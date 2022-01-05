@@ -16,8 +16,6 @@ const data = {
         '#43A5AA',
         '#5BCDD3',
         '#A7E4E8'
-
-
       ]
     }]
   };

@@ -30,7 +30,7 @@ import ChartHealth from '../components/ChartHealth'
 const TestPage = () => {
     return (
         <div>
-            <ExampleHasilHealthTest />
+            <Home />
         </div>
     )
 }
