@@ -45,60 +45,60 @@ const MenuBlog = () => {
             </div>
             <div className="hidden md:block">
                 <div className="bg-begron2">
-                    <div className="topbar w-full">
-                        <DesktopAvatar />
-                    </div>
-                    <div className="px-8 pt-36 pb-12">
-                        <div className="flex justify-center">
-                            <div className="flex flex-col">
-                                <div className="py-8 px-10 bg-body rounded-t-lg">
-                                    <div className="pb-8">
-                                        <div className="mb-1">Layanan Kami</div>
-                                        <div className="text-3xl font-bold">Workshop</div>
+                </div>
+                <div className="topbar w-full">
+                    <DesktopAvatar />
+                </div>
+                <div className="px-8 pt-36 pb-24">
+                    <div className="flex justify-center">
+                        <div className="flex flex-col">
+                            <div className="py-8 px-10 bg-body rounded-t-lg">
+                                <div className="pb-8">
+                                    <div className="mb-1">Layanan Kami</div>
+                                    <div className="text-3xl font-bold">Workshop</div>
+                                </div>
+                                <div className="pt-2 pb-8">
+                                    <div className="font-bold text-sm pb-4">Kategori</div>
+                                    <div className="flex gap-x-3">
+                                        <KategoriBlog title="Semua" />
+                                        <KategoriBlog title="Kesehatan Mental" />
                                     </div>
-                                    <div className="pt-2 pb-8">
-                                        <div className="font-bold text-sm pb-4">Kategori</div>
-                                        <div className="flex gap-x-3">
-                                            <KategoriBlog title="Semua" />
-                                            <KategoriBlog title="Kesehatan Mental" />
-                                        </div>
-                                    </div>
-                                    <div className="pt-4 pb-2">
-                                        <div className="font-bold text-sm pb-3">Hasil</div>
-                                    </div>
-                                    <div className="flex flex-col gap-y-6">
-                                        <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-                                            <BlogCard 
-                                                pic="exampleblog.png"
-                                                title="Dampak overthinking bisa berakibat fatal"
-                                                desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
-                                            />
-                                            <BlogCard 
-                                                pic="exampleblog.png"
-                                                title="Dampak overthinking bisa berakibat fatal"
-                                                desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
-                                            />
-                                            <BlogCard 
-                                                pic="exampleblog.png"
-                                                title="Dampak overthinking bisa berakibat fatal"
-                                                desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
-                                            />
-                                            <BlogCard 
-                                                pic="exampleblog.png"
-                                                title="Dampak overthinking bisa berakibat fatal"
-                                                desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
-                                            />
-                                            <BlogCard 
-                                                pic="exampleblog.png"
-                                                title="Dampak overthinking bisa berakibat fatal"
-                                                desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
-                                            />
-                                            <BlogCard 
-                                                pic="exampleblog.png"
-                                                title="Dampak overthinking bisa berakibat fatal"
-                                                desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
-                                            />
-                                        </div>
+                                </div>
+                                <div className="pt-4 pb-2">
+                                    <div className="font-bold text-sm pb-3">Hasil</div>
+                                </div>
+                                <div className="flex flex-col gap-y-6">
+                                    <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+                                        <BlogCard 
+                                            pic="exampleblog.png"
+                                            title="Dampak overthinking bisa berakibat fatal"
+                                            desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
+                                        />
+                                        <BlogCard 
+                                            pic="exampleblog.png"
+                                            title="Dampak overthinking bisa berakibat fatal"
+                                            desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
+                                        />
+                                        <BlogCard 
+                                            pic="exampleblog.png"
+                                            title="Dampak overthinking bisa berakibat fatal"
+                                            desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
+                                        />
+                                        <BlogCard 
+                                            pic="exampleblog.png"
+                                            title="Dampak overthinking bisa berakibat fatal"
+                                            desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
+                                        />
+                                        <BlogCard 
+                                            pic="exampleblog.png"
+                                            title="Dampak overthinking bisa berakibat fatal"
+                                            desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
+                                        />
+                                        <BlogCard 
+                                            pic="exampleblog.png"
+                                            title="Dampak overthinking bisa berakibat fatal"
+                                            desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
+                                        />
                                     </div>
                                 </div>
                             </div>

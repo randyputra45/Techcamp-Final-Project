@@ -23,11 +23,12 @@ import ExampleHasilHealthTest from '../pages/ExampleHasilHealthTest'
 import MobilePhoneTable from '../pages/MobilePhoneTable'
 import Register3 from '../pages/Register3'
 import Landinginfo from '../pages/Landinginfo'
+import Paket from '../pages/Paket'
 
 const TestPage = () => {
     return (
         <div>
-            <Landinginfo />
+            <Register1 />
         </div>
     )
 }
