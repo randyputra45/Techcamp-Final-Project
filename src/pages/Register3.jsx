@@ -22,7 +22,7 @@ const Register3 = () => {
                             placeholder="XXXXXX"
                         />
                         <div className="pt-4">
-                            Masukan kode verifikasi dari email yang sudah kami berikan ke <b>salmansetiawan@gmail.com</b>
+                            Masukan kode verifikasi dari email yang sudah kami berikan ke <b>salmansetiawan@gmail.com</b>  (jangan lupa untuk tetap periksa folder spam pada email anda.)
                         </div>
                         <div className="pt-4">
                             <csb className="cursor-pointer text-blue-600">Klik disini </csb>apabila belum menerima kode verifikasi dari kami
@@ -34,7 +34,8 @@ const Register3 = () => {
                 </div>
             </div>
             <div className="hidden md:block">
-                <div className="flex items-center justify-center bg-begron h-screen">
+                <div className="bg-begron"></div>
+                <div className="pt-52 pb-20 flex items-center justify-center">
                     <div className="md:w-1/2 lg:w-2/5 bg-white rounded-xl">
                         <div className="px-8 py-12">
                             <ChartBar />
@@ -47,7 +48,7 @@ const Register3 = () => {
                                     placeholder="XXXXXX"
                                 />
                                 <div className="pt-4">
-                                    Masukan kode verifikasi dari email yang sudah kami berikan ke <b>salmansetiawan@gmail.com</b>
+                                    Masukan kode verifikasi dari email yang sudah kami berikan ke <b>salmansetiawan@gmail.com</b> (jangan lupa untuk tetap periksa folder spam pada email anda.)
                                 </div>
                                 <div className="pt-4">
                                     <csb className="cursor-pointer text-blue-600">Klik disini </csb>apabila belum menerima kode verifikasi dari kami
