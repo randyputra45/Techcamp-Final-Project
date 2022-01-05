@@ -32,7 +32,9 @@ const Register2 = () => {
                 </div>
             </div>
             <div className="md:block hidden">
-                <div className="flex items-center justify-center bg-begron h-screen">
+                <div className="bg-begron">
+                </div>
+                <div className="pt-52 pb-20 flex items-center justify-center">
                     <div className="md:w-1/2 lg:w-2/5 bg-white rounded-xl">
                         <div className="px-8 pt-12 pb-20">
                             <ChartBar />

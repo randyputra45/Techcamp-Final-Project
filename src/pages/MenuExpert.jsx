@@ -93,82 +93,82 @@ const MenuExpert = () => {
             </div>
             <div className="hidden md:block">
                 <div className="bg-begron2">
-                    <div className="topbar w-full">
-                        <DesktopAvatar />
-                    </div>
-                    <div className="px-8 pt-36 pb-12">
-                        <div className="flex justify-center">
-                            <div className="flex flex-col">
-                                <div className="py-8 px-10 bg-body rounded-t-lg">
-                                <div className="pb-8">
-                                    <div className="mb-1">Lainnya</div>
-                                    <div className="text-3xl font-bold">Profil Ahli</div>
+                </div>
+                <div className="topbar w-full">
+                    <DesktopAvatar />
+                </div>
+                <div className="px-8 pt-36 pb-24">
+                    <div className="flex justify-center">
+                        <div className="flex flex-col">
+                            <div className="py-8 px-10 bg-body rounded-t-lg">
+                            <div className="pb-8">
+                                <div className="mb-1">Lainnya</div>
+                                <div className="text-3xl font-bold">Profil Ahli</div>
+                            </div>
+
+                                <div className="grid grid-cols-3 gap-x-4 gap-y-6">
+                                    <ExpertCard 
+                                        pic="rosdiana.jpg"
+                                        name="Rosdiana Setyaningrum, MPsi, MHPEd, Psikolog"
+                                        role="Dirut & Pendiri Bersama MS School & Wellbeing Center"
+                                    />
+                                    <ExpertCard 
+                                        pic="dianda.jpg"
+                                        name="Dianda Azani, SPsi, MPsi, Psikolog"
+                                        role="Psikolog"
+                                    />
+                                    <ExpertCard 
+                                        pic="alva.jpg"
+                                        name="Alva Paramitha, SPsi, MPsi, BFRP"
+                                        role="Psikolog"
+                                    />
+                                    <ExpertCard 
+                                        pic="mario.jpg"
+                                        name="Mario Carl Joseph, SPsi, MPsi, Psikolog"
+                                        role="Psikolog"
+                                    />
+                                    <ExpertCard 
+                                        pic="ongen.jpg"
+                                        name="Ongen Cristian Joel, SPd"
+                                        role="Psikolog"
+                                    />
+                                    <ExpertCard 
+                                        pic="veronica.jpg"
+                                        name="Veronica Clarissa, SPsi, MPsi, Psikolog"
+                                        role="Psikolog"
+                                    />
+                                    <ExpertCard 
+                                        pic="sarilani.jpg"
+                                        name="Sarilani Wirawan, SPsi, SE, MPSi"
+                                        role="Psikolog"
+                                    />
+                                    <ExpertCard 
+                                        pic="greg.jpg"
+                                        name="Greg Jakaria, S.E"
+                                        role="Terapis"
+                                    />
+                                    <ExpertCard 
+                                        pic="panega.jpg"
+                                        name="Arlingga Panega"
+                                        role="Pelatih Komunikasi"
+                                    />
+                                    <ExpertCard 
+                                        pic="irna.jpg"
+                                        name="Irna Silawaty, S.Psi, M.Psi, Psikolog"
+                                        role="Psikolog"
+                                    />
+                                    <ExpertCard 
+                                        pic="elsa.jpg"
+                                        name="Elsa Safira Pangaribuan, S.H., SpN"
+                                        role="Pelatih Yoga"
+                                    />
+                                    <ExpertCard 
+                                        pic="kezia.jpg"
+                                        name="Kezia Santoso, BSc"
+                                        role="Psikolog"
+                                    />
                                 </div>
 
-                                    <div className="grid grid-cols-3 gap-x-4 gap-y-6">
-                                        <ExpertCard 
-                                            pic="rosdiana.jpg"
-                                            name="Rosdiana Setyaningrum, MPsi, MHPEd, Psikolog"
-                                            role="Dirut & Pendiri Bersama MS School & Wellbeing Center"
-                                        />
-                                        <ExpertCard 
-                                            pic="dianda.jpg"
-                                            name="Dianda Azani, SPsi, MPsi, Psikolog"
-                                            role="Psikolog"
-                                        />
-                                        <ExpertCard 
-                                            pic="alva.jpg"
-                                            name="Alva Paramitha, SPsi, MPsi, BFRP"
-                                            role="Psikolog"
-                                        />
-                                        <ExpertCard 
-                                            pic="mario.jpg"
-                                            name="Mario Carl Joseph, SPsi, MPsi, Psikolog"
-                                            role="Psikolog"
-                                        />
-                                        <ExpertCard 
-                                            pic="ongen.jpg"
-                                            name="Ongen Cristian Joel, SPd"
-                                            role="Psikolog"
-                                        />
-                                        <ExpertCard 
-                                            pic="veronica.jpg"
-                                            name="Veronica Clarissa, SPsi, MPsi, Psikolog"
-                                            role="Psikolog"
-                                        />
-                                        <ExpertCard 
-                                            pic="sarilani.jpg"
-                                            name="Sarilani Wirawan, SPsi, SE, MPSi"
-                                            role="Psikolog"
-                                        />
-                                        <ExpertCard 
-                                            pic="greg.jpg"
-                                            name="Greg Jakaria, S.E"
-                                            role="Terapis"
-                                        />
-                                        <ExpertCard 
-                                            pic="panega.jpg"
-                                            name="Arlingga Panega"
-                                            role="Pelatih Komunikasi"
-                                        />
-                                        <ExpertCard 
-                                            pic="irna.jpg"
-                                            name="Irna Silawaty, S.Psi, M.Psi, Psikolog"
-                                            role="Psikolog"
-                                        />
-                                        <ExpertCard 
-                                            pic="elsa.jpg"
-                                            name="Elsa Safira Pangaribuan, S.H., SpN"
-                                            role="Pelatih Yoga"
-                                        />
-                                        <ExpertCard 
-                                            pic="kezia.jpg"
-                                            name="Kezia Santoso, BSc"
-                                            role="Psikolog"
-                                        />
-                                    </div>
-
-                                </div>
                             </div>
                         </div>
                     </div>
