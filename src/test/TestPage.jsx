@@ -28,7 +28,7 @@ import Paket from '../pages/Paket'
 const TestPage = () => {
     return (
         <div>
-            <Register1 />
+            <Register3 />
         </div>
     )
 }
