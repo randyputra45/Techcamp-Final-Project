@@ -1,7 +1,9 @@
 import React from 'react'
 import DesktopAvatar from '../components/DesktopAvatar'
+import PembayaranModal from '../components/PembayaranModal'
 import MobileButton from '../components/MobileButton'
 import MobileButton2 from '../components/MobileButton2'
+import RingkasanOrder from '../components/RingkasanOrder'
 import TotalBayar from '../components/TotalBayar'
 
 
@@ -82,7 +84,7 @@ const Pembayaran = () => {
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                                     <div className="">
                                         <div className="pb-4 font-bold">Metode Pembayaran</div>
-                                        <MobileButton2 
+                                        <PembayaranModal
                                             title="Alfamart / Alfamidi"
                                             desc="Klik untuk melihat opsi lain"
                                         />
@@ -93,33 +95,13 @@ const Pembayaran = () => {
                                             desc="Klik untuk melihat opsi lain"
                                         />
                                     </div>
-                                    <div className="flex flex-col gap-y-3">
-                                        <div className="font-bold pb-1">Ringkasan Pembayaran</div>
-                                        <div className="flex justify-between">
-                                            <div className="text-xs">
-                                                Total Tagihan :
-                                            </div>
-                                            <div className="text-xs">
-                                                Rp. 150.000
-                                            </div>
-                                        </div>
-                                        <div className="flex justify-between">
-                                            <div className="text-xs">
-                                                Promo :
-                                            </div>
-                                            <div className="text-xs">
-                                                Rp. 0
-                                            </div>
-                                        </div>
-                                        <div className="flex justify-between">
-                                            <div className="text-xs">
-                                                Biaya Layanan :
-                                            </div>
-                                            <div className="text-xs">
-                                                Rp. 2.500
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <RingkasanOrder 
+                                        nama="Konsultasi"
+                                        tgl="Senin, 16 Oktober 2000"
+                                        tagihan="Rp. 1.200.000"
+                                        promo="Rp.0"
+                                        layanan="Rp. 2.500"
+                                    />
                                 </div>                        
                             </div>
                         </div>
@@ -128,7 +110,7 @@ const Pembayaran = () => {
                 <div className="flex justify-center">
                     <div className="pb-4 botbar2 w-full lg:w-1/2">
                         <TotalBayar 
-                            total="Rp. 152.500"
+                            total="Rp. 1.202.500"
                         />
                     </div>  
                 </div>
