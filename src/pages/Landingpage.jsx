@@ -1,12 +1,17 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import AnswerCard from '../components/AnswerCard'
 import Button from '../components/Button'
 import LandingButton from '../components/LandingButton'
 import LandingNavbar from '../components/LandingNavbar'
 import MobileAvatar from '../components/MobileAvatar'
 import MobileButton from '../components/MobileButton'
+import { UserContext } from '../context/userContext';
 
 const Landingpage = () => {
+
+    const { user, isLoading } = useContext(UserContext); 
+    console.log(user, isLoading);
+
     return (
         <div>
             <div className="block md:hidden">
@@ -69,7 +74,7 @@ const Landingpage = () => {
             </div>
             <div className="hidden md:block">
                 <LandingNavbar />
-                <img src="desktoplanding.svg" alt="" className='fixxxed' />
+                <img src="https://i.ibb.co/tCmLbMF/desktoplanding.png" alt="" className='fixxxed' />
 
                 <div className="px-12 xl:px-24 2xl:px-48 py-20 lg:py-28 xl:py-36 2xl:py-56">
                     <div className="bg-white p-4 w-96 rounded-lg">
@@ -95,7 +100,7 @@ const Landingpage = () => {
                             </div>
                         </div>
                     </div>
-                    <img src="landing1.jpg" alt="" className='object-cover w-1/3' />
+                    <img src="https://i.ibb.co/jVFWLhg/landing1.jpg" alt="" className='object-cover w-1/3' />
                 </div>
             </div>
         </div>

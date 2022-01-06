@@ -14,6 +14,7 @@ import ProfileBlog from '../pages/ProfileBlog'
 import ProfileWebinar from '../pages/ProfileWebinar'
 import Register1 from '../pages/Register1'
 import Register2 from '../pages/Register2'
+import Register3 from '../pages/Register3'
 import Register4 from '../pages/Register4'
 import Screening1 from '../pages/Screening1'
 import ExampleHealthTest from '../pages/ExampleHealthTest'
@@ -21,12 +22,11 @@ import MenuExpert from '../pages/MenuExpert'
 import MenuHealthTest from '../pages/MenuHealthTest'
 import ExampleHasilHealthTest from '../pages/ExampleHasilHealthTest'
 import MobilePhoneTable from '../pages/MobilePhoneTable'
-import Register3 from '../pages/Register3'
 
 const TestPage = () => {
     return (
         <div>
-            <Landingpage />
+            <Register1 />
         </div>
     )
 }
