@@ -3,6 +3,8 @@ body {
     background-color: #FAFCFC;
 }
 
+
+
 .bg-begron {
     background-image: url("../../public/bgfull.svg");
     height: 100%;
@@ -54,6 +56,20 @@ body::-webkit-scrollbar-thumb {
 .scroller {
     scrollbar-width: thin;
     scrollbar-color: rgb(63, 63, 63) rgb(180, 180, 180);
+}
+
+.scroller::-webkit-scrollbar {
+    width: 0.5rem;
+    scrollbar-width: thin;
+}
+
+.scroller::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.scroller::-webkit-scrollbar-thumb {
+    background-color: #4e4e4e;
+    border-radius: 8px;
 }
 
 
@@ -121,6 +137,15 @@ body::-webkit-scrollbar-thumb {
     border-radius: 50%;
 }
 
+.back {
+    z-index: -1;
+}
+
+.avatar-bg {
+    background-image: url("../../public/bgfull.svg");
+    height: 280px;
+    width: 100%;
+}
 
 .focus\:border-form:focus {
     --tw-border-opacity: 1;
@@ -136,4 +161,8 @@ body::-webkit-scrollbar-thumb {
     width: 16px;
     background-color: #bbb;
     border-radius: 50%;
+}
+
+.bar1 {
+    width: 33%;
 }

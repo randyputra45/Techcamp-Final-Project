@@ -11,7 +11,7 @@ const Register1 = () => {
         <div>
             <div className="block md:hidden">
                 <div className="px-8 pt-12">
-                    <ChartBar />
+                    <ChartBar/>
                     <div className="pt-5">
                         <div className="">Tahap 1</div>
                         <div className="text-2xl font-bold">Registrasi</div>
@@ -49,13 +49,24 @@ const Register1 = () => {
                         />
                     </div>
                     <div className="flex flex-col">
-                        <div className="pt-2 flex justify-between items-center gap-x-4">
+                        <div className="pt-2 grid grid-cols-3 gap-x-4">
                             <Box />
                             <Box />
                             <Box />
                         </div>
                         <div className="pt-1.5 text-xs text-gray-700">
                             Password Strength : <b>Low</b>
+                        </div>
+                        <div className="pt-6 pb-3 flex flex-col gap-y-3">
+                            <PassSpecs 
+                                spec="Karakter Minimal 8 Karakter"
+                            />
+                            <PassSpecs 
+                                spec="Menggunakan Kapital"
+                            />
+                            <PassSpecs 
+                                spec="Tanpa Simbol"
+                            />
                         </div>
                     </div>
                     <div className="pt-5">
@@ -130,7 +141,7 @@ const Register1 = () => {
                             />
                         </div>
                         <div className="flex flex-col">
-                            <div className="pt-2 flex justify-between items-center">
+                            <div className="pt-2 grid grid-cols-3 gap-x-4">
                                 <Box />
                                 <Box />
                                 <Box />

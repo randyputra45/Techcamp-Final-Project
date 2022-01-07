@@ -24,11 +24,15 @@ import MobilePhoneTable from '../pages/MobilePhoneTable'
 import Register3 from '../pages/Register3'
 import Landinginfo from '../pages/Landinginfo'
 import Paket from '../pages/Paket'
+import OrderCompelete from '../pages/OrderCompelete'
+import ChartHealth from '../components/ChartHealth'
+import Response403 from '../pages/Response403'
+import Response404 from '../pages/Response404'
 
 const TestPage = () => {
     return (
         <div>
-            <Register3 />
+            <MenuBlog />
         </div>
     )
 }
