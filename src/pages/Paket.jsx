@@ -7,7 +7,47 @@ const Paket = () => {
     return (
         <div>
             <div className="block md:hidden">
-                
+                <div className="pt-24 pb-6 px-6">
+                    <div className="text-2xl font-bold">Pilih Paket</div>
+                    <div className="pt-8">
+                        <div className="flex flex-col gap-y-12">
+                            <div className="grid gap-y-4 content-between">
+                                <PaketCard
+                                    bgtitle="PAKET 1"
+                                    prize="Rp. 300.000"
+                                    desc1="Video Online"
+                                    desc2="3X Group Sharing"
+                                    desc3="Anlisa Perkembangan Individu Via Chat"
+                                />
+                                <Button
+                                    title="Pilih Paket"
+                                />
+                            </div>
+                            <div className="grid gap-y-4 content-between">
+                                <PaketCard
+                                    bgtitle="PAKET 2"
+                                    prize="Rp. 500.000"
+                                    desc1="1x Sesi Individual"
+                                    desc2="1x Sesi Group Support"
+                                />
+                                <Button
+                                    title="Pilih Paket"
+                                />
+                            </div>
+                            <div className="grid gap-y-4 content-between">
+                                <PaketCard
+                                    bgtitle="PAKET 3"
+                                    prize="Rp. 1.200.000"
+                                    desc1="3x Sesi Individual"
+                                    desc2="1x Sesi Group Support"
+                                />
+                                <Button
+                                    title="Pilih Paket"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className="hidden md:block">
                 <div className="bg-begron2">

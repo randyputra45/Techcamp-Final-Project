@@ -1,9 +1,11 @@
 import React from 'react'
 
-const ChartBar = () => {
+
+const ChartBar = (props) => {
     return (
         <div>
-            <div className="py-3 px-14 bg-button rounded-lg">
+            <div className="w-full h-6 bg-button rounded-lg">
+                <div className="bg-active-button rounded-lg h-6 bar1"></div>
             </div>
         </div>
     )

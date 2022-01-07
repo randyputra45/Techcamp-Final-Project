@@ -56,7 +56,7 @@ const Register3 = () => {
                                 <div className="pt-4">
                                     Tolong periksa email anda <b>salmansetiawan@gmail.com</b> untuk konfirmasi akun anda (jangan lupa untuk periksa folder spam pada email anda.)
                                 </div>
-                                <div className="pt-4">
+                                <div className="pt-6">
                                     <csb className="cursor-pointer text-blue-600">Klik disini </csb>apabila belum menerima kode verifikasi dari kami
                                 </div>
                                 <div className="pt-12 text-xs leading-relaxed">
