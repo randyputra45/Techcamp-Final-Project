@@ -21,7 +21,6 @@ export default function useAuth() {
       .get("/user", { withCredentials: true, config })
       .then((res) => {
         setUser(res.data.currentUser);
-        history.push("/");
       })
       .catch((err) => {
         setError(err.response.data);
@@ -68,6 +67,7 @@ export default function useAuth() {
       }, { withCredentials: true, config })
       .then(async (response) => {
         await setUserContext();
+        history.push("/home");
         console.log(response.data);
       })
       .catch((err) => {

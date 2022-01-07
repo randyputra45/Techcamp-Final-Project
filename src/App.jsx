@@ -40,6 +40,8 @@ function App() {
             <Route exact path="/login" component={Login } />
             <Route exact path="/register" component={Register1 } />
             <Route path="/verify" component={Register3 } />
+            <PrivateRoute path="/home" component={Home} />
+            <PrivateRoute path="/blog" component={MenuBlog} />
             <PrivateRoute path="/screening" component={Screening1} />
           </Switch>
         </Router>

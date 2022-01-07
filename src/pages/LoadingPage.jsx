@@ -13,7 +13,7 @@ export const LoadingPage = () => {
                 </div>
                 </div>
                 <div className="flex justify-center pb-9">
-                    <img className="h-8" src={LogoImg} alt="" />   
+                    <img className="h-8" src="gocure.svg" alt="" />   
                 </div>
             </div>
         </div>

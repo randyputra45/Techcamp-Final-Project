@@ -68,7 +68,7 @@ const MenuBlog = () => {
                                     <div className="font-bold text-sm pb-3">Hasil</div>
                                 </div>
                                 <div className="flex flex-col gap-y-6">
-                                    <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+                                    <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4">
                                         <BlogCard 
                                             pic="exampleblog.png"
                                             title="Dampak overthinking bisa berakibat fatal"
