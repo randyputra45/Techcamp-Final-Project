@@ -41,6 +41,7 @@ function App() {
             <Route exact path="/register" component={Register1 } />
             <Route path="/verify" component={Register3 } />
             <PrivateRoute path="/screening" component={Screening1} />
+            <Route path="/blog" component={ExampleBlog } />
           </Switch>
         </Router>
       </main>

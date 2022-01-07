@@ -49,7 +49,7 @@ const Register4 = () => {
                             <div className="mt-2 text-sm">
                                 Ayo lengkapi profilmu agar dapat mengakses seluruh fitur yang tersedia pada website MS Wellbeing 
                             </div>
-                            <div className="pt-12 w-full">
+                            <div className="pt-12 flex justify-center">
                                 <Button title="Lanjut" />
                             </div>
                         </div>

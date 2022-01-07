@@ -62,7 +62,7 @@ const Login = () => {
                         </div>
                     </div>
                     {error && <Alert alertMsg={error} />}
-                    <div className="pt-12 w-full">
+                    <div className="flex justify-center pt-12">
                         <Button title="Login" type={"submit"}/>
                     </div>
                     </form>
@@ -78,7 +78,7 @@ const Login = () => {
             </div>
             <div className="hidden md:block">
                 <div className="bg-begron"></div>
-                <div className="flex items-center justify-center">
+                <div className="flex h-screen items-center justify-center">
                     <div className="md:w-1/2 lg:w-2/5 bg-white rounded-xl">
                         <form onSubmit={handleLogin}>
                         <div className="px-8 py-12">
@@ -113,7 +113,7 @@ const Login = () => {
                                     Lupa Password?
                                 </div>
                             </div>
-                            <div className="pt-12 w-full">
+                            <div className="flex justify-center pt-12">
                                 <Button title="Login" type={"submit"}/>
                             </div>
                             <div className="pt-16">
