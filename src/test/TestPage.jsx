@@ -22,11 +22,13 @@ import MenuExpert from '../pages/MenuExpert'
 import MenuHealthTest from '../pages/MenuHealthTest'
 import ExampleHasilHealthTest from '../pages/ExampleHasilHealthTest'
 import MobilePhoneTable from '../pages/MobilePhoneTable'
+import Landinginfo from '../pages/Landinginfo'
+import Paket from '../pages/Paket'
 
 const TestPage = () => {
     return (
         <div>
-            <Register1 />
+            <Register3 />
         </div>
     )
 }

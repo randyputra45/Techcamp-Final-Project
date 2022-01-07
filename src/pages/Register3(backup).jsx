@@ -1,25 +1,13 @@
-import React, {useEffect} from 'react'
+import React from 'react'
+import Box from '../components/Box'
+import Button from '../components/Button'
+import PhoneDropdown from '../components/PhoneDropdown'
+import Form from '../components/Form'
 import ChartBar from '../components/ChartBar'
-import axios from "axios";
+import MobileButton from '../components/MobileButton'
+import FormGiant from '../components/FormGiant'
 
-
-const Register3 = () => {
-    const verifyToken = window.location.pathname;
-    console.log(verifyToken)
-
-    useEffect(() =>{
-        async function verifyUser() {
-            await axios.get(`${verifyToken}`, { withCredentials: true })
-            .then(res => {
-                console.log(res.data)
-            }).catch(err => {
-                console.log(err);
-            });
-        }
-        
-        verifyUser();  
-    }, [verifyToken]);
-
+const Register3backup = () => {
     return (
         <div>
             <div className="block md:hidden">
@@ -30,15 +18,18 @@ const Register3 = () => {
                         <div className="text-lg font-bold">Verifikasi Akun</div>
                     </div>
                     <div className="pt-8">
+                        <FormGiant 
+                            placeholder="XXXXXX"
+                        />
                         <div className="pt-4">
-                        Tolong periksa email anda <b>salmansetiawan@gmail.com</b> untuk konfirmasi akun anda (jangan lupa untuk periksa folder spam pada email anda.)
+                            Masukan kode verifikasi dari email yang sudah kami berikan ke <b>salmansetiawan@gmail.com</b>  (jangan lupa untuk tetap periksa folder spam pada email anda.)
                         </div>
                         <div className="pt-4">
                             <csb className="cursor-pointer text-blue-600">Klik disini </csb>apabila belum menerima kode verifikasi dari kami
                         </div>
-                        <div className="pt-12 text-xs leading-relaxed">
-                            jika masih belum menemukan coba cari "in:allsubject:(confirm your account on Heroku)" pada email anda
-                        </div>
+                    </div>
+                    <div className="pt-8 w-full">
+                        <Button title="Verifikasi" />
                     </div>
                 </div>
             </div>
@@ -53,15 +44,18 @@ const Register3 = () => {
                                 <div className="text-lg font-bold">Verifikasi Akun</div>
                             </div>
                             <div className="pt-8">
+                                <FormGiant 
+                                    placeholder="XXXXXX"
+                                />
                                 <div className="pt-4">
-                                    Tolong periksa email anda <b>salmansetiawan@gmail.com</b> untuk konfirmasi akun anda (jangan lupa untuk periksa folder spam pada email anda.)
+                                    Masukan kode verifikasi dari email yang sudah kami berikan ke <b>salmansetiawan@gmail.com</b> (jangan lupa untuk tetap periksa folder spam pada email anda.)
                                 </div>
                                 <div className="pt-4">
                                     <csb className="cursor-pointer text-blue-600">Klik disini </csb>apabila belum menerima kode verifikasi dari kami
                                 </div>
-                                <div className="pt-12 text-xs leading-relaxed">
-                                    jika masih belum menemukan coba cari "in:allsubject:(confirm your account on Heroku)" pada email anda
-                                </div>
+                            </div>
+                            <div className="pt-8 w-full">
+                                <Button title="Verifikasi" />
                             </div>
                         </div>
                     </div>
@@ -71,4 +65,4 @@ const Register3 = () => {
     )
 }
 
-export default Register3
+export default Register3backup

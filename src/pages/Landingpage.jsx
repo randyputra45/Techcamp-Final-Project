@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import AnswerCard from '../components/AnswerCard'
 import Button from '../components/Button'
+import DesktopActiveButton2 from '../components/DesktopActiveButton2'
 import LandingButton from '../components/LandingButton'
 import LandingNavbar from '../components/LandingNavbar'
 import MobileAvatar from '../components/MobileAvatar'
@@ -73,9 +74,10 @@ const Landingpage = () => {
                 </div>
             </div>
             <div className="hidden md:block">
-                <LandingNavbar />
-                <img src="https://i.ibb.co/tCmLbMF/desktoplanding.png" alt="" className='fixxxed' />
-
+                <div className="topbar w-full">
+                    <LandingNavbar />
+                </div>
+                <img src="desktoplanding.svg" alt="" className='fixxxed' />
                 <div className="px-12 xl:px-24 2xl:px-48 py-20 lg:py-28 xl:py-36 2xl:py-56">
                     <div className="bg-white p-4 w-96 rounded-lg">
                         <div className="text-xl font-bold">
@@ -89,18 +91,106 @@ const Landingpage = () => {
                         />
                     </div>
                 </div>
-                <div className="py-32 flex justify-center gap-x-8">
-                    <div className="flex items-center w-1/3">
-                        <div className='flex flex-col'>
+                <div className="pt-32 px-12 lg:px-16 xl:px-24 2xl:px-48">
+                    <div className="flex items-center md:gap-x-8 xl:gap-x-16">
+                        <div className='flex flex-col w-2/3'>
                             <div className="text-xl font-bold">
                                 Siapa kami?
                             </div>
-                            <div className=" mt-2 pb-8">
+                            <div className="mt-2 leading-relaxed">
                                 MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus.
                             </div>
                         </div>
+                        <img src="landing1.jpg" alt="" className='object-cover w-1/2' />
                     </div>
-                    <img src="https://i.ibb.co/jVFWLhg/landing1.jpg" alt="" className='object-cover w-1/3' />
+                </div>
+                <div className="px-12 lg:px-16 xl:px-24 2xl:px-48">
+                    <div className="pt-32">
+                        <div className="text-xl font-bold">
+                            Layanan Kami
+                        </div>
+                        <div className="flex justify-between gap-x-4 pt-6">
+                            <LandingButton 
+                                pic="konseling.svg"
+                                title="konseling"
+                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                            />
+                            <LandingButton 
+                                pic="konseling.svg"
+                                title="konseling"
+                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                            />
+                            <LandingButton 
+                                pic="konseling.svg"
+                                title="konseling"
+                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                            />
+                            <LandingButton 
+                                pic="konseling.svg"
+                                title="konseling"
+                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                            />
+                        </div>
+                        <div className="pt-8 flex justify-center">
+                            <DesktopActiveButton2
+                                title="Pelajari Lebih Lanjut"
+                            />
+                        </div>
+                    </div>
+                    <div className="pt-32">
+                        <div className="text-xl font-bold">
+                            Kenapa Kami?
+                        </div>
+                        <div className="flex justify-between gap-x-4 pt-6">
+                            <LandingButton 
+                                pic="konseling.svg"
+                                title="konseling"
+                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                            />
+                            <LandingButton 
+                                pic="konseling.svg"
+                                title="konseling"
+                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                            />
+                            <LandingButton 
+                                pic="konseling.svg"
+                                title="konseling"
+                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                            />
+                            <LandingButton 
+                                pic="konseling.svg"
+                                title="konseling"
+                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                            />
+                        </div>
+                    </div>
+                    <div className="py-32">
+                        <div className="text-xl font-bold">
+                            Kenapa Kami?
+                        </div>
+                        <div className="flex justify-between gap-x-4 pt-6">
+                            <LandingButton 
+                                pic="konseling.svg"
+                                title="konseling"
+                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                            />
+                            <LandingButton 
+                                pic="konseling.svg"
+                                title="konseling"
+                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                            />
+                            <LandingButton 
+                                pic="konseling.svg"
+                                title="konseling"
+                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                            />
+                            <LandingButton 
+                                pic="konseling.svg"
+                                title="konseling"
+                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

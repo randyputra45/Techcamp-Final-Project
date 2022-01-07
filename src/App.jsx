@@ -39,7 +39,8 @@ function App() {
             <Route exact path="/" component={Landingpage } />
             <Route exact path="/login" component={Login } />
             <Route exact path="/register" component={Register1 } />
-            <Route path="/verify" component={Landingpage } />
+            <Route path="/verify" component={Register3 } />
+            <PrivateRoute path="/screening" component={Screening1} />
           </Switch>
         </Router>
       </main>

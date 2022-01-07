@@ -54,80 +54,80 @@ const MenuWebinar = () => {
             </div>
             <div className="hidden md:block">
                 <div className="bg-begron2">
-                    <div className="topbar w-full">
-                        <DesktopAvatar />
-                    </div>
-                    <div className="px-8 pt-36 pb-12">
-                        <div className="flex justify-center">
-                            <div className="flex flex-col">
-                                <div className="py-8 px-10 bg-body rounded-t-lg">
-                                    <div className="pb-8">
-                                        <div className="text-sm mb-1">Layanan Kami</div>
-                                        <div className="text-2xl font-bold">Workshop</div>
-                                    </div>
-                                    <div className="flex flex-col gap-y-6">
-                                        <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-                                            <WebinarCard
-                                                title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
-                                                picnarsum1="small-avatar.svg"
-                                                picnarsum2="small-avatar.svg"
-                                                picnarsum3="small-avatar.svg"
-                                                day="Kamis" 
-                                                date="14 Oct 2021"
-                                                quota="18"
-                                                price="Rp. 150.000"
-                                            />
-                                            <WebinarCard
-                                                title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
-                                                picnarsum1="small-avatar.svg"
-                                                picnarsum2="small-avatar.svg"
-                                                picnarsum3="small-avatar.svg"
-                                                day="Kamis" 
-                                                date="14 Oct 2021"
-                                                quota="18"
-                                                price="Rp. 150.000"
-                                            />
-                                            <WebinarCard
-                                                title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
-                                                picnarsum1="small-avatar.svg"
-                                                picnarsum2="small-avatar.svg"
-                                                picnarsum3="small-avatar.svg"
-                                                day="Kamis" 
-                                                date="14 Oct 2021"
-                                                quota="18"
-                                                price="Rp. 150.000"
-                                            />
-                                            <WebinarCard
-                                                title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
-                                                picnarsum1="small-avatar.svg"
-                                                picnarsum2="small-avatar.svg"
-                                                picnarsum3="small-avatar.svg"
-                                                day="Kamis" 
-                                                date="14 Oct 2021"
-                                                quota="18"
-                                                price="Rp. 150.000"
-                                            />
-                                            <WebinarCard
-                                                title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
-                                                picnarsum1="small-avatar.svg"
-                                                picnarsum2="small-avatar.svg"
-                                                picnarsum3="small-avatar.svg"
-                                                day="Kamis" 
-                                                date="14 Oct 2021"
-                                                quota="18"
-                                                price="Rp. 150.000"
-                                            />
-                                            <WebinarCard
-                                                title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
-                                                picnarsum1="small-avatar.svg"
-                                                picnarsum2="small-avatar.svg"
-                                                picnarsum3="small-avatar.svg"
-                                                day="Kamis" 
-                                                date="14 Oct 2021"
-                                                quota="18"
-                                                price="Rp. 150.000"
-                                            />
-                                        </div>
+                </div>
+                <div className="topbar w-full">
+                    <DesktopAvatar />
+                </div>
+                <div className="px-8 pt-36 pb-24">
+                    <div className="flex justify-center">
+                        <div className="flex flex-col">
+                            <div className="py-8 px-10 bg-body rounded-t-lg">
+                                <div className="pb-8">
+                                    <div className="text-sm mb-1">Layanan Kami</div>
+                                    <div className="text-2xl font-bold">Workshop</div>
+                                </div>
+                                <div className="flex flex-col gap-y-6">
+                                    <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+                                        <WebinarCard
+                                            title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
+                                            picnarsum1="small-avatar.svg"
+                                            picnarsum2="small-avatar.svg"
+                                            picnarsum3="small-avatar.svg"
+                                            day="Kamis" 
+                                            date="14 Oct 2021"
+                                            quota="18"
+                                            price="Rp. 150.000"
+                                        />
+                                        <WebinarCard
+                                            title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
+                                            picnarsum1="small-avatar.svg"
+                                            picnarsum2="small-avatar.svg"
+                                            picnarsum3="small-avatar.svg"
+                                            day="Kamis" 
+                                            date="14 Oct 2021"
+                                            quota="18"
+                                            price="Rp. 150.000"
+                                        />
+                                        <WebinarCard
+                                            title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
+                                            picnarsum1="small-avatar.svg"
+                                            picnarsum2="small-avatar.svg"
+                                            picnarsum3="small-avatar.svg"
+                                            day="Kamis" 
+                                            date="14 Oct 2021"
+                                            quota="18"
+                                            price="Rp. 150.000"
+                                        />
+                                        <WebinarCard
+                                            title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
+                                            picnarsum1="small-avatar.svg"
+                                            picnarsum2="small-avatar.svg"
+                                            picnarsum3="small-avatar.svg"
+                                            day="Kamis" 
+                                            date="14 Oct 2021"
+                                            quota="18"
+                                            price="Rp. 150.000"
+                                        />
+                                        <WebinarCard
+                                            title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
+                                            picnarsum1="small-avatar.svg"
+                                            picnarsum2="small-avatar.svg"
+                                            picnarsum3="small-avatar.svg"
+                                            day="Kamis" 
+                                            date="14 Oct 2021"
+                                            quota="18"
+                                            price="Rp. 150.000"
+                                        />
+                                        <WebinarCard
+                                            title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
+                                            picnarsum1="small-avatar.svg"
+                                            picnarsum2="small-avatar.svg"
+                                            picnarsum3="small-avatar.svg"
+                                            day="Kamis" 
+                                            date="14 Oct 2021"
+                                            quota="18"
+                                            price="Rp. 150.000"
+                                        />
                                     </div>
                                 </div>
                             </div>

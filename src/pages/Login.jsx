@@ -77,7 +77,8 @@ const Login = () => {
                 </div>
             </div>
             <div className="hidden md:block">
-                <div className="flex items-center justify-center bg-begron h-screen">
+                <div className="bg-begron"></div>
+                <div className="flex items-center justify-center">
                     <div className="md:w-1/2 lg:w-2/5 bg-white rounded-xl">
                         <form onSubmit={handleLogin}>
                         <div className="px-8 py-12">

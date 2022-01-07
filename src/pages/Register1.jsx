@@ -199,7 +199,7 @@ const Register1 = () => {
                         />
                     </div>
                     <div className="flex flex-col">
-                        <div className="pt-2 flex justify-between items-center">
+                        <div className="pt-2 flex justify-between items-center gap-x-4">
                             <Box />
                             <Box />
                             <Box />
