@@ -9,6 +9,7 @@ import ExampleExpert from "./pages/ExampleExpert";
 import ExampleWebinar from "./pages/ExampleWebinar";
 import Home from "./pages/Home";
 import Landingpage from "./pages/Landingpage";
+import Landinginfo from "./pages/Landinginfo";
 import Login from "./pages/Login";
 import MenuBlog from "./pages/MenuBlog";
 import MenuWebinar from "./pages/MenuWebinar";
@@ -42,6 +43,8 @@ function App() {
             <Route path="/verify" component={Register3 } />
             <PrivateRoute path="/screening" component={Screening1} />
             <Route path="/blog" component={ExampleBlog } />
+            <Route exact path="/landinginfo" component={Landinginfo } />
+            <Route exact path="/home" component={Home } />
           </Switch>
         </Router>
       </main>
