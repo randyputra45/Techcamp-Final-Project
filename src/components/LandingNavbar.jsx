@@ -10,9 +10,11 @@ const LandingNavbar = () => {
                 <div className="flex gap-x-4">
                     <DesktopActiveButton2
                         title="Masuk"
+                        url="/login"
                     />
                     <DesktopActiveButton
                         title="Daftar"
+                        url="/register"
                     />
                 </div>
             </div>

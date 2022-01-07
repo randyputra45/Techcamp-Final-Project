@@ -8,6 +8,11 @@ const Form = (props) => {
                     <input
                         className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-200 rounded py-2 px-2 my-2 text-sm leading-tight focus:outline-none focus:bg-gray-50 focus:border-form"
                         placeholder={props.placeholder}
+                        name={props.name}
+                        value={props.value}
+                        onChange={props.handleChange}
+                        onKeyDown={props.handleKeyDown}
+                        type={props.type}
                     />
                 </div>
             </div>
