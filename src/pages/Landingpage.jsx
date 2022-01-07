@@ -1,12 +1,18 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import AnswerCard from '../components/AnswerCard'
 import Button from '../components/Button'
 import DesktopActiveButton2 from '../components/DesktopActiveButton2'
 import LandingButton from '../components/LandingButton'
 import LandingNavbar from '../components/LandingNavbar'
-
+import MobileAvatar from '../components/MobileAvatar'
+import MobileButton from '../components/MobileButton'
+import { UserContext } from '../context/userContext';
 
 const Landingpage = () => {
+
+    const { user, isLoading } = useContext(UserContext); 
+    console.log(user, isLoading);
+
     return (
         <div>
             <div className="block md:hidden">
@@ -72,7 +78,6 @@ const Landingpage = () => {
                     <LandingNavbar />
                 </div>
                 <img src="desktoplanding.svg" alt="" className='fixxxed' />
-
                 <div className="px-12 xl:px-24 2xl:px-48 py-20 lg:py-28 xl:py-36 2xl:py-56">
                     <div className="bg-white p-4 w-96 rounded-lg">
                         <div className="text-xl font-bold">
@@ -96,7 +101,7 @@ const Landingpage = () => {
                                 MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus.
                             </div>
                         </div>
-                        <img src="landing1.jpg" alt="" className='object-cover w-full' />
+                        <img src="landing1.jpg" alt="" className='object-cover w-1/2' />
                     </div>
                 </div>
                 <div className="px-12 lg:px-16 xl:px-24 2xl:px-48">

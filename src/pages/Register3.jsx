@@ -1,9 +1,25 @@
-import React from 'react'
-import Button from '../components/Button'
+import React, {useEffect} from 'react'
 import ChartBar from '../components/ChartBar'
-import FormGiant from '../components/FormGiant'
+import axios from "axios";
+
 
 const Register3 = () => {
+    const verifyToken = window.location.pathname;
+    console.log(verifyToken)
+
+    useEffect(() =>{
+        async function verifyUser() {
+            await axios.get(`${verifyToken}`, { withCredentials: true })
+            .then(res => {
+                console.log(res.data)
+            }).catch(err => {
+                console.log(err);
+            });
+        }
+        
+        verifyUser();  
+    }, [verifyToken]);
+
     return (
         <div>
             <div className="block md:hidden">
