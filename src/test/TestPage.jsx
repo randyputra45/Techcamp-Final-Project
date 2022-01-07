@@ -32,7 +32,7 @@ import Response404 from '../pages/Response404'
 const TestPage = () => {
     return (
         <div>
-            <TransaksiPembayaran />
+            <MenuBlog />
         </div>
     )
 }

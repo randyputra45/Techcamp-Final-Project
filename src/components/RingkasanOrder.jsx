@@ -4,7 +4,7 @@ const RingkasanOrder = (props) => {
     return (
         <div>
             <div className="flex flex-col gap-y-3">
-                <div className="font-bold pb-1">Ringkasan Pembayaran</div>
+                <div className="text-sm md:text-base font-bold pb-1">Ringkasan Pembayaran</div>
                 <div className="flex justify-between">
                     <div className="text-xs">
                         Deskripsi :

@@ -30,7 +30,7 @@ const PembayaranModal = (props) => {
     
     return (
         <div>
-            <div onClick={openModal} className='cursor-pointer p-4 px-6 rounded-lg bg-button w-96'>
+            <div onClick={openModal} className='cursor-pointer p-4 px-6 rounded-lg bg-button w-full'>
                 <div className="flex flex-col">
                     <div className="text-sm font-bold">
                         {props.title}

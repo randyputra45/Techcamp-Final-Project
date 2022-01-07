@@ -137,6 +137,15 @@ body::-webkit-scrollbar-thumb {
     border-radius: 50%;
 }
 
+.back {
+    z-index: -1;
+}
+
+.avatar-bg {
+    background-image: url("../../public/bgfull.svg");
+    height: 280px;
+    width: 100%;
+}
 
 .focus\:border-form:focus {
     --tw-border-opacity: 1;
