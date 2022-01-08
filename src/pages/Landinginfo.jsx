@@ -71,33 +71,33 @@ const Landinginfo = () => {
                 <div className="topbar w-full">
                     <LandingNavbar />
                 </div>
-                <div className="px-12 lg:px-16 xl:px-24 2xl:px-48">
+                <div className="px-12 lg:px-16 xl:px-24 2xl:px-52">
                     <div className="pt-32">
                         <LandingInfo
                             title="Konseling"
-                            desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus."
-                            pic="landing1.jpg"
+                            desc="Konseling Terapi yang kami tawarkan berupa konsultasi melalui voice call, video call, dan juga meet secara offline. Diberikannya beberapa pilihan untuk berkonsultasi agar kamu dapat memilih konsultasi yang kamu inginkan sesuai kebutuhanmu saat ini. Konseling Terapi ini juga dapat dilakukan secara 1 on 1 ataupun berkelompok sesuai kondisi yang dialami."
+                            pic="landing-konseling.jpg"
                         />
                     </div>
                     <div className="pt-32">
                         <LandingInfo
-                            title="Konseling"
-                            desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus."
-                            pic="landing1.jpg"
+                            title="Webinar"
+                            desc="Selain berkonsultasi dan Tes Kesehatan, Ms Wellbeing menyediakan Webinar Kesehatan agar kamu mendapatkan lebih banyak  informasi mengenai pentingnya Kesehatan Mental. Topik yang diangkat akan selalu berbeda disetiap pertemuannya. Dan pastinya Webinar ini akan dinarasumberi oleh Psikolog hebat dan ternama."
+                            pic="landing-webinar.jpg"
                         />
                     </div>
                     <div className="pt-32">
                         <LandingInfo
-                            title="Konseling"
-                            desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus."
-                            pic="landing1.jpg"
+                            title="Blog"
+                            desc="Agar pengetahuan Kesehatan Mentalmu bertambah, kamu dapat membaca beberapa Artikel Kesehatan yang telah disediakan. Artikel ini pastinya akan selalu di update setiap hariya dengan topik yang hangat dan  sedang terjadi saat ini."
+                            pic="landing-blog.jpg"
                         />
                     </div>
                     <div className="py-32">
                         <LandingInfo
-                            title="Konseling"
-                            desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus."
-                            pic="landing1.jpg"
+                            title="Tes Kesehatan"
+                            desc="Kamu bisa mencoba Tes Kesehatan untuk mengetahui sejauh mana tingkat kecemasanmu saat ini. Kamu juga akan melihat hasilnya setelah menjawab seluruh pertanyaan dengan jujur dan benar untuk dipertimbangkan ikut atau tidaknya mengikuti konsultasi."
+                            pic="landing-tes-kesehatan.jpg"
                         />
                     </div>
                 </div>

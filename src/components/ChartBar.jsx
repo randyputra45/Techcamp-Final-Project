@@ -5,7 +5,7 @@ const ChartBar = (props) => {
     return (
         <div>
             <div className="w-full h-6 bg-button rounded-lg">
-                <div className="bg-active-button rounded-lg h-6 bar1"></div>
+                <div className={`bg-active-button rounded-lg h-6 ${props.bar}`}></div>
             </div>
         </div>
     )

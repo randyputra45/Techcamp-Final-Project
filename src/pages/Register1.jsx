@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
 
 import React from 'react'
 import Box from '../components/Box'
@@ -99,6 +97,17 @@ const Register1 = () => {
                     <div className="pt-1.5 text-xs text-gray-700">
                         Password Strength : <b>Low</b>
                     </div>
+                    <div className="pt-6 pb-3 flex flex-col gap-y-3">
+                        <PassSpecs 
+                            spec="Karakter Minimal 8 Karakter"
+                        />
+                        <PassSpecs 
+                            spec="Menggunakan Kapital"
+                        />
+                        <PassSpecs 
+                            spec="Tanpa Simbol"
+                        />
+                    </div>
                 </div>
                 <div className="pt-5">
                     <div className="font-bold">
@@ -129,8 +138,8 @@ const Register1 = () => {
                         </div>
                     </div>
                 </div>
-                <div className="pt-8 w-full">
-                    <Button title="Daftar" type={"submit"}/>
+                <div className="pt-8 flex justify-center">
+                    <Button title="Daftar" type={"submit"} url="/verify"/>
                 </div>
                 </form>
             </div>
@@ -204,7 +213,7 @@ const Register1 = () => {
                             <Box />
                             <Box />
                         </div>
-                        <div className="pt-1.5 text-xs text-gray-700">
+                        <div className="text-xs text-gray-700">
                             Password Strength : <b>Low</b>
                             <div className="pt-6 pb-3 flex flex-col gap-y-3">
                                 <PassSpecs 
@@ -248,7 +257,7 @@ const Register1 = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="pt-8 w-full">
+                    <div className="pt-8 flex justify-center">
                         <Button title="Daftar" type={"submit"}/>
                     </div>
                     </form>

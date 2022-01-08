@@ -4,8 +4,6 @@ import Button from '../components/Button'
 import DesktopActiveButton2 from '../components/DesktopActiveButton2'
 import LandingButton from '../components/LandingButton'
 import LandingNavbar from '../components/LandingNavbar'
-import MobileAvatar from '../components/MobileAvatar'
-import MobileButton from '../components/MobileButton'
 import { UserContext } from '../context/userContext';
 
 const Landingpage = () => {
@@ -88,6 +86,7 @@ const Landingpage = () => {
                         </div>
                         <Button
                             title="Daftar Sekarang"
+                            url="/register"
                         />
                     </div>
                 </div>
@@ -109,31 +108,32 @@ const Landingpage = () => {
                         <div className="text-xl font-bold">
                             Layanan Kami
                         </div>
-                        <div className="flex justify-between gap-x-4 pt-6">
+                        <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 pt-6">
                             <LandingButton 
                                 pic="konseling.svg"
                                 title="konseling"
-                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                                desc="disini anda bisa melakukan penanganan kesehatan mental anda dengan orang yang terpercaya dan ahli dibidangnya." 
+                            />
+                            <LandingButton 
+                                pic="webinar.svg"
+                                title="webinar"
+                                desc="disini anda bisa mengikuti kegiatan webinar bertajuk kesehatan mental bersama narasumber ahli dan terpercaya." 
+                            />
+                            <LandingButton 
+                                pic="blog.svg"
+                                title="blog"
+                                desc="disini anda bisa membaca ragam artikel dan blog untuk menambah awareness anda tentang kesehatan mental." 
                             />
                             <LandingButton 
                                 pic="konseling.svg"
-                                title="konseling"
-                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
-                            />
-                            <LandingButton 
-                                pic="konseling.svg"
-                                title="konseling"
-                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
-                            />
-                            <LandingButton 
-                                pic="konseling.svg"
-                                title="konseling"
-                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                                title="tes kesehatan"
+                                desc="disini anda juga dapat melakukan tes kesehatan bersama kami agar anda mengetahui kondisi dari kesehatan mental anda saat ini." 
                             />
                         </div>
                         <div className="pt-8 flex justify-center">
                             <DesktopActiveButton2
                                 title="Pelajari Lebih Lanjut"
+                                url="landinginfo"
                             />
                         </div>
                     </div>
@@ -141,26 +141,26 @@ const Landingpage = () => {
                         <div className="text-xl font-bold">
                             Kenapa Kami?
                         </div>
-                        <div className="flex justify-between gap-x-4 pt-6">
+                        <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 pt-6">
                             <LandingButton 
                                 pic="konseling.svg"
-                                title="konseling"
-                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                                title="24 jam pelayanan konsumen"
+                                desc="GoCure hadir dengan memberikan pelayanan sepenuh hati kepada konsumen. Siap melayani konsumen kapanpun user inginkan." 
                             />
                             <LandingButton 
                                 pic="konseling.svg"
-                                title="konseling"
-                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                                title="SDM yang ahli dibidangnya"
+                                desc="Kami bekerjasama dengan tenaga yang ahli dibidangnya, tidak hanya mendengarkan, tetapi juga memberikan saran dan solusi yang terbaik untuk konsumen." 
                             />
                             <LandingButton 
                                 pic="konseling.svg"
-                                title="konseling"
-                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                                title="aksesibilitas yang mudah"
+                                desc="GoCure dibuat dengan antarmuka dengan aksesibilitas yang menarik dan sangat user friendly untuk memudahkan pengguna mengakses website kami." 
                             />
                             <LandingButton 
                                 pic="konseling.svg"
-                                title="konseling"
-                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                                title="proses konseling yang cepat"
+                                desc="tidak perlu untuk menunggu lama, jadwal konsultasimu akan segera dikirim melalui email yang didaftarkan, karena kami akan segera mencocokkan dan membalas pesanmu dengan cepat." 
                             />
                         </div>
                     </div>
