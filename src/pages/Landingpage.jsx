@@ -4,8 +4,6 @@ import Button from '../components/Button'
 import DesktopActiveButton2 from '../components/DesktopActiveButton2'
 import LandingButton from '../components/LandingButton'
 import LandingNavbar from '../components/LandingNavbar'
-import MobileAvatar from '../components/MobileAvatar'
-import MobileButton from '../components/MobileButton'
 import { UserContext } from '../context/userContext';
 
 const Landingpage = () => {
@@ -88,6 +86,7 @@ const Landingpage = () => {
                         </div>
                         <Button
                             title="Daftar Sekarang"
+                            url="/register"
                         />
                     </div>
                 </div>
@@ -134,6 +133,7 @@ const Landingpage = () => {
                         <div className="pt-8 flex justify-center">
                             <DesktopActiveButton2
                                 title="Pelajari Lebih Lanjut"
+                                url="landinginfo"
                             />
                         </div>
                     </div>

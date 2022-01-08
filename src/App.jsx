@@ -30,6 +30,7 @@ import ExampleHasilHealthTest from "./pages/ExampleHasilHealthTest";
 import MobilePhoneTable from "./pages/MobilePhoneTable";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Paket from "./pages/Paket";
 
 function App() {
   return (
@@ -38,13 +39,22 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/" component={Landingpage } />
+            <Route exact path="/landinginfo" component={Landinginfo } />
             <Route exact path="/login" component={Login } />
             <Route exact path="/register" component={Register1 } />
             <Route path="/verify" component={Register3 } />
-            <PrivateRoute path="/screening" component={Screening1} />
-            <Route path="/blog" component={ExampleBlog } />
-            <Route exact path="/landinginfo" component={Landinginfo } />
-            <Route exact path="/home" component={Home } />
+            <Route exact path="/register/success" component={Register4 } />
+            <PrivateRoute path="/home" component={Home} />
+            <PrivateRoute exact path="/blogs" component={MenuBlog} />
+            <PrivateRoute exact path="/blogs/:id" component={ExampleBlog} />
+            <PrivateRoute exact path="/webinar" component={MenuWebinar} />
+            <PrivateRoute exact path="/webinar" component={MenuWebinar} />
+            <PrivateRoute exact path="/pricing" component={Paket} />
+            <PrivateRoute exact path="/screening" component={Screening1} />
+            <PrivateRoute exact path="/healthtest" component={ExampleHealthTest} />
+            <PrivateRoute exact path="/healthtest/hasil" component={ExampleHasilHealthTest} />
+            <PrivateRoute exact path="/payment" component={TransaksiPembayaran} />
+            <PrivateRoute exact path="/profile" component={Profile} />
           </Switch>
         </Router>
       </main>
