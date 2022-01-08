@@ -95,6 +95,11 @@ const ExampleBlog = () => {
                     </div>
 
                 </div>
+                <div className="botbar pb-10 pr-12">
+                    <BlogButton 
+                        pic="like.svg"
+                    />
+                </div>
             </div>
         </div>
     )
