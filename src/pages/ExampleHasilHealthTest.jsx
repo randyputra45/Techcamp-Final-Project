@@ -70,7 +70,7 @@ const ExampleHasilHealthTest = () => {
                                 </div>
                                 <div className="py-8 flex justify-center">
                                     <div className="w-96">
-                                        <ChartHealth />
+                                        <ChartHealth stres="12" depresi="24" cemas="16"/>
                                     </div>
                                 </div>
                                 <div className="pt-4 pb-2">

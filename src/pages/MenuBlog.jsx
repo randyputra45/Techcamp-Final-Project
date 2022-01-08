@@ -55,7 +55,7 @@ const MenuBlog = () => {
                             <div className="py-8 px-10 bg-body rounded-t-lg">
                                 <div className="pb-8">
                                     <div className="mb-1">Layanan Kami</div>
-                                    <div className="text-3xl font-bold">Workshop</div>
+                                    <div className="text-3xl font-bold">Blogs</div>
                                 </div>
                                 <div className="pt-2 pb-8">
                                     <div className="font-bold text-sm pb-4">Kategori</div>
@@ -68,7 +68,7 @@ const MenuBlog = () => {
                                     <div className="font-bold text-sm pb-3">Hasil</div>
                                 </div>
                                 <div className="flex flex-col gap-y-6">
-                                    <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4">
+                                    <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
                                         <BlogCard 
                                             pic="exampleblog.png"
                                             title="Dampak overthinking bisa berakibat fatal"

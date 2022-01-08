@@ -1,5 +1,4 @@
 import React from 'react'
-import LogoImg from '../images/logo-white.svg'
 import Loading from '../components/Loading'
 
 export const LoadingPage = () => {

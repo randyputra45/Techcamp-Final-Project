@@ -5,7 +5,6 @@ import Loading from "../components/Loading";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const { user, isLoading } = useContext(UserContext); 
-  console.log(user, isLoading);
 
   if(isLoading) {
     return <Loading/>

@@ -4,14 +4,16 @@ import Button from '../components/Button'
 import DesktopActiveButton2 from '../components/DesktopActiveButton2'
 import LandingButton from '../components/LandingButton'
 import LandingNavbar from '../components/LandingNavbar'
-import MobileAvatar from '../components/MobileAvatar'
-import MobileButton from '../components/MobileButton'
 import { UserContext } from '../context/userContext';
+import { useHistory } from 'react-router-dom'
 
 const Landingpage = () => {
-
-    const { user, isLoading } = useContext(UserContext); 
-    console.log(user, isLoading);
+    const history = useHistory();
+    const { user } = useContext(UserContext); 
+    
+    if(user) {
+        history.push("/home")
+    }
 
     return (
         <div>

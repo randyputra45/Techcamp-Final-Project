@@ -29,6 +29,7 @@ import ExampleHasilHealthTest from "./pages/ExampleHasilHealthTest";
 import MobilePhoneTable from "./pages/MobilePhoneTable";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Paket from "./pages/Paket";
 
 function App() {
   return (
@@ -40,9 +41,18 @@ function App() {
             <Route exact path="/login" component={Login } />
             <Route exact path="/register" component={Register1 } />
             <Route path="/verify" component={Register3 } />
+            <Route exact path="/register4" component={Register4 } />
             <PrivateRoute path="/home" component={Home} />
-            <PrivateRoute path="/blog" component={MenuBlog} />
-            <PrivateRoute path="/screening" component={Screening1} />
+            <PrivateRoute exact path="/blogs" component={MenuBlog} />
+            <PrivateRoute exact path="/blogs/:id" component={ExampleBlog} />
+            <PrivateRoute exact path="/webinar" component={MenuWebinar} />
+            <PrivateRoute exact path="/webinar" component={MenuWebinar} />
+            <PrivateRoute exact path="/paket" component={Paket} />
+            <PrivateRoute exact path="/screening" component={Screening1} />
+            <PrivateRoute exact path="/healthtest" component={ExampleHealthTest} />
+            <PrivateRoute exact path="/healthtest/hasil" component={ExampleHasilHealthTest} />
+            <PrivateRoute exact path="/payment" component={TransaksiPembayaran} />
+            <PrivateRoute exact path="/profile" component={Profile} />
           </Switch>
         </Router>
       </main>

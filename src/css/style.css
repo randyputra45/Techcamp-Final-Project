@@ -3,8 +3,6 @@ body {
     background-color: #FAFCFC;
 }
 
-
-
 .bg-begron {
     background-image: url("../../public/bgfull.svg");
     height: 100%;
@@ -164,5 +162,41 @@ body::-webkit-scrollbar-thumb {
 }
 
 .bar1 {
-    width: 33%;
+    width: 10%;
+}
+
+.bar2 {
+    width: 20%;
+}
+
+.bar3 {
+    width: 30%;
+}
+
+.bar4 {
+    width: 40%;
+}
+
+.bar5 {
+    width: 50%;
+}
+
+.bar6 {
+    width: 60%;
+}
+
+.bar6 {
+    width: 70%;
+}
+
+.bar6 {
+    width: 80%;
+}
+
+.bar6 {
+    width: 90%;
+}
+
+.bar6 {
+    width: 100%;
 }

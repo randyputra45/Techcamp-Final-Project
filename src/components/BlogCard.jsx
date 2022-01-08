@@ -3,7 +3,7 @@ import React from 'react'
 const BlogCard = (props) => {
     return (
         <div>
-            <div className="rounded bg-button md:w-96 cursor-pointer hover:bg-pink-600 hover:text-gray-50">
+            <div className="rounded bg-button md:w-80 cursor-pointer hover:bg-pink-600 hover:text-gray-50">
                 <div className="">
                 <img className='rounded-t w-full h-36 object-cover' src={props.pic} />  
                 </div>
