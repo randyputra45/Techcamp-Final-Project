@@ -5,11 +5,17 @@ import DesktopActiveButton2 from '../components/DesktopActiveButton2'
 import LandingButton from '../components/LandingButton'
 import LandingNavbar from '../components/LandingNavbar'
 import { UserContext } from '../context/userContext';
+import { useHistory } from 'react-router-dom'
 
 const Landingpage = () => {
+    const history = useHistory()
 
     const { user, isLoading } = useContext(UserContext); 
     console.log(user, isLoading);
+
+    if(user) {
+        history.push("/home")
+    }
 
     return (
         <div>
@@ -28,10 +34,10 @@ const Landingpage = () => {
                         <div className="font-bold mb-3">Layanan yang kami tawarkan?</div>
                         <div className="flex flex-col gap-y-4">
                             <div className="flex justify-between">
-                                <LandingButton pic="konseling.svg" />
-                                <LandingButton pic="konseling.svg" />
-                                <LandingButton pic="konseling.svg" />
-                                <LandingButton pic="konseling.svg" />
+                                <LandingButton pic="konseling.svg" url="/"/>
+                                <LandingButton pic="konseling.svg" url="/"/>
+                                <LandingButton pic="konseling.svg" url="/"/>
+                                <LandingButton pic="konseling.svg" url="/"/>
                             </div>
                             <AnswerCard 
                                 title="Webinar" 
@@ -43,10 +49,10 @@ const Landingpage = () => {
                         <div className="font-bold mb-3">Kenapa kami?</div>
                         <div className="flex flex-col gap-y-4">
                             <div className="flex justify-between">
-                                <LandingButton pic="konseling.svg" />
-                                <LandingButton pic="konseling.svg" />
-                                <LandingButton pic="konseling.svg" />
-                                <LandingButton pic="konseling.svg" />
+                                <LandingButton pic="konseling.svg" url="/"/>
+                                <LandingButton pic="konseling.svg" url="/"/>
+                                <LandingButton pic="konseling.svg" url="/"/>
+                                <LandingButton pic="konseling.svg" url="/"/>
                             </div>
                             <AnswerCard 
                                 title="Webinar" 
@@ -58,10 +64,10 @@ const Landingpage = () => {
                         <div className="font-bold mb-3">Sedikit testimoni dari user kami</div>
                         <div className="flex flex-col gap-y-4">
                             <div className="flex justify-between">
-                                <LandingButton pic="konseling.svg" />
-                                <LandingButton pic="konseling.svg" />
-                                <LandingButton pic="konseling.svg" />
-                                <LandingButton pic="konseling.svg" />
+                                <LandingButton pic="konseling.svg" url="/"/>
+                                <LandingButton pic="konseling.svg" url="/"/>
+                                <LandingButton pic="konseling.svg" url="/"/>
+                                <LandingButton pic="konseling.svg" url="/"/>
                             </div>
                             <AnswerCard 
                                 title="Webinar" 
@@ -111,29 +117,33 @@ const Landingpage = () => {
                         <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 pt-6">
                             <LandingButton 
                                 pic="konseling.svg"
-                                title="konseling"
+                                title="Konseling"
                                 desc="disini anda bisa melakukan penanganan kesehatan mental anda dengan orang yang terpercaya dan ahli dibidangnya." 
+                                url="/screening"
                             />
                             <LandingButton 
                                 pic="webinar.svg"
-                                title="webinar"
+                                title="Webinar"
                                 desc="disini anda bisa mengikuti kegiatan webinar bertajuk kesehatan mental bersama narasumber ahli dan terpercaya." 
+                                url="/webinar"
                             />
                             <LandingButton 
                                 pic="blog.svg"
-                                title="blog"
+                                title="Blog"
                                 desc="disini anda bisa membaca ragam artikel dan blog untuk menambah awareness anda tentang kesehatan mental." 
+                                url="/blogs"
                             />
                             <LandingButton 
                                 pic="konseling.svg"
-                                title="tes kesehatan"
-                                desc="disini anda juga dapat melakukan tes kesehatan bersama kami agar anda mengetahui kondisi dari kesehatan mental anda saat ini." 
+                                title="Tes kesehatan"
+                                desc="disini anda juga dapat melakukan tes kesehatan agar anda mengetahui kondisi dari kesehatan mental anda saat ini." 
+                                url="/healthtest"
                             />
                         </div>
                         <div className="pt-8 flex justify-center">
                             <DesktopActiveButton2
                                 title="Pelajari Lebih Lanjut"
-                                url="landinginfo"
+                                url="/landinginfo"
                             />
                         </div>
                     </div>

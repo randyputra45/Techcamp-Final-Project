@@ -55,12 +55,12 @@ const Login = () => {
                             placeholder="********"
                         />
                     </div>
-                    <div className="pt-2 flex justify-between items-center">
+                    {/* <div className="pt-2 flex justify-between items-center">
                         <Checkbox title="Ingat Password" />
                         <div className="cursor-pointer text-sm text-blue-500">
                             Lupa Password?
                         </div>
-                    </div>
+                    </div> */}
                     {error && <Alert alertMsg={error} />}
                     <div className="flex justify-center pt-12">
                         <Button title="Login" type={"submit"}/>

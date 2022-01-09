@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { UserContext } from "../context/userContext";
@@ -21,7 +21,6 @@ export default function useAuth() {
       .get("/user", { withCredentials: true, config })
       .then((res) => {
         setUser(res.data.currentUser);
-        history.push("/");
       })
       .catch((err) => {
         setError(err.response.data);
@@ -68,6 +67,7 @@ export default function useAuth() {
       }, { withCredentials: true, config })
       .then(async (response) => {
         await setUserContext();
+        history.push("/home");
         console.log(response.data);
       })
       .catch((err) => {
