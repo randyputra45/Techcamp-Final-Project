@@ -4,7 +4,6 @@ import Button from '../components/Button'
 import DesktopAvatar from '../components/DesktopAvatar'
 import HealthScore from '../components/HealthScore'
 import ChartHealth from '../components/ChartHealth'
-import PolarArea from '../components/ChartHealth'
 
 const ExampleHasilHealthTest = (props) => {
     const { state } = props.location

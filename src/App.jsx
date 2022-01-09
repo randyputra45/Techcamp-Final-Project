@@ -31,8 +31,11 @@ import MobilePhoneTable from "./pages/MobilePhoneTable";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Paket from "./pages/Paket";
+<<<<<<< HEAD
 import ExampleScreening from "./pages/ExampleScreening";
 import ExampleHasilScreening from "./pages/ExampleHasilScreening";
+=======
+>>>>>>> ed22ae714daa118b130f6b5ae1d5e01df2ed637f
 
 function App() {
   return (
@@ -45,16 +48,28 @@ function App() {
             <Route exact path="/login" component={Login } />
             <Route exact path="/register" component={Register1 } />
             <Route path="/verify" component={Register3 } />
+<<<<<<< HEAD
             <Route exact path="/register/success" component={Register4 } />
+=======
+            <Route exact path="/register4" component={Register4 } />
+>>>>>>> ed22ae714daa118b130f6b5ae1d5e01df2ed637f
             <PrivateRoute path="/home" component={Home} />
             <PrivateRoute exact path="/blogs" component={MenuBlog} />
             <PrivateRoute exact path="/blogs/:id" component={ExampleBlog} />
             <PrivateRoute exact path="/webinar" component={MenuWebinar} />
+<<<<<<< HEAD
             <PrivateRoute exact path="/pricing" component={Paket} />
             <PrivateRoute exact path="/screening" component={ExampleScreening} />
             <PrivateRoute exact path="/screening/result" component={ExampleHasilScreening} />
             <PrivateRoute exact path="/healthtest" component={ExampleHealthTest} />
             <PrivateRoute exact path="/healthtest/result" component={ExampleHasilHealthTest} />
+=======
+            <PrivateRoute exact path="/webinar" component={MenuWebinar} />
+            <PrivateRoute exact path="/paket" component={Paket} />
+            <PrivateRoute exact path="/screening" component={Screening1} />
+            <PrivateRoute exact path="/healthtest" component={ExampleHealthTest} />
+            <PrivateRoute exact path="/healthtest/hasil" component={ExampleHasilHealthTest} />
+>>>>>>> ed22ae714daa118b130f6b5ae1d5e01df2ed637f
             <PrivateRoute exact path="/payment" component={TransaksiPembayaran} />
             <PrivateRoute exact path="/profile" component={Profile} />
           </Switch>

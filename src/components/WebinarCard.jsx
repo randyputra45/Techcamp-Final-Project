@@ -4,7 +4,7 @@ const WebinarCard = (props) => {
     return (
         <div>
             <a href={props.url}>
-                <div className='md:w-96'>
+                <div className='md:w-80'>
                     <div className="rounded-t-xl bg-card py-4 px-4">
                         <div className="flex flex-wrap flex-col gap-y-10">
                             <div className="flex justify-between">

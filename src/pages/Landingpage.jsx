@@ -143,7 +143,7 @@ const Landingpage = () => {
                         <div className="pt-8 flex justify-center">
                             <DesktopActiveButton2
                                 title="Pelajari Lebih Lanjut"
-                                url="landinginfo"
+                                url="/landinginfo"
                             />
                         </div>
                     </div>
