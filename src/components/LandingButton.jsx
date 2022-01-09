@@ -1,9 +1,9 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 
 const LandingButton = (props) => {
     return (
-        <div>
+        <Link to={props.url}>
             <div className="block md:hidden">
                 <div className="p-6 rounded-lg bg-button">
                     <div className="flex">
@@ -22,7 +22,7 @@ const LandingButton = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

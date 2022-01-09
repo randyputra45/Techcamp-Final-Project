@@ -6,7 +6,7 @@ import HealthScore from '../components/HealthScore'
 import ChartHealth from '../components/ChartHealth'
 import PolarArea from '../components/ChartHealth'
 
-const ExampleHasilHealthTest = (props) => {
+const ExampleHasilScreening = (props) => {
     const { state } = props.location
 
     return (
@@ -70,37 +70,15 @@ const ExampleHasilHealthTest = (props) => {
                                     <div className="mb-1 text-sm">Hasil Tes</div>
                                     <div className="text-2xl font-bold">Salman Setiawan</div>
                                 </div>
-                                <div className="py-5 flex justify-center">
-                                    <div className="w-80">
-                                        <ChartHealth />
-                                    </div>
-                                </div>
-                                <div className="pt-4 pb-2">
-                                    <div className="font-bold text-sm pb-3">Hasil</div>
-                                    <div className="flex justify-between">
-                                        <HealthScore
-                                            pic="cemas.png"
-                                            name="Cemas"
-                                            score={state.cemas}
-                                        />
-                                        <HealthScore
-                                            pic="stres.png"
-                                            name="Stres"
-                                            score={state.stress}
-                                        />
-                                        <HealthScore
-                                            pic="depresi.png"
-                                            name="Depresi"
-                                            score={state.depresi}
-                                        />
-                                    </div>
-                                </div>
                                 <div className="pt-12">
                                     <div className="font-bold">
                                         Saran
                                     </div>
                                     <div className="mt-1 leading-relaxed text-gray-500">
                                         Kami sarankan Anda untuk <b>berkonsultasi</b> dengan tenaga kesehatan profesional untuk bantuan lebih lanjut
+                                    </div>
+                                    <div className="mt-5 justify-items-center grid">
+                                        <Button url="/pricing" title="Booking Konsultasi"></Button>
                                     </div>
                                 </div>
                             </div>
@@ -112,4 +90,4 @@ const ExampleHasilHealthTest = (props) => {
     )
 }
 
-export default ExampleHasilHealthTest
+export default ExampleHasilScreening
