@@ -3,7 +3,7 @@ import React from 'react'
 const PaketCard = (props) => {
     return (
         <div>
-                <div className="block md:hidden">
+            <div className="block md:hidden">
                 <div className="bg-card2 py-12 px-24 border border-gray-300">
                     <div className="flex flex-wrap flex-col">
                         <div className="flex justify-center">
