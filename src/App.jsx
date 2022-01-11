@@ -25,6 +25,7 @@ import Register4 from "./pages/Register4";
 import Screening1 from "./pages/Screening1";
 import ExampleHealthTest from "./pages/ExampleHealthTest";
 import MenuExpert from "./pages/MenuExpert";
+import Paket2 from "./pages/Paket2"
 import MenuHealthTest from "./pages/MenuHealthTest";
 import ExampleHasilHealthTest from "./pages/ExampleHasilHealthTest";
 import MobilePhoneTable from "./pages/MobilePhoneTable";
@@ -36,6 +37,7 @@ import ExampleHasilScreening from "./pages/ExampleHasilScreening";
 import MenuKonseling from "./pages/MenuKonseling";
 import MenuDyslexia from "./pages/MenuDyslexia";
 import MenuCoaching from "./pages/MenuCoaching";
+import ProfileNotification from "./pages/ProfileNotification";
 
 
 function App() {
@@ -60,6 +62,7 @@ function App() {
             <Route exact path="/pusatdsylexia" component={MenuDyslexia} />
             <Route exact path="/coaching" component={MenuCoaching} />
             <Route exact path="/pricing" component={Paket} />
+            <Route exact path="/pricing2" component={Paket2} />
             <Route exact path="/screening" component={ExampleScreening} />
             <Route exact path="/screening/result" component={ExampleHasilScreening} />
             <Route exact path="/healthtest" component={MenuHealthTest} />
@@ -68,6 +71,7 @@ function App() {
             <Route exact path="/payment" component={TransaksiPembayaran} />
             <Route exact path="/payment/success" component={OrderCompelete} />
             <Route exact path="/profile" component={Profile} />
+            <Route exact path="/profile/notification" component={ProfileNotification} />
           </Switch>
         </Router>
       </main>
