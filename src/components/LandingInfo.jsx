@@ -11,8 +11,10 @@ const LandingInfo = (props) => {
                     <div className="mt-4 md:text-base xl:text-lg leading-relaxed">
                         {props.desc}
                     </div>
-                    <div className="mt-8 text-blue-600 md:text-base xl:text-lg leading-relaxed cursor-pointer">
-                        Pelajari Lebih Lanjut
+                    <div className="flex">
+                        <div className="mt-8 text-blue-600 md:text-base xl:text-lg leading-relaxed cursor-pointer">
+                            Pelajari Lebih Lanjut
+                        </div>
                     </div>
                 </div>
                 <img src={props.pic} alt="" className='object-cover w-full' />

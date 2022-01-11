@@ -189,21 +189,6 @@ body::-webkit-scrollbar-thumb {
     width: 60%;
 }
 
-<<<<<<< HEAD
-.bar7 {
-    width: 70%;
-}
-
-.bar8 {
-    width: 80%;
-}
-
-.bar8 {
-    width: 90%;
-}
-
-.bar10 {
-=======
 .bar6 {
     width: 70%;
 }
@@ -217,6 +202,5 @@ body::-webkit-scrollbar-thumb {
 }
 
 .bar6 {
->>>>>>> ed22ae714daa118b130f6b5ae1d5e01df2ed637f
     width: 100%;
 }
