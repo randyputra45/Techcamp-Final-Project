@@ -1,10 +1,19 @@
-import React from 'react'
+import React, {useEffect, useContext} from 'react'
 import Button from '../components/Button'
 import DesktopAvatar from '../components/DesktopAvatar'
 import WebinarCard2 from '../components/WebinarCard2'
 import WebinarNarsum from '../components/WebinarNarsum'
+import useWebinar from '../hooks/useWebinar'
 
 const ExampleWebinar = () => {
+    const {webinar, webinarID, getWebinarById} = useWebinar()
+
+    const path = window.location.pathname
+    
+    useEffect(() => {
+        getWebinarById(path)
+    }, [path])
+
     return (
         <div>
             <div className="block md:hidden">

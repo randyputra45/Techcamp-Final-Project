@@ -12,16 +12,16 @@ export default function useScreening() {
         },
     };
 
-    useEffect(() =>{
+    useEffect(() => {
         async function getScreening() {
-        await axios.get('/screening', { withCredentials: true, config })
-        .then(res => {
-            setQuestion(res.data);
-            setLoading(false);
-        }).catch(err => {
-            console.log(err);
-            setLoading(false);
-        });
+            await axios.get('/screening', { withCredentials: true, config })
+            .then(res => {
+                setQuestion(res.data);
+                setLoading(false);
+            }).catch(err => {
+                console.log(err);
+                setLoading(false);
+            });
         }
         
         getScreening();  
