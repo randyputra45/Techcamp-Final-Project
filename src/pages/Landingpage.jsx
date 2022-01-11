@@ -10,7 +10,7 @@ import { useHistory } from 'react-router-dom'
 const Landingpage = () => {
     const history = useHistory()
 
-    const { user, isLoading } = useContext(UserContext); 
+    const { user, isLoading } = useContext(UserContext);
     console.log(user, isLoading);
 
     if(user) {
