@@ -6,12 +6,12 @@ const DesktopAvatar = () => {
     return (
         <div>
             <div className="py-4 px-16 flex justify-between items-center bg-body">
-                <img src="gocure.svg" alt="" className='cursor-pointer h-10' />
+                <img src="gocure.svg" alt="" className='cursor-pointer h-8' />
                 <div className="flex items-center gap-x-6">
                     <Menu as="div" className="relative inline-block text-left">
                         <div>
                         <Menu.Button className="flex items-center">
-                            <img src="menu.svg" alt="" className="cursor-pointer h-9 dropdown dropdown-end" />
+                            <img src="menu.svg" alt="" className="cursor-pointer h-8 dropdown dropdown-end" />
                         </Menu.Button>
                         </div>
                         <Transition
@@ -143,7 +143,7 @@ const DesktopAvatar = () => {
                             </Menu.Items>
                         </Transition>
                     </Menu>
-                    <img src="notif-active.svg" alt="" className="cursor-pointer h-9" />
+                    <img src="notif-active.svg" alt="" className="cursor-pointer h-8" />
                     <Menu as="div" className="relative inline-block text-left">
                         <div>
                         <Menu.Button className="flex items-center">

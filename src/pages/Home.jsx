@@ -126,22 +126,7 @@ const Home = (props) => {
                                 />
                                 <MobileButton 
                                     pic="konseling.svg"
-                                    title="Kelas untuk Anak Berkebutuhan Khusus"
-                                    desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
-                                />
-                                <MobileButton 
-                                    pic="konseling.svg"
                                     title="Parenting Workshop & Seminars"
-                                    desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
-                                />
-                                <MobileButton 
-                                    pic="konseling.svg"
-                                    title="Brain Training"
-                                    desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
-                                />
-                                <MobileButton 
-                                    pic="konseling.svg"
-                                    title="Pelatihan & Coaching Murid"
                                     desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
                                 />
                                 <MobileButton 
@@ -153,6 +138,11 @@ const Home = (props) => {
                                     pic="konseling.svg"
                                     title="Pusat Dyslexia"
                                     desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
+                                />
+                                <MobileButton 
+                                    pic="konseling.svg"
+                                    title="Coming Soon"
+                                    desc="klik untuk melihat layanan apa saja yang akan datang dari kami."
                                 />
                             </div>
                         </div>

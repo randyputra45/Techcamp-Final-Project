@@ -30,6 +30,7 @@ import ExampleHasilHealthTest from "./pages/ExampleHasilHealthTest";
 import MobilePhoneTable from "./pages/MobilePhoneTable";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import BookTanggal from "./pages/BookTanggal";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
             <Route path="/blog" component={ExampleBlog } />
             <Route exact path="/landinginfo" component={Landinginfo } />
             <Route exact path="/home" component={Home } />
+            <Route exact path="/booktanggal" component={BookTanggal } />
           </Switch>
         </Router>
       </main>

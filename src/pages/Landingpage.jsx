@@ -78,7 +78,7 @@ const Landingpage = () => {
                     <LandingNavbar />
                 </div>
                 <img src="desktoplanding.svg" alt="" className='fixxxed' />
-                <div className="px-12 xl:px-24 2xl:px-48 py-20 lg:py-28 xl:py-36 2xl:py-56">
+                <div className="px-12 xl:px-24 2xl:px-56 py-20 lg:py-32 xl:py-52 2xl:py-56">
                     <div className="bg-white p-4 w-96 rounded-lg">
                         <div className="text-xl font-bold">
                             Perawatan yang tepat di waktu yang tepat.
@@ -91,9 +91,9 @@ const Landingpage = () => {
                         />
                     </div>
                 </div>
-                <div className="pt-32 px-12 lg:px-16 xl:px-24 2xl:px-48">
-                    <div className="flex items-center md:gap-x-8 xl:gap-x-16">
-                        <div className='flex flex-col w-2/3'>
+                <div className="pt-32 px-12 lg:px-16 xl:px-24 2xl:px-56">
+                    <div className="flex items-center md:gap-x-8 xl:gap-x-16 2xl:gap-x-24">
+                        <div className='flex flex-col w-2/3 2xl:w-1/2'>
                             <div className="text-xl font-bold">
                                 Siapa kami?
                             </div>
@@ -104,7 +104,7 @@ const Landingpage = () => {
                         <img src="landing1.jpg" alt="" className='object-cover w-1/2' />
                     </div>
                 </div>
-                <div className="px-12 lg:px-16 xl:px-24 2xl:px-48">
+                <div className="px-12 lg:px-16 xl:px-24 2xl:px-56">
                     <div className="pt-32">
                         <div className="text-xl font-bold">
                             Layanan Kami
@@ -160,7 +160,7 @@ const Landingpage = () => {
                             <LandingButton 
                                 pic="konseling.svg"
                                 title="proses konseling yang cepat"
-                                desc="tidak perlu untuk menunggu lama, jadwal konsultasimu akan segera dikirim melalui email yang didaftarkan, karena kami akan segera mencocokkan dan membalas pesanmu dengan cepat." 
+                                desc="tidak perlu untuk menunggu lama, jadwal konsultasimu akan segera dikirim melalui email yang didaftarkan." 
                             />
                         </div>
                     </div>
