@@ -28,11 +28,14 @@ import MenuExpert from "./pages/MenuExpert";
 import MenuHealthTest from "./pages/MenuHealthTest";
 import ExampleHasilHealthTest from "./pages/ExampleHasilHealthTest";
 import MobilePhoneTable from "./pages/MobilePhoneTable";
-
+import OrderCompelete from "./pages/OrderCompelete"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Paket from "./pages/Paket";
 import ExampleScreening from "./pages/ExampleScreening";
 import ExampleHasilScreening from "./pages/ExampleHasilScreening";
+import MenuKonseling from "./pages/MenuKonseling";
+import MenuDyslexia from "./pages/MenuDyslexia";
+import MenuCoaching from "./pages/MenuCoaching";
 
 
 function App() {
@@ -47,19 +50,24 @@ function App() {
             <Route exact path="/register" component={Register1 } />
             <Route path="/verify" component={Register3 } />
             <Route exact path="/register/success" component={Register4 } />
-            <PrivateRoute path="/home" component={Home} />
-            <PrivateRoute exact path="/blogs" component={MenuBlog} />
-            <PrivateRoute exact path="/blogs/:id" component={ExampleBlog} />
-            <PrivateRoute exact path="/webinar" component={MenuWebinar} />
-            <PrivateRoute exact path="/webinar/:id" component={ExampleWebinar} />
-            <PrivateRoute exact path="/webinar/user/:id" component={ProfileWebinar} />
-            <PrivateRoute exact path="/pricing" component={Paket} />
-            <PrivateRoute exact path="/screening" component={ExampleScreening} />
-            <PrivateRoute exact path="/screening/result" component={ExampleHasilScreening} />
-            <PrivateRoute exact path="/healthtest" component={ExampleHealthTest} />
-            <PrivateRoute exact path="/healthtest/result" component={ExampleHasilHealthTest} />
-            <PrivateRoute exact path="/payment" component={TransaksiPembayaran} />
-            <PrivateRoute exact path="/profile" component={Profile} />
+            <Route path="/home" component={Home} />
+            <Route exact path="/blogs" component={MenuBlog} />
+            <Route exact path="/blogs/:id" component={ExampleBlog} />
+            <Route exact path="/webinar" component={MenuWebinar} />
+            <Route exact path="/webinar/:id" component={ExampleWebinar} />
+            <Route exact path="/webinar/user/:id" component={ProfileWebinar} />
+            <Route exact path="/konseling" component={MenuKonseling} />
+            <Route exact path="/pusatdsylexia" component={MenuDyslexia} />
+            <Route exact path="/coaching" component={MenuCoaching} />
+            <Route exact path="/pricing" component={Paket} />
+            <Route exact path="/screening" component={ExampleScreening} />
+            <Route exact path="/screening/result" component={ExampleHasilScreening} />
+            <Route exact path="/healthtest" component={MenuHealthTest} />
+            <Route exact path="/healthtest/test" component={ExampleHealthTest} />
+            <Route exact path="/healthtest/result" component={ExampleHasilHealthTest} />
+            <Route exact path="/payment" component={TransaksiPembayaran} />
+            <Route exact path="/payment/success" component={OrderCompelete} />
+            <Route exact path="/profile" component={Profile} />
           </Switch>
         </Router>
       </main>
