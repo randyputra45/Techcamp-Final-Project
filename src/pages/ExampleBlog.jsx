@@ -1,12 +1,28 @@
-import React from 'react'
+import React, {useEffect, useContext, useState} from 'react'
 import BlogButton from '../components/BlogButton'
 import BlogCard2 from '../components/BlogCard2'
+import useBlog from '../hooks/useBlog'
+import Content from '../components/ContentArticle';
+import HeartFill from '../images/heart-fill.svg'
+import HeartWhite from '../images/heart-white.svg'
+import { UserContext } from '../context/userContext';
 
 const ExampleBlog = () => {
+    const { user, isLoading } = useContext(UserContext);
+    // const [isLiked, setIsLiked] = useState(false)
+
+    const {blogArticleID, blogContent, isLiked, getArticleById, checkBlogLikes} = useBlog()
+    const path = window.location.pathname
+    
+    useEffect(() => {
+        getArticleById(path)
+        checkBlogLikes(path)
+    }, [path])
+
     return (
         <div>
             <div className="block md:hidden">
-                <img src="exampleblogopened.png" alt="" className='object-cover w-full' />
+                <img src={blogArticleID && blogArticleID.image} alt="" className='object-cover w-full' />
                 <div className="px-4">
                     <div className="pt-6 text-xl">
                         Dampak overthinking bisa berakibat fatal
@@ -42,11 +58,11 @@ const ExampleBlog = () => {
                         <div className="flex pl-8 md:pr-12 lg:px-16 xl:px-36 2xl:px-60">
                             <div className="flex items-end pb-8">
                                 <div className="text-2xl xl:text-3xl font-semibold text-white">
-                                    Dampak overthinking bisa berakibat fatal
+                                    {blogArticleID && blogArticleID.title}
                                 </div>
                             </div>
                         </div>
-                        <img src="exampleblogopened.png" alt="" className='object-cover w-full h-full' />
+                        <img src={blogArticleID && blogArticleID.image} alt="" className='object-cover w-full h-full' />
                     </div>
                 </div>
                 <div className="flex justify-center gap-x-8">
@@ -59,7 +75,7 @@ const ExampleBlog = () => {
 
                                 {/* ARTICLE */}
                                 <div className="col-span-2 text-sm md:text-sm lg:text-base leading-relaxed text-justify article-content pr-12">
-                                    Disini anda dapat mencoba Tes Kesehatan untuk mengetahui sejauh mana tingkat kecemasanmu saat ini. Anda juga akan melihat hasilnya setelah menjawab seluruh pertanyaan dengan jujur dan benar untuk dipertimbangkan ikut atau tidaknya mengikuti konsultasi.
+                                    {blogContent && blogContent.content.map((item, i) => <Content key={i} subcontent={item.subcontent} paragraph={item.paragraph}/>)}
                                 </div>
                                 
                                 {/* OTHER ARTICLE */}
@@ -96,9 +112,11 @@ const ExampleBlog = () => {
 
                 </div>
                 <div className="botbar pb-10 pr-12">
-                    <BlogButton 
-                        pic="like.svg"
-                    />
+                    <button>
+                        <BlogButton
+                            pic={isLiked ? HeartFill : HeartWhite}
+                        />
+                    </button>
                 </div>
             </div>
         </div>

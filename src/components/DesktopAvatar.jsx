@@ -4,11 +4,10 @@ import { Fragment } from 'react'
 import useLogout from '../hooks/useLogout'
 
 const DesktopAvatar = () => {
-    const {logoutUser} = useLogout();
 
+    const {logoutUser} = useLogout()
     const handleLogout = async () => {
-        console.log("Clicked")
-        await logoutUser();
+        await logoutUser()
     }
 
     return (

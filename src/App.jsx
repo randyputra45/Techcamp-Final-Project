@@ -31,6 +31,9 @@ import MobilePhoneTable from "./pages/MobilePhoneTable";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Paket from "./pages/Paket";
+import ExampleScreening from "./pages/ExampleScreening";
+import ExampleHasilScreening from "./pages/ExampleHasilScreening";
+
 
 function App() {
   return (
@@ -43,18 +46,20 @@ function App() {
             <Route exact path="/login" component={Login } />
             <Route exact path="/register" component={Register1 } />
             <Route path="/verify" component={Register3 } />
-            <Route exact path="/register4" component={Register4 } />
-            <Route path="/home" component={Home} />
-            <Route exact path="/blogs" component={MenuBlog} />
-            <Route exact path="/blogs/:id" component={ExampleBlog} />
-            <Route exact path="/webinar" component={MenuWebinar} />
-            <Route exact path="/webinar" component={MenuWebinar} />
-            <Route exact path="/paket" component={Paket} />
-            <Route exact path="/screening" component={Screening1} />
-            <Route exact path="/healthtest" component={ExampleHealthTest} />
-            <Route exact path="/healthtest/hasil" component={ExampleHasilHealthTest} />
-            <Route exact path="/payment" component={TransaksiPembayaran} />
-            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/register/success" component={Register4 } />
+            <PrivateRoute path="/home" component={Home} />
+            <PrivateRoute exact path="/blogs" component={MenuBlog} />
+            <PrivateRoute exact path="/blogs/:id" component={ExampleBlog} />
+            <PrivateRoute exact path="/webinar" component={MenuWebinar} />
+            <PrivateRoute exact path="/webinar/:id" component={ExampleWebinar} />
+            <PrivateRoute exact path="/webinar/user/:id" component={ProfileWebinar} />
+            <PrivateRoute exact path="/pricing" component={Paket} />
+            <PrivateRoute exact path="/screening" component={ExampleScreening} />
+            <PrivateRoute exact path="/screening/result" component={ExampleHasilScreening} />
+            <PrivateRoute exact path="/healthtest" component={ExampleHealthTest} />
+            <PrivateRoute exact path="/healthtest/result" component={ExampleHasilHealthTest} />
+            <PrivateRoute exact path="/payment" component={TransaksiPembayaran} />
+            <PrivateRoute exact path="/profile" component={Profile} />
           </Switch>
         </Router>
       </main>

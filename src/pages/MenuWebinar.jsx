@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import DesktopAvatar from '../components/DesktopAvatar'
 import NotifButton from '../components/NotifButton'
 import WebinarCard from '../components/WebinarCard'
+import useWebinar from '../hooks/useWebinar'
 
 const MenuWebinar = () => {
+    const {webinar} = useWebinar()
+    webinar && console.log(webinar)
+
     return (
         <div>
             <div className="block md:hidden">
@@ -68,66 +72,15 @@ const MenuWebinar = () => {
                                 </div>
                                 <div className="flex flex-col gap-y-6">
                                     <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-                                        <WebinarCard
-                                            title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
+                                        {webinar && webinar.map(item => <WebinarCard
+                                            title={item.title}
                                             picnarsum1="small-avatar.svg"
                                             picnarsum2="small-avatar.svg"
                                             picnarsum3="small-avatar.svg"
                                             day="Kamis" 
                                             date="14 Oct 2021"
-                                            quota="18"
                                             price="Rp. 150.000"
-                                        />
-                                        <WebinarCard
-                                            title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
-                                            picnarsum1="small-avatar.svg"
-                                            picnarsum2="small-avatar.svg"
-                                            picnarsum3="small-avatar.svg"
-                                            day="Kamis" 
-                                            date="14 Oct 2021"
-                                            quota="18"
-                                            price="Rp. 150.000"
-                                        />
-                                        <WebinarCard
-                                            title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
-                                            picnarsum1="small-avatar.svg"
-                                            picnarsum2="small-avatar.svg"
-                                            picnarsum3="small-avatar.svg"
-                                            day="Kamis" 
-                                            date="14 Oct 2021"
-                                            quota="18"
-                                            price="Rp. 150.000"
-                                        />
-                                        <WebinarCard
-                                            title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
-                                            picnarsum1="small-avatar.svg"
-                                            picnarsum2="small-avatar.svg"
-                                            picnarsum3="small-avatar.svg"
-                                            day="Kamis" 
-                                            date="14 Oct 2021"
-                                            quota="18"
-                                            price="Rp. 150.000"
-                                        />
-                                        <WebinarCard
-                                            title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
-                                            picnarsum1="small-avatar.svg"
-                                            picnarsum2="small-avatar.svg"
-                                            picnarsum3="small-avatar.svg"
-                                            day="Kamis" 
-                                            date="14 Oct 2021"
-                                            quota="18"
-                                            price="Rp. 150.000"
-                                        />
-                                        <WebinarCard
-                                            title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
-                                            picnarsum1="small-avatar.svg"
-                                            picnarsum2="small-avatar.svg"
-                                            picnarsum3="small-avatar.svg"
-                                            day="Kamis" 
-                                            date="14 Oct 2021"
-                                            quota="18"
-                                            price="Rp. 150.000"
-                                        />
+                                        />)}
                                     </div>
                                 </div>
                             </div>

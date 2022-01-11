@@ -3,8 +3,15 @@ import BlogCard from '../components/BlogCard'
 import DesktopAvatar from '../components/DesktopAvatar'
 import KategoriBlog from '../components/KategoriBlog'
 import MobileNavbar from '../components/MobileNavbar'
+import useBlog from '../hooks/useBlog'
 
 const MenuBlog = () => {
+    const {blogArticle} = useBlog()
+    if(blogArticle) {
+        console.log(JSON.parse(blogArticle[1].content[0])[0]);
+        console.log(blogArticle);
+    } // Get article 
+    
     return (
         <div>
             <div className="block md:hidden">
@@ -69,36 +76,15 @@ const MenuBlog = () => {
                                 </div>
                                 <div className="flex flex-col gap-y-6">
                                     <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-                                        <BlogCard 
-                                            pic="exampleblog.png"
-                                            title="Dampak overthinking bisa berakibat fatal"
-                                            desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
-                                        />
-                                        <BlogCard 
-                                            pic="exampleblog.png"
-                                            title="Dampak overthinking bisa berakibat fatal"
-                                            desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
-                                        />
-                                        <BlogCard 
-                                            pic="exampleblog.png"
-                                            title="Dampak overthinking bisa berakibat fatal"
-                                            desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
-                                        />
-                                        <BlogCard 
-                                            pic="exampleblog.png"
-                                            title="Dampak overthinking bisa berakibat fatal"
-                                            desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
-                                        />
-                                        <BlogCard 
-                                            pic="exampleblog.png"
-                                            title="Dampak overthinking bisa berakibat fatal"
-                                            desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
-                                        />
-                                        <BlogCard 
-                                            pic="exampleblog.png"
-                                            title="Dampak overthinking bisa berakibat fatal"
-                                            desc="Terdapat masalah dengan Rumah Tanggamu? Bingung untuk mencari solusi bersama pasangan? Konsultasikan masalahmu bersama psikolog kami."
-                                        />
+                                        {blogArticle &&
+                                        blogArticle.map((art) => (
+                                            <BlogCard
+                                            url={`/blogs/${art._id}`}
+                                            key={art._id}
+                                            title={art.title}
+                                            pic={art.image}
+                                            />
+                                        ))}
                                     </div>
                                 </div>
                             </div>
