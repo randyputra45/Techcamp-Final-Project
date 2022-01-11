@@ -58,7 +58,7 @@ const MenuWebinar = () => {
                 <div className="topbar w-full">
                     <DesktopAvatar />
                 </div>
-                <div className="px-8 pt-36 pb-24">
+                <div className="lg:px-4 2xl:px-16 pt-36 pb-24">
                     <div className="flex justify-center">
                         <div className="flex flex-col">
                             <div className="py-8 px-10 bg-body rounded-t-lg">

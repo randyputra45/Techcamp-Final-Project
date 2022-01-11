@@ -116,8 +116,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .small-webinar-img {
-    height: 24px;
-    width: 24px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
 }
 
 .narsum-img {

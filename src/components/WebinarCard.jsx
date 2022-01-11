@@ -4,7 +4,7 @@ const WebinarCard = (props) => {
     return (
         <div>
             <a href={props.url}>
-                <div className='md:w-80'>
+                <div className='cursor-pointer'>
                     <div className="rounded-t-xl bg-card py-4 px-4">
                         <div className="flex flex-wrap flex-col gap-y-10">
                             <div className="flex justify-between">
@@ -15,7 +15,7 @@ const WebinarCard = (props) => {
                                 <div className="font-bold">
                                     {props.title}
                                 </div>
-                                <div className="flex flex-wrap w-1/2 items-end justify-between">
+                                <div className="flex flex-wrap w-1/2 gap-2 items-end justify-end">
                                     <img src={props.picnarsum1} alt="" className="small-webinar-img" />
                                     <img src={props.picnarsum2} alt="" className="small-webinar-img" />
                                     <img src={props.picnarsum3} alt="" className="small-webinar-img" />
