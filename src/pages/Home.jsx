@@ -40,23 +40,8 @@ const Home = (props) => {
                             />
                             <MobileButton 
                                 pic="konseling.svg"
-                                title="Brain Training"
-                                desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
-                            />
-                            <MobileButton 
-                                pic="konseling.svg"
                                 title="Pelatihan & Coaching Murid"
                                 desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
-                            />
-                            <MobileButton 
-                                pic="konseling.svg"
-                                title="Kelas untuk Anak Berkebutuhan Khusus"
-                                desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
-                            />
-                            <MobileButton 
-                                pic="webinar.svg"
-                                title="Parenting Workshop & Seminars"
-                                desc="mengikuti kegiatan webinar bertajuk kesehatan mental bersama narasumber ahli dan terpercaya."
                             />
                         </div>
                     </div>
@@ -123,26 +108,22 @@ const Home = (props) => {
                                     pic="konseling.svg"
                                     title="Konsultasi dan Pemeriksaan Psikologis"
                                     desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
+                                    url="/screening"
                                 />
                                 <MobileButton 
                                     pic="konseling.svg"
-                                    title="Parenting Workshop & Seminars"
+                                    title="Webinar"
                                     desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
                                 />
                                 <MobileButton 
                                     pic="konseling.svg"
-                                    title="Pusat Ketergantungan Gadget"
+                                    title="Pelatihan & Coaching Murid"
                                     desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
                                 />
                                 <MobileButton 
                                     pic="konseling.svg"
                                     title="Pusat Dyslexia"
                                     desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
-                                />
-                                <MobileButton 
-                                    pic="konseling.svg"
-                                    title="Coming Soon"
-                                    desc="klik untuk melihat layanan apa saja yang akan datang dari kami."
                                 />
                             </div>
                         </div>
@@ -153,37 +134,38 @@ const Home = (props) => {
                             <div className="grid grid-cols-3 gap-2.5">
                                 <MobileButton 
                                 pic="tes.svg"
-                                title="tes kesehatan"
+                                title="Tes Kesehatan"
                                 desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
                                 />
                                 <MobileButton 
                                     pic="blog.svg"
-                                    title="blog"
+                                    title="Blog"
                                     desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
+                                    url="/blogs"
                                 />
                                 <MobileButton 
                                     pic="ahli.svg"
-                                    title="profil ahli"
+                                    title="Profil Ahli"
                                     desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
                                 />
                                 <MobileButton 
                                     pic="info.svg"
-                                    title="tentang kami"
+                                    title="Tentang Kami"
                                     desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
                                 />
                                 <MobileButton 
                                     pic="kolab.svg"
-                                    title="kolaborasi"
+                                    title="Kolaborasi"
                                     desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
                                 />
                                 <MobileButton 
                                     pic="feedback.svg"
-                                    title="feedback"
+                                    title="Feedback"
                                     desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
                                 />
                                 <MobileButton 
                                     pic="tos.svg"
-                                    title="syarat dan ketentuan"
+                                    title="Syarat dan Ketentuan"
                                     desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
                                 />
                             </div>

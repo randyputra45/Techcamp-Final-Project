@@ -1,10 +1,6 @@
 import React from 'react'
-import Box from '../components/Box'
 import Button from '../components/Button'
-import PhoneDropdown from '../components/PhoneDropdown'
-import Form from '../components/Form'
 import ChartBar from '../components/ChartBar'
-import MobileButton from '../components/MobileButton'
 
 const Register4 = () => {
     return (
@@ -14,7 +10,7 @@ const Register4 = () => {
                     <ChartBar />
                     <div className="pt-5">
                         <div className="text-xs mb-1">Tahap 3</div>
-                        <div className="text-lg font-bold">Edit Profil</div>
+                        <div className="text-lg font-bold">Selamat Akun Telah Terverifikasi</div>
                     </div>
                     <div className="p-12">
                         <img src="after-register.svg" alt="" />
@@ -37,7 +33,7 @@ const Register4 = () => {
                         <div className="px-8 py-12">
                             <ChartBar />
                             <div className="pt-5">
-                                <div className="text-xs mb-1">Tahap 3</div>
+                                <div className="text-xs mb-1">Selamat Akun Telah Terverifikasi</div>
                                 <div className="text-lg font-bold">Edit Profil</div>
                             </div>
                             <div className="p-12 flex justify-center">

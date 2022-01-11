@@ -5,7 +5,6 @@ import Loading from "../components/Loading";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const { user, isLoading } = useContext(UserContext); 
-  console.log(user, isLoading);
 
   if(isLoading) {
     return <Loading/>
@@ -14,7 +13,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   if(user){
     return ( <Route {...rest} render={(props) => (<Component {...props}/>)}/>)
   } else {
-    return <Redirect to='/login'/> 
+    return <Redirect to='/'/> 
   }
 };
 

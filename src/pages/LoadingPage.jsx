@@ -1,5 +1,4 @@
 import React from 'react'
-import LogoImg from '../images/logo-white.svg'
 import Loading from '../components/Loading'
 
 export const LoadingPage = () => {
@@ -13,7 +12,7 @@ export const LoadingPage = () => {
                 </div>
                 </div>
                 <div className="flex justify-center pb-9">
-                    <img className="h-8" src={LogoImg} alt="" />   
+                    <img className="h-8" src="gocure.svg" alt="" />   
                 </div>
             </div>
         </div>

@@ -4,14 +4,17 @@ import { PolarArea } from 'react-chartjs-2'
 Chart.register(ArcElement);
 Chart.register(RadialLinearScale);
 
-const data = {
+
+
+function ChartHealth(props) {
+  const data = {
     labels: [
       'Depresi',
       'Stres',
       'Cemas'
     ],
     datasets: [{
-      data: [24, 12, 16],
+      data: [props.depresi, props.stres, props.cemas],
       backgroundColor: [
         '#43A5AA',
         '#5BCDD3',
@@ -20,7 +23,6 @@ const data = {
     }]
   };
 
-function ChartHealth() {
     return (
         <div>
           <PolarArea

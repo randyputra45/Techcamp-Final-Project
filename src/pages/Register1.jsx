@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
 
 import React from 'react'
 import Box from '../components/Box'
@@ -141,7 +139,7 @@ const Register1 = () => {
                     </div>
                 </div>
                 <div className="pt-8 flex justify-center">
-                    <Button title="Daftar" type={"submit"}/>
+                    <Button title="Daftar" type={"submit"} url="/verify"/>
                 </div>
                 </form>
             </div>
