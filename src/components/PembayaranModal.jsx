@@ -11,7 +11,7 @@ const plans = [
       name: 'Indomaret'
     },
     {
-      name: 'GoPay / DANA / OVO'
+      name: 'QRIS (Gopay / ShopeePay / DANA / OVO)'
     },
 ]
   

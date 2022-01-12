@@ -38,6 +38,7 @@ import MenuKonseling from "./pages/MenuKonseling";
 import MenuDyslexia from "./pages/MenuDyslexia";
 import MenuCoaching from "./pages/MenuCoaching";
 import ProfileNotification from "./pages/ProfileNotification";
+import ScanQR from "./components/ScanQR";
 
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
             <Route exact path="/healthtest/test" component={ExampleHealthTest} />
             <Route exact path="/healthtest/result" component={ExampleHasilHealthTest} />
             <Route exact path="/payment" component={TransaksiPembayaran} />
+            <Route exact path="/payment/scanqr" component={ScanQR} />
             <Route exact path="/payment/success" component={OrderCompelete} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/profile/notification" component={ProfileNotification} />
