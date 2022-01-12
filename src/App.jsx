@@ -41,7 +41,7 @@ import ProfileNotification from "./pages/ProfileNotification";
 import ScanQR from "./components/ScanQR";
 import StartScreening from "./pages/StartScreening";
 import StartHealthtest from "./pages/StartHealthtest";
-
+import DetilPembayaran from "./pages/DetilPembayaran";
 
 function App() {
   return (
@@ -80,6 +80,7 @@ function App() {
             <Route exact path="/payment/scanqr" component={ScanQR} />
             <Route exact path="/payment/success" component={OrderCompelete} />
             <Route exact path="/profile/notification" component={ProfileNotification} />
+            <Route exact path="/invoice" component={DetilPembayaran} />
             
             {/* <Route path="/home" component={Home} />
             <Route exact path="/blogs" component={MenuBlog} />
@@ -100,8 +101,7 @@ function App() {
             <Route exact path="/payment" component={TransaksiPembayaran} />
             <Route exact path="/payment/scanqr" component={ScanQR} />
             <Route exact path="/payment/success" component={OrderCompelete} />
-            <Route exact path="/profile" component={Profile} />
-            <Route exact path="/profile/notification" component={ProfileNotification} /> */}
+            <Route exact path="/profile" component={Profile} /> */}
           </Switch>
         </Router>
       </main>
