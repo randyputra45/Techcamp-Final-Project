@@ -1,13 +1,33 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import DesktopAvatar from '../components/DesktopAvatar'
 import PembayaranModal from '../components/PembayaranModal'
 import MobileButton from '../components/MobileButton'
 import MobileButton2 from '../components/MobileButton2'
 import RingkasanOrder from '../components/RingkasanOrder'
 import TotalBayar from '../components/TotalBayar'
+import { setDate } from 'date-fns/esm'
 
 
-const Pembayaran = () => {
+const Pembayaran = (props) => {
+    const { state } = props.location
+    const [date, setDate] = useState("")
+    const [day, setDay] = useState("")
+    const [price, setPrice] = useState("")
+
+    useEffect(() => {
+        setDate(state.date.split("-").reverse().join("-"))
+
+        function getDayName(dateStr)
+        {
+            var date = new Date(dateStr);
+            return date.toLocaleDateString("id", { weekday: 'long' });
+        }
+
+        var day = getDayName(state.date);
+        setDay(day)
+        setPrice(state.price)
+    }, [state]);
+
     return (
         <div>
             <div className="block md:hidden">
@@ -36,8 +56,8 @@ const Pembayaran = () => {
                         <div className="flex flex-col gap-y-3">
                             <RingkasanOrder 
                                 nama="Konsultasi"
-                                tgl="Senin, 16 Oktober 2000"
-                                tagihan="Rp. 1.200.000"
+                                day={day}
+                                tagihan={price}
                                 promo="Rp.0"
                                 layanan="Rp. 2.500"
                             />
@@ -46,7 +66,7 @@ const Pembayaran = () => {
                 </div>
                 <div className="botbar2 w-full">
                     <TotalBayar 
-                        total="Rp. 1.202.500"
+                        total={price + 2500}
                     />
                 </div>  
             </div>
@@ -59,7 +79,7 @@ const Pembayaran = () => {
                 <div className="px-8 pt-36 pb-12">
                     <div className="flex justify-center">
                         <div className="flex flex-col">
-                            <div className="py-8 px-10 bg-body rounded-t-lg">
+                            <div className="py-8 px-10  bg-body rounded-t-lg">
                                 <div className="pb-8">
                                     <div className="text-2xl font-bold">Pembayaran</div>
                                 </div>
@@ -79,8 +99,9 @@ const Pembayaran = () => {
                                     </div>
                                     <RingkasanOrder 
                                         nama="Konsultasi"
-                                        tgl="Senin, 16 Oktober 2000"
-                                        tagihan="Rp. 1.200.000"
+                                        day={day}
+                                        date={date}
+                                        tagihan={price}
                                         promo="Rp.0"
                                         layanan="Rp. 2.500"
                                     />
@@ -90,9 +111,9 @@ const Pembayaran = () => {
                     </div>
                 </div>
                 <div className="flex justify-center">
-                    <div className="pb-4 botbar2 w-full lg:w-1/2">
+                    <div className="pb-0 botbar2 w-full lg:w-1/2">
                         <TotalBayar 
-                            total="Rp. 1.202.500"
+                            total={price + 2500} 
                         />
                     </div>  
                 </div>

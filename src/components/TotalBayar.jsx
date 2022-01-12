@@ -4,7 +4,7 @@ import Button from './Button'
 const TotalBayar = (props) => {
     return (
         <div>
-            <div className="bg-base px-6 py-8">
+            <div className="bg-base px-6 py-6 rounded-md">
                 <div className="flex justify-between items-center">
                     <div className="flex flex-col">
                         <p className="font-medium text-sm mb-1">

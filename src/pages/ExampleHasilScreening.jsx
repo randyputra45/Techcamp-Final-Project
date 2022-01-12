@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import BackButton from '../components/BackButton'
 import Button from '../components/Button'
 import DesktopAvatar from '../components/DesktopAvatar'
 import HealthScore from '../components/HealthScore'
 import ChartHealth from '../components/ChartHealth'
 import PolarArea from '../components/ChartHealth'
+import { UserContext } from '../context/userContext'
 
 const ExampleHasilScreening = (props) => {
     const { state } = props.location
+    const { user } = useContext(UserContext)
 
     return (
         <div>
@@ -68,14 +70,14 @@ const ExampleHasilScreening = (props) => {
                             <div className="py-8 px-10 bg-body rounded-t-lg">
                                 <div className="pb-8">
                                     <div className="mb-1 text-sm">Hasil Tes</div>
-                                    <div className="text-2xl font-bold">Salman Setiawan</div>
+                                    <div className="text-2xl font-bold">{user && user.first_name}</div>
                                 </div>
                                 <div className="pt-12">
                                     <div className="font-bold">
                                         Saran
                                     </div>
                                     <div className="mt-1 leading-relaxed text-gray-500">
-                                        Kami sarankan Anda untuk <b>berkonsultasi</b> dengan tenaga kesehatan profesional untuk bantuan lebih lanjut
+                                        Hasil screening Anda telah terekam dan akan diserahkan kepada psikolog kami. Kami sarankan Anda untuk segera <b>berkonsultasi</b> dengan tenaga kesehatan profesional kami untuk bantuan lebih lanjut.
                                     </div>
                                     <div className="mt-5 justify-items-center grid">
                                         <Button url="/pricing" title="Booking Konsultasi"></Button>
