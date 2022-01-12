@@ -83,7 +83,7 @@ const Landingpage = () => {
                 </div>
                 <img src="desktoplanding.svg" alt="" className='fixxxed' />
                 <div className="px-12 xl:px-24 2xl:px-48 py-20 lg:py-28 xl:py-36 2xl:py-56">
-                    <div className="bg-white p-4 w-96 rounded-lg">
+                    <div className="bg-white p-6 w-96 rounded-lg">
                         <div className="text-xl font-bold">
                             Perawatan yang tepat di waktu yang tepat.
                         </div>
@@ -104,6 +104,13 @@ const Landingpage = () => {
                             </div>
                             <div className="mt-2 leading-relaxed">
                                 MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus.
+                            </div>
+                            <div className="flex">
+                                <div className="border-b border-white hover:border-blue-600">
+                                    <div className="mt-8 text-blue-600 md:text-base xl:text-lg leading-relaxed cursor-pointer">
+                                        Tentang Kami →
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <img src="landing1.jpg" alt="" className='object-cover w-1/2' />
