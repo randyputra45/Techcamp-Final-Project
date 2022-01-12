@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import BackButton from '../components/BackButton'
 import Button from '../components/Button'
 import DesktopAvatar from '../components/DesktopAvatar'
@@ -7,6 +7,39 @@ import ChartHealth from '../components/ChartHealth'
 
 const ExampleHasilHealthTest = (props) => {
     const { state } = props.location
+    const [stress, setStress] = useState("")
+    const [depresi, setDepresi] = useState("")
+    const [cemas, setCemas] = useState("")
+
+    useEffect(() => {
+        function getScore() {
+            if (state.stress > 20) {
+                setStress("Sangat Berat (kami sarankan Anda untuk berkonsultasi dengan tenaga kesehatan profesional untuk bantuan lebih lanjut)")
+            } else if (state.stress > 10 && state.stress <= 20) {
+                setStress("Sedang (kami sarankan Anda untuk berkonsultasi dengan tenaga kesehatan profesional untuk bantuan lebih lanjut)")
+            } else {
+                setStress("Normal")
+            }
+            
+            if (state.cemas > 20) {
+                setCemas("Sangat Berat (kami sarankan Anda untuk berkonsultasi dengan tenaga kesehatan profesional untuk bantuan lebih lanjut)")
+            } else if (state.cemas > 10 && state.cemas <= 20) {
+                setCemas("Sedang (kami sarankan Anda untuk berkonsultasi dengan tenaga kesehatan profesional untuk bantuan lebih lanjut)")
+            } else {
+                setCemas("Normal")
+            }
+            
+            if (state.depresi > 20) {
+                setDepresi("Sangat Berat (kami sarankan Anda untuk berkonsultasi dengan tenaga kesehatan profesional untuk bantuan lebih lanjut)")
+            } else if (state.depresi > 10 && state.depresi <= 20) {
+                setDepresi("Sedang (kami sarankan Anda untuk berkonsultasi dengan tenaga kesehatan profesional untuk bantuan lebih lanjut)")
+            } else {
+                setDepresi("Normal")
+            }
+        }
+        
+        getScore();  
+    }, [state]);
 
     return (
         <div>
@@ -71,11 +104,11 @@ const ExampleHasilHealthTest = (props) => {
                                 </div>
                                 <div className="py-5 flex justify-center">
                                     <div className="w-80">
-                                        <ChartHealth />
+                                        <ChartHealth depresi={state.depresi} cemas={state.cemas} stres={state.stress}/>
                                     </div>
                                 </div>
                                 <div className="pt-4 pb-2">
-                                    <div className="font-bold text-sm pb-3">Hasil</div>
+                                    <div className="font-bold text-md pb-3">Hasil</div>
                                     <div className="flex justify-between">
                                         <HealthScore
                                             pic="cemas.png"
@@ -95,11 +128,17 @@ const ExampleHasilHealthTest = (props) => {
                                     </div>
                                 </div>
                                 <div className="pt-12">
-                                    <div className="font-bold">
-                                        Saran
+                                    <div className="font-bold text-md">
+                                        Kesimpulan
                                     </div>
-                                    <div className="mt-1 leading-relaxed text-gray-500">
-                                        Kami sarankan Anda untuk <b>berkonsultasi</b> dengan tenaga kesehatan profesional untuk bantuan lebih lanjut
+                                    <div className="mt-1 leading-relaxed text-gray-500 text-sm">
+                                        <b>Cemas </b>= {cemas}
+                                    </div>
+                                    <div className="mt-1 leading-relaxed text-gray-500 text-sm">
+                                        <b>Stress </b>= {stress}
+                                    </div>
+                                    <div className="mt-1 leading-relaxed text-gray-500 text-sm">
+                                        <b>Depresi </b>= {depresi}
                                     </div>
                                 </div>
                             </div>

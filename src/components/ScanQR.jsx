@@ -10,7 +10,7 @@ const ScanQR = () => {
                     <div className="md:w-1/2 lg:w-2/5 bg-white rounded-xl">
                         <div className="px-6 py-12">
                             <div className="p-12 flex justify-center">
-                                <img src="qr-code.png" alt="" className='h-40' />
+                                <img src={window.location.origin + '/image/qr-code.png'} alt="" className='h-40' />
                             </div>
                             <div className="font-bold text-sm">
                                 Pemesanan konselingmu hampir selesai nih

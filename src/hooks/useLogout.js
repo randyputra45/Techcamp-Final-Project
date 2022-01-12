@@ -20,7 +20,7 @@ export default function useLogout() {
             })
         } catch(err) {
             console.log(err);
-        } 
+        }
     }
 
     return {

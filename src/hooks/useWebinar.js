@@ -35,7 +35,7 @@ export default function useWebinar() {
         `${data}`,
         { withCredentials: true, config }
       ).then(res => {
-          setWebinarID(res.data)
+        setWebinarID(res.data)
       })
       .catch((err) => {
         console.log(err);

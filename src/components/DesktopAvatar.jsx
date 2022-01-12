@@ -2,18 +2,26 @@ import React from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import useLogout from '../hooks/useLogout'
+import { Link, useHistory } from 'react-router-dom'
 
 const DesktopAvatar = () => {
+    const history = useHistory()
 
     const {logoutUser} = useLogout()
     const handleLogout = async () => {
         await logoutUser()
     }
 
+    const handleProfile = () => {
+        history.push("/profile")
+    }
+
     return (
         <div>
             <div className="py-4 px-16 flex justify-between items-center bg-body">
-                <img src="gocure.svg" alt="" className='cursor-pointer h-10' />
+                <Link to="/">
+                    <img src="gocure.svg" alt="" className="cursor-pointer h-10" />
+                </Link>
                 <div className="flex items-center gap-x-6">
                     <Menu as="div" className="relative inline-block text-left">
                         <div>
@@ -30,19 +38,18 @@ const DesktopAvatar = () => {
                             leaveFrom="transform opacity-100 scale-100"
                             leaveTo="transform opacity-0 scale-95"
                         >
-                            <Menu.Items className="absolute right-0 w-72 mt-6 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                            <Menu.Items className="absolute right-0 w-56 mt-6 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                 <div className="flex flex-col overflow-y-scroll h-40 scroller">
-                                    <div className="p-1 grid grid-cols-3 gap-2">
+                                    <div className="p-1 flex">
                                         <Menu.Item>
                                             {({ active }) => (
                                             <button
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
-                                                } group flex flex-col rounded-md items-center w-full py-4 text-sm`}
+                                                } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
                                             >
-                                                <svg class="w-6 h-6 mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
-
-                                                Konsultasi
+                                                <svg className="w-6 h-6 mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                                Profil
                                             </button>
                                             )}
                                         </Menu.Item>
@@ -51,11 +58,10 @@ const DesktopAvatar = () => {
                                             <button
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
-                                                } group flex flex-col rounded-md items-center w-full py-4 text-sm`}
+                                                } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
                                             >
-                                                <svg class="w-6 h-6 mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
-
-                                                Webinar
+                                                <svg className="w-6 h-6 mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                                                Keluar
                                             </button>
                                             )}
                                         </Menu.Item>
@@ -64,38 +70,24 @@ const DesktopAvatar = () => {
                                             <button
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
-                                                } group flex flex-col rounded-md items-center w-full py-4 text-sm`}
+                                                } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
                                             >
-                                                <svg class="w-6 h-6 mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
-
-                                                Blog
+                                                <svg className="w-6 h-6 mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                                                Keluar
                                             </button>
                                             )}
                                         </Menu.Item>
-
+                                    </div>
+                                    <div className="p-1 flex">
                                         <Menu.Item>
                                             {({ active }) => (
                                             <button
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
-                                                } group flex flex-col rounded-md items-center w-full py-4 text-sm`}
+                                                } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
                                             >
-                                                <svg class="w-6 h-6 mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
-
-                                                Pusat Dyslexia
-                                            </button>
-                                            )}
-                                        </Menu.Item>
-                                        <Menu.Item>
-                                            {({ active }) => (
-                                            <button
-                                                className={`${
-                                                active ? 'bg-active-button text-white' : 'text-gray-900'
-                                                } group flex flex-col rounded-md items-center w-full py-4 text-sm`}
-                                            >
-                                                <svg class="w-6 h-6 mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
-
-                                                Tes Kesehatan
+                                                <svg className="w-6 h-6 mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                                Profil
                                             </button>
                                             )}
                                         </Menu.Item>
@@ -104,25 +96,61 @@ const DesktopAvatar = () => {
                                             <button
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
-                                                } group flex flex-col rounded-md items-center w-full py-4 text-sm`}
+                                                } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
                                             >
-                                                <svg class="w-6 h-6 mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
-
-                                                Coaching Murid
+                                                <svg className="w-6 h-6 mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                                                Keluar
                                             </button>
                                             )}
                                         </Menu.Item>
-
                                         <Menu.Item>
                                             {({ active }) => (
                                             <button
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
-                                                } group flex flex-col rounded-md items-center w-full py-4 text-sm`}
+                                                } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
                                             >
-                                                <svg class="w-6 h-6 mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
-
-                                                Profil Ahli
+                                                <svg className="w-6 h-6 mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                                                Keluar
+                                            </button>
+                                            )}
+                                        </Menu.Item>
+                                    </div>
+                                    <div className="p-1 flex">
+                                        <Menu.Item>
+                                            {({ active }) => (
+                                            <button
+                                                onClick={() => handleProfile()}
+                                                className={`${
+                                                active ? 'bg-active-button text-white' : 'text-gray-900'
+                                                } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
+                                            >
+                                                <svg className="w-6 h-6 mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                                Profil
+                                            </button>
+                                            )}
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                            {({ active }) => (
+                                            <button
+                                                className={`${
+                                                active ? 'bg-active-button text-white' : 'text-gray-900'
+                                                } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
+                                            >
+                                                <svg className="w-6 h-6 mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                                                Keluar
+                                            </button>
+                                            )}
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                            {({ active }) => (
+                                            <button
+                                                className={`${
+                                                active ? 'bg-active-button text-white' : 'text-gray-900'
+                                                } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
+                                            >
+                                                <svg className="w-6 h-6 mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                                                Keluar
                                             </button>
                                             )}
                                         </Menu.Item>
@@ -155,6 +183,7 @@ const DesktopAvatar = () => {
                                         className={`${
                                         active ? 'bg-active-button text-white' : 'text-gray-900'
                                         } group flex rounded-md items-center w-full px-3 py-3 text-sm`}
+                                        onClick={() => handleProfile()}
                                     >
                                         <svg className="w-6 h-6 mr-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                         Profil
@@ -168,7 +197,6 @@ const DesktopAvatar = () => {
                                         className={`${
                                         active ? 'bg-active-button text-white' : 'text-gray-900'
                                         } group flex rounded-md items-center w-full px-3 py-3 text-sm`}
-                                        onClick={() => handleLogout()}
                                     >
                                         <svg className="w-6 h-6 mr-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
                                         Keluar
