@@ -2,6 +2,7 @@ import React, {useEffect, useContext, useState} from 'react'
 import BlogButton from '../components/BlogButton'
 import BlogCard2 from '../components/BlogCard2'
 import useBlog from '../hooks/useBlog'
+import useLikes from '../hooks/useLikes'
 import Content from '../components/ContentArticle';
 import HeartFill from '../images/heart-fill.svg'
 import HeartWhite from '../images/heart-white.svg'
@@ -11,13 +12,35 @@ const ExampleBlog = () => {
     const { user, isLoading } = useContext(UserContext);
     // const [isLiked, setIsLiked] = useState(false)
 
-    const {blogArticleID, blogContent, isLiked, getArticleById, checkBlogLikes} = useBlog()
+    const {blogArticleID, blogContent, isLiked, getArticleById} = useBlog()
+    const [checkLike, setLike] = useState(false)
+    const {likeStatus, likeBlog, unlikeBlog, checkBlogLikes} = useLikes()
     const path = window.location.pathname
     
     useEffect(() => {
         getArticleById(path)
         checkBlogLikes(path)
-    }, [path])
+        if (likeStatus) {
+            setLike(true)
+        } else {
+            setLike(false)
+        }
+    }, [path, checkLike, isLiked])
+
+    console.log(likeStatus)
+
+    const handleLike = async () => {
+        console.log(likeStatus)
+        if (likeStatus) {
+            console.log("unlike")
+            await unlikeBlog(blogArticleID._id, user._id)
+            setLike(likeStatus)
+        } else {
+            console.log("like")
+            await likeBlog(blogArticleID._id, user._id)
+            setLike(likeStatus)
+        }
+    }
 
     return (
         <div>
@@ -112,9 +135,9 @@ const ExampleBlog = () => {
 
                 </div>
                 <div className="botbar pb-10 pr-12">
-                    <button>
+                    <button onClick={() => handleLike()}>
                         <BlogButton
-                            pic={isLiked ? HeartFill : HeartWhite}
+                            pic={likeStatus && likeStatus ? HeartFill : HeartWhite}
                         />
                     </button>
                 </div>

@@ -4,7 +4,7 @@ const WebinarNarsum = (props) => {
     return (
         <div>
             <div className="flex gap-x-3 items-center">
-                <img src={props.pic} alt="" className='narsum-img' />
+                <img src={props.pic} alt="" className='narsum-img rounded-full object-cover' />
                 <div className="flex flex-col">
                     <p className="text-sm mb-1 font-medium">
                         {props.name}

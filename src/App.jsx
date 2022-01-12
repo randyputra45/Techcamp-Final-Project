@@ -49,9 +49,9 @@ function App() {
             <PrivateRoute path="/home" component={Home} />
             <PrivateRoute exact path="/blogs" component={MenuBlog} />
             <PrivateRoute exact path="/blogs/:id" component={ExampleBlog} />
-            <PrivateRoute exact path="/webinar" component={MenuWebinar} />
-            <PrivateRoute exact path="/webinar/:id" component={ExampleWebinar} />
-            <PrivateRoute exact path="/webinar/user/:id" component={ProfileWebinar} />
+            <PrivateRoute exact path="/webinars" component={MenuWebinar} />
+            <PrivateRoute exact path="/webinars/:id" component={ExampleWebinar} />
+            <PrivateRoute exact path="/webinars/user/:id" component={ProfileWebinar} />
             <PrivateRoute exact path="/pricing" component={Paket} />
             <PrivateRoute exact path="/screening" component={ExampleScreening} />
             <PrivateRoute exact path="/screening/result" component={ExampleHasilScreening} />

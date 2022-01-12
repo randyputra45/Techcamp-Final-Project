@@ -6,7 +6,7 @@ import WebinarNarsum from '../components/WebinarNarsum'
 import useWebinar from '../hooks/useWebinar'
 
 const ExampleWebinar = () => {
-    const {webinar, webinarID, getWebinarById} = useWebinar()
+    const {webinarID, getWebinarById} = useWebinar()
 
     const path = window.location.pathname
     
@@ -19,20 +19,17 @@ const ExampleWebinar = () => {
             <div className="block md:hidden">
                 <div className="px-4 pt-4 pb-12">
                     <WebinarCard2
-                        title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
+                        title={webinarID && webinarID.title}
                     />
                     <div className="pt-4 text-sm text-gray-600">
                         Kamis, 10 Mei 2021
                     </div>
                     <div className="pt-2 text-2xl">
-                        Menjaga Kesehatan Mental Di Masa Pandemi COVID-19
+                        {webinarID && webinarID.title}
                     </div>
                     <div className="pt-4 flex items-end justify-between">
                         <div className="text-lg font-black">
-                            Rp. 150.000
-                        </div>
-                        <div className="text-sm">
-                            Kuota Tersisa : <b>10 Orang</b>
+                            {webinarID && webinarID.price}
                         </div>
                     </div>
                     <div className="pt-10">
@@ -42,21 +39,12 @@ const ExampleWebinar = () => {
                     </div>
                     <div className="pt-10 flex flex-col gap-y-4">
                         <div className="font-bold">Narasumber</div>
-                        <WebinarNarsum 
-                            pic="small-avatar.svg"
-                            name="Prof. Dr. Bosri Modding, S.E., M.Si"
-                            role="Rektor Univ. Muslim Indonesia"
-                        />
-                        <WebinarNarsum 
-                            pic="small-avatar.svg"
-                            name="Prof. Dr. Bosri Modding, S.E., M.Si"
-                            role="Rektor Univ. Muslim Indonesia"
-                        />
-                        <WebinarNarsum 
-                            pic="small-avatar.svg"
-                            name="Prof. Dr. Bosri Modding, S.E., M.Si"
-                            role="Rektor Univ. Muslim Indonesia"
-                        />
+                            {webinarID && webinarID.psikolog.map(item => <WebinarNarsum
+                            key={item._id}
+                            name={item.name}
+                            pic={item.image}
+                            role={item.role}
+                        />)}
                     </div>
                     <div className="pt-10 flex flex-col gap-y-4">
                         <div className="font-bold">Moderator</div>
@@ -69,7 +57,7 @@ const ExampleWebinar = () => {
                     <div className="pt-10 flex flex-col gap-y-4">
                         <div className="font-bold">Live via</div>
                         <WebinarNarsum 
-                            pic="small-avatar.svg"
+                            pic="zoomlogo.png"
                             name="Zoom"
                             role="Video Conference"
                         />
@@ -92,22 +80,19 @@ const ExampleWebinar = () => {
                                 </div>
                                 <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-y-4 gap-x-16">
                                     <WebinarCard2
-                                        title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
+                                        title={webinarID && webinarID.title}
                                     />
                                     <div className="grid grid-col content-between">
                                         <div>
                                             <div className="pt-4 text-sm text-gray-600">
-                                                Kamis, 10 Mei 2021
+                                                {webinarID && webinarID.day}, {webinarID && webinarID.date}
                                             </div>
                                             <div className="pt-2 text-2xl">
-                                                Menjaga Kesehatan Mental Di Masa Pandemi COVID-19
+                                                {webinarID && webinarID.title}
                                             </div>
                                             <div className="pt-4 flex items-end justify-between">
                                                 <div className="text-lg font-black">
-                                                    Rp. 150.000
-                                                </div>
-                                                <div className="text-sm">
-                                                    Kuota Tersisa : <b>10 Orang</b>
+                                                    Rp{webinarID && webinarID.price}
                                                 </div>
                                             </div>
                                         </div>
@@ -121,35 +106,26 @@ const ExampleWebinar = () => {
                                 <div className="pt-6 grid md:grid-cols-1 lg:grid-cols-2">
                                     <div className="pt-10 flex flex-col gap-y-4">
                                         <div className="font-bold">Narasumber</div>
-                                        <WebinarNarsum 
-                                            pic="small-avatar.svg"
-                                            name="Prof. Dr. Bosri Modding, S.E., M.Si"
-                                            role="Rektor Univ. Muslim Indonesia"
-                                        />
-                                        <WebinarNarsum 
-                                            pic="small-avatar.svg"
-                                            name="Prof. Dr. Bosri Modding, S.E., M.Si"
-                                            role="Rektor Univ. Muslim Indonesia"
-                                        />
-                                        <WebinarNarsum 
-                                            pic="small-avatar.svg"
-                                            name="Prof. Dr. Bosri Modding, S.E., M.Si"
-                                            role="Rektor Univ. Muslim Indonesia"
-                                        />
+                                        {webinarID && webinarID.psikolog.map(item => <WebinarNarsum
+                                            key={item._id}
+                                            name={item.name}
+                                            pic={item.image}
+                                            role={item.role}
+                                        />)}
                                     </div>
                                     <div className="">
                                         <div className="pt-10 flex flex-col gap-y-4">
                                             <div className="font-bold">Moderator</div>
                                             <WebinarNarsum 
-                                                pic="small-avatar.svg"
+                                                pic="https://res.cloudinary.com/gocure/image/upload/v1641927760/man_cjqgfn.jpg"
                                                 name="Salman Setiawan"
-                                                role="Mas-mas biasa"
+                                                role="Informatics Student"
                                             />
                                         </div>
                                         <div className="pt-10 flex flex-col gap-y-4">
                                             <div className="font-bold">Live via</div>
                                             <WebinarNarsum 
-                                                pic="small-avatar.svg"
+                                                pic="https://res.cloudinary.com/gocure/image/upload/v1641927629/zoomlogo_a4wnrz.png"
                                                 name="Zoom"
                                                 role="Video Conference"
                                             />

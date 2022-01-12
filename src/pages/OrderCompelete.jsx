@@ -17,10 +17,10 @@ const OrderCompelete = () => {
                                 Pemesanan konselingmu hampir selesai nih
                             </div>
                             <div className="mt-2 text-sm leading-relaxed">
-                                jangan lupa periksa emailmu ya untuk detil pemesanan, jadwal maupun link konselingnya, anda juga bisa mengakses informasi tersebut lewat laman profil anda.
+                                Sangan lupa periksa emailmu ya untuk detil pemesanan, jadwal maupun link konselingnya, anda juga bisa mengakses informasi tersebut lewat laman profil anda.
                             </div>
                             <div className="mt-6 text-sm">
-                                selamat berkonsultasi :)
+                                Selamat berkonsultasi :)
                             </div>
                             <div className="pt-12 w-full">
                                 <Button title="Periksa Laman Konsultasi" />
@@ -46,10 +46,10 @@ const OrderCompelete = () => {
                                 Pemesanan konselingmu hampir selesai nih
                             </div>
                             <div className="mt-2 text-sm leading-relaxed">
-                                jangan lupa periksa emailmu ya untuk detil pemesanan, jadwal maupun link konselingnya, anda juga bisa mengakses informasi tersebut lewat laman profil anda.
+                                Jangan lupa periksa emailmu ya untuk detil pemesanan, jadwal maupun link konselingnya, anda juga bisa mengakses informasi tersebut lewat laman profil anda.
                             </div>
                             <div className="mt-6 text-sm">
-                                selamat berkonsultasi :)
+                                Selamat berkonsultasi :)
                             </div>
                             <div className="pt-12 w-full">
                                 <Button title="Periksa Laman Konsultasi" />

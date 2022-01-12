@@ -2,6 +2,7 @@ import React from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import useLogout from '../hooks/useLogout'
+import { Link } from 'react-router-dom'
 
 const DesktopAvatar = () => {
     const {logoutUser} = useLogout()
@@ -12,7 +13,9 @@ const DesktopAvatar = () => {
     return (
         <div>
             <div className="py-4 px-16 flex justify-between items-center bg-body">
-                <img src="gocure.svg" alt="" className='cursor-pointer h-10' />
+                <Link to="/">
+                    <img src="gocure.svg" alt="" className="cursor-pointer h-10" />
+                </Link>
                 <div className="flex items-center gap-x-6">
                     <Menu as="div" className="relative inline-block text-left">
                         <div>

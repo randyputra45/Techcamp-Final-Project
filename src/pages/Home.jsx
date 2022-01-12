@@ -114,6 +114,7 @@ const Home = (props) => {
                                     pic="konseling.svg"
                                     title="Webinar"
                                     desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
+                                    url="/webinars"
                                 />
                                 <MobileButton 
                                     pic="konseling.svg"
