@@ -16,7 +16,7 @@ const plans = [
 ]
   
 const PembayaranModal = (props) => {
-    let [isOpen, setIsOpen] = useState(true)
+    let [isOpen, setIsOpen] = useState(false)
 
     function closeModal() {
       setIsOpen(false)
@@ -30,7 +30,7 @@ const PembayaranModal = (props) => {
     
     return (
         <div>
-            <div onClick={openModal} className='cursor-pointer p-4 px-6 rounded-lg bg-button w-full'>
+            <div onClick={() => openModal()} className='cursor-pointer p-4 px-6 rounded-lg bg-button w-full'>
                 <div className="flex flex-col">
                     <div className="text-sm font-bold">
                         {props.title}
@@ -128,7 +128,7 @@ const PembayaranModal = (props) => {
                                 </div>
                                 
                                 <div className="pt-8">
-                                    <div onClick={closeModal}>
+                                    <div onClick={() => closeModal()}>
                                         <Button
                                             title="Selesai"
                                         />

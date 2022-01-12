@@ -39,8 +39,9 @@ import MenuDyslexia from "./pages/MenuDyslexia";
 import MenuCoaching from "./pages/MenuCoaching";
 import ProfileNotification from "./pages/ProfileNotification";
 import ScanQR from "./components/ScanQR";
+import StartScreening from "./pages/StartScreening";
+import StartHealthtest from "./pages/StartHealthtest";
 import DetilPembayaran from "./pages/DetilPembayaran";
-
 
 function App() {
   return (
@@ -54,7 +55,34 @@ function App() {
             <Route exact path="/register" component={Register1 } />
             <Route path="/verify" component={Register3 } />
             <Route exact path="/register/success" component={Register4 } />
-            <Route path="/home" component={Home} />
+            <Route exact path="/experts" component={MenuExpert } />
+            <Route exact path="/experts/:id" component={ExampleExpert } />
+            <PrivateRoute path="/home" component={Home} />
+            <PrivateRoute exact path="/blogs" component={MenuBlog} />
+            <PrivateRoute exact path="/blogs/:id" component={ExampleBlog} />
+            <PrivateRoute exact path="/webinars" component={MenuWebinar} />
+            <PrivateRoute exact path="/webinars/:id" component={ExampleWebinar} />
+            <PrivateRoute exact path="/webinars/user/:id" component={ProfileWebinar} />
+            <PrivateRoute exact path="/pricing" component={Paket} />
+            <PrivateRoute exact path="/screening" component={StartScreening} />
+            <PrivateRoute exact path="/screening/start" component={ExampleScreening} />
+            <PrivateRoute exact path="/screening/result" component={ExampleHasilScreening} />
+            <PrivateRoute exact path="/healthtest" component={StartHealthtest} />
+            <PrivateRoute exact path="/healthtest/start" component={ExampleHealthTest} />
+            <PrivateRoute exact path="/healthtest/result" component={ExampleHasilHealthTest} />
+            <PrivateRoute exact path="/payment" component={TransaksiPembayaran} />
+            <PrivateRoute exact path="/profile" component={Profile} />
+            <Route exact path="/pusatdsylexia" component={MenuDyslexia} />
+            <Route exact path="/coaching" component={MenuCoaching} />
+            <Route exact path="/pricing" component={Paket} />
+            <Route exact path="/pricing2" component={Paket2} />
+            <Route exact path="/payment" component={TransaksiPembayaran} />
+            <Route exact path="/payment/scanqr" component={ScanQR} />
+            <Route exact path="/payment/success" component={OrderCompelete} />
+            <Route exact path="/profile/notification" component={ProfileNotification} />
+            <Route exact path="/invoice" component={DetilPembayaran} />
+            
+            {/* <Route path="/home" component={Home} />
             <Route exact path="/blogs" component={MenuBlog} />
             <Route exact path="/blogs/:id" component={ExampleBlog} />
             <Route exact path="/webinar" component={MenuWebinar} />
@@ -73,9 +101,7 @@ function App() {
             <Route exact path="/payment" component={TransaksiPembayaran} />
             <Route exact path="/payment/scanqr" component={ScanQR} />
             <Route exact path="/payment/success" component={OrderCompelete} />
-            <Route exact path="/profile" component={Profile} />
-            <Route exact path="/profile/notification" component={ProfileNotification} />
-            <Route exact path="/invoice" component={DetilPembayaran} />
+            <Route exact path="/profile" component={Profile} /> */}
           </Switch>
         </Router>
       </main>

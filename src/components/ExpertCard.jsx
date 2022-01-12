@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const ExpertCard = (props) => {
     return (
-        <div>
+        <Link to={props.url}>
             <div className="cursor-pointer">
                 <img src={props.pic} alt="" className='object-cover rounded h-48 w-full' />
                 <div className="font-bold text-sm pt-2">
@@ -12,7 +13,7 @@ const ExpertCard = (props) => {
                     {props.role}
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

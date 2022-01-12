@@ -60,7 +60,7 @@ const ExampleScreening = () => {
 						</div>
 						<div className="pt-52 pb-20 flex items-center justify-center">
 							<div className="md:w-1/2 lg:w-2/5 bg-white rounded-xl">
-								<div className="px-8 pt-12 pb-12">
+								<div className="px-8 pt-6 pb-12">
 									<ChartBar bar={`bar${currentQuestion}`}/>
 									<div className="pt-5">
 										<div className="mb-1">Soal {currentQuestion + 1}</div>

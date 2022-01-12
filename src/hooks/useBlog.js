@@ -7,7 +7,7 @@ export default function useBlog() {
   const [blogArticleID, setArticleID] = useState(null);
   const [blogContent, setBlogContent] = useState(null);
   const [isLoading, setLoading] = useState(true);
-  const [isLiked, setLiked] = useState("");
+  const [isLiked, setLiked] = useState(false);
   const [isLoadingContent] = useState(true);
   const [error, setError] = useState("");
 
@@ -56,7 +56,12 @@ export default function useBlog() {
     return axios
       .get(`${data}`, { withCredentials: true, config })
       .then((res) => {
-            setLiked(user.liked_blog.find(id => id === res.data._id))
+          const statusLiked = user.liked_blog.find(id => id === res.data._id)
+          if (statusLiked !== undefined) {
+            setLiked(true)
+          } else {
+            setLiked(false)
+          }
         }
       )
       .catch((err) => {

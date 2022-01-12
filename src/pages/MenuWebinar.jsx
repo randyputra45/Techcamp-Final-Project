@@ -1,12 +1,18 @@
-import React, {useEffect} from 'react'
+import * as React from 'react';
+import TextField from '@mui/material/TextField';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import DatePicker from '@mui/lab/DatePicker';
 import DesktopAvatar from '../components/DesktopAvatar'
 import NotifButton from '../components/NotifButton'
 import WebinarCard from '../components/WebinarCard'
 import useWebinar from '../hooks/useWebinar'
+import { format } from 'date-fns'
 
 const MenuWebinar = () => {
     const {webinar} = useWebinar()
     webinar && console.log(webinar)
+    const [value, setValue] = React.useState(null);
 
     return (
         <div>
@@ -22,36 +28,16 @@ const MenuWebinar = () => {
                     <div className="pt-8">
                         <div className="font-bold text-sm pb-3">Webinar yang akan datang</div>
                         <div className="flex flex-col gap-y-3">
-                            <WebinarCard
-                                title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
-                                picnarsum1="small-avatar.svg"
-                                picnarsum2="small-avatar.svg"
-                                picnarsum3="small-avatar.svg"
-                                day="Kamis" 
-                                date="14 Oct 2021"
-                                quota="18"
-                                price="Rp. 150.000"
-                            />
-                            <WebinarCard
-                                title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
-                                picnarsum1="small-avatar.svg"
-                                picnarsum2="small-avatar.svg"
-                                picnarsum3="small-avatar.svg"
-                                day="Kamis" 
-                                date="14 Oct 2021"
-                                quota="18"
-                                price="Rp. 150.000"
-                            />
-                            <WebinarCard
-                                title="MENJAGA KESEHATAN MENTAL DI MASA PANDEMI COVID-19"
-                                picnarsum1="small-avatar.svg"
-                                picnarsum2="small-avatar.svg"
-                                picnarsum3="small-avatar.svg"
-                                day="Kamis" 
-                                date="14 Oct 2021"
-                                quota="18"
-                                price="Rp. 150.000"
-                            />
+                            {webinar && webinar.map(item => <WebinarCard
+                                key={item._id}
+                                title={item.title}
+                                url={`/webinars/${item._id}`}
+                                picnarsum1={item.psikolog[0].image}
+                                picnarsum2={item.psikolog[1].image}
+                                day={item.day}
+                                date={item.date}
+                                price={item.price}
+                            />)}
                         </div>
                     </div>
                 </div> 
@@ -73,13 +59,14 @@ const MenuWebinar = () => {
                                 <div className="flex flex-col gap-y-6">
                                     <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
                                         {webinar && webinar.map(item => <WebinarCard
+                                            key={item._id}
                                             title={item.title}
-                                            picnarsum1="small-avatar.svg"
-                                            picnarsum2="small-avatar.svg"
-                                            picnarsum3="small-avatar.svg"
-                                            day="Kamis" 
-                                            date="14 Oct 2021"
-                                            price="Rp. 150.000"
+                                            url={`/webinars/${item._id}`}
+                                            picnarsum1={item.psikolog[0].image}
+                                            picnarsum2={item.psikolog[1].image}
+                                            day={item.day}
+                                            date={item.date}
+                                            price={item.price}
                                         />)}
                                     </div>
                                 </div>
