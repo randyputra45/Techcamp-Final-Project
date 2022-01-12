@@ -59,7 +59,7 @@ const Pembayaran = () => {
                 <div className="px-8 pt-36 pb-12">
                     <div className="flex justify-center">
                         <div className="flex flex-col">
-                            <div className="py-8 px-10 bg-body rounded-t-lg">
+                            <div className="py-8 px-10  bg-body rounded-t-lg">
                                 <div className="pb-8">
                                     <div className="text-2xl font-bold">Pembayaran</div>
                                 </div>
@@ -90,7 +90,7 @@ const Pembayaran = () => {
                     </div>
                 </div>
                 <div className="flex justify-center">
-                    <div className="pb-4 botbar2 w-full lg:w-1/2">
+                    <div className="pb-0 botbar2 w-full lg:w-1/2">
                         <TotalBayar 
                             total="Rp. 1.202.500"
                         />

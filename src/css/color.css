@@ -9,6 +9,10 @@
     background-color: #d4f0f0;
 }
 
+.bg-selected {
+    background-color: #db2777;
+}
+
 .bg-active-button {
     background-color: #00696E;
 }

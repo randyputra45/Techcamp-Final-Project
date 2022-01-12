@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
 import Button from '../components/Button'
 import DesktopAvatar from '../components/DesktopAvatar'
 import PaketCard from '../components/PaketCard'
+
 
 const Paket = () => {
     return (
@@ -59,8 +60,14 @@ const Paket = () => {
                     <div className="flex justify-center">
                         <div className="flex flex-col">
                             <div className="py-8 px-10 bg-body rounded-t-lg">
-                                <div className="pb-8">
-                                    <div className="text-2xl font-bold">Pilih paket yang diinginkan</div>
+                                <div className="pb-12">
+                                    <div className="mb-4">
+                                        <div className="text-xl font-bold">Pilih tanggal</div>
+                                    </div>
+                                    <input className='w-60 p-3 border border-gray-300' type="date" id="" />
+                                </div>
+                                <div className="mb-6">
+                                    <div className="text-xl font-bold">Pilih paket yang diinginkan</div>
                                 </div>
                                 <div className="grid md:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-16 content-between">
                                     <div className="grid gap-y-4 content-between">

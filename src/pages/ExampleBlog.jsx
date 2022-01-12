@@ -9,7 +9,7 @@ import HeartWhite from '../images/heart-white.svg'
 import { UserContext } from '../context/userContext';
 
 const ExampleBlog = () => {
-    const { user, isLoading } = useContext(UserContext);
+    const { user } = useContext(UserContext);
     // const [isLiked, setIsLiked] = useState(false)
 
     const {blogArticleID, blogContent, isLiked, getArticleById} = useBlog()
@@ -68,9 +68,11 @@ const ExampleBlog = () => {
                         <BlogButton 
                             pic="white-back.svg"
                         />
-                        <BlogButton 
-                            pic="like.svg"
-                        />
+                        <button onClick={() => handleLike()}>
+                            <BlogButton
+                                pic={likeStatus && likeStatus ? HeartFill : HeartWhite}
+                            />
+                        </button>
                     </div>
                 </div>
             </div>

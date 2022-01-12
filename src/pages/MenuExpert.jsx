@@ -3,8 +3,11 @@ import BackButton from '../components/BackButton'
 import DesktopAvatar from '../components/DesktopAvatar'
 import ExpertCard from '../components/ExpertCard'
 import NotifButton from '../components/NotifButton'
+import usePsikolog from '../hooks/usePsikolog'
 
 const MenuExpert = () => {
+    const {psikolog} = usePsikolog()
+
     return (
         <div>
             <div className="block md:hidden">
@@ -107,68 +110,20 @@ const MenuExpert = () => {
                             </div>
 
                                 <div className="grid grid-cols-3 gap-x-4 gap-y-6">
-                                    <ExpertCard 
+                                    {psikolog && psikolog.map((psi) => (
+                                        <ExpertCard
+                                        url={`/experts/${psi._id}`}
+                                        name={psi.name}
+                                        role={psi.role}
+                                        pic={psi.image}
+                                        />
+                                    ))}
+                                    {/* <ExpertCard 
                                         pic="rosdiana.jpg"
                                         name="Rosdiana Setyaningrum, MPsi, MHPEd, Psikolog"
                                         role="Dirut & Pendiri Bersama MS School & Wellbeing Center"
-                                    />
-                                    <ExpertCard 
-                                        pic="dianda.jpg"
-                                        name="Dianda Azani, SPsi, MPsi, Psikolog"
-                                        role="Psikolog"
-                                    />
-                                    <ExpertCard 
-                                        pic="alva.jpg"
-                                        name="Alva Paramitha, SPsi, MPsi, BFRP"
-                                        role="Psikolog"
-                                    />
-                                    <ExpertCard 
-                                        pic="mario.jpg"
-                                        name="Mario Carl Joseph, SPsi, MPsi, Psikolog"
-                                        role="Psikolog"
-                                    />
-                                    <ExpertCard 
-                                        pic="ongen.jpg"
-                                        name="Ongen Cristian Joel, SPd"
-                                        role="Psikolog"
-                                    />
-                                    <ExpertCard 
-                                        pic="veronica.jpg"
-                                        name="Veronica Clarissa, SPsi, MPsi, Psikolog"
-                                        role="Psikolog"
-                                    />
-                                    <ExpertCard 
-                                        pic="sarilani.jpg"
-                                        name="Sarilani Wirawan, SPsi, SE, MPSi"
-                                        role="Psikolog"
-                                    />
-                                    <ExpertCard 
-                                        pic="greg.jpg"
-                                        name="Greg Jakaria, S.E"
-                                        role="Terapis"
-                                    />
-                                    <ExpertCard 
-                                        pic="panega.jpg"
-                                        name="Arlingga Panega"
-                                        role="Pelatih Komunikasi"
-                                    />
-                                    <ExpertCard 
-                                        pic="irna.jpg"
-                                        name="Irna Silawaty, S.Psi, M.Psi, Psikolog"
-                                        role="Psikolog"
-                                    />
-                                    <ExpertCard 
-                                        pic="elsa.jpg"
-                                        name="Elsa Safira Pangaribuan, S.H., SpN"
-                                        role="Pelatih Yoga"
-                                    />
-                                    <ExpertCard 
-                                        pic="kezia.jpg"
-                                        name="Kezia Santoso, BSc"
-                                        role="Psikolog"
-                                    />
+                                    /> */}
                                 </div>
-
                             </div>
                         </div>
                     </div>

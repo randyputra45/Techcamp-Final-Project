@@ -99,7 +99,7 @@ const Home = (props) => {
                 </div>
                 <div className="px-4 py-12 flex lg:flex-row flex-col items-start justify-center gap-4">
                     <div className="flex flex-col">
-                        <div className="py-8 px-10 bg-body rounded-t-lg">
+                        <div className="p-8 bg-body rounded-t-lg">
                             <div className="text-lg font-bold pb-4">
                                 Layanan Kami
                             </div>
