@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '../components/Button'
 import DesktopAvatar from '../components/DesktopAvatar'
 
-const OrderCompelete = () => {
+const ScanQR = () => {
     return (
         <div>
             <div className="block md:hidden">
@@ -10,19 +10,13 @@ const OrderCompelete = () => {
                     <div className="md:w-1/2 lg:w-2/5 bg-white rounded-xl">
                         <div className="px-6 py-12">
                             <div className="p-12 flex justify-center">
-                                <img src="complete.svg" alt="" />
+                                <img src="qr-code.png" alt="" className='h-40' />
                             </div>
                             <div className="font-bold text-sm">
                                 Pemesanan konselingmu hampir selesai nih
                             </div>
                             <div className="mt-2 text-sm leading-relaxed">
                                 jangan lupa periksa emailmu ya untuk detil pemesanan, jadwal maupun link konselingnya, anda juga bisa mengakses informasi tersebut lewat laman profil anda.
-                            </div>
-                            <div className="mt-6 text-sm">
-                                selamat berkonsultasi :)
-                            </div>
-                            <div className="pt-12 w-full">
-                                <Button title="Periksa Laman Konsultasi" />
                             </div>
                         </div>
                     </div>
@@ -38,19 +32,13 @@ const OrderCompelete = () => {
                     <div className="md:w-1/2 lg:w-2/5 bg-white rounded-xl">
                         <div className="px-8 py-12">
                             <div className="p-12 flex justify-center">
-                                <img src="complete.svg" alt="" />
+                                <img src="qr-code.png" alt="" className='h-40' />
                             </div>
                             <div className="font-bold text-sm">
-                                Pemesanan konselingmu berhasil
+                                Pemesanan konselingmu hampir selesai nih
                             </div>
                             <div className="mt-2 text-sm leading-relaxed">
                                 jangan lupa periksa emailmu ya untuk detil pemesanan, jadwal maupun link konselingnya, anda juga bisa mengakses informasi tersebut lewat laman profil anda.
-                            </div>
-                            <div className="mt-6 text-sm">
-                                selamat berkonsultasi :)
-                            </div>
-                            <div className="pt-12 w-full">
-                                <Button title="Periksa Laman Konsultasi" />
                             </div>
                         </div>
                     </div>
@@ -60,4 +48,4 @@ const OrderCompelete = () => {
     )
 }
 
-export default OrderCompelete
+export default ScanQR
