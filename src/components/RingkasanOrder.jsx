@@ -18,7 +18,7 @@ const RingkasanOrder = (props) => {
                         Hari dan Tanggal :
                     </div>
                     <div className="text-xs">
-                        {props.tgl}
+                        {props.day}, {props.date}
                     </div>
                 </div>
                 <div className="pt-8 flex justify-between">
