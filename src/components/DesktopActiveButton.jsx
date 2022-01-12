@@ -5,7 +5,7 @@ const DesktopActiveButton = (props) => {
         <div>
             <a href={props.url}>
                 <div className="cursor-pointer">
-                    <div className="py-2 px-8 bg-active-button hover:bg-pink-600 rounded-md text-white font-semibold text-sm text-center">
+                    <div className="py-2 px-8 bg-active-button hover:bg-pink-600 rounded-md text-white font-medium text-sm text-center">
                         {props.title}
                     </div>
                 </div>

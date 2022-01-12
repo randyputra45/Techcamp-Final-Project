@@ -1,7 +1,5 @@
 import React from 'react'
 import AnswerCard from '../components/AnswerCard'
-import Button from '../components/Button'
-import DesktopActiveButton2 from '../components/DesktopActiveButton2'
 import LandingButton from '../components/LandingButton'
 import LandingInfo from '../components/LandingInfo'
 import LandingNavbar from '../components/LandingNavbar'

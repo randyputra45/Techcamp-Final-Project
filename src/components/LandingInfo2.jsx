@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LandingInfo = (props) => {
+const LandingInfo2 = (props) => {
     return (
         <div>
             <div className="flex flex-col lg:flex-row items-center md:gap-8 xl:gap-x-24 xl:px-12 2xl:px-16">
@@ -12,13 +12,6 @@ const LandingInfo = (props) => {
                     <div className="mt-4 md:text-base xl:text-lg leading-relaxed">
                         {props.desc}
                     </div>
-                    <div className="flex">
-                        <div className="border-b border-white hover:border-blue-600">
-                            <div className="mt-8 text-blue-600 md:text-base xl:text-lg leading-relaxed cursor-pointer">
-                                Pelajari Lebih Lanjut →
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <img src={props.pic} alt="" className='hidden lg:block object-cover w-4/6' />
             </div>
@@ -26,4 +19,4 @@ const LandingInfo = (props) => {
     )
 }
 
-export default LandingInfo
+export default LandingInfo2

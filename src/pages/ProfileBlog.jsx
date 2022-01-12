@@ -1,6 +1,5 @@
 import React from 'react'
 import BlogCard from '../components/BlogCard'
-import MobileButton from '../components/MobileButton'
 import NotifButton from '../components/NotifButton'
 
 const ProfileBlog = () => {
