@@ -39,6 +39,7 @@ import MenuDyslexia from "./pages/MenuDyslexia";
 import MenuCoaching from "./pages/MenuCoaching";
 import ProfileNotification from "./pages/ProfileNotification";
 import ScanQR from "./components/ScanQR";
+import DetilPembayaran from "./pages/DetilPembayaran";
 
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
             <Route exact path="/payment/success" component={OrderCompelete} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/profile/notification" component={ProfileNotification} />
+            <Route exact path="/invoice" component={DetilPembayaran} />
           </Switch>
         </Router>
       </main>
