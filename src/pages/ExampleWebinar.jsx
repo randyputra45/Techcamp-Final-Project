@@ -1,18 +1,42 @@
 import React, {useEffect, useContext} from 'react'
 import Button from '../components/Button'
+import ButtonAction from '../components/ButtonAction'
 import DesktopAvatar from '../components/DesktopAvatar'
 import WebinarCard2 from '../components/WebinarCard2'
 import WebinarNarsum from '../components/WebinarNarsum'
 import useWebinar from '../hooks/useWebinar'
+import { useHistory } from 'react-router-dom';
 
 const ExampleWebinar = () => {
     const {webinarID, getWebinarById} = useWebinar()
+    const history = useHistory()
 
     const path = window.location.pathname
     
     useEffect(() => {
         getWebinarById(path)
     }, [path])
+
+    console.log(webinarID)
+
+    const handleClick = () => {
+        try {    
+            const data = {
+                date: webinarID.date,
+                package: webinarID.title,
+                price: webinarID.price
+            }
+            
+            if(data) {
+                history.push({
+                    pathname: "/payment/webinar",
+                    state: data
+                })
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     return (
         <div>
@@ -33,9 +57,11 @@ const ExampleWebinar = () => {
                         </div>
                     </div>
                     <div className="pt-10">
-                        <Button
-                            title="Pesan Sekarang"
-                        />
+                        <button onClick={handleClick()}>
+                            <ButtonAction
+                                title="Pesan Sekarang"
+                            />
+                        </button>
                     </div>
                     <div className="pt-10 flex flex-col gap-y-4">
                         <div className="font-bold">Narasumber</div>
@@ -97,9 +123,11 @@ const ExampleWebinar = () => {
                                             </div>
                                         </div>
                                         <div className='md:pt-12 lg:pt-0'>
-                                            <Button
-                                                title="Pesan Sekarang"
-                                            />
+                                            <button onClick={handleClick()}>
+                                                <ButtonAction
+                                                    title="Pesan Sekarang"
+                                                />
+                                            </button>
                                         </div>
                                     </div>
                                 </div>

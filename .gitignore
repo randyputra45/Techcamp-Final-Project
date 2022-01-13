@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+src/App.js
+src/pages/Paket.jsx
 
 # testing
 /coverage

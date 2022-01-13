@@ -5,13 +5,16 @@ import Button from './Button'
 
 const plans = [
     {
-      name: 'Alfamart / Alfamidi'
+      name: 'Gopay'
     },
     {
-      name: 'Indomaret'
+      name: 'ShopeePay'
     },
     {
-      name: 'QRIS (Gopay / ShopeePay / DANA / OVO)'
+      name: 'DANA'
+    },
+    {
+      name: 'OVO'
     },
 ]
   
@@ -20,6 +23,7 @@ const PembayaranModal = (props) => {
 
     function closeModal() {
       setIsOpen(false)
+      props.sendToParent(selected.name)
     }
   
     function openModal() {
@@ -33,7 +37,7 @@ const PembayaranModal = (props) => {
             <div onClick={() => openModal()} className='cursor-pointer p-4 px-6 rounded-lg bg-button w-full'>
                 <div className="flex flex-col">
                     <div className="text-sm font-bold">
-                        {props.title}
+                        {selected.name}
                     </div>
                     <div className="mt-1 text-xxs text-gray-600">
                         {props.desc}
