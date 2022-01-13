@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const LandingButton = (props) => {
+const LandingButton1 = (props) => {
     return (
         <Link to={props.url}>
             <div className="block md:hidden">
@@ -17,7 +17,7 @@ const LandingButton = (props) => {
                         <img src={props.pic} alt="" className='h-12'></img>
                         <div className="font-bold">{props.title}</div>  
                     </div>
-                    <div className='text-sm pt-4 leading-relaxed text-gray-600'>
+                    <div className='text-sm pt-4 leading-relaxed text-gray-600 h-20'>
                         {props.desc}
                     </div>
                 </div>
@@ -26,4 +26,4 @@ const LandingButton = (props) => {
     )
 }
 
-export default LandingButton
+export default LandingButton1

@@ -2,10 +2,11 @@ import React, {useContext} from 'react'
 import AnswerCard from '../components/AnswerCard'
 import Button from '../components/Button'
 import DesktopActiveButton2 from '../components/DesktopActiveButton2'
-import LandingButton from '../components/LandingButton'
 import LandingNavbar from '../components/LandingNavbar'
 import { UserContext } from '../context/userContext';
 import { useHistory } from 'react-router-dom'
+import LandingButton1 from '../components/LandingButton1'
+import LandingButton11 from '../components/LandingButton11'
 
 const Landingpage = () => {
     const history = useHistory()
@@ -34,10 +35,10 @@ const Landingpage = () => {
                         <div className="font-bold mb-3">Layanan yang kami tawarkan?</div>
                         <div className="flex flex-col gap-y-4">
                             <div className="flex justify-between">
-                                <LandingButton pic="konseling.svg" url="/"/>
-                                <LandingButton pic="konseling.svg" url="/"/>
-                                <LandingButton pic="konseling.svg" url="/"/>
-                                <LandingButton pic="konseling.svg" url="/"/>
+                                <LandingButton1 pic="konseling.svg" url="/"/>
+                                <LandingButton1 pic="konseling.svg" url="/"/>
+                                <LandingButton1 pic="konseling.svg" url="/"/>
+                                <LandingButton1 pic="konseling.svg" url="/"/>
                             </div>
                             <AnswerCard 
                                 title="Webinar" 
@@ -49,10 +50,10 @@ const Landingpage = () => {
                         <div className="font-bold mb-3">Kenapa kami?</div>
                         <div className="flex flex-col gap-y-4">
                             <div className="flex justify-between">
-                                <LandingButton pic="konseling.svg" url="/"/>
-                                <LandingButton pic="konseling.svg" url="/"/>
-                                <LandingButton pic="konseling.svg" url="/"/>
-                                <LandingButton pic="konseling.svg" url="/"/>
+                                <LandingButton1 pic="konseling.svg" url="/"/>
+                                <LandingButton1 pic="konseling.svg" url="/"/>
+                                <LandingButton1 pic="konseling.svg" url="/"/>
+                                <LandingButton1 pic="konseling.svg" url="/"/>
                             </div>
                             <AnswerCard 
                                 title="Webinar" 
@@ -64,10 +65,10 @@ const Landingpage = () => {
                         <div className="font-bold mb-3">Sedikit testimoni dari user kami</div>
                         <div className="flex flex-col gap-y-4">
                             <div className="flex justify-between">
-                                <LandingButton pic="konseling.svg" url="/"/>
-                                <LandingButton pic="konseling.svg" url="/"/>
-                                <LandingButton pic="konseling.svg" url="/"/>
-                                <LandingButton pic="konseling.svg" url="/"/>
+                                <LandingButton1 pic="konseling.svg" url="/"/>
+                                <LandingButton1 pic="konseling.svg" url="/"/>
+                                <LandingButton1 pic="konseling.svg" url="/"/>
+                                <LandingButton1 pic="konseling.svg" url="/"/>
                             </div>
                             <AnswerCard 
                                 title="Webinar" 
@@ -122,25 +123,25 @@ const Landingpage = () => {
                             Layanan Kami
                         </div>
                         <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 pt-6">
-                            <LandingButton 
+                            <LandingButton1 
                                 pic="konseling.svg"
                                 title="Konseling"
                                 desc="disini anda bisa melakukan penanganan kesehatan mental anda dengan orang yang terpercaya dan ahli dibidangnya." 
                                 url="/screening"
                             />
-                            <LandingButton 
+                            <LandingButton1 
                                 pic="webinar.svg"
                                 title="Webinar"
                                 desc="disini anda bisa mengikuti kegiatan webinar bertajuk kesehatan mental bersama narasumber ahli dan terpercaya." 
                                 url="/webinar"
                             />
-                            <LandingButton 
+                            <LandingButton1 
                                 pic="blog.svg"
                                 title="Blog"
                                 desc="disini anda bisa membaca ragam artikel dan blog untuk menambah awareness anda tentang kesehatan mental." 
                                 url="/blogs"
                             />
-                            <LandingButton 
+                            <LandingButton1 
                                 pic="konseling.svg"
                                 title="Tes kesehatan"
                                 desc="disini anda juga dapat melakukan tes kesehatan agar anda mengetahui kondisi dari kesehatan mental anda saat ini." 
@@ -159,22 +160,22 @@ const Landingpage = () => {
                             Kenapa Kami?
                         </div>
                         <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 pt-6">
-                            <LandingButton 
+                            <LandingButton11
                                 pic="konseling.svg"
                                 title="24 jam pelayanan konsumen"
                                 desc="GoCure hadir dengan memberikan pelayanan sepenuh hati kepada konsumen. Siap melayani konsumen kapanpun user inginkan." 
                             />
-                            <LandingButton 
+                            <LandingButton11 
                                 pic="konseling.svg"
                                 title="SDM yang ahli dibidangnya"
                                 desc="Kami bekerjasama dengan tenaga yang ahli dibidangnya, tidak hanya mendengarkan, tetapi juga memberikan saran dan solusi yang terbaik untuk konsumen." 
                             />
-                            <LandingButton 
+                            <LandingButton11 
                                 pic="konseling.svg"
                                 title="aksesibilitas yang mudah"
                                 desc="GoCure dibuat dengan antarmuka dengan aksesibilitas yang menarik dan sangat user friendly untuk memudahkan pengguna mengakses website kami." 
                             />
-                            <LandingButton 
+                            <LandingButton11 
                                 pic="konseling.svg"
                                 title="proses konseling yang cepat"
                                 desc="tidak perlu untuk menunggu lama, jadwal konsultasimu akan segera dikirim melalui email yang didaftarkan, karena kami akan segera mencocokkan dan membalas pesanmu dengan cepat." 
@@ -183,25 +184,25 @@ const Landingpage = () => {
                     </div>
                     <div className="py-32">
                         <div className="text-xl font-bold">
-                            Kenapa Kami?
+                            Sedikit testimoni dari kami
                         </div>
-                        <div className="flex justify-between gap-x-4 pt-6">
-                            <LandingButton 
+                        <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 pt-6">
+                            <LandingButton1 
                                 pic="konseling.svg"
                                 title="konseling"
                                 desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
                             />
-                            <LandingButton 
+                            <LandingButton1 
                                 pic="konseling.svg"
                                 title="konseling"
                                 desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
                             />
-                            <LandingButton 
+                            <LandingButton1 
                                 pic="konseling.svg"
                                 title="konseling"
                                 desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
                             />
-                            <LandingButton 
+                            <LandingButton1
                                 pic="konseling.svg"
                                 title="konseling"
                                 desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
