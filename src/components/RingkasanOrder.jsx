@@ -18,7 +18,7 @@ const RingkasanOrder = (props) => {
                         Hari dan Tanggal :
                     </div>
                     <div className="text-xs">
-                        {props.day}, {props.date}
+                        {props.day} {props.date}
                     </div>
                 </div>
                 <div className="pt-8 flex justify-between">
@@ -26,7 +26,7 @@ const RingkasanOrder = (props) => {
                         Total Tagihan :
                     </div>
                     <div className="text-xs">
-                        {props.tagihan}
+                        Rp{props.tagihan}
                     </div>
                 </div>
                 <div className="flex justify-between">

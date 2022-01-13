@@ -1,8 +1,14 @@
 import React, {useEffect, useContext} from 'react'
 import DesktopAvatar from '../components/DesktopAvatar'
 import LayananCard from '../components/LayananCard'
+import PaymentCard from '../components/PaymentCard'
+import useConsultation from "../hooks/useConsultation"
 
 const DetilPembayaran = () => {
+    const{userConsul} = useConsultation()
+
+    console.log(userConsul)
+
     return (
         <div>
             <div className="block md:hidden">
@@ -23,49 +29,12 @@ const DetilPembayaran = () => {
                         <div className="flex flex-col">
                             <div className="py-8 px-10 bg-body rounded-t-lg">
                                 <div className="pb-8">
-                                    <div className="text-sm mb-1">Invoice</div>
-                                    <div className="text-xl font-bold">ID Invoice</div>
+                                    <div className="text-xl font-bold">Riwayat Pemesanan</div>
                                 </div>
-                                <div className="grid grid-cols-1 gap-y-3">
-                                    <div className="font-bold">Anda telah memesan</div>
-                                    <LayananCard
-                                        title="KONSULTASI DAN PEMERIKSAAN PSIKOLOGIS"
-                                    />
-                                </div>
-                                <div className="pt-6 pr-24 grid md:grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-4">
-                                    <div className="">
-                                        <div className="text-sm mb-1">
-                                            Paket
-                                        </div>
-                                        <div className="text-lg font-bold">
-                                            C
-                                        </div>   
-                                    </div>
-                                    <div className="">
-                                        <div className="text-sm mb-1">
-                                            Hari Tanggal
-                                        </div>
-                                        <div className="text-lg font-bold">
-                                            Senin, 14 Oktober 2021
-                                        </div>  
-                                    </div>
-                                    <div className="">
-                                        <div className="text-sm mb-1">
-                                            Harga
-                                        </div>
-                                        <div className="text-lg font-bold">
-                                            Rp. 1.202.500
-                                        </div>  
-                                    </div>
-                                    <div className="">
-                                        <div className="text-sm mb-1">
-                                            Status
-                                        </div>
-                                        <div className="text-red-500 text-lg font-bold">
-                                            Pending
-                                        </div>  
-                                    </div>
-                                </div>
+                                <div className="font-bold">Anda telah memesan</div>
+                                {userConsul && userConsul.map((consul) => (
+                                    <PaymentCard package={consul.package_name} order_id={consul.payment_details.order_id} date={consul.date} price={consul.price}/>
+                                ))}
                             </div>
                         </div>
                     </div>

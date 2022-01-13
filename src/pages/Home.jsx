@@ -109,7 +109,7 @@ const Home = (props) => {
                                     pic="konseling.svg"
                                     title="Konsultasi dan Pemeriksaan Psikologis"
                                     desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
-                                    url="/screening"
+                                    url="/pricing"
                                 />
                                 <MobileButton 
                                     pic="webinar.svg"
