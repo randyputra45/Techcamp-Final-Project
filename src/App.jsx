@@ -52,6 +52,9 @@ import ProfilLayanan from "./pages/ProfilLayanan";
 import ProfilGantiNomor from "./pages/ProfilGantiNomor";
 import ProfilGantiPass from "./pages/ProfilGantiPass";
 import ProfilGantiEmail from "./pages/ProfilGantiEmail";
+import Partnership from "./pages/Partnership";
+import TentangKami from "./pages/TentangKami";
+import Feedback from "./pages/Feedback";
 
 function App() {
   return (
@@ -97,7 +100,11 @@ function App() {
             <Route exact path="/payment/success" component={OrderCompelete} />
             <Route exact path="/profile/notification" component={ProfileNotification} />
             <Route exact path="/invoice" component={DetilPembayaran} />
-            
+            <Route exact path="/partnership" component={Partnership} />
+            <Route exact path="/16" component={TentangKami} />
+            <Route exact path="/feedback" component={Feedback} />
+
+
             {/* <Route path="/home" component={Home} />
             <Route exact path="/blogs" component={MenuBlog} />
             <Route exact path="/blogs/:id" component={ExampleBlog} />
