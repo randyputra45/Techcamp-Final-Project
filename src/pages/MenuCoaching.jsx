@@ -4,8 +4,11 @@ import Button from '../components/Button'
 import CoachingCard from '../components/CoachingCard'
 import DesktopAvatar from '../components/DesktopAvatar'
 import NotifButton from '../components/NotifButton'
+import useCoaching from '../hooks/useCoaching'
 
 const MenuCoaching = () => {
+    const {coaching} = useCoaching()
+
     return (
         <div>
             <div className="block md:hidden">
@@ -49,16 +52,14 @@ const MenuCoaching = () => {
                                 <div className="flex flex-col gap-y-6">
                                     <div className="flex justify-center">
                                         <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
-                                            <CoachingCard
-                                                pic="coaching-1.png"
-                                                price="Rp. 150.000"
-                                            />
-                                            <CoachingCard
-                                                pic="coaching-1.png"
-                                                price="Rp. 150.000"
-                                            />
+                                            {coaching && coaching.map((coach) => (
+                                                <CoachingCard
+                                                    url={`/blogs/${coach._id}`}
+                                                    pic={coach.image}
+                                                    price="Rp. 150.000"
+                                                />
+                                            ))}
                                         </div>
-
                                     </div>
                                 </div>
                             </div>

@@ -1,8 +1,10 @@
 import React from 'react'
 import BackButton from '../components/BackButton'
 import Button from '../components/Button'
+import ButtonAction from '../components/ButtonAction'
 import DesktopAvatar from '../components/DesktopAvatar'
 import NotifButton from '../components/NotifButton'
+import { Link } from 'react-router-dom'
 
 const MenuDyslexia = () => {
     return (
@@ -19,12 +21,14 @@ const MenuDyslexia = () => {
                         </div>
                         <NotifButton />
                     </div>
-                    <div className="text-gray-500 leading-relaxed pb-8">
+                    <div className="text-gray-500 leading-relaxed pb-8 text-justify">
                         Disleksia adalah gangguan pada kemampuan otak untuk menerjemahkan gambar tertulis yang diterima dari mata menjadi pikiran yang bermakna. Ini adalah cacat "tersembunyi". Dari segi penampilan, mereka tampak "normal", seperti anak lainnya, tetapi menghadapi kesulitan dalam membaca, menulis, dan matematika. Namun, kecerdasan tidak terpengaruh; bahkan mungkin dalam kisaran superior atau berbakat.
                     </div>
-                    <Button
-                        title="Pesan Sekarang"
-                    />
+                    <Link to="/dyslexia/pricing">
+                        <ButtonAction
+                            title="Pesan Sekarang"
+                        />
+                    </Link>
                     <div className="pt-12">
 
                     </div>
@@ -41,26 +45,28 @@ const MenuDyslexia = () => {
                         <div className="w-5/6 lg:w-4/6 xl:w-1/2">
                         <div className="flex flex-col">
                             <div className="py-8 px-10 bg-body rounded-t-lg">
-                                <div className="pb-8">
+                                <div className="pb-8 text-justify">
                                     <div className="mb-1">Layanan Kami</div>
                                     <div className="text-3xl font-bold">Pusat Dyslexia</div>
                                     <div className="pt-8 text-gray-500 leading-relaxed pb-8">
                                         Disleksia adalah gangguan pada kemampuan otak untuk menerjemahkan gambar tertulis yang diterima dari mata menjadi pikiran yang bermakna. Ini adalah cacat "tersembunyi". Dari segi penampilan, mereka tampak "normal", seperti anak lainnya, tetapi menghadapi kesulitan dalam membaca, menulis, dan matematika. Namun, kecerdasan tidak terpengaruh; bahkan mungkin dalam kisaran superior atau berbakat.
                                     </div>
-                                    <Button
-                                        title="Pesan Sekarang"
-                                    />
+                                    <Link to="/dyslexia/pricing">
+                                        <ButtonAction
+                                            title="Pesan Sekarang"
+                                        />
+                                    </Link>
 
                                     <div className="pt-16 font-semibold">
                                         Kondisi Terkait dengan Disleksia
                                     </div>
-                                    <div className="mt-3 text-gray-500">
+                                    <div className="mt-3 text-gray-500 text-justify">
                                         Disleksia dapat dikaitkan dengan kondisi lain seperti ADHD dan autisme karena terkadang seorang anak mungkin memiliki kondisi ini selain disleksia.
                                     </div>
-                                    <div className="mt-4 text-gray-500">
+                                    <div className="mt-4 text-gray-500 text-justify">
                                         Attention Deficit Hyperactivity Disorder (ADHD) adalah salah satu gangguan mental yang paling umum berkembang pada anak-anak di mana mereka mengalami kesulitan dalam memusatkan perhatian, tetap fokus, mengendalikan perilaku mereka dan menjadi hiperaktif.
                                     </div>
-                                    <div className="mt-4 text-gray-500">
+                                    <div className="mt-4 text-gray-500 text-justify">
                                         Autisme adalah gangguan perkembangan otak yang ditandai dengan gangguan interaksi sosial dan komunikasi, serta perilaku yang terbatas dan berulang.
                                     </div>
 

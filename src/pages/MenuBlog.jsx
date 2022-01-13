@@ -75,8 +75,6 @@ const MenuBlog = () => {
         getFilteredBlog();  
     }, [allActive, blogArticle, mentalActive, produktifitasActive]);
 
-
-    
     return (
         <div>
             <div className="block md:hidden">

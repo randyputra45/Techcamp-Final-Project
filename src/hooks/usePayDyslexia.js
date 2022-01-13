@@ -6,7 +6,7 @@ import { UserContext } from "../context/userContext";
 export default function usePayDyslexia() {
   let history = useHistory();
   const [error, setError] = useState(null);
-  const [userConsul, setFilteredConsul] = useState(null);
+  const [userDyslexia, setFilteredDyslexia] = useState(null);
   const [paymentData, setPaymentData] = useState(null);
 
   const { user } = useContext(UserContext);
@@ -19,15 +19,14 @@ export default function usePayDyslexia() {
   };
 
   useEffect(() => {
-    async function getConsul() {
+    async function getDyslexia() {
       await axios
         .get("/paydyslexia", { withCredentials: true, config })
         .then((res) => {
-            const consultationList = res.data.filter(consul => {
-                return consul.user._id.includes(`${user._id}`)
+            const dyslexiaList = res.data.filter(cyslexia => {
+                return cyslexia.user._id.includes(`${user._id}`)
             })
-            console.log(res.data)
-            setFilteredConsul(res.data)
+            setFilteredDyslexia(dyslexiaList)
             }
         )
         .catch((err) => {
@@ -35,7 +34,7 @@ export default function usePayDyslexia() {
         });
     }
 
-    getConsul();
+    getDyslexia();
   }, [user]);
 
   //create payment
@@ -94,7 +93,7 @@ export default function usePayDyslexia() {
   return {
     createPayment,
     paymentData,
-    userConsul,
+    userDyslexia,
     error,
   };
 }

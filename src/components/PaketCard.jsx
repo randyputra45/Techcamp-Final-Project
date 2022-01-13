@@ -15,7 +15,7 @@ const PaketCard = (props) => {
                 </div>
                 <div className="px-2">
                     <div className="pt-6 pb-4">
-                        <div className="text-center text-xl md:text-2xl font-bold">{props.prize}</div>
+                        <div className="text-center text-xl md:text-2xl font-bold">Rp{props.prize}</div>
                     </div>
                     <div className="py-4">
                         <div className="flex flex-col gap-y-2">
@@ -27,7 +27,7 @@ const PaketCard = (props) => {
                 </div>
             </div>
             <div className="hidden md:block">
-                <div className="bg-card2 py-16 px-24 border border-gray-300">
+                <div className="bg-card2 py-16 px-10 border border-gray-300">
                     <div className="flex flex-wrap flex-col">
                         <div className="flex justify-center">
                             <div className="text-4xl font-extrabold tracking-wide mont">
@@ -38,7 +38,7 @@ const PaketCard = (props) => {
                 </div>
                 <div className="px-4">
                     <div className="py-8">
-                        <div className="text-center text-2xl font-bold">{props.prize}</div>
+                        <div className="text-center text-2xl font-bold">Rp{props.prize}</div>
                     </div>
                     <div className="py-4">
                         <div className="flex flex-col gap-y-2">
