@@ -26,7 +26,7 @@ const RingkasanOrder = (props) => {
                         Total Tagihan :
                     </div>
                     <div className="text-xs">
-                        {props.tagihan}
+                        Rp{props.tagihan}
                     </div>
                 </div>
                 <div className="flex justify-between">

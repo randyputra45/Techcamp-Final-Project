@@ -90,20 +90,23 @@ function App() {
             <PrivateRoute exact path="/healthtest/start" component={ExampleHealthTest} />
             <PrivateRoute exact path="/healthtest/result" component={ExampleHasilHealthTest} />
             <PrivateRoute exact path="/payment" component={TransaksiPembayaran} />
-            <PrivateRoute exact path="/profile" component={Profile} />
             <Route exact path="/pusatdsylexia" component={MenuDyslexia} />
             <Route exact path="/coaching" component={MenuCoaching} />
-            <Route exact path="/pricing" component={Paket} />
             <Route exact path="/pricing2" component={Paket2} />
-            <Route exact path="/payment" component={TransaksiPembayaran} />
             <Route exact path="/payment/scanqr" component={ScanQR} />
+            <Route exact path="/payment/status" component={DetilPembayaran} />
             <Route exact path="/payment/success" component={OrderCompelete} />
             <Route exact path="/profile/notification" component={ProfileNotification} />
-            <Route exact path="/invoice" component={DetilPembayaran} />
             <Route exact path="/partnership" component={Partnership} />
-            <Route exact path="/16" component={TentangKami} />
+            <Route exact path="/aboutus" component={TentangKami} />
             <Route exact path="/feedback" component={Feedback} />
-
+            <PrivateRoute exact path="/profile" component={Profile} />
+            <Route exact path="/profile/layanan" component={ProfilLayanan} />
+            <Route exact path="/profile/webinar" component={ProfileWebinar} />
+            <Route exact path="/profile/blog" component={ProfileBlog} />
+            <Route exact path="/profile/gantiemail" component={ProfilGantiEmail} />
+            <Route exact path="/profile/gantipass" component={ProfilGantiPass} />
+            <Route exact path="/profile/gantinomor" component={ProfilGantiNomor} />
 
             {/* <Route path="/home" component={Home} />
             <Route exact path="/blogs" component={MenuBlog} />
