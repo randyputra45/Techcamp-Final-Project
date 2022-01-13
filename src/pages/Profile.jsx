@@ -102,7 +102,7 @@ const Profile = () => {
                                     <div className="text-lg font-bold">
                                         Biodata
                                     </div>
-                                    <div className="text-sm text-blue-600">
+                                    <div className="cursor-pointer text-sm text-blue-600">
                                         Ubah biodata disini
                                     </div>
                                 </div>
@@ -142,17 +142,17 @@ const Profile = () => {
                             </div>
                             <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5">
                                 <ProfileButton  
-                                    pic="blog.svg"
+                                    pic="mail.svg"
                                     title="Ganti Email"
                                     desc="salmansetiawan@mail.com"
                                 />
                                 <ProfileButton  
-                                    pic="ahli.svg"
+                                    pic="phone.svg"
                                     title="Ganti Nomor Telepon"
                                     desc="+62 888-8888-8888"
                                 />
                                 <ProfileButton  
-                                    pic="info.svg"
+                                    pic="key.svg"
                                     title="Ganti Kata Sandi"
                                     desc="Sa*****"
                                 />
