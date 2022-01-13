@@ -64,7 +64,7 @@ const Home = (props) => {
                                 <MobileButton 
                                     pic="ahli.svg"
                                     title="Profil Ahli"
-                                    desc="cek informasi mengenai para ahli yang bekerja pada kami."
+                                    desc="disini terdapat informasi mengenai para ahli yang bekerja pada kami."
                                 />
                                 <MobileButton 
                                     pic="info.svg"
@@ -135,9 +135,9 @@ const Home = (props) => {
                             </div>
                             <div className="grid grid-cols-3 gap-2.5">
                                 <MobileButton 
-                                pic="tes.svg"
-                                title="Tes Kesehatan"
-                                desc="lakukan tes bersama kami agar anda mengetahui kondisi dari kesehatan mental anda saat ini."
+                                    pic="tes.svg"
+                                    title="Tes Kesehatan"
+                                    desc="lakukan tes bersama kami agar anda mengetahui kondisi dari kesehatan mental anda saat ini."
                                 />
                                 <MobileButton 
                                     pic="blog.svg"
@@ -148,7 +148,7 @@ const Home = (props) => {
                                 <MobileButton 
                                     pic="ahli.svg"
                                     title="Profil Ahli"
-                                    desc="cek informasi mengenai para ahli yang bekerja pada kami."
+                                    desc="disini terdapat informasi mengenai para ahli yang bekerja pada kami."
                                 />
                                 <MobileButton 
                                     pic="info.svg"
