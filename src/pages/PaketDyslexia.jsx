@@ -5,7 +5,7 @@ import PaketCard from '../components/PaketCard'
 import { useHistory } from 'react-router-dom';
 import usePackage from '../hooks/usePackage';
 
-const Paket = () => {
+const PaketKonseling = () => {
     let dateNow = new Date().toLocaleDateString('en-CA', {timeZone: "Asia/Jakarta"})
     const history = useHistory()
     const {packageData} = usePackage()
@@ -47,8 +47,9 @@ const Paket = () => {
                                         <PaketCard
                                             bgtitle={data.name}
                                             prize={data.price}
-                                            desc1="1x Sesi Individual"
-                                            desc2="1x Sesi Group Support"
+                                            desc1="Morning 8.30 - 12.30 PM"
+                                            desc2="1 Guru dengan 5 Murid"
+                                            desc2="Kelas edukasi dengan Visual Arts, Dance, Music, dan Robotics"
                                         />
                                         <button onClick={() => handleClick(data.name, data.price)}>
                                             <ButtonAction
@@ -109,4 +110,4 @@ const Paket = () => {
     )
 }
 
-export default Paket
+export default PaketKonseling
