@@ -25,13 +25,13 @@ import Register4 from "./pages/Register4";
 import Screening1 from "./pages/Screening1";
 import ExampleHealthTest from "./pages/ExampleHealthTest";
 import MenuExpert from "./pages/MenuExpert";
-import Paket2 from "./pages/Paket2"
+import Paket2 from "./pages/PaketDyslexia"
 import MenuHealthTest from "./pages/MenuHealthTest";
 import ExampleHasilHealthTest from "./pages/ExampleHasilHealthTest";
 import MobilePhoneTable from "./pages/MobilePhoneTable";
 import OrderCompelete from "./pages/OrderCompelete"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Paket from "./pages/Paket";
+import Paket from "./pages/PaketKonseling";
 import ExampleScreening from "./pages/ExampleScreening";
 import ExampleHasilScreening from "./pages/ExampleHasilScreening";
 import MenuKonseling from "./pages/MenuKonseling";
@@ -55,6 +55,8 @@ import ProfilGantiEmail from "./pages/ProfilGantiEmail";
 import Partnership from "./pages/Partnership";
 import TentangKami from "./pages/TentangKami";
 import Feedback from "./pages/Feedback";
+import PaketKonseling from "./pages/PaketKonseling";
+import PaketDyslexia from "./pages/PaketDyslexia";
 
 function App() {
   return (
@@ -82,7 +84,8 @@ function App() {
             <PrivateRoute exact path="/webinars" component={MenuWebinar} />
             <PrivateRoute exact path="/webinars/:id" component={ExampleWebinar} />
             <PrivateRoute exact path="/webinars/user/:id" component={ProfileWebinar} />
-            <PrivateRoute exact path="/pricing" component={Paket} />
+            <PrivateRoute exact path="/pricing/konseling" component={PaketKonseling} />
+            <PrivateRoute exact path="/pricing/dyslexia" component={PaketDyslexia} />
             <PrivateRoute exact path="/screening" component={StartScreening} />
             <PrivateRoute exact path="/screening/start" component={ExampleScreening} />
             <PrivateRoute exact path="/screening/result" component={ExampleHasilScreening} />
@@ -91,8 +94,9 @@ function App() {
             <PrivateRoute exact path="/healthtest/result" component={ExampleHasilHealthTest} />
             <PrivateRoute exact path="/payment" component={TransaksiPembayaran} />
             <PrivateRoute exact path="/profile" component={Profile} />
-            <Route exact path="/pusatdsylexia" component={MenuDyslexia} />
-            <Route exact path="/coaching" component={MenuCoaching} />
+            <Route exact path="/layanan/pusatdyslexia" component={MenuDyslexia} />
+            <Route exact path="/layanan/coaching" component={MenuCoaching} />
+            <Route exact path="/layanan/konsultasi" component={MenuKonseling} />
             <Route exact path="/pricing" component={Paket} />
             <Route exact path="/pricing2" component={Paket2} />
             <Route exact path="/payment" component={TransaksiPembayaran} />
