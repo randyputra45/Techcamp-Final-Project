@@ -25,7 +25,6 @@ import Register4 from "./pages/Register4";
 import Screening1 from "./pages/Screening1";
 import ExampleHealthTest from "./pages/ExampleHealthTest";
 import MenuExpert from "./pages/MenuExpert";
-import Paket2 from "./pages/Paket2"
 import MenuHealthTest from "./pages/MenuHealthTest";
 import ExampleHasilHealthTest from "./pages/ExampleHasilHealthTest";
 import MobilePhoneTable from "./pages/MobilePhoneTable";
@@ -55,6 +54,7 @@ import ProfilGantiEmail from "./pages/ProfilGantiEmail";
 import Partnership from "./pages/Partnership";
 import TentangKami from "./pages/TentangKami";
 import Feedback from "./pages/Feedback";
+import PembayaranWebinar from "./pages/TransaksiPembayaranWebinar";
 
 function App() {
   return (
@@ -90,9 +90,9 @@ function App() {
             <PrivateRoute exact path="/healthtest/start" component={ExampleHealthTest} />
             <PrivateRoute exact path="/healthtest/result" component={ExampleHasilHealthTest} />
             <PrivateRoute exact path="/payment" component={TransaksiPembayaran} />
+            <PrivateRoute exact path="/payment/webinar" component={PembayaranWebinar} />
             <Route exact path="/pusatdsylexia" component={MenuDyslexia} />
             <Route exact path="/coaching" component={MenuCoaching} />
-            <Route exact path="/pricing2" component={Paket2} />
             <Route exact path="/payment/scanqr" component={ScanQR} />
             <Route exact path="/payment/status" component={DetilPembayaran} />
             <Route exact path="/payment/success" component={OrderCompelete} />

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { UserContext } from "../context/userContext";
 
-export default function useConsultation() {
+export default function usePayWebinar() {
   let history = useHistory();
   const [error, setError] = useState(null);
   const [userConsul, setFilteredConsul] = useState(null);
@@ -17,24 +17,16 @@ export default function useConsultation() {
       "Content-Type": "application/json",
     },
   };
-  
-  const config2 = {
-    headers: {
-      "Accept": "application/json",
-      "Content-Type": "application/json",
-      "Authorization": "Basic U0ItTWlkLXNlcnZlci03MHNpUlFuOGt0Zk1qNVBsM3lvQUpMdWQ6"
-    },
-  };
 
   useEffect(() => {
-    async function getConsul() {
+    async function getWebinar() {
       await axios
-        .get("/consultation", { withCredentials: true, config })
+        .get("/paywebinar", { withCredentials: true, config })
         .then((res) => {
-            const consultationList = res.data.filter(consul => {
-                return consul.user._id.includes(`${user._id}`)
+            const webinarList = res.data.filter(webinar => {
+                return webinar.user._id.includes(`${user._id}`)
             })
-            setFilteredConsul(consultationList)
+            setFilteredConsul(webinarList)
             }
         )
         .catch((err) => {
@@ -42,7 +34,7 @@ export default function useConsultation() {
         });
     }
 
-    getConsul();
+    getWebinar();
   }, [user]);
 
   //create payment
@@ -62,7 +54,7 @@ export default function useConsultation() {
     } = data;
     return axios
       .post(
-        `/payconsultation`,
+        `/paywebinar`,
         {
             first_name,
             last_name,
@@ -98,24 +90,8 @@ export default function useConsultation() {
       });
   };
 
-  const getStatusPayment = async (data) => {
-    return axios
-      .get("https://api.sandbox.midtrans.com/v2/e9c413d7-bd64-457f-8fc6-74ca847655e7/status", { withCredentials: true, config2 })
-      .then((res) => {
-          console.log(res)
-        }
-      )
-      .catch((err) => {
-        console.log(err);
-        return setError(
-          JSON.stringify(err.response.data.message)
-        );
-      });
-  };
-
   return {
     createPayment,
-    getStatusPayment,
     paymentData,
     userConsul,
     error,

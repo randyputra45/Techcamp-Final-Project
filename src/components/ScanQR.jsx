@@ -1,9 +1,7 @@
-import { SatelliteAlt } from '@mui/icons-material'
 import React from 'react'
-import Button from '../components/Button'
 import DesktopAvatar from '../components/DesktopAvatar'
-import useConsultation from '../hooks/useConsultation'
 import ButtonAction from './ButtonAction'
+import { Link } from 'react-router-dom'
 
 const ScanQR = (props) => {
     const { state } = props.location
@@ -47,7 +45,9 @@ const ScanQR = (props) => {
                                 Scan QR Code QRIS diatas dengan menggunakan aplikasi {state.payment_method}. Jangan lupa periksa emailmu ya untuk detil pemesanan, jadwal maupun link konselingnya, Anda juga bisa mengakses informasi tersebut lewat laman profil anda.
                             </div>
                             <div className='py-6 px-20'>
-                                <ButtonAction title="Cek Status Pembayaran"></ButtonAction>
+                                <Link to="/payment/status">
+                                    <ButtonAction title="Cek Status Pembayaran"></ButtonAction>
+                                </Link>
                             </div>
                         </div>
                     </div>

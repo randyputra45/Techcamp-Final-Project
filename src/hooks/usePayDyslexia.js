@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { UserContext } from "../context/userContext";
 
-export default function useConsultation() {
+export default function usePayDyslexia() {
   let history = useHistory();
   const [error, setError] = useState(null);
   const [userConsul, setFilteredConsul] = useState(null);
@@ -17,24 +17,17 @@ export default function useConsultation() {
       "Content-Type": "application/json",
     },
   };
-  
-  const config2 = {
-    headers: {
-      "Accept": "application/json",
-      "Content-Type": "application/json",
-      "Authorization": "Basic U0ItTWlkLXNlcnZlci03MHNpUlFuOGt0Zk1qNVBsM3lvQUpMdWQ6"
-    },
-  };
 
   useEffect(() => {
     async function getConsul() {
       await axios
-        .get("/consultation", { withCredentials: true, config })
+        .get("/paydyslexia", { withCredentials: true, config })
         .then((res) => {
             const consultationList = res.data.filter(consul => {
                 return consul.user._id.includes(`${user._id}`)
             })
-            setFilteredConsul(consultationList)
+            console.log(res.data)
+            setFilteredConsul(res.data)
             }
         )
         .catch((err) => {
@@ -62,7 +55,7 @@ export default function useConsultation() {
     } = data;
     return axios
       .post(
-        `/payconsultation`,
+        `/paydyslexia`,
         {
             first_name,
             last_name,
@@ -98,24 +91,8 @@ export default function useConsultation() {
       });
   };
 
-  const getStatusPayment = async (data) => {
-    return axios
-      .get("https://api.sandbox.midtrans.com/v2/e9c413d7-bd64-457f-8fc6-74ca847655e7/status", { withCredentials: true, config2 })
-      .then((res) => {
-          console.log(res)
-        }
-      )
-      .catch((err) => {
-        console.log(err);
-        return setError(
-          JSON.stringify(err.response.data.message)
-        );
-      });
-  };
-
   return {
     createPayment,
-    getStatusPayment,
     paymentData,
     userConsul,
     error,
