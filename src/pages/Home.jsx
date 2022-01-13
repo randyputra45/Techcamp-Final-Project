@@ -164,11 +164,6 @@ const Home = (props) => {
                                     title="Feedback"
                                     desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
                                 />
-                                <MobileButton 
-                                    pic="tos.svg"
-                                    title="Syarat dan Ketentuan"
-                                    desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
-                                />
                             </div>
                         </div>  
                     </div>
