@@ -77,7 +77,7 @@ function App() {
             <Route exact path="/register/success" component={Register4 } />
             <Route exact path="/experts" component={MenuExpert } />
             <Route exact path="/experts/:id" component={ExampleExpert } />
-            <Route path="/home" component={Home} />
+            <PrivateRoute path="/home" component={Home} />
             <PrivateRoute exact path="/blogs" component={MenuBlog} />
             <PrivateRoute exact path="/blogs/:id" component={ExampleBlog} />
             <PrivateRoute exact path="/webinars" component={MenuWebinar} />
@@ -94,7 +94,7 @@ function App() {
             <PrivateRoute exact path="/payment/webinar" component={PembayaranWebinar} />
             <PrivateRoute exact path="/pusatdsylexia" component={MenuDyslexia} />
             <PrivateRoute exact path="/coaching" component={MenuCoaching} />
-            <Route exact path="/coaching/id" component={ExampleCoaching} />
+            <PrivateRoute exact path="/coaching/id" component={ExampleCoaching} />
             <PrivateRoute exact path="/payment/scanqr" component={ScanQR} />
             <PrivateRoute exact path="/payment/status" component={DetilPembayaran} />
             <PrivateRoute exact path="/payment/success" component={OrderCompelete} />
@@ -102,7 +102,7 @@ function App() {
             <PrivateRoute exact path="/partnership" component={Partnership} />
             <PrivateRoute exact path="/aboutus" component={TentangKami} />
             <PrivateRoute exact path="/feedback" component={Feedback} />
-            <PrivateRoute exact path="/profile" component={Profile} />
+            <Route exact path="/profile" component={Profile} />
             <PrivateRoute exact path="/profile/layanan" component={ProfilLayanan} />
             <PrivateRoute exact path="/profile/webinar" component={ProfileWebinar} />
             <PrivateRoute exact path="/profile/blog" component={ProfileBlog} />

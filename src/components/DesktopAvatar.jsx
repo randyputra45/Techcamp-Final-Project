@@ -134,7 +134,7 @@ const DesktopAvatar = () => {
                     <Menu as="div" className="relative inline-block text-left">
                         <div>
                         <Menu.Button className="flex items-center">
-                            <img src="avatar.png" alt="" className="avatar-ico cursor-pointer dropdown dropdown-end" />
+                            <img src="small-avatar.svg" alt="" className="avatar-ico cursor-pointer dropdown dropdown-end" />
                         </Menu.Button>
                         </div>
                         <Transition

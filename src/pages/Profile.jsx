@@ -91,7 +91,7 @@ const Profile = () => {
                 <div className="px-4 py-12 flex flex-row items-start justify-center gap-4">
                     <div className="flex flex-col">
                         <div className="px-10 -mt-32">  
-                            <img src="avatar.png" alt="" className="h-36 rounded-full cursor-pointer" />
+                            <img src="small-avatar.svg" alt="" className="h-36 rounded-full cursor-pointer" />
                         </div>
                         <div className="bg-body pt-24 px-10 -mt-16 back">
                             <div className="text-2xl font-bold">Salman Setiawan</div>
