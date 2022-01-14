@@ -1,5 +1,6 @@
 import React from 'react'
 import DesktopAvatar from '../components/DesktopAvatar'
+import None from '../components/None'
 
 const ProfilLayanan = () => {
     return (
@@ -17,14 +18,7 @@ const ProfilLayanan = () => {
                                 <div className="text-sm mb-1">Profil</div>
                                 <div className="text-2xl font-bold">Layanan yang diambil</div>
                             </div>
-                            <div className="p-12 flex justify-center">
-                                <img src="empty.svg" alt="" className='h-44' />
-                            </div>
-                            <div className="pt-4">
-                                <div className="font-bold text-center">
-                                    Belum ada layanan yang diambil
-                                </div>
-                            </div>
+                            <None />
                         </div>
                     </div>
                 </div>
