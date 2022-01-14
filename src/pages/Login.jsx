@@ -44,17 +44,17 @@ const Login = () => {
             setAlert(true);
         }
         else{
-            const userFind = allUsers.find(user => user.email === values.email)
-            if(userFind.verified === true){
+            // const userFind = allUsers.find(user => user.email === values.email)
+            // if(userFind.verified === true){
                 setAlert(false);
                 await loginUser(values);
-            } else if (userFind.verified === false) {
-                setAlertMsg("Account not found, please Register")
-                setAlert(true); 
-            } else {
-                setAlertMsg("Account not found, please Register")
-                setAlert(true); 
-            }
+            // } else if (userFind.verified === false) {
+            //     setAlertMsg("Account not found, please Register")
+            //     setAlert(true); 
+            // } else {
+            //     setAlertMsg("Account not found, please Register")
+            //     setAlert(true); 
+            // }
         }
     }
 
