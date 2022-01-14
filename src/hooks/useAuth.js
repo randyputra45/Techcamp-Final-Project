@@ -65,7 +65,7 @@ export default function useAuth() {
   const loginUser = async (data) => {
     const { email, password } = data;
     return axios
-      .post("https://gocure.herokuapp.com/login", {
+      .post("https://gocure.com/login", {
         email,
         password,
       }, { withCredentials: true, config })
