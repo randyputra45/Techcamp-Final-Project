@@ -18,22 +18,18 @@ const ExampleWebinar = () => {
     }, [path])
 
     const handleClick = () => {
+        console.log("clicked")
+        const data = {
+            date: webinarID.date,
+            package: webinarID.title,
+            price: webinarID.price
+        }
         
-        try {    
-            const data = {
-                date: webinarID.date,
-                package: webinarID.title,
-                price: webinarID.price
-            }
-            
-            if(data) {
-                history.push({
-                    pathname: "/payment/webinar",
-                    state: data
-                })
-            }
-        } catch (error) {
-            console.log(error)
+        if(data) {
+            history.push({
+                pathname: "/webinar/payment",
+                state: data
+            })
         }
     }
 
@@ -56,7 +52,7 @@ const ExampleWebinar = () => {
                         </div>
                     </div>
                     <div className="pt-10">
-                        <button onClick={handleClick()}>
+                        <button onClick={() => handleClick()}>
                             <ButtonAction
                                 title="Pesan Sekarang"
                             />
@@ -122,7 +118,7 @@ const ExampleWebinar = () => {
                                             </div>
                                         </div>
                                         <div className='md:pt-12 lg:pt-0'>
-                                            <button onClick={handleClick()}>
+                                            <button onClick={() => handleClick()}>
                                                 <ButtonAction
                                                     title="Pesan Sekarang"
                                                 />

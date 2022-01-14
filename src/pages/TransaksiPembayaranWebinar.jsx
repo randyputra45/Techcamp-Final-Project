@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react'
+import React, {useState, useContext} from 'react'
 import DesktopAvatar from '../components/DesktopAvatar'
 import PembayaranModal from '../components/PembayaranModal'
 import MobileButton from '../components/MobileButton'
@@ -19,6 +19,8 @@ const PembayaranWebinar = (props) => {
     console.log(state)
     console.log(payment_method)
     const handlePayment = async() => {
+        console.log(user)
+        const url = "/profile/webinars"
         const data = {
             first_name: user.first_name,
             last_name: user.last_name,
@@ -32,7 +34,7 @@ const PembayaranWebinar = (props) => {
             payment_status: "Success",
             payment_method: payment_method
         }
-        await createPayment(data)
+        await createPayment(data, url)
     }   
 
     return (

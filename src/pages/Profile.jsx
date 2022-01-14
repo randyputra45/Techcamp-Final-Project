@@ -124,9 +124,10 @@ const Profile = () => {
                                 </div>
                             </div>
                             <ProfileBio
-                                kelamin={user.birth_date}
+                                kelamin="Laki-laki"
                                 profesi="Mahasiswa"
-                                tanggal={user.birth_date}
+                                // tanggal={user.birth_date}
+                                tanggal="4 Mei 2001"
                                 kota="Balikpapan"
                             />
                         </div>
@@ -145,7 +146,7 @@ const Profile = () => {
                                     pic="webinar.svg"
                                     title="Webinar yang diikuti"
                                     desc={`${userWebinar && userWebinar.length} Webinar`}
-                                    url="/profile/webinar"
+                                    url="/profile/webinars"
                                 />
                                 <ProfileButton 
                                     pic="webinar.svg"
@@ -172,7 +173,7 @@ const Profile = () => {
                                 Pengaturan 
                             </div>
                             <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5">
-                                <ProfileButton  
+                                {/* <ProfileButton  
                                     pic="mail.svg"
                                     title="Ganti Email"
                                     desc="salmansetiawan@mail.com"
@@ -181,7 +182,7 @@ const Profile = () => {
                                     pic="phone.svg"
                                     title="Ganti Nomor Telepon"
                                     desc="+62 888-8888-8888"
-                                />
+                                /> */}
                                 <ProfileButton  
                                     pic="key.svg"
                                     title="Ganti Kata Sandi"

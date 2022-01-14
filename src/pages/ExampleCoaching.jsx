@@ -28,7 +28,7 @@ const ExampleCoaching = () => {
             }
             if(data) {
                 history.push({
-                    pathname: "/payment/coaching",
+                    pathname: "/coach/payment",
                     state: data
                 })
             }

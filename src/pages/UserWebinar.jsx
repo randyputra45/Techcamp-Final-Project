@@ -1,8 +1,9 @@
-import React, {useEffect, useContext} from 'react'
+import React from 'react'
 import DesktopAvatar from '../components/DesktopAvatar'
 import LayananCard from '../components/LayananCard'
 import PaymentCard from '../components/PaymentCard'
 import usePayWebinar from "../hooks/usePayWebinar"
+import None from '../components/None'
 
 const UserWebinar = () => {
     const{userWebinar} = usePayWebinar()

@@ -35,6 +35,7 @@ const PembayaranDyslexia = (props) => {
 
     console.log(payment_method)
     const handlePayment = async() => {
+        const url = "/profile/dyslexia"
         const data = {
             first_name: user.first_name,
             last_name: user.last_name,
@@ -48,7 +49,7 @@ const PembayaranDyslexia = (props) => {
             payment_status: "Pending",
             payment_method: payment_method
         }
-        await createPayment(data)
+        await createPayment(data, url)
     }   
 
     return (

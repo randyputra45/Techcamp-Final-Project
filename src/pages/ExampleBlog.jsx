@@ -119,19 +119,19 @@ const ExampleBlog = () => {
                                     </div>
                                     <div className="pt-3 flex flex-col gap-y-4">
                                         <BlogCard2
-                                            pic="exampleblogopened.png"
-                                            title="artikel 1"
-                                            desc="gatau"
+                                            url="/blogs/61de8f32cd21ab6e533f9528"
+                                            title="Merasa Kesepian? Kenali Penyebab Sulit Memiliki Teman"
+                                            pic="https://res.cloudinary.com/gocure/image/upload/v1641975601/chqswzf6snns2ckt0amq.jpg"
                                         />
                                         <BlogCard2
-                                            pic="exampleblogopened.png"
-                                            title="artikel 1"
-                                            desc="gatau"
+                                            url="/blogs/61de94689122ac15946cf43a"
+                                            title="Gaya Hidup Konsumtif: Gimana Sih Cara Biar Gak Boros?"
+                                            pic="https://res.cloudinary.com/gocure/image/upload/v1641976935/ah48bacruoy0mok5ynoi.jpg"
                                         />
                                         <BlogCard2
-                                            pic="exampleblogopened.png"
-                                            title="artikel 1"
-                                            desc="gatau"
+                                            url="blogs/61de9617d4b61b3b93aa31f5"
+                                            pic="https://res.cloudinary.com/gocure/image/upload/v1641977365/dy9enjs9y5tafdeiblyd.jpg"
+                                            title="Motivasi Kerja Hilang? (Cara Mengembalikan Produktivitas Kerja)"
                                         />
                                     </div>
                                 </div>

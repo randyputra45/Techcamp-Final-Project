@@ -8,6 +8,8 @@ import { useHistory } from 'react-router-dom'
 import LandingButton1 from '../components/LandingButton1'
 import LandingButton11 from '../components/LandingButton11'
 import TestiCard from '../components/TestiCard'
+import { Link } from 'react-router-dom'
+import ButtonAction from '../components/ButtonAction'
 
 const Landingpage = () => {
     const history = useHistory()
@@ -92,10 +94,11 @@ const Landingpage = () => {
                         <div className=" mt-2 pb-8">
                             Platform kami memberdayakan orang-orang dengan alat digital yang didukung secara klinis untuk secara proaktif meningkatkan kesejahteraan mental.
                         </div>
-                        <Button
-                            title="Daftar Sekarang"
-                            url="/register"
-                        />
+                        <Link to="/register">
+                            <Button
+                                title="Daftar Sekarang"
+                            />
+                        </Link>
                     </div>
                 </div>
                 <div className="pt-32 px-12 lg:px-16 xl:px-24 2xl:px-48">
@@ -107,13 +110,13 @@ const Landingpage = () => {
                             <div className="mt-2 leading-relaxed">
                                 GoCure merupakan sebuah klinik layanan psikologi yang berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. GoCure Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus.
                             </div>
-                            <div className="flex">
+                            <Link to="/aboutus" className="flex">
                                 <div className="border-b border-white hover:border-blue-600">
                                     <div className="mt-8 text-blue-600 md:text-base xl:text-lg leading-relaxed cursor-pointer">
                                         Tentang Kami →
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                         <img src="landing1.jpg" alt="" className='object-cover w-1/2' />
                     </div>
@@ -152,7 +155,7 @@ const Landingpage = () => {
                         <div className="pt-8 flex justify-center">
                             <DesktopActiveButton2
                                 title="Pelajari Lebih Lanjut"
-                                url="/landinginfo"
+                                url="/infolayanan"
                             />
                         </div>
                     </div>
@@ -179,7 +182,7 @@ const Landingpage = () => {
                             <LandingButton11 
                                 pic="konseling.svg"
                                 title="proses konseling yang cepat"
-                                desc="tidak perlu untuk menunggu lama, jadwal konsultasimu akan segera dikirim melalui email yang didaftarkan, karena kami akan segera mencocokkan dan membalas pesanmu dengan cepat." 
+                                desc="Tidak perlu untuk menunggu lama, jadwal konsultasimu akan segera dikirim melalui email yang didaftarkan, karena kami akan segera membalas pesanmu dengan cepat." 
                             />
                         </div>
                     </div>

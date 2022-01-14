@@ -1,9 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Button from '../components/Button'
+import ButtonAction from '../components/ButtonAction'
 import DesktopAvatar from '../components/DesktopAvatar'
 import Form from '../components/Form'
+import Alert from "../components/Alert";
 
 const Feedback = () => {
+    const [alert, setAlert] = useState(false);
+    const [alertMsg, setAlertMsg] = useState("");
+
+    const handleClick = async () => {
+        setAlert(true)
+        setAlertMsg("Form telah terkirim, silahkan tunggu balasan kami")
+    }
     return (
         <div>
             <div className="hidden md:block">
@@ -19,18 +28,21 @@ const Feedback = () => {
                             <div className="py-8 px-10 bg-body rounded-t-lg">
                                 <div className="pb-8">
                                     <div className="mb-1">Lainnya</div>
-                                    <div className="text-3xl font-bold">Tes Kesehatan</div>
+                                    <div className="text-3xl font-bold">Feedback</div>
                                     <div className="pt-8 text-gray-500 leading-relaxed">
-                                        Disini anda dapat mencoba Tes Kesehatan untuk mengetahui sejauh mana tingkat kecemasanmu saat ini. Anda juga akan melihat hasilnya setelah menjawab seluruh pertanyaan dengan jujur dan benar untuk dipertimbangkan ikut atau tidaknya mengikuti konsultasi.
+                                        Disini anda dapat memberikan kritik atau saran bagi pengembangan website dan juga testimoni tentang layanan yang diberikan GoCure. Silahkan tinggalkan pesan pada form berikut, tanggapan anda akan sangat berarti.
                                     </div>
                                     <div className="pt-8">
                                         <div className="font-bold mb-2">Kolom Feedback</div>
                                         <Form />
                                     </div>
+                                    {alert ? <Alert alertMsg={alertMsg}/> : ""}
                                     <div className="pt-8">
-                                        <Button
+                                        <button onClick={() => handleClick()}>
+                                        <ButtonAction
                                             title="Kirim"
-                                        />
+                                            />
+                                        </button>
                                     </div>
                                 </div>
                             </div>
