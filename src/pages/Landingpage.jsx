@@ -7,6 +7,7 @@ import { UserContext } from '../context/userContext';
 import { useHistory } from 'react-router-dom'
 import LandingButton1 from '../components/LandingButton1'
 import LandingButton11 from '../components/LandingButton11'
+import TestiCard from '../components/TestiCard'
 
 const Landingpage = () => {
     const history = useHistory()
@@ -29,7 +30,7 @@ const Landingpage = () => {
                     <div className="text-center pb-12">scroll untuk melihat lebih lanjut.</div>
                     <div className="pt-16">
                         <div className="font-bold mb-2">Siapa Kami?</div>
-                        <div className="text-gray-500 text-sm leading-relaxed">MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus.</div>
+                        <div className="text-gray-500 text-sm leading-relaxed">GoCure Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. GoCure Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus.</div>
                     </div>
                     <div className="pt-12">
                         <div className="font-bold mb-3">Layanan yang kami tawarkan?</div>
@@ -89,7 +90,7 @@ const Landingpage = () => {
                             Perawatan yang tepat di waktu yang tepat.
                         </div>
                         <div className=" mt-2 pb-8">
-                            Over 17 million developers use GoCure. Get started by signing up or downloading the desktop app.
+                            Platform kami memberdayakan orang-orang dengan alat digital yang didukung secara klinis untuk secara proaktif meningkatkan kesejahteraan mental.
                         </div>
                         <Button
                             title="Daftar Sekarang"
@@ -104,7 +105,7 @@ const Landingpage = () => {
                                 Siapa kami?
                             </div>
                             <div className="mt-2 leading-relaxed">
-                                MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus.
+                                GoCure merupakan sebuah klinik layanan psikologi yang berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. GoCure Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus.
                             </div>
                             <div className="flex">
                                 <div className="border-b border-white hover:border-blue-600">
@@ -186,26 +187,21 @@ const Landingpage = () => {
                         <div className="text-xl font-bold">
                             Sedikit testimoni dari kami
                         </div>
-                        <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 pt-6">
-                            <LandingButton1 
-                                pic="konseling.svg"
-                                title="konseling"
-                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                        <div className="grid grid-cols-2 xl:grid-cols-3 gap-16 pt-8">
+                            <TestiCard
+                                pic="randomavatar-1.png"
+                                name="Brian Jaski • Mahasiswa"
+                                desc="Saya mahasiswa tingkat akhir yang masih ngurusin skripsian. Selalu ditanya kapan selesai, selalu dibilang jadi beban ortu. Hal itu membuat saya depresi. Saya tipe orang yang sulit untuk bercerita ke orang lain, namun di GoCure ini, dengan sangat mudah saya bercerita mengenai kondisi yang saya alami, seiring berjalannya waktu depresi saya berkurang dan akhirnya skripsi sayapun selesai." 
                             />
-                            <LandingButton1 
-                                pic="konseling.svg"
-                                title="konseling"
-                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                            <TestiCard
+                                pic="randomavatar-2.png"
+                                name="Lukas Sebastian • Orang Tua"
+                                desc="Konsultasi dengan psikolog dari GoCure sangat nyaman, aman, dan penuh pengertian sekali. Saya mengonsultasikan anak saya yang kondisinya berbeda dengan teman - temannya. Saya tidak menyadari bahwa dia mengidap penyakit diseleksia. Walaupun agak terlambat mengetahui kondisi tersebut, tapi setidaknya dia sedang di masa pemulihan." 
                             />
-                            <LandingButton1 
-                                pic="konseling.svg"
-                                title="konseling"
-                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
-                            />
-                            <LandingButton1
-                                pic="konseling.svg"
-                                title="konseling"
-                                desc="MS Wellbeing Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. MS Wellbeing Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus." 
+                            <TestiCard
+                                pic="randomavatar-4.png"
+                                name="Maria Malva • Pelajar"
+                                desc="Ga nyangka bangett ternyata kondisi aku suka anehh kadang aku ngerasa pengen nangis, ketawa, dan marah di satu waktu. Karna penasaran dengan kondisiku yang kek gini, akhirnya aku coba untuk konsultasi dengan psikolog dari GoCure. Dan hasilnya uwaww ternyata kondisi aku ga baik baik ajaa, beberapa kali pertemuan sekaranggg aku udah beneran baik baik aja" 
                             />
                         </div>
                     </div>
