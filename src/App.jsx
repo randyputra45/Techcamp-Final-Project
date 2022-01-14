@@ -58,6 +58,8 @@ import PembayaranWebinar from "./pages/TransaksiPembayaranWebinar";
 import PaketKonseling from "./pages/PaketKonseling";
 import PaketDyslexia from "./pages/PaketDyslexia";
 import PembayaranDyslexia from "./pages/TransaksiPembayaranDyslexia";
+import ExampleCoaching from "./pages/ExampleCoaching";
+import PembayaranCoaching from "./pages/TransaksiPembayaranCoaching";
 
 function App() {
   return (
@@ -119,7 +121,8 @@ function App() {
 
             {/* Coaching */}
             <Route exact path="/coaching" component={MenuCoaching} />
-            <Route exact path="/coaching/:id" component={LandingCoaching} />
+            <Route exact path="/coaching/:id" component={ExampleCoaching} />
+            <Route exact path="/payment/coaching" component={PembayaranCoaching} />
 
             {/* Konseling */}
             <Route exact path="/counseling" component={MenuKonseling} />

@@ -17,9 +17,8 @@ const ExampleWebinar = () => {
         getWebinarById(path)
     }, [path])
 
-    console.log(webinarID)
-
     const handleClick = () => {
+        
         try {    
             const data = {
                 date: webinarID.date,

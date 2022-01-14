@@ -10,7 +10,6 @@ import { UserContext } from '../context/userContext';
 
 const ExampleBlog = () => {
     const { user } = useContext(UserContext);
-    // const [isLiked, setIsLiked] = useState(false)
 
     const {blogArticleID, blogContent, isLiked, getArticleById} = useBlog()
     const [checkLike, setLike] = useState(false)
@@ -26,8 +25,6 @@ const ExampleBlog = () => {
             setLike(false)
         }
     }, [path, checkLike, isLiked])
-
-    console.log(likeStatus)
 
     const handleLike = async () => {
         console.log(likeStatus)
@@ -48,7 +45,7 @@ const ExampleBlog = () => {
                 <img src={blogArticleID && blogArticleID.image} alt="" className='object-cover w-full' />
                 <div className="px-4">
                     <div className="pt-6 text-xl">
-                        Dampak overthinking bisa berakibat fatal
+                        {blogArticleID && blogArticleID.title}
                     </div>
                     <div className="pt-4 flex justify-between">
                         <div className="text-gray-500 text-xs">
@@ -59,10 +56,7 @@ const ExampleBlog = () => {
                         </div>
                     </div>
                     <div className="pt-6 text-gray-500 text-xs leading-relaxed">
-                        Disini anda dapat mencoba Tes Kesehatan untuk mengetahui sejauh mana tingkat kecemasanmu saat ini. Anda juga akan melihat hasilnya setelah menjawab seluruh pertanyaan dengan jujur dan benar untuk dipertimbangkan ikut atau tidaknya mengikuti konsultasi.
-                    </div>
-                    <div className="mt-3 text-gray-500 text-xs leading-relaxed">
-                        Disini anda dapat mencoba Tes Kesehatan untuk mengetahui sejauh mana tingkat kecemasanmu saat ini. Anda juga akan melihat hasilnya setelah menjawab seluruh pertanyaan dengan jujur dan benar untuk dipertimbangkan ikut atau tidaknya mengikuti konsultasi.
+                        {blogContent && blogContent.content.map((item, i) => <Content key={i} subcontent={item.subcontent} paragraph={item.paragraph}/>)}
                     </div>
                     <div className="flex botbar pb-4 pr-4 gap-x-3">
                         <BlogButton 

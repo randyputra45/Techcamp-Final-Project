@@ -142,7 +142,7 @@ const Landingpage = () => {
                                 url="/blogs"
                             />
                             <LandingButton1 
-                                pic="konseling.svg"
+                                pic="tes.svg"
                                 title="Tes kesehatan"
                                 desc="disini anda juga dapat melakukan tes kesehatan agar anda mengetahui kondisi dari kesehatan mental anda saat ini." 
                                 url="/healthtest"

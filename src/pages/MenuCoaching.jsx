@@ -52,9 +52,10 @@ const MenuCoaching = () => {
                                 <div className="flex flex-col gap-y-6">
                                     <div className="flex justify-center">
                                         <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
-                                            {coaching && coaching.map((coach) => (
+                                            {coaching && coaching.map((coach, i) => (
                                                 <CoachingCard
-                                                    url={`/blogs/${coach._id}`}
+                                                    key={i}
+                                                    url={`/coaching/${coach._id}`}
                                                     pic={coach.image}
                                                     price="Rp. 150.000"
                                                 />

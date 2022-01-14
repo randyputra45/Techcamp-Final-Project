@@ -121,11 +121,13 @@ const Home = (props) => {
                                     pic="coaching.svg"
                                     title="Pelatihan & Coaching Murid"
                                     desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
+                                    url="/coaching"
                                 />
                                 <MobileButton 
                                     pic="dyslexia.svg"
                                     title="Pusat Dyslexia"
                                     desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
+                                    url="/dyslexia"
                                 />
                             </div>
                         </div>
