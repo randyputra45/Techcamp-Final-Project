@@ -1,15 +1,21 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import useLogout from '../hooks/useLogout'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory, Redirect } from 'react-router-dom'
+import { UserContext } from '../context/userContext'
 
 const DesktopAvatar = () => {
     const history = useHistory()
+    const { user } = useContext(UserContext); 
 
     const {logoutUser} = useLogout()
     const handleLogout = async () => {
         await logoutUser()
+        console.log(user)
+        if(!user){
+            history.push("/")
+        }
     }
 
     const handleProfile = () => {

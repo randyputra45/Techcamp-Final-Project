@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const ProfileButton = (props) => {
     return (
-        <div>
+        <Link to={props.url}>
             <div className="hidden md:block">
                 <div className="cursor-pointer py-4 px-5 rounded-lg bg-button hover:bg-hover-button lg:w-72 xl:w-80">
                     <div className="flex gap-x-6 items-center">
@@ -18,7 +19,7 @@ const ProfileButton = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

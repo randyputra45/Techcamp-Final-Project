@@ -6,7 +6,7 @@ import { UserContext } from "../context/userContext";
 export default function usePayCoaching() {
   let history = useHistory();
   const [error, setError] = useState(null);
-  const [userCoaching, setFilteredWebinar] = useState(null);
+  const [userCoaching, setFilteredCoaching] = useState(null);
   const [paymentData, setPaymentData] = useState(null);
 
   const { user } = useContext(UserContext);
@@ -19,15 +19,14 @@ export default function usePayCoaching() {
   };
   
   useEffect(() => {
-    async function getConsul() {
+    async function getCoaching() {
       await axios
         .get("/paycoaching", { withCredentials: true, config })
         .then((res) => {
-            const webinarList = res.data.filter(consul => {
-                return consul.user._id.includes(`${user._id}`)
+            const coachingList = res.data.filter(coaching => {
+                return coaching.user._id.includes(`${user._id}`)
             })
-            console.log(res.data)
-            setFilteredWebinar(res.data)
+            setFilteredCoaching(coachingList)
             }
         )
         .catch((err) => {
@@ -35,7 +34,7 @@ export default function usePayCoaching() {
         });
     }
 
-    getConsul();
+    getCoaching();
   }, [user]);
 
   //create payment

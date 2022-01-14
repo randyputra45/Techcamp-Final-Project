@@ -3,7 +3,7 @@ import ButtonAction from '../components/ButtonAction'
 import DesktopAvatar from '../components/DesktopAvatar'
 import PaketCard from '../components/PaketCard'
 import { useHistory } from 'react-router-dom';
-import usePackage from '../hooks/usePackage';
+import usePackage from '../hooks/usePackageConsul';
 
 const Paket = () => {
     let dateNow = new Date().toLocaleDateString('en-CA', {timeZone: "Asia/Jakarta"})
@@ -83,7 +83,7 @@ const Paket = () => {
                                 <div className="mb-6">
                                     <div className="text-xl font-bold">Pilih paket yang diinginkan</div>
                                 </div>
-                                <div className="grid md:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-16 content-between">
+                                <div className="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-16 content-between">
                                     {packageData && packageData.map((data, i) => 
                                     <>
                                         <div className="grid gap-y-4 content-between">

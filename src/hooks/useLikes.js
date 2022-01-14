@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import { UserContext } from "../context/userContext";
 
@@ -15,11 +15,11 @@ export default function useLikes() {
     },
   };
 
-  const checkBlogLikes = async (data) => {
+  const checkBlogLikes = async (data, url) => {
     return axios
       .get(`${data}`, { withCredentials: true, config })
       .then((res) => {
-          const statusLiked = user.liked_blog.find(id => id === res.data._id)
+          const statusLiked = user.liked_blog.find(blog => blog._id === url)
           if (statusLiked !== undefined) {
             setLiked(true)
           } else {
