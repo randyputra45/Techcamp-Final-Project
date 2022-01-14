@@ -4,6 +4,7 @@ import Button from '../components/Button'
 import DesktopAvatar from '../components/DesktopAvatar'
 import LandingButton3 from '../components/LandingButton3'
 import NotifButton from '../components/NotifButton'
+import { Link } from 'react-router-dom'
 
 const MenuKonseling = () => {
     return (
@@ -23,9 +24,11 @@ const MenuKonseling = () => {
                     <div className="text-gray-500 leading-relaxed pb-8">
                         Disini anda dapat mencoba Tes Kesehatan untuk mengetahui sejauh mana tingkat kecemasanmu saat ini. Anda juga akan melihat hasilnya setelah menjawab seluruh pertanyaan dengan jujur dan benar untuk dipertimbangkan ikut atau tidaknya mengikuti konsultasi.
                     </div>
+                    <Link to="/counseling/pricing">
                     <Button
                         title="Pesan Sekarang"
-                    />
+                        />
+                    </Link>
                     <div className="pt-12">
 
                     </div>
@@ -48,9 +51,11 @@ const MenuKonseling = () => {
                                     <div className="pt-8 text-gray-500 leading-relaxed pb-8">
                                         layanan ini merupakan sesi konseling yang diadakan oleh kami untuk memeriksa kesehatan anda secara psikologis, yang mana bisa anda lakukan melalui voice call, video call, dan juga meet secara offline. Konseling Terapi ini juga dapat dilakukan secara 1 on 1 ataupun berkelompok sesuai dengan paket yang diambil.
                                     </div>
+                                    <Link to="/counseling/pricing">
                                     <Button
                                         title="Pesan Sekarang"
-                                    />
+                                        />
+                                    </Link>
                                     <div className="pt-16">
                                         <div className="text-xl font-bold">
                                             Benefit Melakukan Konseling dengan Peer Counselor

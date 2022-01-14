@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const BlogCard2 = (props) => {
     return (
-        <div>
+        <Link to={props.url}>
             <div className="rounded-lg bg-button">
                 <img className='object-cover rounded-t-lg w-full h-32 xl:h-40' src={props.pic} alt="" />
                 <div className="flex flex-col p-4">
@@ -14,7 +15,7 @@ const BlogCard2 = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

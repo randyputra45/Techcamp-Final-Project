@@ -38,7 +38,7 @@ export default function usePayDyslexia() {
   }, [user]);
 
   //create payment
-  const createPayment = async (data) => {
+  const createPayment = async (data, paymentUrl) => {
     console.log(data);
     const {
         first_name,
@@ -75,7 +75,8 @@ export default function usePayDyslexia() {
         const data = {
             qrisUrl: res.actions[0].url,
             gopayUrl: res.actions[1].url,
-            payment_method: response.data.payment_method
+            payment_method: response.data.payment_method,
+            paymentUrl: paymentUrl
         }
         history.push({
             pathname: "/payment/scanqr",

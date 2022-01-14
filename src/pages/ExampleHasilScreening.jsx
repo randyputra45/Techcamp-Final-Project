@@ -6,6 +6,7 @@ import HealthScore from '../components/HealthScore'
 import ChartHealth from '../components/ChartHealth'
 import PolarArea from '../components/ChartHealth'
 import { UserContext } from '../context/userContext'
+import { Link } from 'react-router-dom'
 
 const ExampleHasilScreening = (props) => {
     const { state } = props.location
@@ -80,7 +81,9 @@ const ExampleHasilScreening = (props) => {
                                         Hasil screening Anda telah terekam dan akan diserahkan kepada psikolog kami. Kami sarankan Anda untuk segera <b>berkonsultasi</b> dengan tenaga kesehatan profesional kami untuk bantuan lebih lanjut.
                                     </div>
                                     <div className="mt-5 justify-items-center grid">
-                                        <Button url="/pricing" title="Booking Konsultasi"></Button>
+                                        <Link to="/profile/conseling">
+                                            <Button title="Cek Kembali Jadwal Konsultasi"></Button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

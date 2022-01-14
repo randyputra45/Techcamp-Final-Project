@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import BackButton from '../components/BackButton'
 import Button from '../components/Button'
+import ButtonAction from '../components/ButtonAction'
 import DesktopAvatar from '../components/DesktopAvatar'
 import NotifButton from '../components/NotifButton'
+import { Link } from 'react-router-dom'
 
 const StartHealthtest = () => {
     const [show, setShow] = useState(false)
@@ -24,7 +26,7 @@ const StartHealthtest = () => {
                         Disini anda dapat mencoba Tes Kesehatan untuk mengetahui sejauh mana tingkat kecemasanmu saat ini. Anda juga akan melihat hasilnya setelah menjawab seluruh pertanyaan dengan jujur dan benar untuk dipertimbangkan ikut atau tidaknya mengikuti konsultasi.
                     </div>
                     <Button
-                        title="Pesan Sekarang"
+                        title="Lakukan Tes Sekarang"
                     />
                     <div className="pt-12">
 
@@ -46,9 +48,7 @@ const StartHealthtest = () => {
                                     <div className="mb-1">Layanan Kami</div>
                                     <div className="text-3xl font-bold">Tes Kesehatan</div>
                                     <div className="pt-8 text-gray-500 leading-relaxed pb-6">
-                                        <b>
                                         Kamu penasaran dengan kondisi kesehatan mentalmu saat ini? Yuk, baca <button onClick={() => setShow(!show)} className='text-teal-700 font-bold'>petunjuk ini</button> dan ikuti test berikut untuk mengetahui hasilnya!
-                                        </b>
                                     </div>
                                     {show &&
                                     <>
@@ -64,11 +64,12 @@ const StartHealthtest = () => {
                                         <div className="pt-1 text-gray-500 leading-relaxed text-justify pb-6">
                                             4. Jika kamu keluar di tengah tes, maka seluruh proses tes dan jawaban akan hilang. Silakan mengisi ulang dari awal.
                                         </div>
-                                    </>}               
-                                    <Button
-                                        title="Mulai Tes"
-                                        url="/healthtest/start"
-                                    />
+                                    </>}
+                                    <Link to="/healthtest/start">
+                                        <ButtonAction
+                                            title="Mulai Tes"
+                                        />
+                                    </Link>               
                                 </div>
                             </div>
                         </div>

@@ -50,6 +50,7 @@ const DesktopAvatar = () => {
                                         <Menu.Item>
                                             {({ active }) => (
                                             <button
+                                                onClick={() => history.push("/counseling")}
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
                                                 } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
@@ -65,6 +66,7 @@ const DesktopAvatar = () => {
                                         <Menu.Item>
                                             {({ active }) => (
                                             <button
+                                                onClick={() => history.push("/coaching")}
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
                                                 } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
@@ -80,6 +82,7 @@ const DesktopAvatar = () => {
                                         <Menu.Item>
                                             {({ active }) => (
                                             <button
+                                                onClick={() => history.push("/healthtest")}
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
                                                 } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
@@ -99,6 +102,7 @@ const DesktopAvatar = () => {
                                         <Menu.Item>
                                             {({ active }) => (
                                             <button
+                                                onClick={() => history.push("/dyslexia")}
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
                                                 } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
@@ -115,6 +119,7 @@ const DesktopAvatar = () => {
                                         <Menu.Item>
                                             {({ active }) => (
                                             <button
+                                                onClick={() => history.push("/blogs")}
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
                                                 } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
@@ -135,6 +140,7 @@ const DesktopAvatar = () => {
                                         <Menu.Item>
                                             {({ active }) => (
                                             <button
+                                                onClick={() => history.push("/webinars")}
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
                                                 } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
@@ -152,6 +158,7 @@ const DesktopAvatar = () => {
                                         <Menu.Item>
                                             {({ active }) => (
                                             <button
+                                                onClick={() => history.push("/experts")}
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
                                                 } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}

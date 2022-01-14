@@ -24,7 +24,7 @@ const Paket = () => {
             
             if(date && name && price) {
                 history.push({
-                    pathname: "/payment",
+                    pathname: "/counseling/payment",
                     state: data
                 })
             }

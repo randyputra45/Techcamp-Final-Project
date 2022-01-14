@@ -14,7 +14,7 @@ const TentangKami = () => {
                         <MemberCard
                             title="Randy Christian Saputra"
                             role="Fullstack Developer"
-                            desc="isi sendiri ya."
+                            desc="Mahasiswa kelahiran 4 Mei 2001 dan sekarang sedang mengenyam pendidikan di Universitas Brawijaya. Mempunyai passion dibidang IT khususnya Web Development dan Robotics, dan memiliki hobi mendengarkan musik dan badminton dikala senggang."
                             pic2="landing-konseling2.jpg"
                         />
                         <img src="randy.svg" alt="" className='w-2/6' />
@@ -34,7 +34,7 @@ const TentangKami = () => {
                         <MemberCard
                             title="Ike Nurul Fatihah"
                             role="Backend Developer"
-                            desc="isi sendiri ya."
+                            desc="Mahasiswa kelahiran 4 Mei 2001 dan sekarang sedang mengenyam pendidikan di Universitas Jember. Mempunyai passion dibidang IT khususnya Web Development dan UI/UX, dan memiliki hobi mendengarkan musik KPOP."
                             pic2="landing-konseling2.jpg"
                         />
                         <img src="ike.svg" alt="" className='w-2/6' />
@@ -43,7 +43,7 @@ const TentangKami = () => {
                         <MemberCard
                             title="Azadin Azhar Purba"
                             role="Backend Developer"
-                            desc="isi sendiri ya."
+                            desc="Mahasiswa kelahiran 4 Mei 2001 dan sekarang sedang mengenyam pendidikan di Politeknik Negeri Medan. Mempunyai passion dibidang IT khususnya Elektronika dan Web Design, dan memiliki hobi mendengarkan musik dan bersepeda dikala senggang."
                             pic2="landing-konseling2.jpg"
                         />
                         <img src="azadin.svg" alt="" className='w-2/6' />
