@@ -51,5 +51,5 @@
     "postcss": "^8.4.5",
     "tailwindcss": "^3.0.7"
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "https://gocure.herokuapp.com"
 }
