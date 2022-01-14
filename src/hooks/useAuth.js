@@ -36,6 +36,8 @@ export default function useAuth() {
       email,
       password,
       no_telp,
+      sex,
+      birth_date
     } = data;
     return axios
       .post(
@@ -46,6 +48,8 @@ export default function useAuth() {
           email,
           password,
           no_telp,
+          sex,
+          birth_date
         },
         { withCredentials: true, config }
       )
@@ -72,7 +76,7 @@ export default function useAuth() {
       })
       .catch((err) => {
         return setError(
-          JSON.stringify(err.response.data.message)
+          JSON.stringify(err.response.data.error)
         );
       });
   };

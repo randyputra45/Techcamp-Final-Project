@@ -7,18 +7,22 @@ import Content from '../components/ContentArticle';
 import HeartFill from '../images/heart-fill.svg'
 import HeartWhite from '../images/heart-white.svg'
 import { UserContext } from '../context/userContext';
+import DesktopAvatar from '../components/DesktopAvatar'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
 const ExampleBlog = () => {
+    const history = useHistory();
     const { user } = useContext(UserContext);
 
     const {blogArticleID, blogContent, isLiked, getArticleById} = useBlog()
     const [checkLike, setLike] = useState(false)
     const {likeStatus, likeBlog, unlikeBlog, checkBlogLikes} = useLikes()
     const path = window.location.pathname
+    let url = path.replace(/^https?:\/\//, '').split('/');
     
     useEffect(() => {
         getArticleById(path)
-        checkBlogLikes(path)
+        checkBlogLikes(path, url[2])
         if (likeStatus) {
             setLike(true)
         } else {
@@ -26,8 +30,10 @@ const ExampleBlog = () => {
         }
     }, [path, checkLike, isLiked])
 
+    console.log("render", likeStatus)
+
     const handleLike = async () => {
-        console.log(likeStatus)
+        console.log("click", likeStatus)
         if (likeStatus) {
             console.log("unlike")
             await unlikeBlog(blogArticleID._id, user._id)
@@ -59,9 +65,11 @@ const ExampleBlog = () => {
                         {blogContent && blogContent.content.map((item, i) => <Content key={i} subcontent={item.subcontent} paragraph={item.paragraph}/>)}
                     </div>
                     <div className="flex botbar pb-4 pr-4 gap-x-3">
-                        <BlogButton 
-                            pic="white-back.svg"
-                        />
+                        <button onClick={() => history.goBack()}>
+                            <BlogButton 
+                                pic="white-back.svg"
+                            />
+                        </button>
                         <button onClick={() => handleLike()}>
                             <BlogButton
                                 pic={likeStatus && likeStatus ? HeartFill : HeartWhite}
@@ -71,8 +79,11 @@ const ExampleBlog = () => {
                 </div>
             </div>
             <div className="hidden md:block">
+                <div className="topbar w-full">
+                    <DesktopAvatar />
+                </div>
                 {/* HEAD */}
-                <div className="bg-active-button">
+                <div className="bg-active-button mt-14">
                     <div className="grid grid-cols-2">
                         <div className="flex pl-8 md:pr-12 lg:px-16 xl:px-36 2xl:px-60">
                             <div className="flex items-end pb-8">
@@ -128,12 +139,11 @@ const ExampleBlog = () => {
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div className="botbar pb-10 pr-12">
                     <button onClick={() => handleLike()}>
                         <BlogButton
-                            pic={likeStatus && likeStatus ? HeartFill : HeartWhite}
+                            pic={likeStatus !== null && likeStatus ? HeartFill : HeartWhite}
                         />
                     </button>
                 </div>

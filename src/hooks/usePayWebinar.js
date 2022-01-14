@@ -6,7 +6,7 @@ import { UserContext } from "../context/userContext";
 export default function usePayWebinar() {
   let history = useHistory();
   const [error, setError] = useState(null);
-  const [userConsul, setFilteredConsul] = useState(null);
+  const [userWebinar, setFilteredConsul] = useState(null);
   const [paymentData, setPaymentData] = useState(null);
 
   const { user } = useContext(UserContext);
@@ -93,7 +93,7 @@ export default function usePayWebinar() {
   return {
     createPayment,
     paymentData,
-    userConsul,
+    userWebinar,
     error,
   };
 }

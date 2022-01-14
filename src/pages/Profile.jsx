@@ -1,12 +1,25 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import DesktopAvatar from '../components/DesktopAvatar'
 import MobileAvatar from '../components/MobileAvatar'
 import MobileButton from '../components/MobileButton'
 import NotifButton from '../components/NotifButton'
 import ProfileBio from '../components/ProfileBio'
 import ProfileButton from '../components/ProfileButton'
+import { UserContext } from '../context/userContext';
+import usePayCoaching from '../hooks/usePayCoaching'
+import usePayWebinar from "../hooks/usePayWebinar"
+import usePayDyslexia from "../hooks/usePayDyslexia"
+import useConsultation from "../hooks/useConsultation"
 
 const Profile = () => {
+    const { user, isLoading } = useContext(UserContext);
+    const{userCoaching} = usePayCoaching()
+    const{userWebinar} = usePayWebinar()
+    const{userDyslexia} = usePayDyslexia()
+    const{userConsul} = useConsultation()
+
+    console.log(userConsul)
+
     return (
         <div>
             <div className="block md:hidden">
@@ -25,7 +38,7 @@ const Profile = () => {
                                 <div className="text-xxs text-blue-600">Ubah biodata disini</div>
                             </div>
                             <ProfileBio
-                                kelamin="Laki-Laki"
+                                kelamin={user.birth_date}
                                 profesi="Mahasiswa"
                                 tanggal="16 Oktober 2000"
                                 kota="Balikpapan"
@@ -39,16 +52,19 @@ const Profile = () => {
                                 pic="konseling.svg"
                                 title="Layanan yang diambil"
                                 desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
+                                url="/profile/blogs"
                             />
                             <MobileButton 
                                 pic="webinar.svg"
                                 title="Webinar yang diikuti"
                                 desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
+                                url="/profile/blogs"
                             />
                             <MobileButton 
                                 pic="blog.svg"
                                 title="Blog yang disukai"
                                 desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
+                                url="/profile/blogs"
                             />
                         </div>
                     </div>
@@ -94,7 +110,7 @@ const Profile = () => {
                             <img src="small-avatar.svg" alt="" className="h-36 rounded-full cursor-pointer" />
                         </div>
                         <div className="bg-body pt-24 px-10 -mt-16 back">
-                            <div className="text-2xl font-bold">Salman Setiawan</div>
+                            <div className="text-2xl font-bold">{`${user.first_name} ${user.last_name}`}</div>
                         </div>
                         <div className="py-8 px-10 bg-body">
                             <div className="pb-4">
@@ -108,9 +124,9 @@ const Profile = () => {
                                 </div>
                             </div>
                             <ProfileBio
-                                kelamin="Laki-Laki"
+                                kelamin={user.birth_date}
                                 profesi="Mahasiswa"
-                                tanggal="16 Oktober 2000"
+                                tanggal={user.birth_date}
                                 kota="Balikpapan"
                             />
                         </div>
@@ -121,18 +137,33 @@ const Profile = () => {
                             <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5">
                                 <ProfileButton 
                                     pic="konseling.svg"
-                                    title="Layanan yang diambil"
-                                    desc="1 Layanan"
+                                    title="Konsultasi yang diikuti"
+                                    desc={`${userConsul && userConsul.length} Konseling`}
+                                    url="/profile/conseling"
                                 />
                                 <ProfileButton 
                                     pic="webinar.svg"
                                     title="Webinar yang diikuti"
-                                    desc="1 Webinar"
+                                    desc={`${userWebinar && userWebinar.length} Webinar`}
+                                    url="/profile/webinar"
+                                />
+                                <ProfileButton 
+                                    pic="webinar.svg"
+                                    title="Kelas yang diikuti"
+                                    desc={`${userCoaching && userCoaching.length} Kelas`}
+                                    url="/profile/coaching"
+                                />
+                                <ProfileButton 
+                                    pic="webinar.svg"
+                                    title="Dyslexia yang diikuti"
+                                    desc={`${userDyslexia && userDyslexia.length} Layanan`}
+                                    url="/profile/dyslexia"
                                 />
                                 <ProfileButton 
                                     pic="blog.svg"
                                     title="Blog yang disukai"
-                                    desc="5 Blog"
+                                    desc={`${user.liked_blog.length} Blog`}
+                                    url="/profile/blogs"
                                 />
                             </div>
                         </div>
