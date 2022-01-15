@@ -31,9 +31,11 @@ export default function useConsultation() {
       await axios
         .get("https://gocure.netlify.app/api/consultation", { withCredentials: true, config })
         .then((res) => {
+            console.log(res)
             const consultationList = res.data.filter(consul => {
                 return consul.user._id.includes(`${user._id}`)
             })
+            console.log(consultationList)
             setFilteredConsul(consultationList)
             }
         )
