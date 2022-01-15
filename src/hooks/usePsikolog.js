@@ -17,7 +17,7 @@ export default function usePsikolog() {
   useEffect(() => {
     async function getPsikolog() {
       await axios
-        .get("/experts", { withCredentials: true, config })
+        .get("https://gocure.netlify.app/experts", { withCredentials: true, config })
         .then((res) => {
           setPsikolog(res.data);
           setLoading(false);
@@ -33,7 +33,7 @@ export default function usePsikolog() {
 
   const getPsikologById = async (data) => {
     return axios
-      .get(`${data}`, { withCredentials: true, config })
+      .get(`https://gocure.netlify.app${data}`, { withCredentials: true, config })
       .then((res) => {
         setPsikologID(res.data);
       })

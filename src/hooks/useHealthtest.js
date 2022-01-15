@@ -14,7 +14,7 @@ export default function useHealthTest() {
 
     useEffect(() => {
         async function getScreening() {
-            await axios.get('/health-test', { withCredentials: true, config })
+            await axios.get('https://gocure.netlify.app/health-test', { withCredentials: true, config })
             .then(res => {
                 setQuestion(res.data);
                 setLoading(false);

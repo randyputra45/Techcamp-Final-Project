@@ -29,7 +29,7 @@ export default function useConsultation() {
   useEffect(() => {
     async function getConsul() {
       await axios
-        .get("/consultation", { withCredentials: true, config })
+        .get("https://gocure.netlify.app/consultation", { withCredentials: true, config })
         .then((res) => {
             const consultationList = res.data.filter(consul => {
                 return consul.user._id.includes(`${user._id}`)
@@ -62,7 +62,7 @@ export default function useConsultation() {
     } = data;
     return axios
       .post(
-        `/payconsultation`,
+        `https://gocure.netlify.app/payconsultation`,
         {
             first_name,
             last_name,
