@@ -17,7 +17,7 @@ export default function useLikes() {
 
   const checkBlogLikes = async (data, url) => {
     return axios
-      .get(`https://gocure.netlify.app${data}`, { withCredentials: true, config })
+      .get(`https://gocure.netlify.app/api${data}`, { withCredentials: true, config })
       .then((res) => {
           const statusLiked = user.liked_blog.find(blog => blog._id === url)
           if (statusLiked !== undefined) {
@@ -40,7 +40,7 @@ export default function useLikes() {
     console.log(id_blog, id_user)
     return axios
       .patch(
-        `https://gocure.netlify.app/blogs/like`,
+        `https://gocure.netlify.app/api/blogs/like`,
         { id_blog, id_user },
         { withCredentials: true, config }
       ).then(setLiked(true))
@@ -57,7 +57,7 @@ export default function useLikes() {
     console.log(id_blog, id_user)
     return axios
       .patch(
-        `https://gocure.netlify.app/blogs/unlike`,
+        `https://gocure.netlify.app/api/blogs/unlike`,
         { id_blog, id_user },
         { withCredentials: true, config }
       ).then(setLiked(false))

@@ -15,7 +15,7 @@ export default function useLogout() {
 
     const logoutUser = async () => {
         try {
-           await axios.get("https://gocure.netlify.app/logout", { withCredentials: true, config }
+           await axios.get("https://gocure.netlify.app/api/logout", { withCredentials: true, config }
             ).then(res => { 
                 console.log(res); 
                 setUser(false);
