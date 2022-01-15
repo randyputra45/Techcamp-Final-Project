@@ -21,7 +21,7 @@ export default function usePayDyslexia() {
   useEffect(() => {
     async function getDyslexia() {
       await axios
-        .get("https://gocure.netlify.app/paydyslexia", { withCredentials: true, config })
+        .get("https://gocure.netlify.app/api/paydyslexia", { withCredentials: true, config })
         .then((res) => {
             const dyslexiaList = res.data.filter(cyslexia => {
                 return cyslexia.user._id.includes(`${user._id}`)
@@ -54,7 +54,7 @@ export default function usePayDyslexia() {
     } = data;
     return axios
       .post(
-        `https://gocure.netlify.app/paydyslexia`,
+        `https://gocure.netlify.app/api/paydyslexia`,
         {
             first_name,
             last_name,

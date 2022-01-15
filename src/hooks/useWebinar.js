@@ -16,7 +16,7 @@ export default function useWebinar() {
 
   useEffect(() => {
     async function getWebinar() {
-    await axios.get('https://gocure.netlify.app/webinars', { withCredentials: true, config })
+    await axios.get('https://gocure.netlify.app/api/webinars', { withCredentials: true, config })
     .then(res => {
         setWebinar(res.data);
         setLoading(false);
@@ -32,7 +32,7 @@ export default function useWebinar() {
   const getWebinarById = async (data) => {
     return axios
       .get(
-        `https://gocure.netlify.app${data}`,
+        `https://gocure.netlify.app/api${data}`,
         { withCredentials: true, config }
       ).then(res => {
         setWebinarID(res.data)
