@@ -17,14 +17,14 @@ export default function useFindUser() {
   useEffect(() => {
     async function findUser() {
       await axios
-        .get("https://gocure.netlify.app/user", { withCredentials: true, config })
+        .get("https://gocure.netlify.app/api/user", { withCredentials: true, config })
         .then((res) => {
           setUser(res.data.currentUser);
           setLoading(false);
         })
         .then(
           axios
-            .get("https://gocure.netlify.app/users", {
+            .get("https://gocure.netlify.app/api/users", {
               withCredentials: true,
               config,
             })
