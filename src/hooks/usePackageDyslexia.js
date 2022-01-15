@@ -14,7 +14,7 @@ export default function usePackage() {
 
     useEffect(() => {
         async function getPackage() {
-            await axios.get('/dyslexia', { withCredentials: true, config })
+            await axios.get('https://gocure.netlify.app/dyslexia', { withCredentials: true, config })
             .then(res => {
                 setData(res.data);
                 setLoading(false);

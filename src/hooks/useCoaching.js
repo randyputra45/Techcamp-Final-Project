@@ -19,7 +19,7 @@ export default function useCoaching() {
   useEffect(() => {
     async function getCoaching() {
       await axios
-        .get("/coaching", { withCredentials: true, config })
+        .get("https://gocure.netlify.app/coaching", { withCredentials: true, config })
         .then((res) => {
           setCoaching(res.data);
           setLoading(false);
@@ -34,7 +34,7 @@ export default function useCoaching() {
 
   const getCoachingById = async (data) => {
     return axios
-      .get(`${data}`, { withCredentials: true, config })
+      .get(`https://gocure.netlify.app${data}`, { withCredentials: true, config })
       .then((res) => {
         setCoachingContent(JSON.parse(res.data.content[0])[0]);
         setCoachingID(res.data);

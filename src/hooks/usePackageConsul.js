@@ -14,7 +14,7 @@ export default function usePackage() {
 
     useEffect(() => {
         async function getPackage() {
-            await axios.get('/package', { withCredentials: true, config })
+            await axios.get('https://gocure.netlify.app/package', { withCredentials: true, config })
             .then(res => {
                 setData(res.data);
                 setLoading(false);

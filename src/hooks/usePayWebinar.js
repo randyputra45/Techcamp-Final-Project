@@ -21,7 +21,7 @@ export default function usePayWebinar() {
   useEffect(() => {
     async function getWebinar() {
       await axios
-        .get("/paywebinar", { withCredentials: true, config })
+        .get("https://gocure.netlify.app/paywebinar", { withCredentials: true, config })
         .then((res) => {
             const webinarList = res.data.filter(webinar => {
                 return webinar.user._id.includes(`${user._id}`)
@@ -54,7 +54,7 @@ export default function usePayWebinar() {
     } = data;
     return axios
       .post(
-        `/paywebinar`,
+        `https://gocure.netlify.app/paywebinar`,
         {
             first_name,
             last_name,

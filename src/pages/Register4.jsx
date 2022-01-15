@@ -12,7 +12,7 @@ const Register4 = () => {
 
     useEffect(() =>{
         async function verifyUser() {
-            await axios.get(`${verifyToken}`, { withCredentials: true })
+            await axios.get(`https://gocure.herokuapp.com${verifyToken}`, { withCredentials: true })
             .then(res => {
                 console.log(res.data)
             }).catch(err => {
