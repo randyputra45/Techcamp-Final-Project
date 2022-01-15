@@ -14,7 +14,7 @@ import { Link, useHistory } from "react-router-dom";
 const Register1 = () => {
   const history = useHistory()
   let dateNow = new Date().toLocaleDateString('en-CA', {timeZone: "Asia/Jakarta"})    
-  const { registerUser } = useAuth();
+  const { registerUser, error } = useAuth();
   const { allUsers } = useFindUser();
   const [alert, setAlert] = useState(false);
   const [alertMsg, setAlertMsg] = useState("");
@@ -54,20 +54,17 @@ const Register1 = () => {
     else if (values.password !== values.confirm_password){
         setAlertMsg("Password don't match.")
         setAlert(true);
+    } else if (error) {
+        console.log(error)
+        setAlertMsg(error)
+        setAlert(true);
     }
     else{
-        const userFind = allUsers.find(user => user.email === values.email)
-        if(userFind){
-            setAlertMsg("The email account is already exist, please Login")
-            setAlert(true); 
-        } else {
-            setAlert(false);
-            await registerUser(values);
-            history.push({
-                pathname: "/register/checkemail",
-                state: {email: values.email}
-            })
-        }
+        await registerUser(values);
+        history.push({
+            pathname: "/register/checkemail",
+            state: {email: values.email}
+        })
     }
   }
 
