@@ -23,7 +23,7 @@ export default function useBlog() {
   useEffect(() => {
     async function getArticle() {
       await axios
-        .get("https://gocure.netlify.app/blogs", { withCredentials: true, config })
+        .get("https://gocure.netlify.app/api/blogs", { withCredentials: true, config })
         .then((res) => {
           setArticle(res.data);
           setLoading(false);
@@ -39,7 +39,7 @@ export default function useBlog() {
 
   const getArticleById = async (data) => {
     return axios
-      .get(`https://gocure.netlify.app${data}`, { withCredentials: true, config })
+      .get(`https://gocure.netlify.app/api${data}`, { withCredentials: true, config })
       .then((res) => {
         setBlogContent(JSON.parse(res.data.content[0])[0]);
         setArticleID(res.data);
@@ -54,7 +54,7 @@ export default function useBlog() {
 
   const checkBlogLikes = async (data) => {
     return axios
-      .get(`https://gocure.netlify.app${data}`, { withCredentials: true, config })
+      .get(`https://gocure.netlify.app/api${data}`, { withCredentials: true, config })
       .then((res) => {
           const statusLiked = user.liked_blog.find(id => id === res.data._id)
           if (statusLiked !== undefined) {
