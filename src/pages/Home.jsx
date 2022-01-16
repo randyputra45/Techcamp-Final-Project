@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import DesktopAvatar from "../components/DesktopAvatar";
 import MobileAvatar from "../components/MobileAvatar";
 import MobileButton from "../components/MobileButton";
+import { UserContext } from '../context/userContext';
 
 const Home = (props) => {
+  const { user } = useContext(UserContext);
+
   return (
     <div>
       <div className="block md:hidden">
@@ -107,7 +110,7 @@ const Home = (props) => {
         </div>
         <div className="pt-32 flex flex-col items-center">
           <div className="font-semibold mb-1">
-            Halo Salman
+            {user && user.first_name}
           </div>
           <div className="text-2xl font-bold">
             Apa yang bisa kami lakukan untukmu hari ini?
