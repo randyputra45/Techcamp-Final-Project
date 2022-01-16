@@ -21,14 +21,11 @@ export default function useConsultation() {
   useEffect(() => {
     async function getConsul() {
       await axios
-        .get("https://gocure.netlify.app/api/consultation", { withCredentials: true, config })
+        .get("https://gocure.netlify.app/api/consul", { withCredentials: true, config })
         .then((res) => {
             console.log(res)
               if(res.data){
-                console.log(res.data)
-                const consultationList = res.data.filter(consul => {
-                    return consul.user._id === user._id
-                })
+                const consultationList = res.data.filter(consul => consul.user === user._id)
                 console.log(consultationList)
                 setFilteredConsul(consultationList)
               }
