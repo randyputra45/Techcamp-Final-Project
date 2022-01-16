@@ -25,10 +25,7 @@ export default function useConsultation() {
         .then((res) => {
             console.log(res)
               if(res.data){
-                console.log(res.data)
-                const consultationList = res.data.filter(consul => {
-                    return consul.user._id === user._id
-                })
+                const consultationList = res.data.filter(consul => consul._id === user._id)
                 console.log(consultationList)
                 setFilteredConsul(consultationList)
               }
