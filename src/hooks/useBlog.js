@@ -52,33 +52,12 @@ export default function useBlog() {
       });
   };
 
-  const checkBlogLikes = async (data) => {
-    return axios
-      .get(`https://gocure.netlify.app/api${data}`, { withCredentials: true, config })
-      .then((res) => {
-          const statusLiked = user.liked_blog.find(id => id === res.data._id)
-          if (statusLiked !== undefined) {
-            setLiked(true)
-          } else {
-            setLiked(false)
-          }
-        }
-      )
-      .catch((err) => {
-        console.log(err);
-        return setError(
-          JSON.stringify(err.response.data.message)
-        );
-      });
-  };
-
   return {
     blogArticle,
     blogArticleID,
     blogContent,
     isLiked,
     getArticleById,
-    checkBlogLikes,
     isLoading,
     isLoadingContent,
     error,
