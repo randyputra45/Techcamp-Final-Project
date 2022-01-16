@@ -28,7 +28,7 @@ const ExampleBlog = () => {
         } else {
             setLike(false)
         }
-    }, [path, checkLike, likeStatus])
+    }, [path, checkLike])
 
     console.log("render", likeStatus)
 

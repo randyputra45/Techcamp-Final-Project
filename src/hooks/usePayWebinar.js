@@ -23,7 +23,7 @@ export default function usePayWebinar() {
       await axios
         .get("https://gocure.netlify.app/api/paywebinar", { withCredentials: true, config })
         .then((res) => {
-            const webinarList = res.data.filter(webinar => webinar._id === user._id)
+            const webinarList = res.data.filter(webinar => webinar.user === user._id)
             setFilteredConsul(webinarList)
             }
         )
