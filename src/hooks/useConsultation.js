@@ -26,8 +26,9 @@ export default function useConsultation() {
             console.log(res)
               if(res.data.length){
                 const consultationList = res.data.filter(consul => {
-                    return consul.user._id.includes(user._id)
+                    return consul.user._id === user._id
                 })
+                console.log(consultationList)
                 setFilteredConsul(consultationList)
               }
             }
