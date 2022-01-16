@@ -178,7 +178,6 @@ const DesktopAvatar = () => {
                             </Menu.Items>
                         </Transition>
                     </Menu>
-                    <img src="notif-active.svg" alt="" className="cursor-pointer h-9" />
                     <Menu as="div" className="relative inline-block text-left">
                         <div>
                         <Menu.Button className="flex items-center">

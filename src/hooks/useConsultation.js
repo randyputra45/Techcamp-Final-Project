@@ -24,9 +24,10 @@ export default function useConsultation() {
         .get("https://gocure.netlify.app/api/consultation", { withCredentials: true, config })
         .then((res) => {
             console.log(res)
-            const consultationList = res.data.filter(consul => consul._id === user._id)
-            console.log(consultationList)
-            setFilteredConsul(consultationList)
+            if (res.data.length) {
+              const consultationList = res.data.filter(consul => consul._id === user._id)
+              setFilteredConsul(consultationList)
+            }
             }
         )
         .catch((err) => {

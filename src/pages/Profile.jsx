@@ -138,7 +138,7 @@ const Profile = () => {
                             <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5">
                                 <ProfileButton 
                                     pic="konseling.svg"
-                                    title="Konsultasi yang diikuti"
+                                    title="Konseling yang diikuti"
                                     desc={`${userConsul && userConsul.length} Konseling`}
                                     url="/profile/conseling"
                                 />
