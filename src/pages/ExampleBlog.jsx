@@ -14,7 +14,7 @@ const ExampleBlog = () => {
     const history = useHistory();
     const { user } = useContext(UserContext);
 
-    const {blogArticleID, blogContent, isLiked, getArticleById} = useBlog()
+    const {blogArticleID, blogContent, getArticleById} = useBlog()
     const [checkLike, setLike] = useState(false)
     const {likeStatus, likeBlog, unlikeBlog, checkBlogLikes} = useLikes()
     const path = window.location.pathname
@@ -28,7 +28,7 @@ const ExampleBlog = () => {
         } else {
             setLike(false)
         }
-    }, [path, checkLike, isLiked])
+    }, [path, checkLike, likeStatus])
 
     console.log("render", likeStatus)
 

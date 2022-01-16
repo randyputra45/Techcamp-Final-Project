@@ -23,9 +23,7 @@ export default function usePayCoaching() {
       await axios
         .get("https://gocure.netlify.app/api/paycoaching", { withCredentials: true, config })
         .then((res) => {
-            const coachingList = res.data.filter(coaching => {
-                return coaching.user._id.includes(`${user._id}`)
-            })
+            const coachingList = res.data.filter(coaching => coaching._id === user._id)
             setFilteredCoaching(coachingList)
             }
         )

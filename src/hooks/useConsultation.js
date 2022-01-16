@@ -17,14 +17,6 @@ export default function useConsultation() {
       "Content-Type": "application/json",
     },
   };
-  
-  const config2 = {
-    headers: {
-      "Accept": "application/json",
-      "Content-Type": "application/json",
-      "Authorization": "Basic U0ItTWlkLXNlcnZlci03MHNpUlFuOGt0Zk1qNVBsM3lvQUpMdWQ6"
-    },
-  };
 
   useEffect(() => {
     async function getConsul() {
@@ -32,9 +24,7 @@ export default function useConsultation() {
         .get("https://gocure.netlify.app/api/consultation", { withCredentials: true, config })
         .then((res) => {
             console.log(res)
-            const consultationList = res.data.filter(consul => {
-                return consul.user._id.includes(`${user._id}`)
-            })
+            const consultationList = res.data.filter(consul => consul._id === user._id)
             console.log(consultationList)
             setFilteredConsul(consultationList)
             }
@@ -101,24 +91,8 @@ export default function useConsultation() {
       });
   };
 
-  const getStatusPayment = async (data) => {
-    return axios
-      .get("https://api.sandbox.midtrans.com/v2/e9c413d7-bd64-457f-8fc6-74ca847655e7/status", { withCredentials: true, config2 })
-      .then((res) => {
-          console.log(res)
-        }
-      )
-      .catch((err) => {
-        console.log(err);
-        return setError(
-          JSON.stringify(err.response.data.message)
-        );
-      });
-  };
-
   return {
     createPayment,
-    getStatusPayment,
     paymentData,
     userConsul,
     error,
