@@ -111,12 +111,27 @@ export default function useAuth() {
         );
       });
   };
+  
+  //reset password
+  const editUser = async (data, url) => {
+    console.log(data)
+    return axios
+      .patch(`https://gocure.netlify.app/api${url}`, {
+        data,
+      }, { withCredentials: true, config })
+      .catch((err) => {
+        return setError(
+          JSON.stringify(err.response.data.error)
+        );
+      });
+  };
 
   return {
     registerUser,
     loginUser,
     forgotPassword,
     resetPassword,
+    editUser,
     error,
   };
 }

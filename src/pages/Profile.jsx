@@ -10,6 +10,7 @@ import usePayCoaching from '../hooks/usePayCoaching'
 import usePayWebinar from "../hooks/usePayWebinar"
 import usePayDyslexia from "../hooks/usePayDyslexia"
 import useConsultation from "../hooks/useConsultation"
+import { Link } from 'react-router-dom'
 
 const Profile = () => {
     const { user, isLoading } = useContext(UserContext);
@@ -27,7 +28,7 @@ const Profile = () => {
                     <div className="flex justify-between">
                         <div className="flex flex-col">
                             <div className="text-sm mb-1">Profil</div>
-                            <div className="text-2xl font-bold">Salman Setiawan</div>
+                            <div className="text-2xl font-bold">{user && user.first_name} {user && user.last_name}</div>
                         </div>
                         <NotifButton />
                     </div>
@@ -35,13 +36,15 @@ const Profile = () => {
                         <div className="flex flex-col gap-y-3">
                             <div className="flex justify-between items-end">
                             <div className="font-bold text-sm">Biodata</div>
-                                <div className="text-xxs text-blue-600">Ubah biodata disini</div>
+                                <Link to="/profile/edit">
+                                    <div className="text-xxs text-blue-600">Ubah biodata disini</div>
+                                </Link>
                             </div>
                             <ProfileBio
-                                kelamin={user.birth_date}
-                                profesi="Mahasiswa"
-                                tanggal="16 Oktober 2000"
-                                kota="Balikpapan"
+                                kelamin={user.sex}
+                                profesi={user.job}
+                                tanggal={user.birth_date}
+                                kota={user.city}
                             />
                         </div>
                     </div>
@@ -109,17 +112,18 @@ const Profile = () => {
                                     <div className="text-lg font-bold">
                                         Biodata
                                     </div>
-                                    <div className="cursor-pointer text-sm text-blue-600">
-                                        Ubah biodata disini
-                                    </div>
+                                    <Link to="/profile/edit">
+                                        <div className="cursor-pointer text-sm text-blue-600">
+                                            Ubah biodata disini
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                             <ProfileBio
-                                kelamin="Laki-laki"
-                                profesi="Mahasiswa"
-                                // tanggal={user.birth_date}
-                                tanggal="4 Mei 2001"
-                                kota="Balikpapan"
+                                kelamin={user.sex}
+                                profesi={user.job}
+                                tanggal={user.birth_date}
+                                kota={user.city}
                             />
                         </div>
                         <div className="py-8 px-10 bg-body">
@@ -140,13 +144,13 @@ const Profile = () => {
                                     url="/profile/webinars"
                                 />
                                 <ProfileButton 
-                                    pic="webinar.svg"
-                                    title="Kelas yang diikuti"
+                                    pic="coaching.svg"
+                                    title="Kelas/coaching yang diikuti"
                                     desc={`${userCoaching && userCoaching.length} Kelas`}
                                     url="/profile/coaching"
                                 />
                                 <ProfileButton 
-                                    pic="webinar.svg"
+                                    pic="dyslexia.svg"
                                     title="Dyslexia yang diikuti"
                                     desc={`${userDyslexia && userDyslexia.length} Layanan`}
                                     url="/profile/dyslexia"
@@ -164,20 +168,10 @@ const Profile = () => {
                                 Pengaturan 
                             </div>
                             <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5">
-                                {/* <ProfileButton  
-                                    pic="mail.svg"
-                                    title="Ganti Email"
-                                    desc="salmansetiawan@mail.com"
-                                />
-                                <ProfileButton  
-                                    pic="phone.svg"
-                                    title="Ganti Nomor Telepon"
-                                    desc="+62 888-8888-8888"
-                                /> */}
                                 <ProfileButton  
                                     pic="key.svg"
                                     title="Ganti Kata Sandi"
-                                    desc="Sa*****"
+                                    desc="pass****"
                                     url="/profile/changepass"
                                 />
                             </div>

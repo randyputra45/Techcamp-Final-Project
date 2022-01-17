@@ -1,9 +1,10 @@
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { useContext } from 'react';
 import { UserContext } from '../context/userContext';
 
 export default function useLogout() {
+    const history = useHistory()
     const { setUser } = useContext(UserContext);
 
     const config = {
@@ -19,6 +20,7 @@ export default function useLogout() {
             ).then(res => { 
                 console.log(res); 
                 setUser(false);
+                history.push("/");
             })
         } catch(err) {
             console.log(err);

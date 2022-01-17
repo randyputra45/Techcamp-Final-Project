@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import Button from '../components/Button'
 import Checkbox from '../components/Checkbox'
 import Form from '../components/Form'
@@ -7,8 +7,17 @@ import useAuth from '../hooks/useAuth';
 import Alert from "../components/Alert";
 import { Link, useHistory } from 'react-router-dom';
 import useFindUser from "../hooks/useFindUser";
+import { UserContext } from '../context/userContext';
 
 const Login = () => {
+    const history = useHistory()
+
+    const { user } = useContext(UserContext);
+
+    if(user) {
+        history.push("/home")
+    }
+
     const { values, handleChange } = useForm({
         initialValues: {
             email: '',
@@ -16,7 +25,6 @@ const Login = () => {
         }
     });
     const { loginUser, error } = useAuth();
-    const { allUsers } = useFindUser();
     const [alert, setAlert] = useState(false);
     const [alertMsg, setAlertMsg] = useState("");
 
@@ -31,7 +39,7 @@ const Login = () => {
             setAlert(true);
         }
         else if (!emailRegex.test(values.email)){
-            setAlertMsg("Invalid email.")
+            setAlertMsg("Invalid email")
             setAlert(true);
         }
         else if (!passwordRegex.test(values.password)){
@@ -42,19 +50,14 @@ const Login = () => {
             console.log(error)
             setAlertMsg(error)
             setAlert(true);
+            setInterval(
+                function(){ history.go(0) },
+                2000
+            );
         }
         else{
-            // const userFind = allUsers.find(user => user.email === values.email)
-            // if(userFind.verified === true){
-                setAlert(false);
-                await loginUser(values);
-            // } else if (userFind.verified === false) {
-            //     setAlertMsg("Account not found, please Register")
-            //     setAlert(true); 
-            // } else {
-            //     setAlertMsg("Account not found, please Register")
-            //     setAlert(true); 
-            // }
+            setAlert(false);
+            await loginUser(values);
         }
     }
 
@@ -138,9 +141,11 @@ const Login = () => {
                                 />
                             </div>
                             <div className="pt-2 pb-3 flex justify-between items-center">
-                                <div className="cursor-pointer text-sm text-blue-500">
-                                    Lupa Password?
-                                </div>
+                                <Link to="/profile/changepass">
+                                    <div className="cursor-pointer text-sm text-blue-500">
+                                        Lupa Password?
+                                    </div>
+                                </Link>
                             </div>
                             {alert && <Alert alertMsg={alertMsg}/>}
                             <div className="flex justify-center pt-8">

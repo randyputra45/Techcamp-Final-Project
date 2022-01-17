@@ -1,43 +1,69 @@
-import { useHistory } from "react-router-dom";
-
-import React from 'react'
-import Box from '../components/Box'
+import React, {useState, useContext} from 'react'
 import Button from '../components/Button'
-import PhoneDropdown from '../components/PhoneDropdown'
 import Form from '../components/Form'
 import ChartBar from '../components/ChartBar'
-import PassSpecs from '../components/PassSpecs'
 
 import useForm from '../hooks/useForm';
 import useAuth from '../hooks/useAuth';
+import FormDropdown from "../components/FormDropdown";
+import FormDatepicker from "../components/FormDatepicker";
+import Alert from "../components/Alert";
+import useFindUser from "../hooks/useFindUser";
+import { Link, useHistory } from "react-router-dom";
+import { UserContext } from '../context/userContext';
+
 
 const ProfileEdit = () => {
-  const { values, handleChange } = useForm({
-    initialValues: {
-        first_name: "",
-        last_name: "",
-        email: "",
-        password: "",
-        no_telp: "",
-        confirm_password: ""
-    }
-  });
-  const { registerUser, error } = useAuth();
+    const history = useHistory()
 
-  const handleRegister = async (e) => {
-      e.preventDefault();
-      console.log(values)
-      await registerUser(values);
-  }
+    const { user } = useContext(UserContext);
+    
+    let dateNow = new Date().toLocaleDateString('en-CA', {timeZone: "Asia/Jakarta"})    
+    const { editUser, error } = useAuth();
+    const [alert, setAlert] = useState(false);
+    const [alertMsg, setAlertMsg] = useState("");
+
+    const { values, handleChange } = useForm({
+        initialValues: {
+            first_name: "",
+            last_name: "",
+            no_telp: "",
+            sex: "",
+            city: "",
+            job: "",
+            birth_date: ""
+        }
+    });
+
+    const handleEdit = async (e) => {
+        e.preventDefault();
+        console.log(values)
+
+        if (values.first_name === "" && values.last_name === "" && values.sex === "" && values.no_telp === ""&& values.birth_date === "" &&  values.city === "" &&  values.job === "") {
+            setAlertMsg("Please fill in atleast one field")
+            setAlert(true);
+        }
+        else{
+            await editUser(values, `/users/${user._id}`);
+            if (error) {
+                setAlertMsg("Please fill in atleast one field")
+                setAlert(true);
+            } else {
+                setAlertMsg("Data successfully updated")
+                setAlert(true);
+            }
+        }
+    }
 
   return (
     <div>
         <div className="block md:hidden">
             <div className="px-8 pt-12">
                 <div className="pt-5">
-                    <div className="text-2xl font-bold">Edit Profilmu</div>
+                    <div className="text-2xl font-bold">Edit Profile</div>
+                    <div className="">Edit atleast one field</div>
                 </div>
-                <form onSubmit={handleRegister}>
+                <form onSubmit={handleEdit}>
                 <div className="pt-12">
                     <div className="font-bold">
                         Nama Depan
@@ -64,67 +90,9 @@ const ProfileEdit = () => {
                 </div>
                 <div className="pt-4">
                     <div className="font-bold">
-                        Email
-                    </div>
-                    <Form 
-                        type={"email"}
-                        name={"email"} 
-                        value={values.email} 
-                        handleChange={handleChange}
-                        placeholder="johndoe@mail.com"
-                    />
-                </div>
-                <div className="pt-4">
-                    <div className="font-bold">
-                        Kata Sandi
-                    </div>
-                    <Form 
-                        type={"password"}
-                        name={"password"} 
-                        value={values.password} 
-                        handleChange={handleChange}
-                        placeholder="*******"
-                    />
-                </div>
-                <div className="flex flex-col">
-                    <div className="pt-2 flex justify-between items-center gap-x-4">
-                        <Box />
-                        <Box />
-                        <Box />
-                    </div>
-                    <div className="pt-1.5 text-xs text-gray-700">
-                        Password Strength : <b>Low</b>
-                    </div>
-                    <div className="pt-6 pb-3 flex flex-col gap-y-3">
-                        <PassSpecs 
-                            spec="Karakter Minimal 8 Karakter"
-                        />
-                        <PassSpecs 
-                            spec="Menggunakan Kapital"
-                        />
-                        <PassSpecs 
-                            spec="Tanpa Simbol"
-                        />
-                    </div>
-                </div>
-                <div className="pt-5">
-                    <div className="font-bold">
-                        Konfirmasi Kata Sandi
-                    </div>
-                    <Form
-                        type={"password"}
-                        name={"confirm_password"} 
-                        value={values.confirm_password} 
-                        handleChange={handleChange}
-                        placeholder="*******"
-                    />
-                </div>
-                <div className="pt-5">
-                    <div className="font-bold">
                         No Telepon
                     </div>
                     <div className="flex items-center gap-x-8">
-                        <PhoneDropdown />
                         <div className="w-full">
                             <Form
                               type={"text"}
@@ -136,8 +104,73 @@ const ProfileEdit = () => {
                         </div>
                     </div>
                 </div>
+                <div className="pt-4">
+                    <div className="font-bold">
+                        Jenis Kelamin
+                    </div>
+                    <div className="flex items-center gap-x-8">
+                        <div className="w-full">
+                            <FormDropdown
+                                type={"text"}
+                                name={"sex"} 
+                                value={values.sex} 
+                                handleChange={handleChange}
+                                placeholder="0000-0000-0000"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div className="pt-4">
+                    <div className="font-bold">
+                        Kota Asal
+                    </div>
+                    <div className="flex items-center gap-x-8">
+                        <div className="w-full">
+                            <Form
+                                type={"text"}
+                                name={"city"} 
+                                value={values.city} 
+                                handleChange={handleChange}
+                                placeholder="Jakarta"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div className="pt-4">
+                        <div className="font-bold">
+                            Status Pekerjaan
+                        </div>
+                        <div className="flex items-center gap-x-8">
+                            <div className="w-full">
+                                <Form
+                                  type={"text"}
+                                  name={"job"} 
+                                  value={values.job} 
+                                  handleChange={handleChange}
+                                  placeholder="Mahasiswa"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                <div className="pt-4">
+                    <div className="font-bold">
+                        Tanggal Lahir
+                    </div>
+                    <div className="flex items-center gap-x-8">
+                        <div className="w-full mt-3">
+                            <FormDatepicker 
+                                type={"date"}
+                                name={"birth_date"} 
+                                value={values.birth_date} 
+                                max={dateNow}
+                                handleChange={handleChange}
+                            />
+                        </div>
+                    </div>
+                </div>
+                {alert && <Alert alertMsg={alertMsg}/>}
                 <div className="pt-8 flex justify-center">
-                    <Button title="Daftar" type={"submit"} url="/verify"/>
+                    <Button title="Edit Data" type={"submit"} url="/verify"/>
                 </div>
                 </form>
             </div>
@@ -149,9 +182,10 @@ const ProfileEdit = () => {
                 <div className="md:w-1/2 lg:w-2/5 bg-white rounded-xl">
                     <div className="px-8 py-12">
                     <div className="pt-5">
-                        <div className="text-2xl font-bold">Edit Profilmu</div>
+                        <div className="text-2xl font-bold">Edit Profile</div>
+                        <div className="">Edit atleast one field</div>
                     </div>
-                    <form onSubmit={handleRegister}>
+                    <form onSubmit={handleEdit}>
                     
                     <div className="pt-12 grid md:grid-cols-1 xl:grid-cols-2 gap-4">
                         <div className="">
@@ -179,18 +213,6 @@ const ProfileEdit = () => {
                           />
                         </div>
                     </div>
-                    <div className="pt-4">
-                        <div className="font-bold">
-                            Email
-                        </div>
-                        <Form 
-                            type={"email"}
-                            name={"email"} 
-                            value={values.email} 
-                            handleChange={handleChange}
-                            placeholder="johndoe@mail.com"
-                        />
-                    </div>
                     <div className="pt-5">
                         <div className="font-bold">
                             No Telepon
@@ -202,13 +224,78 @@ const ProfileEdit = () => {
                                   name={"no_telp"} 
                                   value={values.no_telp} 
                                   handleChange={handleChange}
+                                  placeholder="0800-0000-0000"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="pt-5">
+                        <div className="font-bold">
+                            Jenis Kelamin
+                        </div>
+                        <div className="flex items-center gap-x-8">
+                            <div className="w-full">
+                                <FormDropdown
+                                  type={"text"}
+                                  name={"sex"} 
+                                  value={values.sex} 
+                                  handleChange={handleChange}
                                   placeholder="0000-0000-0000"
                                 />
                             </div>
                         </div>
                     </div>
+                    <div className="pt-5">
+                        <div className="font-bold">
+                            Kota Asal
+                        </div>
+                        <div className="flex items-center gap-x-8">
+                            <div className="w-full">
+                                <Form
+                                  type={"text"}
+                                  name={"city"} 
+                                  value={values.city} 
+                                  handleChange={handleChange}
+                                  placeholder="Jakarta"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="pt-5">
+                        <div className="font-bold">
+                            Status Pekerjaan
+                        </div>
+                        <div className="flex items-center gap-x-8">
+                            <div className="w-full">
+                                <Form
+                                  type={"text"}
+                                  name={"job"} 
+                                  value={values.job} 
+                                  handleChange={handleChange}
+                                  placeholder="Mahasiswa"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="pt-5 mb-5">
+                        <div className="font-bold">
+                            Tanggal Lahir
+                        </div>
+                        <div className="flex items-center gap-x-8">
+                            <div className="w-full mt-3">
+                                <FormDatepicker 
+                                    type={"date"}
+                                    name={"birth_date"} 
+                                    value={values.birth_date} 
+                                    max={dateNow}
+                                    handleChange={handleChange}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    {alert && <Alert alertMsg={alertMsg}/>}
                     <div className="pt-8 flex justify-center">
-                        <Button title="Daftar" type={"submit"}/>
+                        <Button title="Edit Data" type={"submit"}/>
                     </div>
                     </form>
                     </div>
