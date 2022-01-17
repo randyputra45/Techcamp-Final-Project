@@ -89,7 +89,7 @@ export default function useAuth() {
         email,
       }, { withCredentials: true, config })
       .then(async (response) => {
-        setError("Email sent")
+        setError("Email sent! Please wait mail for several minutes")
       })
       .catch((err) => {
         return setError(

@@ -20,13 +20,17 @@ const ProfilGantiPass = () => {
     });
 
     const handleForgotPass = async (e) => {
-        if (values.password === "" || values.confirm_password) {
-            setAlert(true);
+        e.preventDefault();
+        if (values.password === "" || values.confirm_password === "") {
             setAlertMsg(error);
+            setAlert(true);
+        } else if (values.password !== values.confirm_password){
+            setAlertMsg("Password don't match.")
+            setAlert(true);
         } else {
             await forgotPassword(values.password, path)
+            setAlertMsg("Password change successfully")
             setAlert(true);
-            setAlertMsg(error);
         }
     }
 
@@ -38,7 +42,7 @@ const ProfilGantiPass = () => {
                     <DesktopAvatar />
                 </div>
                 <div className="flex h-screen items-center justify-center">
-                    <div className="md:w-1/2 lg:w-2/5 2xl:w-2/6 bg-white rounded-xl">
+                    <div className="md:w-1/2 lg:w-2/5 2xl:w-2/6 bg-white rounded-xl mt-12">
                         <form onSubmit={handleForgotPass}>
                         <div className="px-10 py-12">
                             <div className="text-xl font-bold">Ganti Kata Sandi</div>

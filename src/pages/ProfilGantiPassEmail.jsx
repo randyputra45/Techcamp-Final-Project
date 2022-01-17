@@ -23,6 +23,7 @@ const ProfilGantiPassEmail = () => {
             setAlertMsg("Please fill in all the required fields")
             setAlert(true);
         } else {
+            setAlert(false);
             await forgotPassword(values)
             setAlert(true);
             setAlertMsg(error)
