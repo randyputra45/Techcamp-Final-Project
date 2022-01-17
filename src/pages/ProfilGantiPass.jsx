@@ -9,6 +9,7 @@ import Alert from "../components/Alert";
 const ProfilGantiPass = () => {
     const [alertMsg, setAlertMsg] = useState("");
     const [alert, setAlert] = useState(false);
+    const [password, setPassword] = useState("");
     const {error, resetPassword} = useAuth();
     const path = window.location.pathname;
 
@@ -21,6 +22,7 @@ const ProfilGantiPass = () => {
 
     const handleForgotPass = async (e) => {
         e.preventDefault();
+        setPassword(values.password)
         if (values.password === "" || values.confirm_password === "") {
             setAlertMsg(error);
             setAlert(true);
@@ -28,7 +30,7 @@ const ProfilGantiPass = () => {
             setAlertMsg("Password don't match.")
             setAlert(true);
         } else {
-            await resetPassword(values.password, path)
+            await resetPassword(password, path)
             setAlertMsg("Password change successfully")
             setAlert(true);
         }
