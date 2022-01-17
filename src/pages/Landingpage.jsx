@@ -24,6 +24,9 @@ const Landingpage = () => {
     return (
         <div>
             <div className="block md:hidden">
+                <div className="topbar w-full">
+                    <LandingNavbar />
+                </div>
                 <div className="pt-24 pb-6 px-6">
                     <div className="text-2xl font-bold pb-12">Perawatan yang tepat di waktu yang tepat.</div>
                 </div>
@@ -31,52 +34,87 @@ const Landingpage = () => {
                 <div className="py-24 px-6">
                     <div className="text-center pb-12">scroll untuk melihat lebih lanjut.</div>
                     <div className="pt-16">
-                        <div className="font-bold mb-2">Siapa Kami?</div>
-                        <div className="text-gray-500 text-sm leading-relaxed">GoCure Center adalah sebuah klinik layanan psikologi. Berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. GoCure Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus.</div>
-                    </div>
-                    <div className="pt-12">
-                        <div className="font-bold mb-3">Layanan yang kami tawarkan?</div>
-                        <div className="flex flex-col gap-y-4">
-                            <div className="flex justify-between">
-                                <LandingButton1 pic="konseling.svg" url="/"/>
-                                <LandingButton1 pic="konseling.svg" url="/"/>
-                                <LandingButton1 pic="konseling.svg" url="/"/>
-                                <LandingButton1 pic="konseling.svg" url="/"/>
+                        <div className='flex flex-col'>
+                            <img src="landing1.jpg" alt="" className='object-cover pb-6' />
+                            <div className="text-xl font-bold">
+                                Siapa kami?
                             </div>
-                            <AnswerCard 
-                                title="Webinar" 
-                                desc="anda dapat mengikuti kegiatan webinar bertemakan kesehatan mental yang disediakan oleh kami, kami juga mendatangkan langsung narasumber dari ahli yang terpercaya, dan anda bisa mendapatkan beberapa benefit menarik dari kami selama mengikuti kegiatan webinar."
-                            />
+                            <div className="mt-2 leading-relaxed">
+                                GoCure merupakan sebuah klinik layanan psikologi yang berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. GoCure Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus.
+                            </div>
+                            <Link to="/aboutus" className="flex">
+                                <div className="border-b border-white hover:border-blue-600">
+                                    <div className="mt-6 text-blue-600 md:text-base xl:text-lg leading-relaxed cursor-pointer">
+                                        Tentang Kami →
+                                    </div>
+                                </div>
+                            </Link>
                         </div>
                     </div>
-                    <div className="pt-12">
-                        <div className="font-bold mb-3">Kenapa kami?</div>
-                        <div className="flex flex-col gap-y-4">
-                            <div className="flex justify-between">
-                                <LandingButton1 pic="konseling.svg" url="/"/>
-                                <LandingButton1 pic="konseling.svg" url="/"/>
-                                <LandingButton1 pic="konseling.svg" url="/"/>
-                                <LandingButton1 pic="konseling.svg" url="/"/>
+                    <div className="">
+                        <div className="pt-32">
+                            <div className="text-xl font-bold">
+                                Layanan Kami
                             </div>
-                            <AnswerCard 
-                                title="Webinar" 
-                                desc="anda dapat mengikuti kegiatan webinar bertemakan kesehatan mental yang disediakan oleh kami, kami juga mendatangkan langsung narasumber dari ahli yang terpercaya, dan anda bisa mendapatkan beberapa benefit menarik dari kami selama mengikuti kegiatan webinar."
-                            />
+                            <div className="grid grid-cols-1 gap-4 pt-6">
+                                <LandingButton1 
+                                    pic="konseling.svg"
+                                    title="Konseling"
+                                    desc="disini anda bisa melakukan penanganan kesehatan mental anda dengan orang yang terpercaya dan ahli dibidangnya." 
+                                    url="/screening"
+                                />
+                                <LandingButton1 
+                                    pic="webinar.svg"
+                                    title="Webinar"
+                                    desc="disini anda bisa mengikuti kegiatan webinar bertajuk kesehatan mental bersama narasumber ahli dan terpercaya." 
+                                    url="/webinar"
+                                />
+                                <LandingButton1 
+                                    pic="blog.svg"
+                                    title="Blog"
+                                    desc="disini anda bisa membaca ragam artikel dan blog untuk menambah awareness anda tentang kesehatan mental." 
+                                    url="/blogs"
+                                />
+                                <LandingButton1 
+                                    pic="tes.svg"
+                                    title="Tes kesehatan"
+                                    desc="disini anda juga dapat melakukan tes kesehatan agar anda mengetahui kondisi dari kesehatan mental anda saat ini." 
+                                    url="/healthtest"
+                                />
+                            </div>
+                            <div className="pt-8 flex justify-center">
+                                <DesktopActiveButton2
+                                    title="Pelajari Lebih Lanjut"
+                                    url="/infolayanan"
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className="pt-12">
-                        <div className="font-bold mb-3">Sedikit testimoni dari user kami</div>
-                        <div className="flex flex-col gap-y-4">
-                            <div className="flex justify-between">
-                                <LandingButton1 pic="konseling.svg" url="/"/>
-                                <LandingButton1 pic="konseling.svg" url="/"/>
-                                <LandingButton1 pic="konseling.svg" url="/"/>
-                                <LandingButton1 pic="konseling.svg" url="/"/>
+                        <div className="pt-32">
+                            <div className="text-xl font-bold">
+                                Kenapa Kami?
                             </div>
-                            <AnswerCard 
-                                title="Webinar" 
-                                desc="anda dapat mengikuti kegiatan webinar bertemakan kesehatan mental yang disediakan oleh kami, kami juga mendatangkan langsung narasumber dari ahli yang terpercaya, dan anda bisa mendapatkan beberapa benefit menarik dari kami selama mengikuti kegiatan webinar."
-                            />
+                            <div className="grid grid-cols-1 gap-4 pt-6">
+                                <LandingButton11
+                                    pic="konseling.svg"
+                                    title="24 jam pelayanan konsumen"
+                                    desc="GoCure hadir dengan memberikan pelayanan sepenuh hati kepada konsumen. Siap melayani konsumen kapanpun user inginkan." 
+                                />
+                                <LandingButton11 
+                                    pic="konseling.svg"
+                                    title="SDM yang ahli dibidangnya"
+                                    desc="Kami bekerjasama dengan tenaga yang ahli dibidangnya, tidak hanya mendengarkan, tetapi juga memberikan saran dan solusi yang terbaik untuk konsumen." 
+                                />
+                                <LandingButton11 
+                                    pic="konseling.svg"
+                                    title="aksesibilitas yang mudah"
+                                    desc="GoCure dibuat dengan antarmuka dengan aksesibilitas yang menarik dan sangat user friendly untuk memudahkan pengguna mengakses website kami." 
+                                />
+                                <LandingButton11 
+                                    pic="konseling.svg"
+                                    title="proses konseling yang cepat"
+                                    desc="Tidak perlu untuk menunggu lama, jadwal konsultasimu akan segera dikirim melalui email yang didaftarkan, karena kami akan segera membalas pesanmu dengan cepat." 
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

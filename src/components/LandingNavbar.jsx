@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const LandingNavbar = () => {
     return (
         <div>
-            <div className="bg-gray-50 py-6 px-12 flex items-center justify-between">
+            <div className="bg-gray-50 py-6 px-4 md:px-12 flex items-center justify-between">
                 <Link>
                     <img to="/" src="gocure.svg" alt="" className="h-10" />
                 </Link>

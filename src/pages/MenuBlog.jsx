@@ -77,52 +77,13 @@ const MenuBlog = () => {
 
     return (
         <div>
-            <div className="block md:hidden">
-                <div className="px-6">
-                    <MobileNavbar />
-                    <div className="pt-24 flex flex-col">
-                        <div className="text-sm mb-1">Lainnya</div>
-                        <div className="text-2xl font-bold">Blog</div>
-                    </div>
-                    <div className="pt-8">
-                        <div className="font-bold text-sm pb-3">Kategori</div>
-                        <div className="flex gap-x-3">
-                            <button onClick={() => handleAll()}>
-                                <KategoriBlog color={allActive ? "bg-selected" : "bg-button"} textcolor={allActive ? "text-white" : "text-black"} title="Semua" />
-                            </button>
-                            <button onClick={() => handleMental()}>
-                                <KategoriBlog color={mentalActive ? "bg-selected" : "bg-button"} textcolor={mentalActive ? "text-white" : "text-black"} title="Kesehatan Mental" />
-                            </button>
-                            <button onClick={() => handleProduktifitas()}>
-                                <KategoriBlog color={produktifitasActive ? "bg-selected" : "bg-button"} textcolor={produktifitasActive ? "text-white" : "text-black"} title="Produktifitas" />
-                            </button>
-                            <button onClick={() => handlePemahamanDiri()}>
-                                <KategoriBlog color={pemahamanActive ? "bg-selected" : "bg-button"} textcolor={pemahamanActive ? "text-white" : "text-black"} title="Pemahaman Diri" />
-                            </button>
-                        </div>
-                    </div>
-                    <div className="pt-8">
-                        <div className="font-bold text-sm pb-3">Hasil</div>
-                        <div className="flex flex-col gap-y-3">
-                            {filteredBlog && filteredBlog.map((art) => (
-                                <BlogCard
-                                url={`/blogs/${art._id}`}
-                                key={art._id}
-                                title={art.title}
-                                pic={art.image}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                </div>  
-            </div>
-            <div className="hidden md:block">
+            <div className="">
                 <div className="bg-begron2">
                 </div>
                 <div className="topbar w-full">
                     <DesktopAvatar />
                 </div>
-                <div className="px-8 pt-36 pb-24">
+                <div className="md:px-8 pt-36 pb-24">
                     <div className="flex justify-center">
                         <div className="flex flex-col">
                             <div className="py-8 px-10 bg-body rounded-t-lg">
