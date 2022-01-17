@@ -52,15 +52,6 @@ const PembayaranCoaching = (props) => {
                     </div>
                     <div className="pt-8">
                         <div className="flex flex-col gap-y-3">
-                            <div className="font-bold text-sm">Promo</div>
-                            <MobileButton 
-                                title="Tidak memilih apapun"
-                                desc="Klik untuk melihat opsi lain"
-                            />
-                        </div>
-                    </div>
-                    <div className="pt-8">
-                        <div className="flex flex-col gap-y-3">
                             <RingkasanOrder 
                                 nama="Konsultasi"
                                 date={state.date}
@@ -96,12 +87,6 @@ const PembayaranCoaching = (props) => {
                                         <PembayaranModal
                                             desc="Klik untuk melihat opsi lain"
                                             sendToParent={setIsParentData}
-                                        />
-
-                                        <div className="pt-8 pb-4 font-bold">Paket Promo</div>
-                                        <MobileButton2 
-                                            title="Tidak Memilih Promo"
-                                            desc="Klik untuk melihat opsi lain"
                                         />
                                     </div>
                                     <RingkasanOrder 

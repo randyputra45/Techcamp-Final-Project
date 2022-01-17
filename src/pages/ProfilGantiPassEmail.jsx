@@ -25,10 +25,11 @@ const ProfilGantiPassEmail = () => {
         } else {
             setAlert(false);
             await forgotPassword(values)
-            setAlert(true);
             setAlertMsg(error)
+            setAlert(true);
         }
     }
+    
     return (
         <div>
             <div className="hidden md:block">
