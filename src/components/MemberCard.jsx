@@ -3,10 +3,7 @@ import React from 'react'
 const MemberCard = (props) => {
     return (
         <div>
-            <div className="block md:hidden">
-                <img src={props.pic2} alt="" className='lg:hidden block object-cover w-full' />
-            </div>
-            <div className="hidden md:block">
+            <div className="">
                 <div className='flex flex-col'>
                     <div className="md:text-2xl xl:text-3xl font-bold">
                         {props.title}

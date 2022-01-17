@@ -16,7 +16,7 @@ const Partnership = () => {
 
     return (
         <div>
-            <div className="hidden md:block">
+            <div className="">
                 <div className="bg-begron2">
                 </div>
                 <div className="topbar w-full">
