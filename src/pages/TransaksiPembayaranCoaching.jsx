@@ -5,12 +5,12 @@ import MobileButton from '../components/MobileButton'
 import MobileButton2 from '../components/MobileButton2'
 import RingkasanOrder from '../components/RingkasanOrder'
 import TotalBayar from '../components/TotalBayar'
-import usePayWebinar from '../hooks/usePayWebinar'
+import usePayCoaching from '../hooks/usePayCoaching'
 import { UserContext } from "../context/userContext";
 import ButtonAction from '../components/ButtonAction'
 
 const PembayaranCoaching = (props) => {
-    const {createPayment} = usePayWebinar()
+    const {createPayment} = usePayCoaching()
     const { user } = useContext(UserContext);
     const { state } = props.location
 
