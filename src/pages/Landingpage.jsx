@@ -9,13 +9,11 @@ import LandingButton1 from '../components/LandingButton1'
 import LandingButton11 from '../components/LandingButton11'
 import TestiCard from '../components/TestiCard'
 import { Link } from 'react-router-dom'
-import ButtonAction from '../components/ButtonAction'
 
 const Landingpage = () => {
     const history = useHistory()
 
-    const { user, isLoading } = useContext(UserContext);
-    console.log(user, isLoading);
+    const { user } = useContext(UserContext);
 
     if(user) {
         history.push("/home")

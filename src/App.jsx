@@ -68,6 +68,7 @@ import UserWebinar from "./pages/UserWebinar";
 import UserCoaching from "./pages/UserCoaching";
 import UserDyslexia from "./pages/UserDyslexia";
 import ProfilGantiPassEmail from "./pages/ProfilGantiPassEmail";
+import Response404 from "./pages/Response404";
 
 
 function App() {
@@ -145,17 +146,19 @@ function App() {
               <PrivateRoute exact path="/profile" component={Profile} />
               <PrivateRoute exact path="/profile/notification" component={ProfileNotification} />
 
-              <PrivateRoute exact path="/profile/layanan" component={ProfilLayanan} />
-              <PrivateRoute exact path="/profile/conseling" component={UserConseling} />
+              <PrivateRoute exact path="/profile/edit" component={ProfileEdit} />
+\             <PrivateRoute exact path="/profile/conseling" component={UserConseling} />
               <PrivateRoute exact path="/profile/webinars" component={UserWebinar} />
               <PrivateRoute exact path="/profile/coaching" component={UserCoaching} />
               <PrivateRoute exact path="/profile/dyslexia" component={UserDyslexia} />
               <PrivateRoute exact path="/profile/blogs" component={ProfileBlog} />
 
-              <PrivateRoute exact path="/profile/edit" component={ProfileEdit} />
               <Route exact path="/profile/changepass" component={ProfilGantiPassEmail} />
               <Route path="/passwordreset" component={ProfilGantiPass} />
-            </Switch>
+
+              {/* Not Found */}
+              <Route component={Response404} />
+            </Switch> 
           </ScrollToTop>
         </Router>
       </main>

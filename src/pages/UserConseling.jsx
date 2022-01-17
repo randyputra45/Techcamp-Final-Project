@@ -30,7 +30,7 @@ const UserConseling = () => {
                         <div className="flex flex-col">
                             <div className="py-8 px-10 bg-body rounded-t-lg">
                                 <div className="pb-8">
-                                    <div className="text-xl font-bold">Riwayat Pemesanan Kelas Pelatihan</div>
+                                    <div className="text-xl font-bold">Riwayat Pemesanan Conseling</div>
                                 </div>
                                 <div className="font-bold">Anda telah memesan</div>
                                 {userConsul && userConsul.map((consul) => (

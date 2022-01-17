@@ -31,8 +31,13 @@ const ProfilGantiPass = () => {
             setAlert(true);
         } else {
             await resetPassword(values.password, path)
-            setAlertMsg(error)
-            setAlert(true);
+            if(error) {
+                setAlertMsg(error)
+                setAlert(true);
+            } else {
+                setAlertMsg("Password successfully change")
+                setAlert(true);
+            }
         }
     }
 

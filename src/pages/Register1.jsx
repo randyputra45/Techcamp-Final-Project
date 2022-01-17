@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import Button from '../components/Button'
 import Form from '../components/Form'
 import ChartBar from '../components/ChartBar'
@@ -10,63 +10,72 @@ import FormDatepicker from "../components/FormDatepicker";
 import Alert from "../components/Alert";
 import useFindUser from "../hooks/useFindUser";
 import { Link, useHistory } from "react-router-dom";
+import { UserContext } from '../context/userContext';
+
 
 const Register1 = () => {
-  const history = useHistory()
-  let dateNow = new Date().toLocaleDateString('en-CA', {timeZone: "Asia/Jakarta"})    
-  const { registerUser, error } = useAuth();
-  const { allUsers } = useFindUser();
-  const [alert, setAlert] = useState(false);
-  const [alertMsg, setAlertMsg] = useState("");
+    const history = useHistory()
 
-  const { values, handleChange } = useForm({
-    initialValues: {
-        first_name: "",
-        last_name: "",
-        email: "",
-        password: "",
-        confirm_password: "",
-        no_telp: "",
-        sex: "",
-        birth_date: ""
-    }
-  });
+    const { user } = useContext(UserContext);
 
-  const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  const passwordRegex = /^[a-zA-Z0-9]{8,}$/
+    if(user) {
+        history.push("/home")
+    }
+    
+    let dateNow = new Date().toLocaleDateString('en-CA', {timeZone: "Asia/Jakarta"})    
+    const { registerUser, error } = useAuth();
+    const { allUsers } = useFindUser();
+    const [alert, setAlert] = useState(false);
+    const [alertMsg, setAlertMsg] = useState("");
 
-  const handleRegister = async (e) => {
-    e.preventDefault();
-    console.log(values)
+    const { values, handleChange } = useForm({
+        initialValues: {
+            first_name: "",
+            last_name: "",
+            email: "",
+            password: "",
+            confirm_password: "",
+            no_telp: "",
+            sex: "",
+            birth_date: ""
+        }
+    });
 
-    if (values.first_name === "" || values.last_name === "" || values.email === "" || values.password === "" || values.confirm_password === "" || values.sex === ""|| values.no_telp === ""|| values.birth_date === "") {
-        setAlertMsg("Please fill in all the required fields")
-        setAlert(true);
+    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    const passwordRegex = /^[a-zA-Z0-9]{8,}$/
+
+    const handleRegister = async (e) => {
+        e.preventDefault();
+        console.log(values)
+
+        if (values.first_name === "" || values.last_name === "" || values.email === "" || values.password === "" || values.confirm_password === "" || values.sex === ""|| values.no_telp === ""|| values.birth_date === "") {
+            setAlertMsg("Please fill in all the required fields")
+            setAlert(true);
+        }
+        else if (!emailRegex.test(values.email)){
+            setAlertMsg("Invalid email.")
+            setAlert(true);
+        }
+        else if (!passwordRegex.test(values.password)){
+            setAlertMsg("Password should contain at least 8 characters")
+            setAlert(true);
+        }
+        else if (values.password !== values.confirm_password){
+            setAlertMsg("Password don't match.")
+            setAlert(true);
+        } else if (error) {
+            console.log(error)
+            setAlertMsg(error)
+            setAlert(true);
+        }
+        else{
+            await registerUser(values);
+            history.push({
+                pathname: "/register/checkemail",
+                state: {email: values.email}
+            })
+        }
     }
-    else if (!emailRegex.test(values.email)){
-        setAlertMsg("Invalid email.")
-        setAlert(true);
-    }
-    else if (!passwordRegex.test(values.password)){
-        setAlertMsg("Password should contain at least 8 characters")
-        setAlert(true);
-    }
-    else if (values.password !== values.confirm_password){
-        setAlertMsg("Password don't match.")
-        setAlert(true);
-    } else if (error) {
-        console.log(error)
-        setAlertMsg(error)
-        setAlert(true);
-    }
-    else{
-        await registerUser(values);
-        history.push({
-            pathname: "/register/checkemail",
-            state: {email: values.email}
-        })
-    }
-  }
 
   return (
     <div>
