@@ -74,7 +74,7 @@ const PembayaranCoaching = (props) => {
                 <div className="topbar w-full">
                     <DesktopAvatar />
                 </div>
-                <div className="px-8 pt-36 pb-12">
+                <div className="px-4 pt-36 pb-12">
                     <div className="flex justify-center">
                         <div className="flex flex-col">
                             <div className="py-8 px-10  bg-body rounded-t-lg">

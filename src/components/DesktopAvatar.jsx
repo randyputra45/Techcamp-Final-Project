@@ -24,7 +24,7 @@ const DesktopAvatar = () => {
 
     return (
         <div>
-            <div className="py-4 px-16 flex justify-between items-center bg-body">
+            <div className="py-4 px-4 md:px-16 flex justify-between items-center bg-body">
                 <Link to="/">
                     <img src="gocure.svg" alt="" className="cursor-pointer h-10" />
                 </Link>
