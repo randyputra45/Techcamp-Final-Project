@@ -6,30 +6,28 @@ import useForm from '../hooks/useForm';
 import useAuth from '../hooks/useAuth';
 import Alert from "../components/Alert";
 
-const ProfilGantiPass = () => {
+const ProfilGantiPassEmail = () => {
     const [alertMsg, setAlertMsg] = useState("");
     const [alert, setAlert] = useState(false);
-    const {error, forgotPassword} = useAuth();
-    const path = window.location.pathname;
+    const {error, forgotPassword} = useAuth()
 
     const { values, handleChange } = useForm({
         initialValues: {
-            password: "",
-            confirm_password: "",
+            email: "",
         }
     });
 
-    const handleForgotPass = async (e) => {
-        if (values.password === "" || values.confirm_password) {
+    const handleForgotPassEmail = async (e) => {
+        e.preventDefault();
+        if (values.email === "") {
+            setAlertMsg("Please fill in all the required fields")
             setAlert(true);
-            setAlertMsg(error);
         } else {
-            await forgotPassword(values.password, path)
+            await forgotPassword(values)
             setAlert(true);
-            setAlertMsg(error);
+            setAlertMsg(error)
         }
     }
-
     return (
         <div>
             <div className="hidden md:block">
@@ -39,37 +37,25 @@ const ProfilGantiPass = () => {
                 </div>
                 <div className="flex h-screen items-center justify-center">
                     <div className="md:w-1/2 lg:w-2/5 2xl:w-2/6 bg-white rounded-xl">
-                        <form onSubmit={handleForgotPass}>
+                        <form onSubmit={handleForgotPassEmail}>
                         <div className="px-10 py-12">
                             <div className="text-xl font-bold">Ganti Kata Sandi</div>
                             <div className="pt-12">
                                 <div className="font-bold mb-2">
-                                    Masukan password baru
+                                    Masukan email untuk reset password
                                 </div>
-                                <Form 
-                                    type={"password"}
-                                    name={"password"} 
-                                    value={values.password} 
+                                <Form
+                                    type={"email"}
+                                    name={"email"} 
+                                    value={values.email} 
                                     handleChange={handleChange}
-                                    placeholder="********"
-                                />
-                            </div>
-                            <div className="pt-12 pb-3">
-                                <div className="font-bold mb-2">
-                                    Masukan konfirmasi password baru
-                                </div>
-                                <Form 
-                                    type={"password"}
-                                    name={"confirm_password"} 
-                                    value={values.confirm_password} 
-                                    handleChange={handleChange}
-                                    placeholder="********"
+                                    placeholder="yourmail@mail.com"
                                 />
                             </div>
                             {alert && <Alert alertMsg={alertMsg}/>}
                             <div className="pt-8">
                                 <Button
-                                    title="Ganti Password"
+                                    title="Kirim Email"
                                     type={"submit"}
                                 />
                             </div>
@@ -82,4 +68,4 @@ const ProfilGantiPass = () => {
     )
 }
 
-export default ProfilGantiPass
+export default ProfilGantiPassEmail

@@ -67,6 +67,7 @@ import ProfileEdit from "./pages/ProfileEdit";
 import UserWebinar from "./pages/UserWebinar";
 import UserCoaching from "./pages/UserCoaching";
 import UserDyslexia from "./pages/UserDyslexia";
+import ProfilGantiPassEmail from "./pages/ProfilGantiPassEmail";
 
 
 function App() {
@@ -152,9 +153,8 @@ function App() {
               <PrivateRoute exact path="/profile/blogs" component={ProfileBlog} />
 
               <PrivateRoute exact path="/profile/edit" component={ProfileEdit} />
-              <PrivateRoute exact path="/profile/gantiemail" component={ProfilGantiEmail} />
-              <PrivateRoute exact path="/profile/gantipass" component={ProfilGantiPass} />
-              <PrivateRoute exact path="/profile/gantinomor" component={ProfilGantiNomor} />
+              <Route exact path="/profile/changepass" component={ProfilGantiPassEmail} />
+              <Route path="/passwordreset" component={ProfilGantiPass} />
             </Switch>
           </ScrollToTop>
         </Router>
