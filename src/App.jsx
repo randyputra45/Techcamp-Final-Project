@@ -67,6 +67,7 @@ import ProfileEdit from "./pages/ProfileEdit";
 import UserWebinar from "./pages/UserWebinar";
 import UserCoaching from "./pages/UserCoaching";
 import UserDyslexia from "./pages/UserDyslexia";
+import ProfilGantiPassEmail from "./pages/ProfilGantiPassEmail";
 
 
 function App() {
@@ -141,20 +142,19 @@ function App() {
               <Route exact path="/dyslexia/payment" component={PembayaranDyslexia} />
 
               {/* Profile */}
-              <Route exact path="/profile" component={Profile} />
-              <Route exact path="/profile/notification" component={ProfileNotification} />
+              <PrivateRoute exact path="/profile" component={Profile} />
+              <PrivateRoute exact path="/profile/notification" component={ProfileNotification} />
 
-              <Route exact path="/profile/layanan" component={ProfilLayanan} />
-              <Route exact path="/profile/conseling" component={UserConseling} />
-              <Route exact path="/profile/webinars" component={UserWebinar} />
-              <Route exact path="/profile/coaching" component={UserCoaching} />
-              <Route exact path="/profile/dyslexia" component={UserDyslexia} />
-              <Route exact path="/profile/blogs" component={ProfileBlog} />
+              <PrivateRoute exact path="/profile/layanan" component={ProfilLayanan} />
+              <PrivateRoute exact path="/profile/conseling" component={UserConseling} />
+              <PrivateRoute exact path="/profile/webinars" component={UserWebinar} />
+              <PrivateRoute exact path="/profile/coaching" component={UserCoaching} />
+              <PrivateRoute exact path="/profile/dyslexia" component={UserDyslexia} />
+              <PrivateRoute exact path="/profile/blogs" component={ProfileBlog} />
 
-              <Route exact path="/profile/edit" component={ProfileEdit} />
-              <Route exact path="/profile/gantiemail" component={ProfilGantiEmail} />
-              <Route exact path="/profile/gantipass" component={ProfilGantiPass} />
-              <Route exact path="/profile/gantinomor" component={ProfilGantiNomor} />
+              <PrivateRoute exact path="/profile/edit" component={ProfileEdit} />
+              <Route exact path="/profile/changepass" component={ProfilGantiPassEmail} />
+              <Route path="/passwordreset" component={ProfilGantiPass} />
             </Switch>
           </ScrollToTop>
         </Router>

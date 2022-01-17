@@ -80,10 +80,46 @@ export default function useAuth() {
         );
       });
   };
+  
+  //forgot password
+  const forgotPassword = async (data) => {
+    const { email } = data;
+    return axios
+      .post("https://gocure.netlify.app/api/forgotpassword", {
+        email,
+      }, { withCredentials: true, config })
+      .then(async (response) => {
+        setError("Email sent! Please wait mail for several minutes")
+      })
+      .catch((err) => {
+        return setError(
+          JSON.stringify(err.response.data.error)
+        );
+      });
+  };
+
+  //reset password
+  const resetPassword = async (data, url) => {
+    const { password } = data;
+    return axios
+      .post(`https://gocure.netlify.app/api${url}`, {
+        password,
+      }, { withCredentials: true, config })
+      .then(async (response) => {
+        setError("Password changed")
+      })
+      .catch((err) => {
+        return setError(
+          JSON.stringify(err.response.data.error)
+        );
+      });
+  };
 
   return {
     registerUser,
     loginUser,
+    forgotPassword,
+    resetPassword,
     error,
   };
 }

@@ -72,19 +72,10 @@ const Profile = () => {
                         <div className="flex flex-col gap-y-3">
                             <div className="font-bold text-sm">Pengaturan</div>
                             <MobileButton 
-                                pic="blog.svg"
-                                title="Ganti Email"
-                                desc="baca juga artikel dan blog untuk menambah awareness anda tentang kesehatan mental."
-                            />
-                            <MobileButton 
-                                pic="ahli.svg"
-                                title="Ganti Nomor Telepon"
-                                desc="cek informasi mengenai para ahli yang bekerja pada kami."
-                            />
-                            <MobileButton 
                                 pic="info.svg"
                                 title="Ganti Kata Sandi"
                                 desc="baca juga artikel dan blog untuk menambah awareness anda tentang kesehatan mental."
+                                url="/profile/changepass"
                             />
                             <MobileButton 
                                 pic="kolab.svg"
@@ -187,6 +178,7 @@ const Profile = () => {
                                     pic="key.svg"
                                     title="Ganti Kata Sandi"
                                     desc="Sa*****"
+                                    url="/profile/changepass"
                                 />
                             </div>
                         </div>  
