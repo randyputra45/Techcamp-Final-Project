@@ -9,7 +9,7 @@ import Alert from "../components/Alert";
 const ProfilGantiPass = () => {
     const [alertMsg, setAlertMsg] = useState("");
     const [alert, setAlert] = useState(false);
-    const {error, forgotPassword} = useAuth();
+    const {error, resetPassword} = useAuth();
     const path = window.location.pathname;
 
     const { values, handleChange } = useForm({
@@ -28,7 +28,7 @@ const ProfilGantiPass = () => {
             setAlertMsg("Password don't match.")
             setAlert(true);
         } else {
-            await forgotPassword(values.password, path)
+            await resetPassword(values.password, path)
             setAlertMsg("Password change successfully")
             setAlert(true);
         }
@@ -44,7 +44,7 @@ const ProfilGantiPass = () => {
                 <div className="flex h-screen items-center justify-center">
                     <div className="md:w-1/2 lg:w-2/5 2xl:w-2/6 bg-white rounded-xl mt-12">
                         <form onSubmit={handleForgotPass}>
-                        <div className="px-10 py-12">
+                        <div className="px-10 py-20">
                             <div className="text-xl font-bold">Ganti Kata Sandi</div>
                             <div className="pt-12">
                                 <div className="font-bold mb-2">
@@ -58,7 +58,7 @@ const ProfilGantiPass = () => {
                                     placeholder="********"
                                 />
                             </div>
-                            <div className="pt-12 pb-3">
+                            <div className="pt-6 pb-3">
                                 <div className="font-bold mb-2">
                                     Masukan konfirmasi password baru
                                 </div>

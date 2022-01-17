@@ -102,7 +102,7 @@ export default function useAuth() {
   const resetPassword = async (data, url) => {
     const { password } = data;
     return axios
-      .post(`https://gocure.netlify.app/api${url}`, {
+      .put(`https://gocure.netlify.app/api${url}`, {
         password,
       }, { withCredentials: true, config })
       .then(async (response) => {
