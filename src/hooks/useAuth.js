@@ -101,13 +101,11 @@ export default function useAuth() {
   //reset password
   const resetPassword = async (data, url) => {
     const { password } = data;
+    console.log("password")
     return axios
       .put(`https://gocure.netlify.app/api${url}`, {
         password,
       }, { withCredentials: true, config })
-      .then(async (response) => {
-        setError("Password changed")
-      })
       .catch((err) => {
         return setError(
           JSON.stringify(err.response.data.error)
