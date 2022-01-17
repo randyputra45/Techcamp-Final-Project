@@ -3,34 +3,33 @@ import ButtonAction from '../components/ButtonAction'
 import DesktopAvatar from '../components/DesktopAvatar'
 import PaketCard from '../components/PaketCard'
 import { useHistory } from 'react-router-dom';
-import usePackage from '../hooks/usePackage';
+import usePackage from '../hooks/usePackageDyslexia';
 
-const PaketKonseling = () => {
+const PaketDyslexia = () => {
     let dateNow = new Date().toLocaleDateString('en-CA', {timeZone: "Asia/Jakarta"})
     const history = useHistory()
     const {packageData} = usePackage()
 
     const [date, setDate] = useState("")
-    const [package_name, setPackage] = useState("")
-    const [package_price, setPrice] = useState("")
 
-    const handleClick = (name, price) => {
-        setPackage(name);
-        setPrice(price);
-        console.log(name, price)
-
-        const data = {
-            date: date,
-            package_name: package_name,
-            price: package_price
-        }
-
-        console.log(package_name, package_price)
-        if(date && package_price && package_name) {
-            history.push({
-                pathname: "/payment",
-                state: data
-            })
+    const handleClick = async (name, price) => {
+        try {
+            console.log(name, price)
+    
+            const data = {
+                date: date,
+                package: `Pusat Dyslexia ${name}`,
+                price: price
+            }
+            
+            if(date && name && price) {
+                history.push({
+                    pathname: "/dyslexia/payment",
+                    state: data
+                })
+            }
+        } catch (error) {
+            console.log(error)
         }
     }
 
@@ -41,18 +40,19 @@ const PaketKonseling = () => {
                     <div className="text-2xl font-bold">Pilih Paket</div>
                     <div className="pt-8">
                         <div className="flex flex-col gap-y-12">
-                            {packageData && packageData.map((data) => 
+                            {packageData && packageData.map((data, i) => 
                             <>
                                 <div className="grid gap-y-4 content-between">
                                         <PaketCard
+                                            key={i}
                                             bgtitle={data.name}
                                             prize={data.price}
-                                            desc1="Morning 8.30 - 12.30 PM"
-                                            desc2="1 Guru dengan 5 Murid"
-                                            desc2="Kelas edukasi dengan Visual Arts, Dance, Music, dan Robotics"
+                                            desc1="1x Sesi Individual"
+                                            desc2="1x Sesi Group Support"
                                         />
                                         <button onClick={() => handleClick(data.name, data.price)}>
                                             <ButtonAction
+                                                key={i}
                                                 title="Pilih Paket"
                                             />
                                         </button>
@@ -72,7 +72,7 @@ const PaketKonseling = () => {
                 <div className="px-8 lg:px-12 2xl:px-48 pt-36 pb-12">
                     <div className="flex justify-center">
                         <div className="flex flex-col">
-                            <div className="py-8 px-10 bg-body rounded-t-lg">
+                            <div className="py-8 px-20 bg-body rounded-t-lg">
                                 <div className="pb-12">
                                     <div className="mb-4">
                                         <div className="text-xl font-bold">Pilih tanggal</div>
@@ -82,11 +82,12 @@ const PaketKonseling = () => {
                                 <div className="mb-6">
                                     <div className="text-xl font-bold">Pilih paket yang diinginkan</div>
                                 </div>
-                                <div className="grid md:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-16 content-between">
-                                    {packageData && packageData.map((data) => 
+                                <div className="grid md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-x-4 gap-y-12 content-between">
+                                    {packageData && packageData.map((data, i) => 
                                     <>
-                                        <div className="grid gap-y-4 content-between">
+                                        <div className="grid gap-y-4">
                                                 <PaketCard
+                                                    key={i}
                                                     bgtitle={data.name}
                                                     prize={data.price}
                                                     desc1="1x Sesi Individual"
@@ -94,6 +95,7 @@ const PaketKonseling = () => {
                                                 />
                                                 <button onClick={() => handleClick(data.name, data.price)}>
                                                     <ButtonAction
+                                                        key={i}
                                                         title="Pilih Paket"
                                                     />
                                                 </button>
@@ -110,4 +112,4 @@ const PaketKonseling = () => {
     )
 }
 
-export default PaketKonseling
+export default PaketDyslexia

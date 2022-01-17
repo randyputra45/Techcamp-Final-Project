@@ -1,35 +1,48 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios'; 
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function useFindUser() {
-    const [user, setUser] = useState(null);
-    const [isLoading, setLoading] = useState(true);
+  const [user, setUser] = useState(null);
+  const [allUsers, setAllUser] = useState(null);
+  const [isLoading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    const config = {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "application/json",
-        },
-    };
+  const config = {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json",
+    },
+  };
 
-    useEffect(() =>{
-        async function findUser() {
-        await axios.get('/user', { withCredentials: true, config })
-        .then(res => {
-            setUser(res.data.currentUser);
-            setLoading(false);
-        }).catch(err => {
-            console.log(err);
-            setLoading(false);
+  useEffect(() => {
+    async function findUser() {
+      await axios
+        .get("https://gocure.netlify.app/api/user", { withCredentials: true, config })
+        .then((res) => {
+          setUser(res.data.currentUser);
+          setLoading(false);
+        })
+        .then(
+          axios
+            .get("https://gocure.netlify.app/api/users", {
+              withCredentials: true,
+              config,
+            })
+            .then((res) => {
+              setAllUser(res.data);
+            })
+        )
+        .catch((err) => {
+          setError(err.response.data);
         });
-        }
-        
-        findUser();  
-    }, []);
-    
-    return {
-        user,
-        setUser,
-        isLoading
     }
+    findUser();
+  }, []);
+
+  return {
+    user,
+    allUsers,
+    setUser,
+    isLoading,
+  };
 }

@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
-export default function usePsikolog() {
-  const [psikolog, setPsikolog] = useState(null);
-  const [psikologID, setPsikologID] = useState(null);
+export default function useCoaching() {
+  const [coaching, setCoaching] = useState(null);
+  const [coachingID, setCoachingID] = useState(null);
+  const [coachingContent, setCoachingContent] = useState(null);
   const [isLoading, setLoading] = useState(true);
+  const [isLoadingContent] = useState(true);
   const [error, setError] = useState("");
 
   const config = {
@@ -15,11 +17,11 @@ export default function usePsikolog() {
   };
 
   useEffect(() => {
-    async function getPsikolog() {
+    async function getCoaching() {
       await axios
-        .get("https://gocure.netlify.app/api/experts", { withCredentials: true, config })
+        .get("https://gocure.netlify.app/api/coaching", { withCredentials: true, config })
         .then((res) => {
-          setPsikolog(res.data);
+          setCoaching(res.data);
           setLoading(false);
         })
         .catch((err) => {
@@ -27,15 +29,15 @@ export default function usePsikolog() {
           setLoading(false);
         });
     }
-
-    getPsikolog();
+    getCoaching();
   }, []);
 
-  const getPsikologById = async (data) => {
+  const getCoachingById = async (data) => {
     return axios
       .get(`https://gocure.netlify.app/api${data}`, { withCredentials: true, config })
       .then((res) => {
-        setPsikologID(res.data);
+        setCoachingContent(JSON.parse(res.data.content[0])[0]);
+        setCoachingID(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -46,10 +48,12 @@ export default function usePsikolog() {
   };
 
   return {
-    psikolog,
-    psikologID,
-    getPsikologById,
+    coaching,
+    coachingID,
+    coachingContent,
+    getCoachingById,
     isLoading,
+    isLoadingContent,
     error,
   };
 }

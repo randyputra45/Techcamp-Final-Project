@@ -17,24 +17,18 @@ export default function useConsultation() {
       "Content-Type": "application/json",
     },
   };
-  
-  const config2 = {
-    headers: {
-      "Accept": "application/json",
-      "Content-Type": "application/json",
-      "Authorization": "Basic U0ItTWlkLXNlcnZlci03MHNpUlFuOGt0Zk1qNVBsM3lvQUpMdWQ6"
-    },
-  };
 
   useEffect(() => {
     async function getConsul() {
       await axios
-        .get("/consultation", { withCredentials: true, config })
+        .get("https://gocure.netlify.app/api/consul", { withCredentials: true, config })
         .then((res) => {
-            const consultationList = res.data.filter(consul => {
-                return consul.user._id.includes(`${user._id}`)
-            })
-            setFilteredConsul(consultationList)
+            console.log(res)
+              if(res.data){
+                const consultationList = res.data.filter(consul => consul.user === user._id)
+                console.log(consultationList)
+                setFilteredConsul(consultationList)
+              }
             }
         )
         .catch((err) => {
@@ -46,7 +40,7 @@ export default function useConsultation() {
   }, [user]);
 
   //create payment
-  const createPayment = async (data) => {
+  const createPayment = async (data, paymentUrl) => {
     console.log(data);
     const {
         first_name,
@@ -62,7 +56,7 @@ export default function useConsultation() {
     } = data;
     return axios
       .post(
-        `/payconsultation`,
+        `https://gocure.netlify.app/api/payconsultation`,
         {
             first_name,
             last_name,
@@ -83,7 +77,8 @@ export default function useConsultation() {
         const data = {
             qrisUrl: res.actions[0].url,
             gopayUrl: res.actions[1].url,
-            payment_method: response.data.payment_method
+            payment_method: response.data.payment_method,
+            paymentUrl: paymentUrl
         }
         history.push({
             pathname: "/payment/scanqr",
@@ -98,24 +93,8 @@ export default function useConsultation() {
       });
   };
 
-  const getStatusPayment = async (data) => {
-    return axios
-      .get("https://api.sandbox.midtrans.com/v2/e9c413d7-bd64-457f-8fc6-74ca847655e7/status", { withCredentials: true, config2 })
-      .then((res) => {
-          console.log(res)
-        }
-      )
-      .catch((err) => {
-        console.log(err);
-        return setError(
-          JSON.stringify(err.response.data.message)
-        );
-      });
-  };
-
   return {
     createPayment,
-    getStatusPayment,
     paymentData,
     userConsul,
     error,

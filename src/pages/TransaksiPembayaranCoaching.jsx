@@ -1,41 +1,25 @@
-import React, {useState, useEffect, useContext} from 'react'
+import React, {useState, useContext} from 'react'
 import DesktopAvatar from '../components/DesktopAvatar'
 import PembayaranModal from '../components/PembayaranModal'
 import MobileButton from '../components/MobileButton'
 import MobileButton2 from '../components/MobileButton2'
 import RingkasanOrder from '../components/RingkasanOrder'
 import TotalBayar from '../components/TotalBayar'
-import useConsultation from '../hooks/useConsultation'
+import usePayWebinar from '../hooks/usePayWebinar'
 import { UserContext } from "../context/userContext";
 import ButtonAction from '../components/ButtonAction'
 
-const Pembayaran = (props) => {
-    const {createPayment} = useConsultation()
+const PembayaranCoaching = (props) => {
+    const {createPayment} = usePayWebinar()
     const { user } = useContext(UserContext);
     const { state } = props.location
 
-    const [date, setDate] = useState("")
-    const [day, setDay] = useState("")
-    const [price, setPrice] = useState("")
     const [payment_method, setIsParentData] = useState("Gopay");
 
-    useEffect(() => {
-        setDate(state.date.split("-").reverse().join("-"))
-
-        function getDayName(dateStr)
-        {
-            var date = new Date(dateStr);
-            return date.toLocaleDateString("id", { weekday: 'long' });
-        }
-
-        var day = getDayName(state.date);
-        setDay(day)
-        setPrice(state.price)
-    }, [state]);
-
+    console.log(state)
     console.log(payment_method)
     const handlePayment = async() => {
-        const url = "/profile/conseling"
+        const url = "/profile/coaching"
         const data = {
             first_name: user.first_name,
             last_name: user.last_name,
@@ -43,10 +27,10 @@ const Pembayaran = (props) => {
             phone: user.no_telp,
 
             user: user._id,
-            price: price,
+            price: state.price,
             package_name: state.package,
-            date: day + ", " + date,
-            payment_status: "Pending",
+            date: state.date,
+            payment_status: "Success",
             payment_method: payment_method
         }
         await createPayment(data, url)
@@ -72,7 +56,6 @@ const Pembayaran = (props) => {
                             <MobileButton 
                                 title="Tidak memilih apapun"
                                 desc="Klik untuk melihat opsi lain"
-                                url=""
                             />
                         </div>
                     </div>
@@ -80,8 +63,8 @@ const Pembayaran = (props) => {
                         <div className="flex flex-col gap-y-3">
                             <RingkasanOrder 
                                 nama="Konsultasi"
-                                day={day}
-                                tagihan={price}
+                                date={state.date}
+                                tagihan={state.price}
                                 promo="Rp.0"
                                 layanan="Rp. 2.500"
                             />
@@ -90,7 +73,7 @@ const Pembayaran = (props) => {
                 </div>
                 <div className="botbar2 w-full">
                     <TotalBayar 
-                        total={price + 2500}
+                        total={state.price + 2500}
                     />
                 </div>  
             </div>
@@ -123,9 +106,8 @@ const Pembayaran = (props) => {
                                     </div>
                                     <RingkasanOrder 
                                         nama={state.package}
-                                        day={day}
-                                        date={date}
-                                        tagihan={price}
+                                        date={state.date}
+                                        tagihan={state.price}
                                         promo="Rp.0"
                                         layanan="Rp2500"
                                     />
@@ -143,7 +125,7 @@ const Pembayaran = (props) => {
                                         Total Bayar
                                     </p>
                                     <p className="font-black text-2xl">
-                                        {price + 2500}
+                                        {state.price + 2500}
                                     </p>
                                 </div>
                                 <button onClick={() => handlePayment()}>
@@ -160,4 +142,4 @@ const Pembayaran = (props) => {
     )
 }
 
-export default Pembayaran
+export default PembayaranCoaching

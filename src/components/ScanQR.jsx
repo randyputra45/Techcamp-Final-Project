@@ -45,7 +45,7 @@ const ScanQR = (props) => {
                                 Scan QR Code QRIS diatas dengan menggunakan aplikasi {state.payment_method}. Jangan lupa periksa emailmu ya untuk detil pemesanan, jadwal maupun link konselingnya, Anda juga bisa mengakses informasi tersebut lewat laman profil anda.
                             </div>
                             <div className='py-6 px-20'>
-                                <Link to="/payment/status">
+                                <Link to={state.paymentUrl}>
                                     <ButtonAction title="Cek Status Pembayaran"></ButtonAction>
                                 </Link>
                             </div>

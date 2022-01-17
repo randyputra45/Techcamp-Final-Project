@@ -18,7 +18,7 @@ export default function useAuth() {
   //set user
   const setUserContext = async () => {
     return await axios
-      .get("/user", { withCredentials: true, config })
+      .get("https://gocure.netlify.app/api/user", { withCredentials: true, config })
       .then((res) => {
         setUser(res.data.currentUser);
       })
@@ -36,16 +36,20 @@ export default function useAuth() {
       email,
       password,
       no_telp,
+      sex,
+      birth_date
     } = data;
     return axios
       .post(
-        `/register`,
+        `https://gocure.netlify.app/api/register`,
         {
           first_name,
           last_name,
           email,
           password,
           no_telp,
+          sex,
+          birth_date
         },
         { withCredentials: true, config }
       )
@@ -61,7 +65,7 @@ export default function useAuth() {
   const loginUser = async (data) => {
     const { email, password } = data;
     return axios
-      .post("/login", {
+      .post("https://gocure.netlify.app/api/login", {
         email,
         password,
       }, { withCredentials: true, config })
@@ -72,7 +76,7 @@ export default function useAuth() {
       })
       .catch((err) => {
         return setError(
-          JSON.stringify(err.response.data.message)
+          JSON.stringify(err.response.data.error)
         );
       });
   };

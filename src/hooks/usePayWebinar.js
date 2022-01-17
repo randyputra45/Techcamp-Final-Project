@@ -6,7 +6,7 @@ import { UserContext } from "../context/userContext";
 export default function usePayWebinar() {
   let history = useHistory();
   const [error, setError] = useState(null);
-  const [userConsul, setFilteredConsul] = useState(null);
+  const [userWebinar, setFilteredConsul] = useState(null);
   const [paymentData, setPaymentData] = useState(null);
 
   const { user } = useContext(UserContext);
@@ -21,11 +21,9 @@ export default function usePayWebinar() {
   useEffect(() => {
     async function getWebinar() {
       await axios
-        .get("/paywebinar", { withCredentials: true, config })
+        .get("https://gocure.netlify.app/api/paywebinar", { withCredentials: true, config })
         .then((res) => {
-            const webinarList = res.data.filter(webinar => {
-                return webinar.user._id.includes(`${user._id}`)
-            })
+            const webinarList = res.data.filter(webinar => webinar.user === user._id)
             setFilteredConsul(webinarList)
             }
         )
@@ -38,7 +36,7 @@ export default function usePayWebinar() {
   }, [user]);
 
   //create payment
-  const createPayment = async (data) => {
+  const createPayment = async (data, paymentUrl) => {
     console.log(data);
     const {
         first_name,
@@ -54,7 +52,7 @@ export default function usePayWebinar() {
     } = data;
     return axios
       .post(
-        `/paywebinar`,
+        `https://gocure.netlify.app/api/paywebinar`,
         {
             first_name,
             last_name,
@@ -75,7 +73,8 @@ export default function usePayWebinar() {
         const data = {
             qrisUrl: res.actions[0].url,
             gopayUrl: res.actions[1].url,
-            payment_method: response.data.payment_method
+            payment_method: response.data.payment_method,
+            paymentUrl: paymentUrl
         }
         history.push({
             pathname: "/payment/scanqr",
@@ -93,7 +92,7 @@ export default function usePayWebinar() {
   return {
     createPayment,
     paymentData,
-    userConsul,
+    userWebinar,
     error,
   };
 }

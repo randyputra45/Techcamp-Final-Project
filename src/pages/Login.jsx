@@ -1,11 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Button from '../components/Button'
 import Checkbox from '../components/Checkbox'
 import Form from '../components/Form'
 import useForm from '../hooks/useForm';
 import useAuth from '../hooks/useAuth';
 import Alert from "../components/Alert";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import useFindUser from "../hooks/useFindUser";
 
 const Login = () => {
     const { values, handleChange } = useForm({
@@ -15,10 +16,46 @@ const Login = () => {
         }
     });
     const { loginUser, error } = useAuth();
+    const { allUsers } = useFindUser();
+    const [alert, setAlert] = useState(false);
+    const [alertMsg, setAlertMsg] = useState("");
+
+    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    const passwordRegex = /^[a-zA-Z0-9]{8,}$/
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        await loginUser(values);
+
+        if (values.email === "" || values.password === "") {
+            setAlertMsg("Please fill in all the required fields")
+            setAlert(true);
+        }
+        else if (!emailRegex.test(values.email)){
+            setAlertMsg("Invalid email.")
+            setAlert(true);
+        }
+        else if (!passwordRegex.test(values.password)){
+            setAlertMsg("Password should contain at least 8 characters")
+            setAlert(true);
+        }
+        else if (error) {
+            console.log(error)
+            setAlertMsg(error)
+            setAlert(true);
+        }
+        else{
+            // const userFind = allUsers.find(user => user.email === values.email)
+            // if(userFind.verified === true){
+                setAlert(false);
+                await loginUser(values);
+            // } else if (userFind.verified === false) {
+            //     setAlertMsg("Account not found, please Register")
+            //     setAlert(true); 
+            // } else {
+            //     setAlertMsg("Account not found, please Register")
+            //     setAlert(true); 
+            // }
+        }
     }
 
     return (
@@ -54,20 +91,14 @@ const Login = () => {
                             placeholder="********"
                         />
                     </div>
-                    {/* <div className="pt-2 flex justify-between items-center">
-                        <Checkbox title="Ingat Password" />
-                        <div className="cursor-pointer text-sm text-blue-500">
-                            Lupa Password?
-                        </div>
-                    </div> */}
-                    {error && <Alert alertMsg={error} />}
+                    {alert && <Alert alertMsg={alertMsg}/>}
                     <div className="flex justify-center pt-12">
                         <Button title="Login" type={"submit"}/>
                     </div>
                     </form>
                     <div className="pt-16">
                         <div className="flex justify-center gap-x-1">
-                            <div className="text-sm">Apabila tidak punya akun, klik</div>
+                            <div className="text-sm">Tidak punya akun? klik</div>
                             <Link to="/register">
                                 <div className="cursor-pointer font-semibold text-sm text-blue-500">Disini</div>
                             </Link>
@@ -80,7 +111,7 @@ const Login = () => {
                 <div className="flex h-screen items-center justify-center">
                     <div className="md:w-1/2 lg:w-2/5 bg-white rounded-xl">
                         <form onSubmit={handleLogin}>
-                        <div className="px-8 py-12">
+                        <div className="px-8 py-8">
                             <div className="text-xl font-bold">Masuk</div>
                             <div className="pt-12">
                                 <div className="font-bold">
@@ -106,20 +137,20 @@ const Login = () => {
                                     placeholder="********"
                                 />
                             </div>
-                            <div className="pt-2 flex justify-between items-center">
-                                <Checkbox title="Ingat Password" />
+                            <div className="pt-2 pb-3 flex justify-between items-center">
                                 <div className="cursor-pointer text-sm text-blue-500">
                                     Lupa Password?
                                 </div>
                             </div>
-                            <div className="flex justify-center pt-12">
+                            {alert && <Alert alertMsg={alertMsg}/>}
+                            <div className="flex justify-center pt-8">
                                 <Button title="Login" type={"submit"}/>
                             </div>
-                            <div className="pt-16">
+                            <div className="pt-3">
                                 <div className="flex justify-center gap-x-1">
-                                    <div className="text-sm">Apabila tidak punya akun, klik</div>
+                                    <div className="text-sm">Belum punya akun? </div>
                                     <Link to="/register">
-                                        <div className="cursor-pointer font-semibold text-sm text-blue-500">Disini</div>
+                                        <div className="cursor-pointer font-semibold text-sm text-blue-500">Register</div>
                                     </Link>
                                 </div>
                             </div>

@@ -6,9 +6,7 @@ import useWebinar from '../hooks/useWebinar'
 
 const MenuWebinar = () => {
     const {webinar} = useWebinar()
-    webinar && console.log(webinar)
-    const [value, setValue] = React.useState(null);
-
+    
     return (
         <div>
             <div className="block md:hidden">

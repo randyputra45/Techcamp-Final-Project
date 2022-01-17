@@ -3,7 +3,7 @@ import ButtonAction from '../components/ButtonAction'
 import DesktopAvatar from '../components/DesktopAvatar'
 import PaketCard from '../components/PaketCard'
 import { useHistory } from 'react-router-dom';
-import usePackage from '../hooks/usePackage';
+import usePackage from '../hooks/usePackageConsul';
 
 const PaketKonseling = () => {
     let dateNow = new Date().toLocaleDateString('en-CA', {timeZone: "Asia/Jakarta"})

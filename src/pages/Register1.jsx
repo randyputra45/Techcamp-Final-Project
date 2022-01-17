@@ -1,40 +1,78 @@
-import { useHistory } from "react-router-dom";
-
-import React from 'react'
-import Box from '../components/Box'
+import React, {useState} from 'react'
 import Button from '../components/Button'
-import PhoneDropdown from '../components/PhoneDropdown'
 import Form from '../components/Form'
 import ChartBar from '../components/ChartBar'
-import PassSpecs from '../components/PassSpecs'
 
 import useForm from '../hooks/useForm';
 import useAuth from '../hooks/useAuth';
+import FormDropdown from "../components/FormDropdown";
+import FormDatepicker from "../components/FormDatepicker";
+import Alert from "../components/Alert";
+import useFindUser from "../hooks/useFindUser";
+import { Link, useHistory } from "react-router-dom";
 
 const Register1 = () => {
+  const history = useHistory()
+  let dateNow = new Date().toLocaleDateString('en-CA', {timeZone: "Asia/Jakarta"})    
+  const { registerUser, error } = useAuth();
+  const { allUsers } = useFindUser();
+  const [alert, setAlert] = useState(false);
+  const [alertMsg, setAlertMsg] = useState("");
+
   const { values, handleChange } = useForm({
     initialValues: {
         first_name: "",
         last_name: "",
         email: "",
         password: "",
+        confirm_password: "",
         no_telp: "",
-        confirm_password: ""
+        sex: "",
+        birth_date: ""
     }
   });
-  const { registerUser, error } = useAuth();
+
+  const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  const passwordRegex = /^[a-zA-Z0-9]{8,}$/
 
   const handleRegister = async (e) => {
-      e.preventDefault();
-      console.log(values)
-      await registerUser(values);
+    e.preventDefault();
+    console.log(values)
+
+    if (values.first_name === "" || values.last_name === "" || values.email === "" || values.password === "" || values.confirm_password === "" || values.sex === ""|| values.no_telp === ""|| values.birth_date === "") {
+        setAlertMsg("Please fill in all the required fields")
+        setAlert(true);
+    }
+    else if (!emailRegex.test(values.email)){
+        setAlertMsg("Invalid email.")
+        setAlert(true);
+    }
+    else if (!passwordRegex.test(values.password)){
+        setAlertMsg("Password should contain at least 8 characters")
+        setAlert(true);
+    }
+    else if (values.password !== values.confirm_password){
+        setAlertMsg("Password don't match.")
+        setAlert(true);
+    } else if (error) {
+        console.log(error)
+        setAlertMsg(error)
+        setAlert(true);
+    }
+    else{
+        await registerUser(values);
+        history.push({
+            pathname: "/register/checkemail",
+            state: {email: values.email}
+        })
+    }
   }
 
   return (
     <div>
         <div className="block md:hidden">
             <div className="px-8 pt-12">
-                <ChartBar />
+                <ChartBar bar="bar5"/>
                 <div className="pt-5">
                     <div className="">Tahap 1</div>
                     <div className="text-2xl font-bold">Registrasi</div>
@@ -85,29 +123,10 @@ const Register1 = () => {
                         name={"password"} 
                         value={values.password} 
                         handleChange={handleChange}
-                        placeholder="*******"
+                        placeholder="Minimum 8 character length"
                     />
                 </div>
                 <div className="flex flex-col">
-                    <div className="pt-2 flex justify-between items-center gap-x-4">
-                        <Box />
-                        <Box />
-                        <Box />
-                    </div>
-                    <div className="pt-1.5 text-xs text-gray-700">
-                        Password Strength : <b>Low</b>
-                    </div>
-                    <div className="pt-6 pb-3 flex flex-col gap-y-3">
-                        <PassSpecs 
-                            spec="Karakter Minimal 8 Karakter"
-                        />
-                        <PassSpecs 
-                            spec="Menggunakan Kapital"
-                        />
-                        <PassSpecs 
-                            spec="Tanpa Simbol"
-                        />
-                    </div>
                 </div>
                 <div className="pt-5">
                     <div className="font-bold">
@@ -118,7 +137,7 @@ const Register1 = () => {
                         name={"confirm_password"} 
                         value={values.confirm_password} 
                         handleChange={handleChange}
-                        placeholder="*******"
+                        placeholder="Minimum 8 character length"
                     />
                 </div>
                 <div className="pt-5">
@@ -126,7 +145,6 @@ const Register1 = () => {
                         No Telepon
                     </div>
                     <div className="flex items-center gap-x-8">
-                        <PhoneDropdown />
                         <div className="w-full">
                             <Form
                               type={"text"}
@@ -138,8 +156,47 @@ const Register1 = () => {
                         </div>
                     </div>
                 </div>
+                <div className="pt-5">
+                    <div className="font-bold">
+                        Jenis Kelamin
+                    </div>
+                    <div className="flex items-center gap-x-8">
+                        <div className="w-full">
+                            <FormDropdown
+                                type={"text"}
+                                name={"sex"} 
+                                value={values.sex} 
+                                handleChange={handleChange}
+                                placeholder="0000-0000-0000"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div className="pt-5">
+                    <div className="font-bold">
+                        Tanggal Lahir
+                    </div>
+                    <div className="flex items-center gap-x-8">
+                        <div className="w-full mt-3">
+                            <FormDatepicker 
+                                type={"date"}
+                                name={"birth_date"} 
+                                value={values.birth_date} 
+                                max={dateNow}
+                                handleChange={handleChange}
+                            />
+                        </div>
+                    </div>
+                </div>
+                {alert && <Alert alertMsg={alertMsg}/>}
                 <div className="pt-8 flex justify-center">
                     <Button title="Daftar" type={"submit"} url="/verify"/>
+                </div>
+                <div className="mt-3 flex justify-center gap-x-1">
+                    <div className="text-sm">Sudah punya akun? </div>
+                    <Link to="/login">
+                        <div className="cursor-pointer font-semibold text-sm text-blue-500">Login</div>
+                    </Link>
                 </div>
                 </form>
             </div>
@@ -150,7 +207,7 @@ const Register1 = () => {
             <div className="py-16 flex items-center justify-center">
                 <div className="md:w-1/2 lg:w-2/5 bg-white rounded-xl">
                     <div className="px-8 py-12">
-                        <ChartBar />
+                        <ChartBar bar="bar3"/>
                     <div className="pt-5">
                         <div className="">Tahap 1</div>
                         <div className="text-2xl font-bold">Registrasi</div>
@@ -204,29 +261,8 @@ const Register1 = () => {
                             name={"password"} 
                             value={values.password} 
                             handleChange={handleChange}
-                            placeholder="*******"
+                            placeholder="Minimum 8 character length"
                         />
-                    </div>
-                    <div className="flex flex-col">
-                        <div className="pt-2 flex justify-between items-center gap-x-4">
-                            <Box />
-                            <Box />
-                            <Box />
-                        </div>
-                        <div className="text-xs text-gray-700">
-                            Password Strength : <b>Low</b>
-                            <div className="pt-6 pb-3 flex flex-col gap-y-3">
-                                <PassSpecs 
-                                    spec="Karakter Minimal 8 Karakter"
-                                />
-                                <PassSpecs 
-                                    spec="Menggunakan Kapital"
-                                />
-                                <PassSpecs 
-                                    spec="Tanpa Simbol"
-                                />
-                            </div>
-                        </div>
                     </div>
                     <div className="pt-5">
                         <div className="font-bold">
@@ -237,7 +273,7 @@ const Register1 = () => {
                             name={"confirm_password"} 
                             value={values.confirm_password} 
                             handleChange={handleChange}
-                            placeholder="*******"
+                            placeholder="Minimum 8 character length"
                         />
                     </div>
                     <div className="pt-5">
@@ -245,20 +281,58 @@ const Register1 = () => {
                             No Telepon
                         </div>
                         <div className="flex items-center gap-x-8">
-                            <PhoneDropdown />
                             <div className="w-full">
                                 <Form
                                   type={"text"}
                                   name={"no_telp"} 
                                   value={values.no_telp} 
                                   handleChange={handleChange}
+                                  placeholder="0800-0000-0000"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="pt-5">
+                        <div className="font-bold">
+                            Jenis Kelamin
+                        </div>
+                        <div className="flex items-center gap-x-8">
+                            <div className="w-full">
+                                <FormDropdown
+                                  type={"text"}
+                                  name={"sex"} 
+                                  value={values.sex} 
+                                  handleChange={handleChange}
                                   placeholder="0000-0000-0000"
                                 />
                             </div>
                         </div>
                     </div>
+                    <div className="pt-5 mb-5">
+                        <div className="font-bold">
+                            Tanggal Lahir
+                        </div>
+                        <div className="flex items-center gap-x-8">
+                            <div className="w-full mt-3">
+                                <FormDatepicker 
+                                    type={"date"}
+                                    name={"birth_date"} 
+                                    value={values.birth_date} 
+                                    max={dateNow}
+                                    handleChange={handleChange}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    {alert && <Alert alertMsg={alertMsg}/>}
                     <div className="pt-8 flex justify-center">
                         <Button title="Daftar" type={"submit"}/>
+                    </div>
+                    <div className="mt-3 flex justify-center gap-x-1">
+                        <div className="text-sm">Sudah punya akun? </div>
+                        <Link to="/login">
+                            <div className="cursor-pointer font-semibold text-sm text-blue-500">Login</div>
+                        </Link>
                     </div>
                     </form>
                     </div>

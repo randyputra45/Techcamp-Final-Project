@@ -3,6 +3,7 @@ import BackButton from '../components/BackButton'
 import Button from '../components/Button'
 import DesktopAvatar from '../components/DesktopAvatar'
 import NotifButton from '../components/NotifButton'
+import { Link } from 'react-router-dom'
 
 const StartScreening = () => {
     return (
@@ -47,10 +48,11 @@ const StartScreening = () => {
                                     <div className="pt-8 text-gray-500 leading-relaxed pb-8">
                                         Sebelum mengikuti konsultasi anda dapat mengikuti Tes Screening untuk mengetahui sejauh mana keadaan kesehatan mentalmu saat ini. Anda juga akan melihat hasilnya setelah menjawab seluruh pertanyaan dengan jujur dan benar untuk dipertimbangkan ikut atau tidaknya mengikuti konsultasi.
                                     </div>
-                                    <Button
-                                        title="Mulai Tes"
-                                        url="/screening/start"
-                                    />
+                                    <Link to="/screening/start">
+                                        <Button
+                                            title="Mulai Tes"
+                                        />
+                                    </Link>
                                 </div>
                             </div>
                         </div>

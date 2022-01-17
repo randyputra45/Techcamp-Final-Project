@@ -1,8 +1,10 @@
-import { useHistory } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
+import { useContext } from 'react';
+import { UserContext } from '../context/userContext';
 
 export default function useLogout() {
-    let history = useHistory();
+    const { setUser } = useContext(UserContext);
 
     const config = {
         headers: {
@@ -13,10 +15,10 @@ export default function useLogout() {
 
     const logoutUser = async () => {
         try {
-           await axios.get("/logout", { withCredentials: true, config }
+           await axios.get("https://gocure.netlify.app/api/logout", { withCredentials: true, config }
             ).then(res => { 
                 console.log(res); 
-                history.push('/');
+                setUser(false);
             })
         } catch(err) {
             console.log(err);

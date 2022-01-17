@@ -6,7 +6,7 @@ import { UserContext } from "../context/userContext";
 export default function usePayDyslexia() {
   let history = useHistory();
   const [error, setError] = useState(null);
-  const [userConsul, setFilteredConsul] = useState(null);
+  const [userDyslexia, setFilteredDyslexia] = useState(null);
   const [paymentData, setPaymentData] = useState(null);
 
   const { user } = useContext(UserContext);
@@ -19,15 +19,12 @@ export default function usePayDyslexia() {
   };
 
   useEffect(() => {
-    async function getConsul() {
+    async function getDyslexia() {
       await axios
-        .get("/paydyslexia", { withCredentials: true, config })
+        .get("https://gocure.netlify.app/api/paydyslexia", { withCredentials: true, config })
         .then((res) => {
-            const consultationList = res.data.filter(consul => {
-                return consul.user._id.includes(`${user._id}`)
-            })
-            console.log(res.data)
-            setFilteredConsul(res.data)
+            const dyslexiaList = res.data.filter(dyslexia => dyslexia.user === user._id)
+            setFilteredDyslexia(dyslexiaList)
             }
         )
         .catch((err) => {
@@ -35,11 +32,11 @@ export default function usePayDyslexia() {
         });
     }
 
-    getConsul();
+    getDyslexia();
   }, [user]);
 
   //create payment
-  const createPayment = async (data) => {
+  const createPayment = async (data, paymentUrl) => {
     console.log(data);
     const {
         first_name,
@@ -55,7 +52,7 @@ export default function usePayDyslexia() {
     } = data;
     return axios
       .post(
-        `/paydyslexia`,
+        `https://gocure.netlify.app/api/paydyslexia`,
         {
             first_name,
             last_name,
@@ -76,7 +73,8 @@ export default function usePayDyslexia() {
         const data = {
             qrisUrl: res.actions[0].url,
             gopayUrl: res.actions[1].url,
-            payment_method: response.data.payment_method
+            payment_method: response.data.payment_method,
+            paymentUrl: paymentUrl
         }
         history.push({
             pathname: "/payment/scanqr",
@@ -94,7 +92,7 @@ export default function usePayDyslexia() {
   return {
     createPayment,
     paymentData,
-    userConsul,
+    userDyslexia,
     error,
   };
 }

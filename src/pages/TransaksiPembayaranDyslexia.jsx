@@ -5,12 +5,12 @@ import MobileButton from '../components/MobileButton'
 import MobileButton2 from '../components/MobileButton2'
 import RingkasanOrder from '../components/RingkasanOrder'
 import TotalBayar from '../components/TotalBayar'
-import useConsultation from '../hooks/useConsultation'
 import { UserContext } from "../context/userContext";
 import ButtonAction from '../components/ButtonAction'
+import usePayDyslexia from '../hooks/usePayDyslexia'
 
-const Pembayaran = (props) => {
-    const {createPayment} = useConsultation()
+const PembayaranDyslexia = (props) => {
+    const {createPayment} = usePayDyslexia()
     const { user } = useContext(UserContext);
     const { state } = props.location
 
@@ -35,7 +35,7 @@ const Pembayaran = (props) => {
 
     console.log(payment_method)
     const handlePayment = async() => {
-        const url = "/profile/conseling"
+        const url = "/profile/dyslexia"
         const data = {
             first_name: user.first_name,
             last_name: user.last_name,
@@ -160,4 +160,4 @@ const Pembayaran = (props) => {
     )
 }
 
-export default Pembayaran
+export default PembayaranDyslexia

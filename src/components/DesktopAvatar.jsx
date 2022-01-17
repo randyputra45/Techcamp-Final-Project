@@ -1,15 +1,21 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import useLogout from '../hooks/useLogout'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory, Redirect } from 'react-router-dom'
+import { UserContext } from '../context/userContext'
 
 const DesktopAvatar = () => {
     const history = useHistory()
+    const { user } = useContext(UserContext); 
 
     const {logoutUser} = useLogout()
     const handleLogout = async () => {
         await logoutUser()
+        console.log(user)
+        if(!user){
+            history.push("/")
+        }
     }
 
     const handleProfile = () => {
@@ -44,6 +50,7 @@ const DesktopAvatar = () => {
                                         <Menu.Item>
                                             {({ active }) => (
                                             <button
+                                                onClick={() => history.push("/counseling")}
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
                                                 } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
@@ -59,6 +66,7 @@ const DesktopAvatar = () => {
                                         <Menu.Item>
                                             {({ active }) => (
                                             <button
+                                                onClick={() => history.push("/coaching")}
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
                                                 } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
@@ -74,6 +82,7 @@ const DesktopAvatar = () => {
                                         <Menu.Item>
                                             {({ active }) => (
                                             <button
+                                                onClick={() => history.push("/healthtest")}
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
                                                 } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
@@ -93,6 +102,7 @@ const DesktopAvatar = () => {
                                         <Menu.Item>
                                             {({ active }) => (
                                             <button
+                                                onClick={() => history.push("/dyslexia")}
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
                                                 } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
@@ -109,6 +119,7 @@ const DesktopAvatar = () => {
                                         <Menu.Item>
                                             {({ active }) => (
                                             <button
+                                                onClick={() => history.push("/blogs")}
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
                                                 } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
@@ -129,6 +140,7 @@ const DesktopAvatar = () => {
                                         <Menu.Item>
                                             {({ active }) => (
                                             <button
+                                                onClick={() => history.push("/webinars")}
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
                                                 } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
@@ -146,6 +158,7 @@ const DesktopAvatar = () => {
                                         <Menu.Item>
                                             {({ active }) => (
                                             <button
+                                                onClick={() => history.push("/experts")}
                                                 className={`${
                                                 active ? 'bg-active-button text-white' : 'text-gray-900'
                                                 } group flex flex-col rounded-md items-center w-full px-3 py-3 text-sm`}
@@ -165,7 +178,6 @@ const DesktopAvatar = () => {
                             </Menu.Items>
                         </Transition>
                     </Menu>
-                    <img src="notif-active.svg" alt="" className="cursor-pointer h-9" />
                     <Menu as="div" className="relative inline-block text-left">
                         <div>
                         <Menu.Button className="flex items-center">

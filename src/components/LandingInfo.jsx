@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const LandingInfo = (props) => {
     return (
@@ -12,13 +13,13 @@ const LandingInfo = (props) => {
                     <div className="mt-4 md:text-base xl:text-lg leading-relaxed">
                         {props.desc}
                     </div>
-                    <div className="flex">
+                    <Link to={props.url} className="flex">
                         <div className="border-b border-white hover:border-blue-600">
                             <div className="mt-8 text-blue-600 md:text-base xl:text-lg leading-relaxed cursor-pointer">
                                 Pelajari Lebih Lanjut →
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 </div>
                 <img src={props.pic} alt="" className='hidden lg:block object-cover w-4/6' />
             </div>

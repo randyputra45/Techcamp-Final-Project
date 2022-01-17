@@ -1,10 +1,11 @@
-import React, {useEffect, useContext} from 'react'
+import React from 'react'
 import DesktopAvatar from '../components/DesktopAvatar'
 import LayananCard from '../components/LayananCard'
 import PaymentCard from '../components/PaymentCard'
 import useConsultation from "../hooks/useConsultation"
+import None from '../components/None'
 
-const DetilPembayaran = () => {
+const UserConseling = () => {
     const{userConsul} = useConsultation()
 
     console.log(userConsul)
@@ -29,11 +30,11 @@ const DetilPembayaran = () => {
                         <div className="flex flex-col">
                             <div className="py-8 px-10 bg-body rounded-t-lg">
                                 <div className="pb-8">
-                                    <div className="text-xl font-bold">Riwayat Pemesanan</div>
+                                    <div className="text-xl font-bold">Riwayat Pemesanan Kelas Pelatihan</div>
                                 </div>
                                 <div className="font-bold">Anda telah memesan</div>
                                 {userConsul && userConsul.map((consul) => (
-                                    <PaymentCard package={consul.package_name} order_id={consul.payment_details.order_id} date={consul.date} price={consul.price}/>
+                                    <PaymentCard screening={true} package={consul.package_name} order_id={consul.payment_details.order_id} date={consul.date} price={consul.price}/>
                                 ))}
                             </div>
                         </div>
@@ -44,4 +45,4 @@ const DetilPembayaran = () => {
     )
 }
 
-export default DetilPembayaran
+export default UserConseling

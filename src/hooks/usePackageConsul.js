@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios'; 
 
-export default function useHealthTest() {
-    const [questions, setQuestion] = useState(null);
+export default function usePackage() {
+    const [packageData, setData] = useState(null);
     const [isLoading, setLoading] = useState(true);
 
     const config = {
@@ -13,10 +13,10 @@ export default function useHealthTest() {
     };
 
     useEffect(() => {
-        async function getScreening() {
-            await axios.get('https://gocure.netlify.app/api/health-test', { withCredentials: true, config })
+        async function getPackage() {
+            await axios.get('https://gocure.netlify.app/api/package', { withCredentials: true, config })
             .then(res => {
-                setQuestion(res.data);
+                setData(res.data);
                 setLoading(false);
             }).catch(err => {
                 console.log(err);
@@ -24,11 +24,11 @@ export default function useHealthTest() {
             });
         }
         
-        getScreening();  
+        getPackage();  
     }, []);
     
     return {
-        questions,
+        packageData,
         isLoading
     }
 }

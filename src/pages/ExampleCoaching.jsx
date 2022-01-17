@@ -1,57 +1,83 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Button from '../components/Button'
 import DesktopAvatar from '../components/DesktopAvatar'
+import useCoaching from '../hooks/useCoaching'
+import Content from '../components/ContentArticle';
+import ButtonAction from '../components/ButtonAction';
+import { useHistory } from 'react-router-dom';
 
 const ExampleCoaching = () => {
+    const {coachingContent, coachingID, getCoachingById} = useCoaching()
+    const path = window.location.pathname
+    const history = useHistory()
+
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        
+    useEffect(() => {
+        getCoachingById(path)
+    }, [path])
+
+    const handleClick = () => {
+        console.log(coachingID.materials)
+        var today  = new Date();
+        try {    
+            const data = {
+                date: today.toLocaleDateString("id", options),
+                package: coachingID.materials,
+                price: 150000
+            }
+            if(data) {
+                history.push({
+                    pathname: "/coach/payment",
+                    state: data
+                })
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <div>
             <div className="hidden md:block">
                 <div className="bg-begron2">
                 </div>
+                <div className="mt-6 text-xl font-bold text-center">
+                    Kelas dan Pelatihan Online
+                </div>
+                <div className="mb-6 text-xl font-bold text-center">
+                    "{coachingID && coachingID.materials}"
+                </div>
                 <div className="topbar w-full">
                     <DesktopAvatar />
                 </div>
-                <div className="pt-36 pb-24">
+                <div className="pt-18 pb-24">
                     <div className="flex justify-center">
                         <div className="w-5/6 lg:w-4/6 xl:w-1/2">
                         <div className="flex flex-col">
                             <div className="py-8 px-10 bg-body rounded-t-lg">
                                 <div className="pb-8">
-                                    <img src="coaching-1.png" alt="" />
-                                    <div className="pt-8 text-gray-500 leading-relaxed pb-8">
-                                    Masalah yang lumayan sering dialami oleh dewasa muda adalah tidak bisa menerima atau memaafkan dirinya, yang mungkin dikarenakan oleh kesalahan atau kegagalan yang dialami di masa lalu. Berekspektasi lebih, selalu melihat kekurangan dan tidak menerima diri apa adanya menjadi salah satu kesulitan untuk berdamai dengan diri sendiri. Jika belum bisa memaafkan kesalahan akan berdampak pada perkembangan diri.
+                                    <div className="mt-6 text-2xl font-bold text-center">
+                                        Kelas dan Pelatihan Online
                                     </div>
-                                    
-                                    <div className="border border-gray-300 rounded-xl p-8">
-                                    <div className="flex items-center justify-between">
-                                        <div className="text-xl font-bold">
-                                            Rp. 150.000
+                                    <div className="mb-12 text-2xl font-bold text-center">
+                                        "{coachingID && coachingID.materials}"
+                                    </div>
+                                    <img src={coachingID && coachingID.image} alt="" />
+                                    <div className="border border-gray-300 rounded-b-xl p-8 mb-12">
+                                        <div className="flex items-center justify-between">
+                                            <div className="text-xl font-bold">
+                                                Rp. 150.000
+                                            </div>
+                                            <button onClick={() => handleClick()}>
+                                                <ButtonAction
+                                                    title="Pesan Sekarang"
+                                                />
+                                            </button>
                                         </div>
-                                        <Button
-                                            title="Pesan Sekarang"
-                                        />
                                     </div>
-                                    </div>
-
-                                    <div className="pt-16 font-semibold">
-                                        Apa yang dipelajari disini?
-                                    </div>
-                                    <div className="mt-3 text-gray-500">1. Mengetahui penyebab konflik diri.</div>
-                                    <div className="mt-2 text-gray-500">2. Mengetahui pentingnya berdamai dengan dengan diri.</div>
-                                    <div className="mt-2 text-gray-500">3. Mengetahui penyebab sulitnya berdamai dengan diri sendiri.</div>
-                                    <div className="mt-2 text-gray-500">4. Mengetahui tips untuk berdamai dengan diri sendiri.</div>
-                                    
-                                    <div className="pt-16 font-semibold">
-                                        Kapan Kelas Online diadakan?
-                                    </div>
-                                    <div className="mt-3 text-gray-500">
-                                        Disleksia dapat dikaitkan dengan kondisi lain seperti ADHD dan autisme karena terkadang seorang anak mungkin memiliki kondisi ini selain disleksia.
-                                    </div>
-                                    <div className="mt-4 text-gray-500">
-                                        Attention Deficit Hyperactivity Disorder (ADHD) adalah salah satu gangguan mental yang paling umum berkembang pada anak-anak di mana mereka mengalami kesulitan dalam memusatkan perhatian, tetap fokus, mengendalikan perilaku mereka dan menjadi hiperaktif.
-                                    </div>
-                                    <div className="mt-4 text-gray-500">
-                                        Autisme adalah gangguan perkembangan otak yang ditandai dengan gangguan interaksi sosial dan komunikasi, serta perilaku yang terbatas dan berulang.
+                                        <div className="col-span-2 text-sm md:text-sm lg:text-base leading-relaxed text-justify article-content pr-12">
+                                        {coachingContent && coachingContent.content.map((item, i) => <Content key={i} subcontent={item.subcontent} paragraph={item.paragraph}/>)}
                                     </div>
                                 </div>
                             </div>

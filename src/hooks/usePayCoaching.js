@@ -6,7 +6,7 @@ import { UserContext } from "../context/userContext";
 export default function usePayCoaching() {
   let history = useHistory();
   const [error, setError] = useState(null);
-  const [userCoaching, setFilteredWebinar] = useState(null);
+  const [userCoaching, setFilteredCoaching] = useState(null);
   const [paymentData, setPaymentData] = useState(null);
 
   const { user } = useContext(UserContext);
@@ -19,15 +19,12 @@ export default function usePayCoaching() {
   };
   
   useEffect(() => {
-    async function getConsul() {
+    async function getCoaching() {
       await axios
-        .get("/paycoaching", { withCredentials: true, config })
+        .get("https://gocure.netlify.app/api/paycoaching", { withCredentials: true, config })
         .then((res) => {
-            const webinarList = res.data.filter(consul => {
-                return consul.user._id.includes(`${user._id}`)
-            })
-            console.log(res.data)
-            setFilteredWebinar(res.data)
+            const coachingList = res.data.filter(coaching => coaching.user === user._id)
+            setFilteredCoaching(coachingList)
             }
         )
         .catch((err) => {
@@ -35,11 +32,11 @@ export default function usePayCoaching() {
         });
     }
 
-    getConsul();
+    getCoaching();
   }, [user]);
 
   //create payment
-  const createPayment = async (data) => {
+  const createPayment = async (data, paymentUrl) => {
     console.log(data);
     const {
         first_name,
@@ -55,7 +52,7 @@ export default function usePayCoaching() {
     } = data;
     return axios
       .post(
-        `/paycoaching`,
+        `https://gocure.netlify.app/api/paycoaching`,
         {
             first_name,
             last_name,
@@ -76,7 +73,8 @@ export default function usePayCoaching() {
         const data = {
             qrisUrl: res.actions[0].url,
             gopayUrl: res.actions[1].url,
-            payment_method: response.data.payment_method
+            payment_method: response.data.payment_method,
+            paymentUrl: paymentUrl
         }
         history.push({
             pathname: "/payment/scanqr",
