@@ -22,7 +22,7 @@ const ProfilGantiPass = () => {
 
     const handleForgotPass = async (e) => {
         e.preventDefault();
-        setPassword(values.password)
+        console.log(values.password)
         if (values.password === "" || values.confirm_password === "") {
             setAlertMsg(error);
             setAlert(true);
@@ -30,8 +30,8 @@ const ProfilGantiPass = () => {
             setAlertMsg("Password don't match.")
             setAlert(true);
         } else {
-            await resetPassword(password, path)
-            setAlertMsg("Password change successfully")
+            await resetPassword(values.password, path)
+            setAlertMsg(error)
             setAlert(true);
         }
     }
