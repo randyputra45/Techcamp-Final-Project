@@ -99,62 +99,62 @@ function App() {
               <Route path="/verify" component={Register4 } />
               
               {/* Expert */}
-              <PrivateRoute exact path="/home" component={Home} />
-              <PrivateRoute exact path="/experts" component={MenuExpert } />
-              <PrivateRoute exact path="/experts/:id" component={ExampleExpert } />
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/experts" component={MenuExpert } />
+              <Route exact path="/experts/:id" component={ExampleExpert } />
 
               {/* Blog */}
-              <PrivateRoute exact path="/blogs" component={MenuBlog} />
-              <PrivateRoute exact path="/blogs/:id" component={ExampleBlog} />
+              <Route exact path="/blogs" component={MenuBlog} />
+              <Route exact path="/blogs/:id" component={ExampleBlog} />
 
               {/* Webinar */}
-              <PrivateRoute exact path="/webinars" component={MenuWebinar} />
-              <PrivateRoute exact path="/webinars/:id" component={ExampleWebinar} />
-              <PrivateRoute exact path="/webinar/payment" component={PembayaranWebinar} />
+              <Route exact path="/webinars" component={MenuWebinar} />
+              <Route exact path="/webinars/:id" component={ExampleWebinar} />
+              <Route exact path="/webinar/payment" component={PembayaranWebinar} />
 
               {/* Payment Page */}
-              <PrivateRoute exact path="/payment/scanqr" component={ScanQR} />
-              <PrivateRoute exact path="/payment/success" component={OrderCompelete} />
+              <Route exact path="/payment/scanqr" component={ScanQR} />
+              <Route exact path="/payment/success" component={OrderCompelete} />
 
               {/* Screening & HealthTest */}
-              <PrivateRoute exact path="/screening" component={StartScreening} />
-              <PrivateRoute exact path="/screening/start" component={ExampleScreening} />
-              <PrivateRoute exact path="/screening/result" component={ExampleHasilScreening} />
-              <PrivateRoute exact path="/healthtest/intro" component={MenuHealthTest} />
-              <PrivateRoute exact path="/healthtest" component={StartHealthtest} />
-              <PrivateRoute exact path="/healthtest/start" component={ExampleHealthTest} />
-              <PrivateRoute exact path="/healthtest/result" component={ExampleHasilHealthTest} />
+              <Route exact path="/screening" component={StartScreening} />
+              <Route exact path="/screening/start" component={ExampleScreening} />
+              <Route exact path="/screening/result" component={ExampleHasilScreening} />
+              <Route exact path="/healthtest/intro" component={MenuHealthTest} />
+              <Route exact path="/healthtest" component={StartHealthtest} />
+              <Route exact path="/healthtest/start" component={ExampleHealthTest} />
+              <Route exact path="/healthtest/result" component={ExampleHasilHealthTest} />
 
               {/* Coaching */}
-              <PrivateRoute exact path="/coaching" component={MenuCoaching} />
-              <PrivateRoute exact path="/coaching/:id" component={ExampleCoaching} />
-              <PrivateRoute exact path="/coach/payment" component={PembayaranCoaching} />
+              <Route exact path="/coaching" component={MenuCoaching} />
+              <Route exact path="/coaching/:id" component={ExampleCoaching} />
+              <Route exact path="/coach/payment" component={PembayaranCoaching} />
 
               {/* Konseling */}
-              <PrivateRoute exact path="/counseling" component={MenuKonseling} />
-              <PrivateRoute exact path="/counseling/pricing" component={Paket} />
-              <PrivateRoute exact path="/counseling/payment" component={TransaksiPembayaran} />
+              <Route exact path="/counseling" component={MenuKonseling} />
+              <Route exact path="/counseling/pricing" component={Paket} />
+              <Route exact path="/counseling/payment" component={TransaksiPembayaran} />
 
               {/* Dyslexia */}
-              <PrivateRoute exact path="/dyslexia" component={MenuDyslexia} />
-              <PrivateRoute exact path="/dyslexia/pricing" component={PaketDyslexia} />
-              <PrivateRoute exact path="/dyslexia/payment" component={PembayaranDyslexia} />
+              <Route exact path="/dyslexia" component={MenuDyslexia} />
+              <Route exact path="/dyslexia/pricing" component={PaketDyslexia} />
+              <Route exact path="/dyslexia/payment" component={PembayaranDyslexia} />
 
               {/* Profile */}
-              <PrivateRoute exact path="/profile" component={Profile} />
-              <PrivateRoute exact path="/profile/notification" component={ProfileNotification} />
+              <Route exact path="/profile" component={Profile} />
+              <Route exact path="/profile/notification" component={ProfileNotification} />
 
-              <PrivateRoute exact path="/profile/layanan" component={ProfilLayanan} />
-              <PrivateRoute exact path="/profile/conseling" component={UserConseling} />
-              <PrivateRoute exact path="/profile/webinars" component={UserWebinar} />
-              <PrivateRoute exact path="/profile/coaching" component={UserCoaching} />
-              <PrivateRoute exact path="/profile/dyslexia" component={UserDyslexia} />
-              <PrivateRoute exact path="/profile/blogs" component={ProfileBlog} />
+              <Route exact path="/profile/layanan" component={ProfilLayanan} />
+              <Route exact path="/profile/conseling" component={UserConseling} />
+              <Route exact path="/profile/webinars" component={UserWebinar} />
+              <Route exact path="/profile/coaching" component={UserCoaching} />
+              <Route exact path="/profile/dyslexia" component={UserDyslexia} />
+              <Route exact path="/profile/blogs" component={ProfileBlog} />
 
-              <PrivateRoute exact path="/profile/edit" component={ProfileEdit} />
-              <PrivateRoute exact path="/profile/gantiemail" component={ProfilGantiEmail} />
-              <PrivateRoute exact path="/profile/gantipass" component={ProfilGantiPass} />
-              <PrivateRoute exact path="/profile/gantinomor" component={ProfilGantiNomor} />
+              <Route exact path="/profile/edit" component={ProfileEdit} />
+              <Route exact path="/profile/gantiemail" component={ProfilGantiEmail} />
+              <Route exact path="/profile/gantipass" component={ProfilGantiPass} />
+              <Route exact path="/profile/gantinomor" component={ProfilGantiNomor} />
             </Switch>
           </ScrollToTop>
         </Router>

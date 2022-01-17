@@ -9,32 +9,7 @@ import { Link } from 'react-router-dom'
 const MenuKonseling = () => {
     return (
         <div>
-            <div className="block md:hidden">
-                <div className="px-6">
-                    <div className="pt-6">
-                        <BackButton />
-                    </div>
-                    <div className="pt-20 flex justify-between pb-16">
-                        <div className="flex flex-col">
-                            <div className="text-sm mb-1">Layanan Kami</div>
-                            <div className="text-2xl font-bold">Konsultasi dan Pemeriksaan Psikologis</div>
-                        </div>
-                        <NotifButton />
-                    </div>
-                    <div className="text-gray-500 leading-relaxed pb-8">
-                        Disini anda dapat mencoba Tes Kesehatan untuk mengetahui sejauh mana tingkat kecemasanmu saat ini. Anda juga akan melihat hasilnya setelah menjawab seluruh pertanyaan dengan jujur dan benar untuk dipertimbangkan ikut atau tidaknya mengikuti konsultasi.
-                    </div>
-                    <Link to="/counseling/pricing">
-                    <Button
-                        title="Pesan Sekarang"
-                        />
-                    </Link>
-                    <div className="pt-12">
-
-                    </div>
-                </div>
-            </div>
-            <div className="hidden md:block">
+            <div className="">
                 <div className="bg-begron2">
                 </div>
                 <div className="topbar w-full">
@@ -42,7 +17,7 @@ const MenuKonseling = () => {
                 </div>
                 <div className="pt-36 pb-24">
                     <div className="flex justify-center">
-                        <div className="w-5/6 lg:w-4/6 xl:w-1/2">
+                        <div className="md:w-5/6 lg:w-4/6 xl:w-1/2">
                         <div className="flex flex-col">
                             <div className="py-8 px-10 bg-body rounded-t-lg">
                                 <div className="pb-8">
@@ -52,8 +27,8 @@ const MenuKonseling = () => {
                                         layanan ini merupakan sesi konseling yang diadakan oleh kami untuk memeriksa kesehatan anda secara psikologis, yang mana bisa anda lakukan melalui voice call, video call, dan juga meet secara offline. Konseling Terapi ini juga dapat dilakukan secara 1 on 1 ataupun berkelompok sesuai dengan paket yang diambil.
                                     </div>
                                     <Link to="/counseling/pricing">
-                                    <Button
-                                        title="Pesan Sekarang"
+                                        <Button
+                                            title="Pesan Sekarang"
                                         />
                                     </Link>
                                     <div className="pt-16">

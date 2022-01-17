@@ -6,7 +6,7 @@ import LandingNavbar from '../components/LandingNavbar'
 const LandingWebinar = () => {
     return (
         <div>
-            <div className="hidden md:block">
+            <div className="">
                 <div className="topbar w-full">
                     <LandingNavbar />
                 </div>

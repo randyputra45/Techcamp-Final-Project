@@ -39,10 +39,12 @@ const Register4 = () => {
                         Pendaftaranmu hampir selesai
                     </div>
                     <div className="mt-2 text-sm">
-                        Silahkan untuk <a href='/login'><b>Login</b></a>mengakses fitur di website GoCure
+                        Silahkan untuk <a href='/login'><b>Login </b></a>mengakses fitur di website GoCure
                     </div>
                     <div className="pt-12 w-full">
-                        <Button title="Lanjut" />
+                        <Link to="/login">
+                            <ButtonAction title="Login" />
+                        </Link>
                     </div>
                 </div>
             </div>

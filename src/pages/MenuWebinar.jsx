@@ -9,33 +9,7 @@ const MenuWebinar = () => {
     
     return (
         <div>
-            <div className="block md:hidden">
-                <div className="pt-24 pb-6 px-4">
-                    <div className="flex justify-between">
-                        <div className="flex flex-col">
-                            <div className="text-sm mb-1">Layanan Kami</div>
-                            <div className="text-2xl font-bold">Webinar</div>
-                        </div>
-                        <NotifButton />
-                    </div>
-                    <div className="pt-8">
-                        <div className="font-bold text-sm pb-3">Webinar yang akan datang</div>
-                        <div className="flex flex-col gap-y-3">
-                            {webinar && webinar.map(item => <WebinarCard
-                                key={item._id}
-                                title={item.title}
-                                url={`/webinars/${item._id}`}
-                                picnarsum1={item.psikolog[0].image}
-                                picnarsum2={item.psikolog[1].image}
-                                day={item.day}
-                                date={item.date}
-                                price={item.price}
-                            />)}
-                        </div>
-                    </div>
-                </div> 
-            </div>
-            <div className="hidden md:block">
+            <div className="">
                 <div className="bg-begron2">
                 </div>
                 <div className="topbar w-full">
