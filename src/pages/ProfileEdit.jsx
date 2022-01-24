@@ -37,14 +37,15 @@ const ProfileEdit = () => {
 
     const handleEdit = async (e) => {
         e.preventDefault();
-        console.log(values)
+        const inputData = JSON.parse(JSON.stringify(values),
+        (key, value) => value === null || value === '' ? undefined : value);
 
         if (values.first_name === "" && values.last_name === "" && values.sex === "" && values.no_telp === ""&& values.birth_date === "" &&  values.city === "" &&  values.job === "") {
             setAlertMsg("Please fill in atleast one field")
             setAlert(true);
         }
         else{
-            await editUser(values, `/users/${user._id}`);
+            await editUser(inputData, `/users/${user._id}`);
             if (error) {
                 setAlertMsg("Please fill in atleast one field")
                 setAlert(true);
