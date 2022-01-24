@@ -42,12 +42,6 @@ const ExampleCoaching = () => {
             <div className="hidden md:block">
                 <div className="bg-begron2">
                 </div>
-                <div className="mt-6 text-xl font-bold text-center">
-                    Kelas dan Pelatihan Online
-                </div>
-                <div className="mb-6 text-xl font-bold text-center">
-                    "{coachingID && coachingID.materials}"
-                </div>
                 <div className="topbar w-full">
                     <DesktopAvatar />
                 </div>

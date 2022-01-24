@@ -42,7 +42,7 @@ const MenuBlog = () => {
         setAll(false)
         setMental(false)
         setPemahamanDiri(false)
-        setPemahamanDiri(true)
+        setProduktifitas(true)
         console.log("clicked")
     }
 
