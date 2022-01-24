@@ -228,18 +228,18 @@ const Landingpage = () => {
                         </div>
                         <div className="grid grid-cols-2 xl:grid-cols-3 gap-16 pt-8">
                             <TestiCard
-                                pic="randomavatar-1.png"
+                                pic="testi-1.png"
                                 name="Brian Jaski • Mahasiswa"
                                 desc="Saya mahasiswa tingkat akhir yang masih ngurusin skripsian. Selalu ditanya kapan selesai, selalu dibilang jadi beban ortu. Hal itu membuat saya depresi. Saya tipe orang yang sulit untuk bercerita ke orang lain, namun di GoCure ini, dengan sangat mudah saya bercerita mengenai kondisi yang saya alami, seiring berjalannya waktu depresi saya berkurang dan akhirnya skripsi sayapun selesai." 
                             />
                             <TestiCard
-                                pic="randomavatar-2.png"
-                                name="Lukas Sebastian • Orang Tua"
+                                pic="testi-3.png"
+                                name="Lukas Sebastian • Pelajar"
                                 desc="Konsultasi dengan psikolog dari GoCure sangat nyaman, aman, dan penuh pengertian sekali. Saya mengonsultasikan anak saya yang kondisinya berbeda dengan teman - temannya. Saya tidak menyadari bahwa dia mengidap penyakit diseleksia. Walaupun agak terlambat mengetahui kondisi tersebut, tapi setidaknya dia sedang di masa pemulihan." 
                             />
                             <TestiCard
-                                pic="randomavatar-4.png"
-                                name="Maria Malva • Pelajar"
+                                pic="testi-2.png"
+                                name="Maria Devina • Orang Tua"
                                 desc="Ga nyangka bangett ternyata kondisi aku suka anehh kadang aku ngerasa pengen nangis, ketawa, dan marah di satu waktu. Karna penasaran dengan kondisiku yang kek gini, akhirnya aku coba untuk konsultasi dengan psikolog dari GoCure. Dan hasilnya uwaww ternyata kondisi aku ga baik baik ajaa, beberapa kali pertemuan sekaranggg aku udah beneran baik baik aja" 
                             />
                         </div>

@@ -8,14 +8,11 @@ import useAuth from '../hooks/useAuth';
 import FormDropdown from "../components/FormDropdown";
 import FormDatepicker from "../components/FormDatepicker";
 import Alert from "../components/Alert";
-import useFindUser from "../hooks/useFindUser";
 import { Link, useHistory } from "react-router-dom";
 import { UserContext } from '../context/userContext';
 
 
 const ProfileEdit = () => {
-    const history = useHistory()
-
     const { user } = useContext(UserContext);
     
     let dateNow = new Date().toLocaleDateString('en-CA', {timeZone: "Asia/Jakarta"})    

@@ -112,7 +112,7 @@ export default function useAuth() {
       });
   };
   
-  //reset password
+  //edit user profile
   const editUser = async (data, url) => {
     console.log(data)
     return axios
