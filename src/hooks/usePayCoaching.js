@@ -15,6 +15,9 @@ export default function usePayCoaching() {
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",
+      "Accept": "application/json",
+      "X-OY-Username": "String(64)",
+      "X-Api-Key": "String(255)"
     },
   };
   
