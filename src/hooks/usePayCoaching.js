@@ -67,19 +67,21 @@ export default function usePayCoaching() {
         },
         { withCredentials: true, config }
       ).then((response) => {
-        const res = response.data.payment_details
-        setPaymentData(response.data)
+        console.log(response);
 
-        const data = {
-            qrisUrl: res.actions[0].url,
-            gopayUrl: res.actions[1].url,
-            payment_method: response.data.payment_method,
-            paymentUrl: paymentUrl
-        }
-        history.push({
-            pathname: "/payment/scanqr",
-            state: data
-        })
+        // const res = response.data.payment_details
+        // setPaymentData(response.data)
+
+        // const data = {
+        //     qrisUrl: res.actions[0].url,
+        //     gopayUrl: res.actions[1].url,
+        //     payment_method: response.data.payment_method,
+        //     paymentUrl: paymentUrl
+        // }
+        // history.push({
+        //     pathname: "/payment/scanqr",
+        //     state: data
+        // })
       })
       .catch((err) => {
         console.log(err);
