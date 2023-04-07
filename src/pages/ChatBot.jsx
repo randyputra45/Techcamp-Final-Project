@@ -6,7 +6,6 @@ import Avatar from '../components/Avatar'
 import Button from '../components/Button'
 
 const API_KEY = process.env.REACT_APP_CHATGPT_API_KEY;
-// const API_KEY = "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";
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = { //  Explain things like you're talking to a software professional with 5 years of experience.
   "role": "system", "content": "Explain things like you're talking to a software professional with 2 years of experience."
