@@ -1,0 +1,212 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #FAFCFC;
+}
+
+.bg-begron {
+    background-image: url("../../public/bgfull.svg");
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.bg-begron2 {
+    background-image: url("../../public/whitebgfull.svg");
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.fixxed {
+    position: fixed;
+    z-index: 999;
+    width: auto;
+}
+
+.fixxxed {
+    position: absolute;
+    z-index: -1;
+    height: auto;
+    right: 0;
+}
+
+.cennter {
+    position: absolute;
+    width: 100%;
+}
+
+body::-webkit-scrollbar {
+    width: 0.5rem;
+    scrollbar-width: thin;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #4e4e4e;
+    border-radius: 8px;
+}
+
+.scroller {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(63, 63, 63) rgb(180, 180, 180);
+}
+
+.scroller::-webkit-scrollbar {
+    width: 0.5rem;
+    scrollbar-width: thin;
+}
+
+.scroller::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.scroller::-webkit-scrollbar-thumb {
+    background-color: #4e4e4e;
+    border-radius: 8px;
+}
+
+
+.topbar {
+    position: fixed;
+    top: 0;
+}
+
+
+.mont {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.botbar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.botbar2 {
+    position: fixed;
+    bottom: 0;
+}
+
+.text-xxs {
+    font-size: 0.625rem;
+    line-height: 1rem;
+}
+
+.bg-card {
+    background-image: url("../../public/card-bg.svg");
+    height: 100;
+    background-size: cover;
+}
+
+.bg-card2 {
+    background-image: url("../../public/paket.svg");
+    height: 100;
+    background-size: cover;
+}
+
+.small-webinar-img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.narsum-img {
+    height: 48px;
+    width: 48px;
+}
+
+.avatar-navbar {
+    height: 32px;
+    border-radius: 40%;
+}
+
+.avatar-ico {
+    height: 40px;
+    border-radius: 50%;
+}
+
+.back {
+    z-index: -1;
+}
+
+.avatar-bg {
+    background-image: url("../../public/bgfull.svg");
+    height: 280px;
+    width: 100%;
+}
+
+.coach-card {
+    width: 600px;
+}
+
+.focus\:border-form:focus {
+    --tw-border-opacity: 1;
+    border-color: rgba(4, 120, 87, var(--tw-border-opacity));
+}
+
+.hover\:bg-hover-button:hover {
+    background-color: #b6e0e0;
+}
+
+.dot {
+    height: 16px;
+    width: 16px;
+    background-color: #bbb;
+    border-radius: 50%;
+}
+
+.bar0 {
+    width: 5%;
+}
+
+.bar1 {
+    width: 10%;
+}
+
+.bar2 {
+    width: 20%;
+}
+
+.bar3 {
+    width: 30%;
+}
+
+.bar4 {
+    width: 40%;
+}
+
+.bar5 {
+    width: 50%;
+}
+
+.bar6 {
+    width: 60%;
+}
+
+.bar7 {
+    width: 70%;
+}
+
+.bar8 {
+    width: 80%;
+}
+
+.bar8 {
+    width: 90%;
+}
+
+.bar10 {
+
+    width: 100%;
+}

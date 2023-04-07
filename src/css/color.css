@@ -1,0 +1,35 @@
+/* .bg-button {
+    --tw-bg-opacity: 1;
+    background-color: rgba(107, 114, 128, var(--tw-bg-opacity));
+  } */
+
+
+
+.bg-button {
+    background-color: #d4f0f0;
+}
+
+.bg-selected {
+    background-color: #db2777;
+}
+
+.bg-active-button {
+    background-color: #00696E;
+}
+
+.bg-hover-button {
+    background-color: #b6e0e0;
+}
+
+.bg-base {
+    background-color: #FAFCFC;
+}
+
+b {
+    font-weight: 800;
+    color: #242424;
+}
+
+.bg-body {
+    background-color: #FAFCFC;
+}
