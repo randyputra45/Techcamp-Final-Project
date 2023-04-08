@@ -17,16 +17,20 @@ export default function useLikes() {
 
   const checkBlogLikes = async (data, url) => {
     return axios
-      .get(`https://gocure.netlify.app/api${data}`, { withCredentials: true, config })
-      .then((res) => {
-          const statusLiked = user.liked_blog.find(blog => blog._id === url)
-          if (statusLiked !== undefined) {
-            setLiked(true)
-          } else {
-            setLiked(false)
-          }
-        }
+      .get(
+        `https://rumahbercerita.netlify.app/api${data}`,
+        { withCredentials: true, config }
       )
+      .then((res) => {
+        const statusLiked = user.liked_blog.find(
+          (blog) => blog._id === url
+        );
+        if (statusLiked !== undefined) {
+          setLiked(true);
+        } else {
+          setLiked(false);
+        }
+      })
       .catch((err) => {
         console.log(err);
         return setError(
@@ -37,13 +41,14 @@ export default function useLikes() {
 
   //register user
   const likeBlog = async (id_blog, id_user) => {
-    console.log(id_blog, id_user)
+    console.log(id_blog, id_user);
     return axios
       .patch(
-        `https://gocure.netlify.app/api/blogs/like`,
+        `https://rumahbercerita.netlify.app/api/blogs/like`,
         { id_blog, id_user },
         { withCredentials: true, config }
-      ).then(setLiked(true))
+      )
+      .then(setLiked(true))
       .catch((err) => {
         console.log(err);
         return setError(
@@ -54,13 +59,14 @@ export default function useLikes() {
 
   //login user
   const unlikeBlog = async (id_blog, id_user) => {
-    console.log(id_blog, id_user)
+    console.log(id_blog, id_user);
     return axios
       .patch(
-        `https://gocure.netlify.app/api/blogs/unlike`,
+        `https://rumahbercerita.netlify.app/api/blogs/unlike`,
         { id_blog, id_user },
         { withCredentials: true, config }
-      ).then(setLiked(false))
+      )
+      .then(setLiked(false))
       .catch((err) => {
         console.log(err);
         return setError(

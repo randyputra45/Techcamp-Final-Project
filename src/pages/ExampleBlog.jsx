@@ -129,7 +129,7 @@ const ExampleBlog = () => {
                                             pic="https://res.cloudinary.com/gocure/image/upload/v1641976935/ah48bacruoy0mok5ynoi.jpg"
                                         />
                                         <BlogCard2
-                                            url="blogs/61de9617d4b61b3b93aa31f5"
+                                            url="/blogs/61de9617d4b61b3b93aa31f5"
                                             pic="https://res.cloudinary.com/gocure/image/upload/v1641977365/dy9enjs9y5tafdeiblyd.jpg"
                                             title="Motivasi Kerja Hilang? (Cara Mengembalikan Produktivitas Kerja)"
                                         />

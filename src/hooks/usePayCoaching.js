@@ -6,7 +6,9 @@ import { UserContext } from "../context/userContext";
 export default function usePayCoaching() {
   let history = useHistory();
   const [error, setError] = useState(null);
-  const [userCoaching, setFilteredCoaching] = useState(null);
+  const [userCoaching, setFilteredCoaching] = useState(
+    null
+  );
   const [paymentData, setPaymentData] = useState(null);
 
   const { user } = useContext(UserContext);
@@ -15,23 +17,28 @@ export default function usePayCoaching() {
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",
-      "Accept": "application/json",
+      Accept: "application/json",
       "X-OY-Username": "String(64)",
-      "X-Api-Key": "String(255)"
+      "X-Api-Key": "String(255)",
     },
   };
-  
+
   useEffect(() => {
     async function getCoaching() {
       await axios
-        .get("https://gocure.netlify.app/api/paycoaching", { withCredentials: true, config })
-        .then((res) => {
-            const coachingList = res.data.filter(coaching => coaching.user === user._id)
-            setFilteredCoaching(coachingList)
-            }
+        .get(
+          "https://rumahbercerita.netlify.app/api/paycoaching",
+          { withCredentials: true, config }
         )
+        .then((res) => {
+          console.log(res)
+          const coachingList = res.data.filter(
+            (coaching) => coaching.user._id === user._id
+          );
+          setFilteredCoaching(coachingList);
+        })
         .catch((err) => {
-            console.log(err);
+          console.log(err);
         });
     }
 
@@ -42,34 +49,35 @@ export default function usePayCoaching() {
   const createPayment = async (data, paymentUrl) => {
     console.log(data);
     const {
-        first_name,
-        last_name,
-        email,
-        phone,
-        user,
-        price,
-        date,
-        payment_status,
-        package_name,
-        payment_method
+      first_name,
+      last_name,
+      email,
+      phone,
+      user,
+      price,
+      date,
+      payment_status,
+      package_name,
+      payment_method,
     } = data;
     return axios
       .post(
-        `https://gocure.netlify.app/api/paycoaching`,
+        `https://rumahbercerita.netlify.app/api/paycoaching`,
         {
-            first_name,
-            last_name,
-            email,
-            phone,
-            user,
-            price,
-            date,
-            payment_status,
-            package_name,
-            payment_method
+          first_name,
+          last_name,
+          email,
+          phone,
+          user,
+          price,
+          date,
+          payment_status,
+          package_name,
+          payment_method,
         },
         { withCredentials: true, config }
-      ).then((response) => {
+      )
+      .then((response) => {
         console.log(response);
 
         // const res = response.data.payment_details
@@ -88,9 +96,7 @@ export default function usePayCoaching() {
       })
       .catch((err) => {
         console.log(err);
-        return setError(
-          JSON.stringify(err.response)
-        );
+        return setError(JSON.stringify(err.response));
       });
   };
 

@@ -18,7 +18,10 @@ export default function useAuth() {
   //set user
   const setUserContext = async () => {
     return await axios
-      .get("https://gocure.netlify.app/api/user", { withCredentials: true, config })
+      .get("https://rumahbercerita.netlify.app/api/user", {
+        withCredentials: true,
+        config,
+      })
       .then((res) => {
         setUser(res.data.currentUser);
       })
@@ -37,11 +40,11 @@ export default function useAuth() {
       password,
       no_telp,
       sex,
-      birth_date
+      birth_date,
     } = data;
     return axios
       .post(
-        `https://gocure.netlify.app/api/register`,
+        `https://rumahbercerita.netlify.app/api/register`,
         {
           first_name,
           last_name,
@@ -49,7 +52,7 @@ export default function useAuth() {
           password,
           no_telp,
           sex,
-          birth_date
+          birth_date,
         },
         { withCredentials: true, config }
       )
@@ -65,10 +68,14 @@ export default function useAuth() {
   const loginUser = async (data) => {
     const { email, password } = data;
     return axios
-      .post("https://gocure.netlify.app/api/login", {
-        email,
-        password,
-      }, { withCredentials: true, config })
+      .post(
+        "https://rumahbercerita.netlify.app/api/login",
+        {
+          email,
+          password,
+        },
+        { withCredentials: true, config }
+      )
       .then(async (response) => {
         await setUserContext();
         history.push("/home");
@@ -80,16 +87,22 @@ export default function useAuth() {
         );
       });
   };
-  
+
   //forgot password
   const forgotPassword = async (data) => {
     const { email } = data;
     return axios
-      .post("https://gocure.netlify.app/api/forgotpassword", {
-        email,
-      }, { withCredentials: true, config })
+      .post(
+        "https://rumahbercerita.netlify.app/api/forgotpassword",
+        {
+          email,
+        },
+        { withCredentials: true, config }
+      )
       .then(async (response) => {
-        setError("Email sent! Please wait mail for several minutes")
+        setError(
+          "Email sent! Please wait mail for several minutes"
+        );
       })
       .catch((err) => {
         return setError(
@@ -100,25 +113,33 @@ export default function useAuth() {
 
   //reset password
   const resetPassword = async (data, url) => {
-    console.log(data)
+    console.log(data);
     return axios
-      .put(`https://gocure.netlify.app/api${url}`, {
-        password: data,
-      }, { withCredentials: true, config })
+      .put(
+        `https://rumahbercerita.netlify.app/api${url}`,
+        {
+          password: data,
+        },
+        { withCredentials: true, config }
+      )
       .catch((err) => {
         return setError(
           JSON.stringify(err.response.data.error)
         );
       });
   };
-  
+
   //edit user profile
   const editUser = async (data, url) => {
-    console.log(data)
+    console.log(data);
     return axios
-      .patch(`https://gocure.netlify.app/api${url}`, {
-        data,
-      }, { withCredentials: true, config })
+      .patch(
+        `https://rumahbercerita.netlify.app/api${url}`,
+        {
+          data,
+        },
+        { withCredentials: true, config }
+      )
       .catch((err) => {
         return setError(
           JSON.stringify(err.response.data.error)

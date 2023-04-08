@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios'; 
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function useWebinar() {
   const [webinar, setWebinar] = useState(null);
   const [webinarID, setWebinarID] = useState(null);
   const [isLoading, setLoading] = useState(true);
-  const [error, setError] = useState("")
+  const [error, setError] = useState("");
 
   const config = {
     headers: {
@@ -16,26 +16,32 @@ export default function useWebinar() {
 
   useEffect(() => {
     async function getWebinar() {
-    await axios.get('https://gocure.netlify.app/api/webinars', { withCredentials: true, config })
-    .then(res => {
-        setWebinar(res.data);
-        setLoading(false);
-    }).catch(err => {
-        console.log(err);
-        setLoading(false);
-    });
+      await axios
+        .get(
+          "https://rumahbercerita.netlify.app/api/webinars",
+          { withCredentials: true, config }
+        )
+        .then((res) => {
+          setWebinar(res.data);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
+        });
     }
-    
-    getWebinar();  
+
+    getWebinar();
   }, []);
 
   const getWebinarById = async (data) => {
     return axios
       .get(
-        `https://gocure.netlify.app/api${data}`,
+        `https://rumahbercerita.netlify.app/api${data}`,
         { withCredentials: true, config }
-      ).then(res => {
-        setWebinarID(res.data)
+      )
+      .then((res) => {
+        setWebinarID(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -44,12 +50,12 @@ export default function useWebinar() {
         );
       });
   };
-  
+
   return {
-      webinar,
-      webinarID,
-      getWebinarById,
-      isLoading,
-      error
-  }
+    webinar,
+    webinarID,
+    getWebinarById,
+    isLoading,
+    error,
+  };
 }

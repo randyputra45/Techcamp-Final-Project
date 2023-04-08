@@ -2,8 +2,8 @@ import { useState } from 'react'
 import "../css/chatbot.css";
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator, ArrowButton } from '@chatscope/chat-ui-kit-react';
-import Avatar from '../components/Avatar'
-import Button from '../components/Button'
+import Avatar from './Avatar'
+import Button from './Button'
 
 const API_KEY = process.env.REACT_APP_CHATGPT_API_KEY;
 // "Explain things like you would to a 10 year old learning how to code."
