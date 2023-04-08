@@ -21,14 +21,18 @@ export default function usePayWebinar() {
   useEffect(() => {
     async function getWebinar() {
       await axios
-        .get("https://gocure.netlify.app/api/paywebinar", { withCredentials: true, config })
-        .then((res) => {
-            const webinarList = res.data.filter(webinar => webinar.user === user._id)
-            setFilteredConsul(webinarList)
-            }
+        .get(
+          "https://rumahbercerita.netlify.app/api/paywebinar",
+          { withCredentials: true, config }
         )
+        .then((res) => {
+          const webinarList = res.data.filter(
+            (webinar) => webinar.user === user._id
+          );
+          setFilteredConsul(webinarList);
+        })
         .catch((err) => {
-            console.log(err);
+          console.log(err);
         });
     }
 
@@ -39,53 +43,52 @@ export default function usePayWebinar() {
   const createPayment = async (data, paymentUrl) => {
     console.log(data);
     const {
-        first_name,
-        last_name,
-        email,
-        phone,
-        user,
-        price,
-        date,
-        payment_status,
-        package_name,
-        payment_method
+      first_name,
+      last_name,
+      email,
+      phone,
+      user,
+      price,
+      date,
+      payment_status,
+      package_name,
+      payment_method,
     } = data;
     return axios
       .post(
-        `https://gocure.netlify.app/api/paywebinar`,
+        `https://rumahbercerita.netlify.app/api/paywebinar`,
         {
-            first_name,
-            last_name,
-            email,
-            phone,
-            user,
-            price,
-            date,
-            payment_status,
-            package_name,
-            payment_method
+          first_name,
+          last_name,
+          email,
+          phone,
+          user,
+          price,
+          date,
+          payment_status,
+          package_name,
+          payment_method,
         },
         { withCredentials: true, config }
-      ).then((response) => {
-        const res = response.data.payment_details
-        setPaymentData(response.data)
+      )
+      .then((response) => {
+        const res = response.data.payment_details;
+        setPaymentData(response.data);
 
         const data = {
-            qrisUrl: res.actions[0].url,
-            gopayUrl: res.actions[1].url,
-            payment_method: response.data.payment_method,
-            paymentUrl: paymentUrl
-        }
+          qrisUrl: res.actions[0].url,
+          gopayUrl: res.actions[1].url,
+          payment_method: response.data.payment_method,
+          paymentUrl: paymentUrl,
+        };
         history.push({
-            pathname: "/payment/scanqr",
-            state: data
-        })
+          pathname: "/payment/scanqr",
+          state: data,
+        });
       })
       .catch((err) => {
         console.log(err);
-        return setError(
-          JSON.stringify(err.response)
-        );
+        return setError(JSON.stringify(err.response));
       });
   };
 

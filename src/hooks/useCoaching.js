@@ -4,7 +4,9 @@ import axios from "axios";
 export default function useCoaching() {
   const [coaching, setCoaching] = useState(null);
   const [coachingID, setCoachingID] = useState(null);
-  const [coachingContent, setCoachingContent] = useState(null);
+  const [coachingContent, setCoachingContent] = useState(
+    null
+  );
   const [isLoading, setLoading] = useState(true);
   const [isLoadingContent] = useState(true);
   const [error, setError] = useState("");
@@ -19,7 +21,10 @@ export default function useCoaching() {
   useEffect(() => {
     async function getCoaching() {
       await axios
-        .get("https://gocure.netlify.app/api/coaching", { withCredentials: true, config })
+        .get(
+          "https://rumahbercerita.netlify.app/api/coaching",
+          { withCredentials: true, config }
+        )
         .then((res) => {
           setCoaching(res.data);
           setLoading(false);
@@ -34,9 +39,14 @@ export default function useCoaching() {
 
   const getCoachingById = async (data) => {
     return axios
-      .get(`https://gocure.netlify.app/api${data}`, { withCredentials: true, config })
+      .get(
+        `https://rumahbercerita.netlify.app/api${data}`,
+        { withCredentials: true, config }
+      )
       .then((res) => {
-        setCoachingContent(JSON.parse(res.data.content[0])[0]);
+        setCoachingContent(
+          JSON.parse(res.data.content[0])[0]
+        );
         setCoachingID(res.data);
       })
       .catch((err) => {
