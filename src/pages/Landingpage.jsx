@@ -1,23 +1,22 @@
-import React, { useContext } from "react";
-import AnswerCard from "../components/AnswerCard";
-import Button from "../components/Button";
-import DesktopActiveButton2 from "../components/DesktopActiveButton2";
-import LandingNavbar from "../components/LandingNavbar";
-import { UserContext } from "../context/userContext";
-import { useHistory } from "react-router-dom";
-import LandingButton1 from "../components/LandingButton1";
-import LandingButton11 from "../components/LandingButton11";
-import TestiCard from "../components/TestiCard";
-import { Link } from "react-router-dom";
-import ChatBot from "../pages/ChatBot";
+import React, { useContext } from 'react'
+import AnswerCard from '../components/AnswerCard'
+import Button from '../components/Button'
+import DesktopActiveButton2 from '../components/DesktopActiveButton2'
+import LandingNavbar from '../components/LandingNavbar'
+import { UserContext } from '../context/userContext';
+import { useHistory } from 'react-router-dom'
+import LandingButton1 from '../components/LandingButton1'
+import LandingButton11 from '../components/LandingButton11'
+import TestiCard from '../components/TestiCard'
+import { Link } from 'react-router-dom'
 
 const Landingpage = () => {
-  const history = useHistory();
+  const history = useHistory()
 
   const { user } = useContext(UserContext);
 
   if (user) {
-    history.push("/home");
+    history.push("/home")
   }
 
   return (
@@ -27,33 +26,19 @@ const Landingpage = () => {
           <LandingNavbar />
         </div>
         <div className="pt-24 pb-6 px-6">
-          <div className="text-2xl font-bold pb-12">
-            Perawatan yang tepat di waktu yang tepat.
-          </div>
+          <div className="text-2xl font-bold pb-12">Perawatan yang tidak tepat di waktu yang tepat.</div>
         </div>
         <img className="w-full" src="homepict.svg" alt="" />
         <div className="py-24 px-6">
-          <div className="text-center pb-12">
-            scroll untuk melihat lebih lanjut.
-          </div>
+          <div className="text-center pb-12">scroll untuk melihat lebih lanjut.</div>
           <div className="pt-16">
-            <div className="flex flex-col">
-              <img
-                src="landing1.jpg"
-                alt=""
-                className="object-cover pb-6"
-              />
+            <div className='flex flex-col'>
+              <img src="landing1.jpg" alt="" className='object-cover pb-6' />
               <div className="text-xl font-bold">
                 Siapa kami?
               </div>
               <div className="mt-2 leading-relaxed">
-                GoCure merupakan sebuah klinik layanan
-                psikologi yang berfokus pada kesehatan
-                mental dewasa, remaja & anak melalui
-                berbagai layanan konseling dan terapi.
-                GoCure Center juga mempunyai layanan tumbuh
-                kembang psikologi anak dan anak-anak dengan
-                kebutuhan khusus.
+                GoCure merupakan sebuah klinik layanan psikologi yang berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. GoCure Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus.
               </div>
               <Link to="/aboutus" className="flex">
                 <div className="border-b border-white hover:border-blue-600">
@@ -136,11 +121,11 @@ const Landingpage = () => {
         <div className="topbar w-full">
           <LandingNavbar />
         </div>
-        <div style={{ position:"fixed", bottom: 0, right: 0}}>
+        <div style={{ position: "fixed", bottom: 0, right: 0 }}>
           <ChatBot />
         </div>
         <img
-          src="desktoplanding.svg"
+          src="desktoplanding2.svg"
           alt=""
           className="fixxxed"
         />
@@ -150,30 +135,23 @@ const Landingpage = () => {
               Perawatan yang tepat di waktu yang tepat.
             </div>
             <div className=" mt-2 pb-8">
-              Platform kami memberdayakan orang-orang dengan
-              alat digital yang didukung secara klinis untuk
-              secara proaktif meningkatkan kesejahteraan
-              mental.
+              Platform kami memberdayakan orang-orang dengan alat digital yang didukung secara klinis untuk secara proaktif meningkatkan kesejahteraan mental.
             </div>
             <Link to="/register">
-              <Button title="Daftar Sekarang" />
+              <Button
+                title="Daftar Sekarang"
+              />
             </Link>
           </div>
         </div>
         <div className="pt-32 px-12 lg:px-16 xl:px-24 2xl:px-48">
           <div className="flex items-center md:gap-x-8 xl:gap-x-16">
-            <div className="flex flex-col w-2/3">
+            <div className='flex flex-col w-2/3'>
               <div className="text-xl font-bold">
                 Siapa kami?
               </div>
               <div className="mt-2 leading-relaxed">
-                GoCure merupakan sebuah klinik layanan
-                psikologi yang berfokus pada kesehatan
-                mental dewasa, remaja & anak melalui
-                berbagai layanan konseling dan terapi.
-                GoCure Center juga mempunyai layanan tumbuh
-                kembang psikologi anak dan anak-anak dengan
-                kebutuhan khusus.
+                Rumah Bercerita merupakan sebuah klinik layanan psikologi yang berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. GoCure Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus.
               </div>
               <Link to="/aboutus" className="flex">
                 <div className="border-b border-white hover:border-blue-600">
@@ -183,11 +161,7 @@ const Landingpage = () => {
                 </div>
               </Link>
             </div>
-            <img
-              src="landing1.jpg"
-              alt=""
-              className="object-cover w-1/2"
-            />
+            <img src="landing1.jpg" alt="" className='object-cover w-1/2' />
           </div>
         </div>
         <div className="px-12 lg:px-16 xl:px-24 2xl:px-48">
@@ -200,13 +174,13 @@ const Landingpage = () => {
                 pic="konseling.svg"
                 title="Konseling"
                 desc="disini anda bisa melakukan penanganan kesehatan mental anda dengan orang yang terpercaya dan ahli dibidangnya."
-                url="/screening"
+                url="/counseling"
               />
               <LandingButton1
                 pic="webinar.svg"
                 title="Webinar"
                 desc="disini anda bisa mengikuti kegiatan webinar bertajuk kesehatan mental bersama narasumber ahli dan terpercaya."
-                url="/webinar"
+                url="/webinars"
               />
               <LandingButton1
                 pic="blog.svg"
@@ -236,7 +210,7 @@ const Landingpage = () => {
               <LandingButton11
                 pic="konseling.svg"
                 title="24 jam pelayanan konsumen"
-                desc="GoCure hadir dengan memberikan pelayanan sepenuh hati kepada konsumen. Siap melayani konsumen kapanpun user inginkan."
+                desc="Rumah Bercerita hadir dengan memberikan pelayanan sepenuh hati kepada konsumen. Siap melayani konsumen kapanpun user inginkan."
               />
               <LandingButton11
                 pic="konseling.svg"
@@ -246,7 +220,7 @@ const Landingpage = () => {
               <LandingButton11
                 pic="konseling.svg"
                 title="aksesibilitas yang mudah"
-                desc="GoCure dibuat dengan antarmuka dengan aksesibilitas yang menarik dan sangat user friendly untuk memudahkan pengguna mengakses website kami."
+                desc="Rumah Bercerita dibuat dengan antarmuka dengan aksesibilitas yang menarik dan sangat user friendly untuk memudahkan pengguna mengakses website kami."
               />
               <LandingButton11
                 pic="konseling.svg"
@@ -280,7 +254,7 @@ const Landingpage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Landingpage;
+export default Landingpage

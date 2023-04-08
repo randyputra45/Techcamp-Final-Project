@@ -6,30 +6,30 @@
 
 
 .bg-button {
-    background-color: #d4f0f0;
+  background-color: #D5E4F3;
 }
 
 .bg-selected {
-    background-color: #db2777;
+  background-color: #db2777;
 }
 
 .bg-active-button {
-    background-color: #00696E;
+  background-color: #5793CF;
 }
 
 .bg-hover-button {
-    background-color: #b6e0e0;
+  background-color: #C4D9EE;
 }
 
 .bg-base {
-    background-color: #FAFCFC;
+  background-color: #FAFCFC;
 }
 
 b {
-    font-weight: 800;
-    color: #242424;
+  font-weight: 800;
+  color: #242424;
 }
 
 .bg-body {
-    background-color: #FAFCFC;
+  background-color: #FAFCFC;
 }
