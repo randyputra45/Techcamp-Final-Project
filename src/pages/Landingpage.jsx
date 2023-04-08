@@ -9,6 +9,7 @@ import LandingButton1 from '../components/LandingButton1'
 import LandingButton11 from '../components/LandingButton11'
 import TestiCard from '../components/TestiCard'
 import { Link } from 'react-router-dom'
+import ChatBot from "../pages/ChatBot";
 
 const Landingpage = () => {
   const history = useHistory()
@@ -26,7 +27,7 @@ const Landingpage = () => {
           <LandingNavbar />
         </div>
         <div className="pt-24 pb-6 px-6">
-          <div className="text-2xl font-bold pb-12">Perawatan yang tidak tepat di waktu yang tepat.</div>
+          <div className="text-2xl font-bold pb-12">Perawatan yang tepat di waktu yang tepat.</div>
         </div>
         <img className="w-full" src="homepict.svg" alt="" />
         <div className="py-24 px-6">
