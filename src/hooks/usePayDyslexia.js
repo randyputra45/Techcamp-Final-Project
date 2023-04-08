@@ -29,7 +29,7 @@ export default function usePayDyslexia() {
         )
         .then((res) => {
           const dyslexiaList = res.data.filter(
-            (dyslexia) => dyslexia.user === user._id
+            (dyslexia) => dyslexia.user._id === user._id
           );
           setFilteredDyslexia(dyslexiaList);
         })

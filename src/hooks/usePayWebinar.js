@@ -27,7 +27,7 @@ export default function usePayWebinar() {
         )
         .then((res) => {
           const webinarList = res.data.filter(
-            (webinar) => webinar.user === user._id
+            (webinar) => webinar.user._id === user._id
           );
           setFilteredConsul(webinarList);
         })
