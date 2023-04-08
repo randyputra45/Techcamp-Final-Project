@@ -22,7 +22,7 @@ export default function useConsultation() {
     async function getConsul() {
       await axios
         .get(
-          "https://rumahbercerita.netlify.app/api/consul",
+          "https://rumahbercerita.netlify.app/api/consultation",
           { withCredentials: true, config }
         )
         .then((res) => {
