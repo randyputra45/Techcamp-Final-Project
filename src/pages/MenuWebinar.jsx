@@ -25,7 +25,7 @@ const MenuWebinar = () => {
                 </div>
                 <div className="flex flex-col gap-y-6">
                   <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-                    {/* {webinar && webinar.map(item => <WebinarCard
+                    {webinar && webinar.map(item => <WebinarCard
                       key={item._id}
                       title={item.title}
                       url={`/webinars/${item._id}`}
@@ -34,8 +34,8 @@ const MenuWebinar = () => {
                       day={item.day}
                       date={item.date}
                       price={item.price}
-                    />)} */}
-                    <WebinarCard
+                    />)}
+                    {/* <WebinarCard
                       title="Webinar Kesehatan Mental"
                       url='/webinars/1'
                       picnarsum1="https://awsimages.detik.net.id/community/media/visual/2019/02/19/42393387-9c5c-4be4-97b8-49260708719e.jpeg?w=750&q=90"
@@ -59,7 +59,7 @@ const MenuWebinar = () => {
                       day="Kamis"
                       date="07 April 2022"
                       price="50000"
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>
