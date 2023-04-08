@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, {useContext} from "react";
+=======
+import React, { useContext } from "react";
+>>>>>>> development
 import DesktopAvatar from "../components/DesktopAvatar";
 import MobileAvatar from "../components/MobileAvatar";
 import MobileButton from "../components/MobileButton";
