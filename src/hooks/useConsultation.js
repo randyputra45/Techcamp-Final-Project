@@ -29,7 +29,7 @@ export default function useConsultation() {
           console.log(res);
           if (res.data) {
             const consultationList = res.data.filter(
-              (consul) => consul.user === user._id
+              (consul) => consul.user._id === user._id
             );
             console.log(consultationList);
             setFilteredConsul(consultationList);
