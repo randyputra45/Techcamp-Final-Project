@@ -9,6 +9,7 @@ import LandingButton1 from '../components/LandingButton1'
 import LandingButton11 from '../components/LandingButton11'
 import TestiCard from '../components/TestiCard'
 import { Link } from 'react-router-dom'
+import ChatBot from '../components/ChatBot'
 
 const Landingpage = () => {
   const history = useHistory()
