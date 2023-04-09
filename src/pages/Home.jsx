@@ -77,6 +77,12 @@ const Home = (props) => {
                   url="/blogs"
                 />
                 <MobileButton
+                  pic="video.svg"
+                  title="Video"
+                  desc="kumpulan video edukasi kesehatan mental."
+                  url="/videos"
+                />
+                <MobileButton
                   url="/experts"
                   pic="ahli.svg"
                   title="Profil Ahli"

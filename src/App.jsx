@@ -69,7 +69,8 @@ import UserCoaching from "./pages/UserCoaching";
 import UserDyslexia from "./pages/UserDyslexia";
 import ProfilGantiPassEmail from "./pages/ProfilGantiPassEmail";
 import Response404 from "./pages/Response404";
-
+import MenuVideo from "./pages/MenuVideo";
+import ExampleVideo from "./pages/ExampleVideo";
 
 function App() {
   return (
@@ -108,6 +109,10 @@ function App() {
               {/* Blog */}
               <Route exact path="/blogs" component={MenuBlog} />
               <Route exact path="/blogs/:id" component={ExampleBlog} />
+              
+              {/* Video */}
+              <Route exact path="/videos" component={MenuVideo} />
+              <Route exact path="/videos/:id" component={ExampleVideo} />
 
               {/* Webinar */}
               <Route exact path="/webinars" component={MenuWebinar} />
