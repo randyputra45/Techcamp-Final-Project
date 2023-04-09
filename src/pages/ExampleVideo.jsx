@@ -14,12 +14,12 @@ const ExampleVideo = () => {
     const history = useHistory();
     const { user } = useContext(UserContext);
 
-    const {videoArticleID, videoContent, getArticleById} = useVideo()
+    const {videoArticleID} = useVideo()
     const path = window.location.pathname
     let url = path.replace(/^https?:\/\//, '').split('/');
     
     useEffect(() => {
-        getArticleById(path)
+        videoArticleID(path)
     }, [path])
 
     return (
