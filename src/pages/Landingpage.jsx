@@ -39,7 +39,7 @@ const Landingpage = () => {
                 Siapa kami?
               </div>
               <div className="mt-2 leading-relaxed">
-                GoCure merupakan sebuah klinik layanan psikologi yang berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. GoCure Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus.
+                Rumah Bercerita merupakan sebuah klinik layanan psikologi yang berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. Rumah Bercerita Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus.
               </div>
               <Link to="/aboutus" className="flex">
                 <div className="border-b border-white hover:border-blue-600">
@@ -96,7 +96,7 @@ const Landingpage = () => {
                 <LandingButton11
                   pic="konseling.svg"
                   title="24 jam pelayanan konsumen"
-                  desc="GoCure hadir dengan memberikan pelayanan sepenuh hati kepada konsumen. Siap melayani konsumen kapanpun user inginkan."
+                  desc="Rumah Bercerita hadir dengan memberikan pelayanan sepenuh hati kepada konsumen. Siap melayani konsumen kapanpun user inginkan."
                 />
                 <LandingButton11
                   pic="konseling.svg"
@@ -106,7 +106,7 @@ const Landingpage = () => {
                 <LandingButton11
                   pic="konseling.svg"
                   title="aksesibilitas yang mudah"
-                  desc="GoCure dibuat dengan antarmuka dengan aksesibilitas yang menarik dan sangat user friendly untuk memudahkan pengguna mengakses website kami."
+                  desc="Rumah Bercerita dibuat dengan antarmuka dengan aksesibilitas yang menarik dan sangat user friendly untuk memudahkan pengguna mengakses website kami."
                 />
                 <LandingButton11
                   pic="konseling.svg"

@@ -7,7 +7,7 @@ const WebinarCard2 = (props) => {
         <div className="rounded-xl bg-card py-4 px-4">
           <div className="flex flex-wrap flex-col gap-y-16">
             <div className="flex justify-between">
-              <p className="text-xxs">MS Wellbeingg</p>
+              <p className="text-xxs">Rumah Berceritag</p>
               <p className="text-xxs">Webinar</p>
             </div>
             <div className="flex justify-between gap-x-4 items-end">
@@ -22,7 +22,7 @@ const WebinarCard2 = (props) => {
         <div className="rounded-xl bg-card py-4 px-4">
           <div className="flex flex-wrap flex-col gap-y-36">
             <div className="flex justify-between">
-              <p className="text-xxs">MS Wellbeing</p>
+              <p className="text-xxs">Rumah Bercerita</p>
               <p className="text-xxs">Webinar</p>
             </div>
             <div className="flex justify-between gap-x-4 items-end">

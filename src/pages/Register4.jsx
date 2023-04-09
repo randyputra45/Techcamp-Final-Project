@@ -50,7 +50,7 @@ const Register4 = () => {
             <a href="/login">
               <b>Login </b>
             </a>
-            mengakses fitur di website GoCure
+            mengakses fitur di website Rumah Bercerita
           </div>
           <div className="pt-12 w-full">
             <Link to="/login">
@@ -75,7 +75,7 @@ const Register4 = () => {
               </div>
               <div className="mt-2 text-sm text-center">
                 Ayo <b>login</b> sekarang untuk mengakses
-                fitur website GoCure
+                fitur website Rumah Bercerita
               </div>
               <div className="pt-6 flex justify-center">
                 <Link to="/login">

@@ -20,7 +20,7 @@ const Register3 = (props) => {
                             Tolong periksa email anda <b>{state.email}</b> untuk konfirmasi akun anda (jangan lupa untuk periksa folder spam pada email anda.)
                         </div>
                         <div className="pt-12 text-xs leading-relaxed">
-                            Jika masih belum menemukan coba cari "in:allsubject:(Confirm your account on Gocure)" pada email anda
+                            Jika masih belum menemukan coba cari "in:allsubject:(Confirm your account on Rumah Bercerita)" pada email anda
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@ const Register3 = (props) => {
                                     Tolong periksa email anda <b>{state.email}</b> untuk konfirmasi akun anda (jangan lupa untuk periksa folder spam pada email anda). Setelah konfirmasi silahkan lakukan <a href='/login'><b>Login</b></a>
                                 </div>
                                 <div className="pt-12 text-xs leading-relaxed">
-                                    Jika masih belum menemukan coba cari "in:allsubject:(Confirm your account on Gocure)" pada email anda
+                                    Jika masih belum menemukan coba cari "in:allsubject:(Confirm your account on Rumah Bercerita)" pada email anda
                                 </div>
                             </div>
                         </div>

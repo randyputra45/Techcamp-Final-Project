@@ -30,7 +30,7 @@ const Feedback = () => {
                                     <div className="mb-1">Lainnya</div>
                                     <div className="text-3xl font-bold">Feedback</div>
                                     <div className="pt-8 text-gray-500 leading-relaxed">
-                                        Disini anda dapat memberikan kritik atau saran bagi pengembangan website dan juga testimoni tentang layanan yang diberikan GoCure. Silahkan tinggalkan pesan pada form berikut, tanggapan anda akan sangat berarti.
+                                        Disini anda dapat memberikan kritik atau saran bagi pengembangan website dan juga testimoni tentang layanan yang diberikan Rumah Bercerita. Silahkan tinggalkan pesan pada form berikut, tanggapan anda akan sangat berarti.
                                     </div>
                                     <div className="pt-8">
                                         <div className="font-bold mb-2">Kolom Feedback</div>

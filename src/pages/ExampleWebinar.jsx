@@ -41,7 +41,7 @@ const ExampleWebinar = () => {
             title={webinarID && webinarID.title}
           />
           <div className="pt-4 text-sm text-gray-600">
-            Kamis, 10 Mei 2021
+            {webinarID && webinarID.date}
           </div>
           <div className="pt-2 text-2xl">
             {webinarID && webinarID.title}
@@ -101,19 +101,19 @@ const ExampleWebinar = () => {
                 </div>
                 <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-y-4 gap-x-16">
                   <WebinarCard2
-                    title="Webinar"
+                    title={webinarID && webinarID.title}
                   />
                   <div className="grid grid-col content-between">
                     <div>
                       <div className="pt-4 text-sm text-gray-600">
-                        Kamis, 07 April 2023
+                        {webinarID && webinarID.date}
                       </div>
                       <div className="pt-2 text-2xl">
-                        Webinar
+                        {webinarID && webinarID.title}
                       </div>
                       <div className="pt-4 flex items-end justify-between">
                         <div className="text-lg font-black">
-                          Rp50.000
+                          {webinarID && webinarID.price}
                         </div>
                       </div>
                     </div>
@@ -129,17 +129,17 @@ const ExampleWebinar = () => {
                 <div className="pt-6 grid md:grid-cols-1 lg:grid-cols-2">
                   <div className="pt-10 flex flex-col gap-y-4">
                     <div className="font-bold">Narasumber</div>
-                    {/* {webinarID && webinarID.psikolog.map(item => <WebinarNarsum
+                    {webinarID && webinarID.psikolog.map(item => <WebinarNarsum
                       key={item._id}
                       name={item.name}
                       pic={item.image}
                       role={item.role}
-                    />)} */}
-                    <WebinarNarsum
+                    />)}
+                    {/* <WebinarNarsum
                       name="Megachan"
                       pic="https://awsimages.detik.net.id/community/media/visual/2019/02/19/42393387-9c5c-4be4-97b8-49260708719e.jpeg?w=750&q=90"
                       role="Ketua PDIP"
-                    />
+                    /> */}
                   </div>
                   <div className="">
                     <div className="pt-10 flex flex-col gap-y-4">
