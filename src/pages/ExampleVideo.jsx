@@ -80,26 +80,26 @@ const ExampleVideo = () => {
                                 <div className="text-md leading-relaxed text-justify">
                                     <div className="hidden md:block">
                                         <p className="text-md font-bold">Description</p>
-                                        <p className="text-md pt-2">{videoID && videoID.decs}</p>
+                                        <p className="text-md pt-2">{videoID && videoID.desc}</p>
                                     </div>
                                     <div className="pt-2 md:pt-10 font-bold">
                                         Other Videos
                                     </div>
                                     <div className="pt-3 flex gap-x-4">
                                         <BlogCard2
-                                            url="/videos/6432dacb0e5f096c7a1479d4"
-                                            title="Merasa Kesepian? Kenali Penyebab Sulit Memiliki Teman"
-                                            pic="https://img.youtube.com/vi/vA8z3CHyBpg/sddefault.jpg"
+                                            url="/videos/6432f396120b39e6b87fab5c"
+                                            title="Belajar Kebiasaan Baru dengan Berhenti Belajar (Cara Menghilangkan Kebiasaan Buruk)"
+                                            pic="https://img.youtube.com/vi/L7TUgGWr_44/maxresdefault.jpg"
                                         />
                                         <BlogCard2
-                                            url="/videos/6432dacb0e5f096c7a1479d4"
-                                            title="Merasa Kesepian? Kenali Penyebab Sulit Memiliki Teman"
-                                            pic="https://img.youtube.com/vi/vA8z3CHyBpg/sddefault.jpg"
+                                            url="/videos/6432f42c120b39e6b87fab66"
+                                            title="Cara Biar Kamu Nggak Takut Dewasa (Overthinking Masa Dewasa & Quarter Life-Crisis"
+                                            pic="https://img.youtube.com/vi/l4zLrhS6haQ/maxresdefault.jpg"
                                         />
                                         <BlogCard2
-                                            url="/videos/6432dacb0e5f096c7a1479d4"
-                                            title="Merasa Kesepian? Kenali Penyebab Sulit Memiliki Teman"
-                                            pic="https://img.youtube.com/vi/vA8z3CHyBpg/sddefault.jpg"
+                                            url="/videos/6432f4af120b39e6b87fab68"
+                                            title="Sakit Hati Ditinggal Pas Lagi Sayang-Sayangnya (Cara Move On dari Putus Hubungan & Patah Hati)"
+                                            pic="https://img.youtube.com/vi/y580OtrfGvQ/maxresdefault.jpg"
                                         />
                                     </div>
                                 </div>

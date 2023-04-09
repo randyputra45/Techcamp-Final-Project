@@ -22,10 +22,7 @@ const MenuBlog = () => {
                             <div className="py-8 px-10 bg-body rounded-t-lg">
                                 <div className="pb-8">
                                     <div className="mb-1">Layanan Kami</div>
-                                    <div className="text-3xl font-bold">Blogs</div>
-                                </div>
-                                <div className="pt-4 pb-2">
-                                    <div className="font-bold text-sm pb-3">Hasil</div>
+                                    <div className="text-3xl font-bold">Video Edukasi</div>
                                 </div>
                                 <div className="flex flex-col gap-y-6">
                                     <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
