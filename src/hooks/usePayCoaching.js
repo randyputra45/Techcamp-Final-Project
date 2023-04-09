@@ -6,9 +6,7 @@ import { UserContext } from "../context/userContext";
 export default function usePayCoaching() {
   let history = useHistory();
   const [error, setError] = useState(null);
-  const [userCoaching, setFilteredCoaching] = useState(
-    null
-  );
+  const [userCoaching, setFilteredCoaching] = useState(null);
   const [paymentData, setPaymentData] = useState(null);
 
   const { user } = useContext(UserContext);
@@ -17,9 +15,6 @@ export default function usePayCoaching() {
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",
-      Accept: "application/json",
-      "X-OY-Username": "String(64)",
-      "X-Api-Key": "String(255)",
     },
   };
 
@@ -78,21 +73,19 @@ export default function usePayCoaching() {
         { withCredentials: true, config }
       )
       .then((response) => {
-        console.log(response);
+        const res = response.data.payment_details
+        setPaymentData(response.data)
 
-        // const res = response.data.payment_details
-        // setPaymentData(response.data)
-
-        // const data = {
-        //     qrisUrl: res.actions[0].url,
-        //     gopayUrl: res.actions[1].url,
-        //     payment_method: response.data.payment_method,
-        //     paymentUrl: paymentUrl
-        // }
-        // history.push({
-        //     pathname: "/payment/scanqr",
-        //     state: data
-        // })
+        const data = {
+            qrisUrl: res.actions[0].url,
+            gopayUrl: res.actions[1].url,
+            payment_method: response.data.payment_method,
+            paymentUrl: paymentUrl
+        }
+        history.push({
+            pathname: "/payment/scanqr",
+            state: data
+        })
       })
       .catch((err) => {
         console.log(err);
