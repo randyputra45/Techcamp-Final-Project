@@ -14,28 +14,28 @@ const ExampleVideo = () => {
     const history = useHistory();
     const { user } = useContext(UserContext);
 
-    const {videoArticleID} = useVideo()
+    const {videoID, getVideoById} = useVideo()
     const path = window.location.pathname
     let url = path.replace(/^https?:\/\//, '').split('/');
     
     useEffect(() => {
-        videoArticleID(path)
+        getVideoById(path)
     }, [path])
 
     return (
         <div>
             <div className="block md:hidden">
-                <img src={videoArticleID && videoArticleID.thumbnail_url} alt="" className='object-cover w-full' />
+                <img src={videoID && videoID.thumbnail_url} alt="" className='object-cover w-full' />
                 <div className="px-4">
                     <div className="pt-6 text-xl">
-                        {videoArticleID && videoArticleID.title}
+                        {videoID && videoID.title}
                     </div>
                     <div className="pt-4 flex justify-between">
                         <div className="text-gray-500 text-xs">
                             Description
                         </div>
                         <div className="text-gray-500 text-xs">
-                            {videoArticleID && videoArticleID.decs}
+                            {videoID && videoID.decs}
                         </div>
                     </div>
                     <div className="flex botbar pb-4 pr-4 gap-x-3">
@@ -52,7 +52,7 @@ const ExampleVideo = () => {
                         <div className="flex pl-8 md:pr-12 lg:px-12 xl:px-12 2xl:px-20">
                             <div className="flex items-end pb-8">
                                 <div className="text-2xl xl:text-4xl font-semibold text-white">
-                                    {videoArticleID && videoArticleID.title}
+                                    {videoID && videoID.title}
                                     {/* "Merasa Kesepian? Kenali Penyebab Sulit Memiliki Teman" */}
                                 </div>
                             </div>
@@ -63,7 +63,7 @@ const ExampleVideo = () => {
                                 title="myFrame"
                                 allowFullScreen="allowFullScreen"
                                 frameBorder="0"
-                                src={videoArticleID && videoArticleID.video_url}>
+                                src={videoID && videoID.video_url}>
                             </iframe>
                         </div>
                     </div>
@@ -80,7 +80,7 @@ const ExampleVideo = () => {
                                 <div className="text-md leading-relaxed text-justify">
                                     <div className="hidden md:block">
                                         <p className="text-md font-bold">Description</p>
-                                        <p className="text-md pt-2">{videoArticleID && videoArticleID.decs}</p>
+                                        <p className="text-md pt-2">{videoID && videoID.decs}</p>
                                     </div>
                                     <div className="pt-2 md:pt-10 font-bold">
                                         Other Videos
