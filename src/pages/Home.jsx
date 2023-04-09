@@ -3,6 +3,7 @@ import DesktopAvatar from "../components/DesktopAvatar";
 import MobileAvatar from "../components/MobileAvatar";
 import MobileButton from "../components/MobileButton";
 import { UserContext } from '../context/userContext';
+import ChatBot from '../components/ChatBot'
 
 const Home = (props) => {
   const { user } = useContext(UserContext);
@@ -13,6 +14,9 @@ const Home = (props) => {
         <div className="bg-begron2"></div>
         <div className="topbar w-full">
           <DesktopAvatar />
+        </div>
+        <div style={{ position: "fixed", bottom: 0, right: 0 }}>
+          <ChatBot />
         </div>
         <div className="pt-32 flex flex-col items-center">
           <div className="font-semibold mb-1">

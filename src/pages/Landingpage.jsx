@@ -26,6 +26,9 @@ const Landingpage = () => {
         <div className="topbar w-full">
           <LandingNavbar />
         </div>
+        <div style={{ position: "fixed", bottom: 0, right: 0 }}>
+          <ChatBot />
+        </div>
         <div className="pt-24 pb-6 px-6">
           <div className="text-2xl font-bold pb-12">Perawatan yang tepat di waktu yang tepat.</div>
         </div>
