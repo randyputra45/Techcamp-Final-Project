@@ -56,7 +56,7 @@ const Paket = () => {
                   <div className="text-xl font-bold">Pilih paket yang diinginkan</div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 content-between">
-                  {/* {packageData && packageData.map((data, i) =>
+                  {packageData && packageData.map((data, i) =>
                     <>
                       <div className="grid gap-y-4 content-between">
                         <PaketCard
@@ -74,46 +74,7 @@ const Paket = () => {
                         </button>
                       </div>
                     </>
-                  )} */}
-                  <div className="grid gap-y-4 content-between">
-                    <PaketCard
-                      bgtitle="Paket 1"
-                      prize="50000"
-                      desc1="1x Sesi Individual"
-                      desc2="1x Sesi Group Support"
-                    />
-                    <button onClick={() => handleClick("Paket 1", 50000)}>
-                      <ButtonAction
-                        title="Pilih Paket"
-                      />
-                    </button>
-                  </div>
-
-                  <div className="grid gap-y-4 content-between">
-                    <PaketCard
-                      bgtitle="Paket 2"
-                      prize="25000"
-                      desc1="1x Sesi Individual"
-                    />
-                    <button onClick={() => handleClick("Paket 2", 30000)}>
-                      <ButtonAction
-                        title="Pilih Paket"
-                      />
-                    </button>
-                  </div>
-
-                  <div className="grid gap-y-4 content-between">
-                    <PaketCard
-                      bgtitle="Paket 3"
-                      prize="30000"
-                      desc1="1x Sesi Group Support"
-                    />
-                    <button onClick={() => handleClick("Paket 3", 30000)}>
-                      <ButtonAction
-                        title="Pilih Paket"
-                      />
-                    </button>
-                  </div>
+                  )}
                 </div>
               </div>
             </div>

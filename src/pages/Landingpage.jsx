@@ -27,7 +27,7 @@ const Landingpage = () => {
           <LandingNavbar />
         </div>
         <div className="pt-24 pb-6 px-6">
-          <div className="text-2xl font-bold pb-12">Perawatan yang tidak tepat di waktu yang tepat.</div>
+          <div className="text-2xl font-bold pb-12">Perawatan yang tepat di waktu yang tepat.</div>
         </div>
         <img className="w-full" src="homepict.svg" alt="" />
         <div className="py-24 px-6">
@@ -152,7 +152,7 @@ const Landingpage = () => {
                 Siapa kami?
               </div>
               <div className="mt-2 leading-relaxed">
-                Rumah Bercerita merupakan sebuah klinik layanan psikologi yang berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. GoCure Center juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus.
+                Rumah Bercerita merupakan sebuah klinik layanan psikologi yang berfokus pada kesehatan mental dewasa, remaja & anak melalui berbagai layanan konseling dan terapi. Rumah Bercerita juga mempunyai layanan tumbuh kembang psikologi anak dan anak-anak dengan kebutuhan khusus.
               </div>
               <Link to="/aboutus" className="flex">
                 <div className="border-b border-white hover:border-blue-600">
@@ -238,17 +238,17 @@ const Landingpage = () => {
               <TestiCard
                 pic="testi-1.png"
                 name="Brian Jaski • Mahasiswa"
-                desc="Saya mahasiswa tingkat akhir yang masih ngurusin skripsian. Selalu ditanya kapan selesai, selalu dibilang jadi beban ortu. Hal itu membuat saya depresi. Saya tipe orang yang sulit untuk bercerita ke orang lain, namun di GoCure ini, dengan sangat mudah saya bercerita mengenai kondisi yang saya alami, seiring berjalannya waktu depresi saya berkurang dan akhirnya skripsi sayapun selesai."
+                desc="Saya mahasiswa tingkat akhir yang masih ngurusin skripsian. Selalu ditanya kapan selesai, selalu dibilang jadi beban ortu. Hal itu membuat saya depresi. Saya tipe orang yang sulit untuk bercerita ke orang lain, namun di Rumah Bercerita ini, dengan sangat mudah saya bercerita mengenai kondisi yang saya alami, seiring berjalannya waktu depresi saya berkurang dan akhirnya skripsi sayapun selesai."
               />
               <TestiCard
                 pic="testi-2.png"
                 name="Dina Oktavia • Pelajar"
-                desc="Konsultasi dengan psikolog dari GoCure sangat nyaman, aman, dan penuh pengertian sekali. Saya mengonsultasikan anak saya yang kondisinya berbeda dengan teman - temannya. Saya tidak menyadari bahwa dia mengidap penyakit diseleksia. Walaupun agak terlambat mengetahui kondisi tersebut, tapi setidaknya dia sedang di masa pemulihan."
+                desc="Konsultasi dengan psikolog dari Rumah Bercerita sangat nyaman, aman, dan penuh pengertian sekali. Saya mengonsultasikan anak saya yang kondisinya berbeda dengan teman - temannya. Saya tidak menyadari bahwa dia mengidap penyakit diseleksia. Walaupun agak terlambat mengetahui kondisi tersebut, tapi setidaknya dia sedang di masa pemulihan."
               />
               <TestiCard
                 pic="testi-3.png"
                 name="Maria Devina • Orang Tua"
-                desc="Ga nyangka bangett ternyata kondisi aku suka anehh kadang aku ngerasa pengen nangis, ketawa, dan marah di satu waktu. Karna penasaran dengan kondisiku yang kek gini, akhirnya aku coba untuk konsultasi dengan psikolog dari GoCure. Dan hasilnya uwaww ternyata kondisi aku ga baik baik ajaa, beberapa kali pertemuan sekaranggg aku udah beneran baik baik aja"
+                desc="Ga nyangka bangett ternyata kondisi aku suka anehh kadang aku ngerasa pengen nangis, ketawa, dan marah di satu waktu. Karna penasaran dengan kondisiku yang kek gini, akhirnya aku coba untuk konsultasi dengan psikolog dari Rumah Bercerita. Dan hasilnya uwaww ternyata kondisi aku ga baik baik ajaa, beberapa kali pertemuan sekaranggg aku udah beneran baik baik aja"
               />
             </div>
           </div>
