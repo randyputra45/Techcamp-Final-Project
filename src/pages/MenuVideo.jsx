@@ -6,7 +6,7 @@ import MobileNavbar from '../components/MobileNavbar'
 import useVideo from '../hooks/useVideo'
 
 const MenuBlog = () => {
-    const {videoContent} = useVideo()
+    const {video} = useVideo()
 
     return (
         <div>
@@ -29,7 +29,7 @@ const MenuBlog = () => {
                                 </div>
                                 <div className="flex flex-col gap-y-6">
                                     <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-                                        {videoContent && videoContent.map((art) => (
+                                        {video && video.map((art) => (
                                             <VideoCard
                                             url={`/videos/${art._id}`}
                                             key={art._id}
