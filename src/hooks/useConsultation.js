@@ -13,7 +13,8 @@ export default function useConsultation() {
 
   const config = {
     headers: {
-      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Origin":
+        "*",
       "Content-Type": "application/json",
     },
   };

@@ -31,7 +31,7 @@ export default function usePayCoaching() {
           { withCredentials: true, config }
         )
         .then((res) => {
-          console.log(res)
+          console.log(res);
           const coachingList = res.data.filter(
             (coaching) => coaching.user._id === user._id
           );

@@ -51,7 +51,7 @@ const ExampleCoaching = () => {
                         <div className="flex flex-col">
                             <div className="py-8 px-10 bg-body rounded-t-lg">
                                 <div className="pb-8">
-                                    <div className="mt-6 text-2xl font-bold text-center">
+                                    <div className="mt-8 text-2xl font-bold text-center">
                                         Kelas dan Pelatihan Online
                                     </div>
                                     <div className="mb-12 text-2xl font-bold text-center">

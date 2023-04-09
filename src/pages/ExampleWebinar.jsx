@@ -97,7 +97,7 @@ const ExampleWebinar = () => {
               <div className="py-8 px-10 bg-body rounded-t-lg">
                 <div className="pb-8">
                   <div className="text-sm mb-1">Layanan Kami</div>
-                  <div className="text-2xl font-bold">Workshop</div>
+                  <div className="text-2xl font-bold">Webinar</div>
                 </div>
                 <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-y-4 gap-x-16">
                   <WebinarCard2

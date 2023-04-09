@@ -82,7 +82,7 @@ const PembayaranWebinar = (props) => {
                 <div className="pb-8">
                   <div className="text-2xl font-bold">Pembayaran</div>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-32">
                   <div className="">
                     <div className="pb-4 font-bold">Metode Pembayaran</div>
                     <PembayaranModal
