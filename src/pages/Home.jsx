@@ -79,7 +79,7 @@ const Home = (props) => {
                 <MobileButton
                   pic="video.svg"
                   title="Video"
-                  desc="kumpulan video edukasi kesehatan mental."
+                  desc="kumpulan video edukasi yang menarik tentang kesehatan mental anda."
                   url="/videos"
                 />
                 <MobileButton
