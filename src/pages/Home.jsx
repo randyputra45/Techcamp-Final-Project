@@ -51,12 +51,12 @@ const Home = (props) => {
                   desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
                   url="/coaching"
                 />
-                <MobileButton
+                {/* <MobileButton
                   pic="dyslexia.svg"
                   title="Pusat Dyslexia"
                   desc="lakukan penanganan kesehatan mental anda dengan orang yang ahli dibidangnya."
                   url="/dyslexia"
-                />
+                /> */}
               </div>
             </div>
             <div className="p-4 md:p-8 bg-body rounded-b-lg">

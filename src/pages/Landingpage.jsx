@@ -62,25 +62,25 @@ const Landingpage = () => {
                 <LandingButton1
                   pic="konseling.svg"
                   title="Konseling"
-                  desc="disini anda bisa melakukan penanganan kesehatan mental anda dengan orang yang terpercaya dan ahli dibidangnya."
+                  desc="Disini anda bisa melakukan penanganan kesehatan mental anda dengan orang yang terpercaya dan ahli dibidangnya."
                   url="/screening"
                 />
                 <LandingButton1
                   pic="webinar.svg"
                   title="Webinar"
-                  desc="disini anda bisa mengikuti kegiatan webinar bertajuk kesehatan mental bersama narasumber ahli dan terpercaya."
+                  desc="Disini anda bisa mengikuti kegiatan webinar bertajuk kesehatan mental bersama narasumber ahli dan terpercaya."
                   url="/webinar"
                 />
                 <LandingButton1
                   pic="blog.svg"
                   title="Blog"
-                  desc="disini anda bisa membaca ragam artikel dan blog untuk menambah awareness anda tentang kesehatan mental."
+                  desc="Disini anda bisa membaca ragam artikel dan blog untuk menambah awareness anda tentang kesehatan mental."
                   url="/blogs"
                 />
                 <LandingButton1
                   pic="tes.svg"
                   title="Tes kesehatan"
-                  desc="disini anda juga dapat melakukan tes kesehatan agar anda mengetahui kondisi dari kesehatan mental anda saat ini."
+                  desc="Disini anda juga dapat melakukan tes kesehatan agar anda mengetahui kondisi dari kesehatan mental anda saat ini."
                   url="/healthtest"
                 />
               </div>
@@ -177,25 +177,25 @@ const Landingpage = () => {
               <LandingButton1
                 pic="konseling.svg"
                 title="Konseling"
-                desc="disini anda bisa melakukan penanganan kesehatan mental anda dengan orang yang terpercaya dan ahli dibidangnya."
+                desc="Disini anda bisa melakukan penanganan kesehatan mental anda dengan orang yang terpercaya dan ahli dibidangnya."
                 url="/counseling"
               />
               <LandingButton1
                 pic="webinar.svg"
                 title="Webinar"
-                desc="disini anda bisa mengikuti kegiatan webinar bertajuk kesehatan mental bersama narasumber ahli dan terpercaya."
+                desc="Disini anda bisa mengikuti kegiatan webinar bertajuk kesehatan mental bersama narasumber ahli dan terpercaya."
                 url="/webinars"
               />
               <LandingButton1
                 pic="blog.svg"
                 title="Blog"
-                desc="disini anda bisa membaca ragam artikel dan blog untuk menambah awareness anda tentang kesehatan mental."
+                desc="Disini anda bisa membaca ragam artikel dan blog untuk menambah awareness anda tentang kesehatan mental."
                 url="/blogs"
               />
               <LandingButton1
                 pic="tes.svg"
                 title="Tes kesehatan"
-                desc="disini anda juga dapat melakukan tes kesehatan agar anda mengetahui kondisi dari kesehatan mental anda saat ini."
+                desc="Disini anda juga dapat melakukan tes kesehatan agar anda mengetahui kondisi dari kesehatan mental anda saat ini."
                 url="/healthtest"
               />
             </div>

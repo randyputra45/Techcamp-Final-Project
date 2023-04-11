@@ -14,7 +14,7 @@ const systemMessage = { //  Explain things like you're talking to a software pro
 function ChatBot() {
   const [messages, setMessages] = useState([
     {
-      message: "Hello, I'm ChatGPT! Ask me anything!",
+      message: "Hello, I'm Rumah Bercerita bot! Ask me anything!",
       sentTime: "just now",
       sender: "ChatGPT"
     }

@@ -39,7 +39,7 @@ const Landinginfo = () => {
               pic2="landing-coaching2.jpg"
             />
           </div>
-          <div className="pt-32">
+          {/* <div className="pt-32">
             <LandingInfo
               url="/infolayanan/dyslexia"
               title="Pusat Dyslexia"
@@ -47,7 +47,7 @@ const Landinginfo = () => {
               pic="landing-dyslexia.jpg"
               pic2="landing-dyslexia2.jpg"
             />
-          </div>
+          </div> */}
           <div className="pt-32">
             <LandingInfo
               url="/infolayanan/blogs"
