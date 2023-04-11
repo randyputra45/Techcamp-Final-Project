@@ -50,15 +50,25 @@ const Login = () => {
             console.log(error)
             setAlertMsg(error)
             setAlert(true);
-            setInterval(
-                function(){ history.go(0) },
-                2000
-            );
+            // setInterval(
+            //     function(){ history.go(0) },
+            //     2000
+            // );
         }
         else{
-            setAlert(false);
-            await loginUser(values);
-        }
+            let loggedIn = await loginUser(values)
+            // login true
+            if (loggedIn === true) { 
+                setAlert(true);
+                setAlertMsg("Login success!")
+                history.push("/home")
+            } 
+            // login failed
+            else {
+                setAlert(true);
+                setAlertMsg(loggedIn);
+            };
+        } ;
     }
 
     return (

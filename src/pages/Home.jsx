@@ -100,12 +100,12 @@ const Home = (props) => {
                   desc="ayo bekerja sama dengan kami, daftarkan diri anda sebagai mitra kami."
                   url="/partnership"
                 />
-                <MobileButton
+                {/* <MobileButton
                   pic="feedback.svg"
                   title="Feedback"
                   desc="silahkan berikan feedback agar kami dapat mengembangkan website kami jadi lebih baik lagi."
                   url="/feedback"
-                />
+                /> */}
               </div>
             </div>
           </div>

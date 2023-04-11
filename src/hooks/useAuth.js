@@ -32,17 +32,9 @@ export default function useAuth() {
 
   //register user
   const registerUser = async (data) => {
-    console.log(data);
-    const {
-      first_name,
-      last_name,
-      email,
-      password,
-      no_telp,
-      sex,
-      birth_date,
-    } = data;
-    return axios
+    const { first_name, last_name, no_telp, email, sex, birth_date, password } = data;
+    try {
+      let res = await axios
       .post(
         `https://rumahbercerita.netlify.app/api/register`,
         {
@@ -56,12 +48,18 @@ export default function useAuth() {
         },
         { withCredentials: true, config }
       )
-      .catch((err) => {
-        console.log(err);
-        return setError(
-          JSON.stringify(err.response.data.message)
-        );
-      });
+      console.log(res)
+      if (res.status === 200) {
+        history.push({
+          pathname: "/register/checkemail",
+          state: {email: email}
+        })
+      };
+    } catch (err) {
+      return setError(
+        JSON.stringify(err.response.data.message)
+      );
+    }
   };
 
   //login user
@@ -78,13 +76,10 @@ export default function useAuth() {
       )
       .then(async (response) => {
         await setUserContext();
-        history.push("/home");
-        console.log(response.data);
+        return true
       })
       .catch((err) => {
-        return setError(
-          JSON.stringify(err.response.data.error)
-        );
+        return err.response.data.message
       });
   };
 
@@ -113,7 +108,6 @@ export default function useAuth() {
 
   //reset password
   const resetPassword = async (data, url) => {
-    console.log(data);
     return axios
       .put(
         `https://rumahbercerita.netlify.app/api${url}`,
@@ -131,7 +125,6 @@ export default function useAuth() {
 
   //edit user profile
   const editUser = async (data, url) => {
-    console.log(data);
     return axios
       .patch(
         `https://rumahbercerita.netlify.app/api${url}`,

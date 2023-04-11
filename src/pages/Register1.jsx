@@ -46,7 +46,7 @@ const Register1 = () => {
 
     const handleRegister = async (e) => {
         e.preventDefault();
-        console.log(values)
+        setAlert(false);
 
         if (values.first_name === "" || values.last_name === "" || values.email === "" || values.password === "" || values.confirm_password === "" || values.sex === ""|| values.no_telp === ""|| values.birth_date === "") {
             setAlertMsg("Please fill in all the required fields")
@@ -64,16 +64,12 @@ const Register1 = () => {
             setAlertMsg("Password don't match.")
             setAlert(true);
         } else if (error) {
-            console.log(error)
             setAlertMsg(error)
             setAlert(true);
+            await registerUser(values);
         }
         else{
             await registerUser(values);
-            history.push({
-                pathname: "/register/checkemail",
-                state: {email: values.email}
-            })
         }
     }
 
