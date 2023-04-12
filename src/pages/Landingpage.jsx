@@ -98,22 +98,22 @@ const Landingpage = () => {
               <div className="grid grid-cols-1 gap-4 pt-6">
                 <LandingButton11
                   pic="konseling.svg"
-                  title="24 jam pelayanan konsumen"
+                  title="Pelayanan Sepenuh Hati"
                   desc="Rumah Bercerita hadir dengan memberikan pelayanan sepenuh hati kepada konsumen. Siap melayani konsumen kapanpun user inginkan."
                 />
                 <LandingButton11
                   pic="konseling.svg"
-                  title="SDM yang ahli dibidangnya"
+                  title="SDM Yang Ahli Dibidangnya"
                   desc="Kami bekerjasama dengan tenaga yang ahli dibidangnya, tidak hanya mendengarkan, tetapi juga memberikan saran dan solusi yang terbaik untuk konsumen."
                 />
                 <LandingButton11
                   pic="konseling.svg"
-                  title="aksesibilitas yang mudah"
+                  title="Aksesibilitas Yang Mudah"
                   desc="Rumah Bercerita dibuat dengan antarmuka dengan aksesibilitas yang menarik dan sangat user friendly untuk memudahkan pengguna mengakses website kami."
                 />
                 <LandingButton11
                   pic="konseling.svg"
-                  title="proses konseling yang cepat"
+                  title="Proses Konseling Yang Cepat"
                   desc="Tidak perlu untuk menunggu lama, jadwal konsultasimu akan segera dikirim melalui email yang didaftarkan, karena kami akan segera membalas pesanmu dengan cepat."
                 />
               </div>

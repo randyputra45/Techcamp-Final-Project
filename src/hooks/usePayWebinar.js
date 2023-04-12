@@ -26,6 +26,8 @@ export default function usePayWebinar() {
           { withCredentials: true, config }
         )
         .then((res) => {
+          console.log("data:", res.data)
+          console.log("user", user._id)
           const webinarList = res.data.filter(
             (webinar) => webinar.user._id === user._id
           );
